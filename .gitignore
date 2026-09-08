@@ -1,0 +1,14 @@
+.DS_Store
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+env/
+ENV/
+
+*.part
+
+normes-software-embarque-automobile/sources-downloads/

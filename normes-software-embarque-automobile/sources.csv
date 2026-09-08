@@ -1,0 +1,24 @@
+source_id,organisme,titre,url,type_acces,usage,verifie_le
+unece-r155,UNECE,"UN Regulation No. 155 - Cyber security and cyber security management system",https://unece.org/transport/documents/2021/03/standards/un-regulation-no-155-cyber-security-and-cyber-security,libre,"Texte réglementaire officiel R155",2026-09-08
+unece-r156,UNECE,"UN Regulation No. 156 - Software update and software update management system",https://unece.org/transport/documents/2021/03/standards/un-regulation-no-156-software-update-and-software-update,libre,"Texte réglementaire officiel R156",2026-09-08
+unece-r157,UNECE,"UN Regulation No. 157 - Automated Lane Keeping Systems",https://unece.org/transport/vehicle-regulations-wp29/standards,libre,"Portail WP.29 : retrouver la version consolidée et les amendements",2026-09-08
+iso-26262-package,ISO,"ISO 26262 road vehicles functional safety",https://www.iso.org/publication/PUB200262.html,editeur,"Page de la série ISO 26262 et de ses 10 parties",2026-09-08
+iso-21448,ISO,"ISO 21448:2022 - Safety of the intended functionality",https://www.iso.org/standard/77490.html,editeur,"Page officielle SOTIF",2026-09-08
+iso-ts-5083,ISO,"ISO/TS 5083:2025 - Safety for automated driving systems",https://www.iso.org/standard/81920.html,editeur,"Page officielle ADS design verification validation",2026-09-08
+iec-61508,IEC,"IEC 61508 - Functional safety",https://www.iec.ch/functionalsafety,editeur,"Portail officiel de sécurité fonctionnelle IEC",2026-09-08
+iso-sae-21434,ISO/SAE,"ISO/SAE 21434:2021 - Cybersecurity engineering",https://www.iso.org/standard/70918.html,editeur,"Page officielle cybersécurité automobile",2026-09-08
+iso-pas-5112,ISO,"ISO/PAS 5112:2022 - Guidelines for auditing cybersecurity engineering",https://www.iso.org/standard/80840.html,editeur,"Page officielle guide d'audit CSMS",2026-09-08
+iso-24089,ISO,"ISO 24089 - Software update engineering",https://www.iso.org/search.html?q=ISO%2024089,editeur,"Recherche officielle à revalider pour l'édition applicable",2026-09-08
+iso-iec-27001,ISO/IEC,"ISO/IEC 27001 - Information security management systems",https://www.iso.org/standard/27001.html,editeur,"Page officielle ISMS",2026-09-08
+autosar-standards,AUTOSAR,"AUTOSAR Standards",https://www.autosar.org/standards/,libre_sous_conditions,"Portail officiel Classic Adaptive Foundation",2026-09-08
+iso-11898,ISO,"ISO 11898 - Controller area network",https://www.iso.org/search.html?q=ISO%2011898,editeur,"Recherche officielle CAN",2026-09-08
+iso-17987,ISO,"ISO 17987 - Local Interconnect Network",https://www.iso.org/search.html?q=ISO%2017987,editeur,"Recherche officielle LIN",2026-09-08
+iso-13400,ISO,"ISO 13400 - Diagnostic communication over Internet Protocol",https://www.iso.org/search.html?q=ISO%2013400,editeur,"Recherche officielle DoIP",2026-09-08
+iso-14229,ISO,"ISO 14229 - Unified diagnostic services",https://www.iso.org/search.html?q=ISO%2014229,editeur,"Recherche officielle UDS",2026-09-08
+iso-15765,ISO,"ISO 15765 - Diagnostic communication over CAN",https://www.iso.org/search.html?q=ISO%2015765,editeur,"Recherche officielle diagnostic CAN",2026-09-08
+iso-15118,ISO/IEC,"ISO 15118 - Vehicle to grid communication interface",https://www.iso.org/search.html?q=ISO%2015118,editeur,"Recherche officielle recharge et V2G",2026-09-08
+automotive-spice,Automotive SPICE,"Automotive SPICE Process Assessment / Reference Model",https://automotivespice.com/,libre_pour_version_publiee,"Portail du modèle de processus automobile",2026-09-08
+iso-iec-330xx,ISO/IEC,"ISO/IEC 330xx process assessment",https://www.iso.org/search.html?q=ISO%2FIEC%20330,editeur,"Recherche officielle famille d'évaluation de processus",2026-09-08
+iatf-16949,IATF,"IATF 16949 automotive quality management",https://www.iatfglobaloversight.org/,editeur,"Portail officiel IATF et règles de certification",2026-09-08
+misra,MISRA,"MISRA guidelines",https://misra.org.uk/,payant_ou_extrait,"Portail officiel règles de codage et publications",2026-09-08
+sae-j3061,SAE,"SAE J3061_202112 cybersecurity guidebook",https://saemobilus.sae.org/standards/j3061_202112-cybersecurity-guidebook-cyber-physical-vehicle-systems,payant,"Page officielle SAE, guide historique",2026-09-08
