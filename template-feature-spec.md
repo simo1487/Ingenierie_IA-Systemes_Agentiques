@@ -1,57 +1,66 @@
-# Template de spécification de feature
+# Spécification de feature : vérifications statique et dynamique
 
-> Template neutre à copier pour décrire une feature. Remplacer les éléments entre crochets et supprimer les sections inutiles.
+Cette fiche décrit la feature proposée. Les choix d'outillage qui ne sont pas encore arrêtés restent explicitement ouverts.
 
 ## 1. Informations générales
 
-- **Identifiant :** `[FEAT-XXX]`
-- **Nom de la feature :** `[Nom court et explicite]`
-- **Responsable(s) :** `[Nom ou équipe]`
-- **Priorité :** `[P0 / P1 / P2]`
-- **Statut :** `[Proposée / En cours / À revoir / Terminée]`
-- **Date :** `[AAAA-MM-JJ]`
+- **Identifiant :** `FEAT-QUAL-001`
+- **Nom de la feature :** Vérification qualité statique et dynamique avant validation d'un commit
+- **Responsable(s) :** Équipe Qualité du code : Eric, Céline et Damien
+- **Priorité :** `P1`
+- **Statut :** Proposée
+- **Date :** `2026-09-08`
 
 ## 2. Objectif
 
-Décrire en une ou deux phrases le résultat attendu et la valeur apportée.
-
-> Cette feature permet de `[résultat attendu]` afin de `[valeur ou problème résolu]`.
+Cette feature permet d'exécuter automatiquement une vérification statique et une vérification dynamique avant l'acceptation d'un commit, tout en permettant à un développeur ou à un relecteur de relancer les contrôles à la demande. Elle doit détecter tôt les défauts reproductibles et conserver un résultat exploitable pour la revue.
 
 ## 3. Besoin utilisateur
 
-> En tant que `[type d'utilisateur]`, je veux `[action ou capacité]`, afin de `[bénéfice attendu]`.
+> En tant que développeur ou relecteur, je veux lancer les contrôles qualité automatiquement lors d'un commit ou manuellement, afin de détecter les défauts avant intégration et de disposer d'une preuve reproductible pour la revue.
 
 ## 4. Contexte et problème
 
-- **Situation actuelle :** `[Décrire le fonctionnement ou la difficulté actuelle]`
-- **Problème rencontré :** `[Décrire le problème observable]`
-- **Décision qui reste humaine :** `[Décision qui ne doit pas être déléguée au système]`
-- **Question ouverte :** `[Information manquante ou décision à prendre]`
+- **Situation actuelle :** aucun hook de validation actif, aucun script de contrôle partagé et aucun pipeline de test n'est identifié dans le dépôt. Un rapport Cppcheck existe toutefois pour le noyau Zephyr (`cppcheck-zephyr-kernel-report.xml`).
+- **Problème rencontré :** un commit peut être créé sans analyse statique ni exécution de tests ; les résultats ne sont donc ni systématiques ni facilement comparables.
+- **Décision qui reste humaine :** décider si une anomalie est acceptable, corriger ou justifier une exception, et autoriser l'intégration lorsque le contrôle est inconclusif ou incomplet.
+- **Question ouverte :** quels sont le langage, la commande de compilation et le framework de tests de la cible à contrôler ?
 
 ## 5. Périmètre
 
 ### Inclus
 
-- `[Élément inclus 1]`
-- `[Élément inclus 2]`
-- `[Élément inclus 3]`
+- Un contrôle statique déclenchable automatiquement avant la création du commit.
+- Un contrôle dynamique déclenchable dans le même parcours, selon un profil rapide adapté au commit.
+- Une commande explicite pour relancer les contrôles manuellement, avec un profil complet possible.
+- Un code retour permettant d'accepter ou de bloquer le commit.
+- La production d'un rapport horodaté et associé au commit ou à l'exécution.
+- Une documentation d'installation, d'utilisation et de dépannage.
 
 ### Exclus
 
-- `[Élément explicitement hors périmètre 1]`
-- `[Élément explicitement hors périmètre 2]`
+- La correction automatique du code ou la suppression automatique d'une anomalie.
+- La décision humaine d'accepter un risque ou de déclarer une conformité réglementaire.
+- La certification du logiciel ou la preuve que les contrôles couvrent tous les défauts possibles.
+- Les tests matériels nécessitant une carte ou un banc non disponible localement, sauf décision ultérieure.
 
 ## 6. Entrées
 
 | Entrée | Source | Version / date | Statut | Accès autorisé |
 |---|---|---|---|---|
-| `[Donnée, fichier ou ressource]` | `[Source]` | `[Version / date]` | `[Draft / validé / à vérifier]` | `[Lecture / écriture]` |
+| Code source et fichiers de configuration | Dépôt Git | Version du commit contrôlé | À vérifier | Lecture |
+| Configuration du contrôle statique | Dépôt Git | À définir et versionner | Candidat | Lecture |
+| Commande de compilation et tests | Projet cible | À définir | À vérifier | Exécution |
+| Rapport Cppcheck existant | `cppcheck-zephyr-kernel-report.xml` | Cppcheck 2.21.0, rapport existant | Observation à analyser | Lecture |
+| Environnement d'exécution | Machine locale ou CI | Versions à figer | À vérifier | Lecture |
 
 ## 7. Sorties attendues
 
-- `[Livrable ou résultat 1]`
-- `[Livrable ou résultat 2]`
-- `[Livrable ou résultat 3]`
+- Statut du contrôle : succès, échec, inconclusif ou non exécuté.
+- Rapport statique listant les anomalies, leur gravité, leur fichier et leur ligne.
+- Résultat dynamique : compilation, tests exécutés, tests réussis et tests échoués.
+- Journal de commande, versions des outils et identifiant du commit contrôlé.
+- Message lisible dans le terminal indiquant l'action à effectuer en cas d'échec.
 
 Pour chaque sortie, préciser si elle constitue :
 
@@ -62,104 +71,133 @@ Pour chaque sortie, préciser si elle constitue :
 
 ## 8. Règles métier et contraintes
 
-- `[Règle métier 1]`
-- `[Règle métier 2]`
-- `[Contrainte technique, réglementaire ou organisationnelle]`
-- `[Permission ou limite de sécurité]`
+- Le contrôle doit être déterministe à environnement et commit identiques, ou signaler explicitement les facteurs non déterministes.
+- Une anomalie statique de gravité bloquante ou un test dynamique échoué bloque le commit par défaut.
+- Un outil absent, une compilation impossible ou un test non exécuté ne doit pas être présenté comme un succès.
+- Le développeur peut relancer le contrôle complet manuellement, mais ne peut pas masquer un échec sans justification et revue humaine.
+- Les outils et leurs versions doivent être documentés et, autant que possible, verrouillés.
+- Aucun secret, fichier personnel ou artefact volumineux ne doit être ajouté au dépôt par le mécanisme de contrôle.
 
 ## 9. Critères d'acceptation
 
-- [ ] `[Critère observable et vérifiable 1]`
-- [ ] `[Critère observable et vérifiable 2]`
-- [ ] `[Critère observable et vérifiable 3]`
-- [ ] `[Les sources, versions et statuts sont conservés]`
-- [ ] `[Les informations inconnues restent explicitement ouvertes]`
-- [ ] `[Aucune preuve ou conformité n'est revendiquée sans vérification]`
+- [ ] `CA-01` : un commit déclenche automatiquement le profil rapide statique et dynamique configuré.
+- [ ] `CA-02` : une anomalie bloquante ou un test échoué renvoie un code non nul et empêche le commit.
+- [ ] `CA-03` : une commande manuelle permet de lancer le profil rapide et le profil complet sans modifier le code.
+- [ ] `CA-04` : le résultat indique clairement les contrôles exécutés, ignorés ou en échec.
+- [ ] `CA-05` : le rapport conserve le commit, les versions des outils, les commandes et les résultats.
+- [ ] `CA-06` : un contrôle interrompu ou incomplet n'est jamais classé comme réussi.
+- [ ] `CA-07` : un relecteur peut reproduire le contrôle en suivant la documentation.
+- [ ] Les sources, versions et statuts sont conservés.
+- [ ] Les informations inconnues restent explicitement ouvertes.
+- [ ] Aucune preuve de conformité n'est revendiquée sans vérification.
 
 ## 10. Scénarios Gherkin
 
 ```gherkin
-Fonctionnalité: [Nom de la fonctionnalité]
+Fonctionnalité: Vérification qualité avant validation d'un commit
 
   Contexte:
-    Étant donné [contexte initial commun]
-    Et [précondition commune]
+    Étant donné un dépôt contenant le code et la configuration du projet
+    Et les outils requis installés dans les versions documentées
 
-  Scénario: [Cas nominal]
-    Étant donné [état initial]
-    Quand [action réalisée]
-    Alors [résultat observable attendu]
-    Et [règle ou contrainte vérifiée]
+  Scénario: Contrôles réussis avant un commit
+    Étant donné un changement qui ne produit aucune anomalie bloquante
+    Quand le développeur lance la création du commit
+    Alors le contrôle statique et le profil dynamique configuré sont exécutés
+    Et le commit est accepté avec un rapport associé au commit contrôlé
 
-  Scénario: [Cas frontière ou limite]
-    Étant donné [état à la limite]
-    Quand [action réalisée]
-    Alors [résultat observable attendu]
+  Scénario: Contrôle manuel complet
+    Étant donné un dépôt dans un état compilable
+    Quand un relecteur lance explicitement le profil complet
+    Alors les résultats détaillés sont affichés et enregistrés
 
-  Scénario: [Cas d'erreur, de refus ou d'information manquante]
-    Étant donné [situation invalide, interdite ou incomplète]
-    Quand [action réalisée]
-    Alors [refus, erreur ou question ouverte observable]
+  Scénario: Échec bloquant
+    Étant donné une anomalie statique bloquante ou un test dynamique échoué
+    Quand le développeur lance la création du commit
+    Alors le contrôle renvoie un code non nul
+    Et le commit est refusé avec la cause et le chemin du rapport
+
+  Scénario: Outil ou test indisponible
+    Étant donné qu'un outil requis est absent ou qu'un test ne peut pas être exécuté
+    Quand le contrôle est lancé
+    Alors le résultat est inconclusif ou en échec
+    Et aucune réussite globale n'est annoncée
 ```
 
 ### Couverture des scénarios
 
 | Scénario | Critère couvert | Source de l'attendu | Oracle / observation | Statut |
 |---|---|---|---|---|
-| `[Nom du scénario]` | `[CA-XX]` | `[Source et passage]` | `[Ce qui permet de contredire le résultat]` | `[Candidat / vérifié / ouvert]` |
+| Contrôles réussis avant un commit | CA-01, CA-05 | Cette spécification | Code retour nul, rapport et identifiant du commit | Candidat |
+| Contrôle manuel complet | CA-03, CA-04 | Cette spécification | Rapport complet et commandes rejouables | Candidat |
+| Échec bloquant | CA-02, CA-06 | Cette spécification | Code retour non nul et commit non créé | Candidat |
+| Outil ou test indisponible | CA-04, CA-06 | Cette spécification | Statut inconclusif ou échec visible | Candidat |
 
 ## 11. Traçabilité
 
 | Élément | Source ou identifiant | Relation | Preuve / passage | Statut |
 |---|---|---|---|---|
-| `[Exigence]` | `[Référence]` | `[Vers règle, documentation, code ou test]` | `[Lien ou extrait court]` | `[Vérifié / candidat / non trouvé / non applicable]` |
+| Exécuter une analyse statique | FEAT-QUAL-001 | Configuration et commande statique | À définir avec l'outil retenu | Candidat |
+| Exécuter une vérification dynamique | FEAT-QUAL-001 | Compilation et tests du projet | Commande de test à définir | Candidat |
+| Bloquer un commit défectueux | FEAT-QUAL-001 | Hook de commit ou équivalent CI | Code retour non nul attendu | Candidat |
+| Produire une preuve reproductible | FEAT-QUAL-001 | Rapport et documentation | Commit, versions, commandes, résultats | Candidat |
+| État actuel du contrôle statique | `cppcheck-zephyr-kernel-report.xml` | Observation vers rapport statique | Présence d'un rapport Cppcheck, avec avertissements à qualifier | Observé, non validé |
 
 > Une proximité de vocabulaire, un nom de fichier ou la présence d'un test ne suffit pas à prouver une relation.
 
 ## 12. Vérification
 
-Décrire comment une autre personne peut vérifier la feature sans dépendre d'une interprétation implicite.
+La procédure exacte dépend de l'outillage du projet, qui doit encore être arrêté. La procédure cible est la suivante.
 
-1. `[Étape de vérification 1]`
-2. `[Étape de vérification 2]`
-3. `[Étape de vérification 3]`
+1. Installer les versions documentées des outils et récupérer le dépôt.
+2. Lancer le profil rapide avec la commande documentée, puis vérifier son code retour.
+3. Modifier volontairement un cas de test ou introduire une anomalie contrôlée dans un environnement de démonstration.
+4. Vérifier que le contrôle échoue, que le commit est refusé et que le rapport identifie la cause.
+5. Annuler cette modification de démonstration et relancer le profil complet manuellement.
 
-- **Environnement :** `[Version, outil ou configuration]`
-- **Données utilisées :** `[Données autorisées]`
-- **Résultat attendu :** `[Résultat observable]`
-- **Limites de la vérification :** `[Ce qui n'est pas démontré]`
+- **Environnement :** dépôt Git ; système local et éventuellement CI ; versions des outils à figer.
+- **Données utilisées :** code du dépôt, configuration versionnée, tests et données de test non sensibles.
+- **Résultat attendu :** contrôle terminé avec statut, code retour et rapport consultable.
+- **Limites de la vérification :** elle ne démontre pas l'absence de tous les défauts, la conformité à une norme, ni le comportement sur matériel réel non testé.
 
 ## 13. Dépendances et risques
 
 ### Dépendances
 
-- `[Feature, équipe, donnée ou décision nécessaire]`
+- Définition du projet cible, de sa commande de compilation et de son framework de tests.
+- Choix des outils statique et dynamique, de leurs versions et de leurs seuils de gravité.
+- Accès à un environnement reproductible ; éventuellement installation d'un hook partagé et d'un runner CI.
+- Décision sur le temps maximal acceptable pour un commit.
 
 ### Risques
 
 | Risque | Impact | Probabilité | Mesure de maîtrise | Responsable |
 |---|---|---|---|---|
-| `[Risque identifié]` | `[Faible / moyen / fort]` | `[Faible / moyen / fort]` | `[Action]` | `[Nom]` |
+| Contrôle trop lent pour un commit | Fort | Moyen | Profil rapide au commit, profil complet manuel ou CI | Équipe Qualité du code |
+| Faux positifs ou règles mal configurées | Moyen | Moyen | Revue des règles, seuils versionnés et exceptions justifiées | Équipe Qualité du code |
+| Environnement local différent de la CI | Fort | Moyen | Versions documentées et exécution reproductible | À désigner |
+| Tests dynamiques incomplets | Fort | Moyen | Mesurer la couverture et documenter les limites | À désigner |
+| Rapport Cppcheck non interprétable à cause d'inclusions manquantes | Moyen | Élevé | Corriger les chemins de compilation ou classer le résultat inconclusif | Équipe Qualité du code |
 
 ## 14. Décision de revue
 
-- **Relecteur(s) :** `[Nom ou équipe]`
-- **Date de revue :** `[AAAA-MM-JJ]`
-- **Décision :** `[Acceptée / À corriger / Bloquée]`
-- **Corrections demandées :** `[Liste des corrections]`
-- **Points restant ouverts :** `[Liste des questions]`
+- **Relecteur(s) :** Équipe Qualité du code et responsable du dépôt
+- **Date de revue :** À planifier
+- **Décision :** À revoir
+- **Corrections demandées :** choisir les outils, les commandes, les seuils et le mode d'installation du hook.
+- **Points restant ouverts :** langage et cible exacts ; commande de build ; framework de tests ; durée maximale du profil commit ; conservation des rapports ; politique d'exception.
 
 ## Checklist finale
 
-- [ ] Le besoin utilisateur est compréhensible.
-- [ ] Le périmètre et les exclusions sont explicites.
-- [ ] Les entrées et leurs versions sont identifiées.
-- [ ] Les sorties sont distinguées des preuves.
-- [ ] Les critères d'acceptation sont observables.
-- [ ] Il existe au moins un scénario nominal.
-- [ ] Il existe au moins un scénario frontière, erreur ou refus.
-- [ ] Chaque scénario possède un attendu et un oracle.
-- [ ] Les relations de traçabilité sont sourcées.
-- [ ] Les inconnues ne sont pas inventées.
-- [ ] La vérification est reproductible par une autre personne.
-- [ ] Les limites et risques sont documentés.
+- [x] Le besoin utilisateur est compréhensible.
+- [x] Le périmètre et les exclusions sont explicites.
+- [x] Les entrées et leurs versions sont identifiées ou signalées comme à définir.
+- [x] Les sorties sont distinguées des preuves.
+- [x] Les critères d'acceptation sont observables.
+- [x] Il existe au moins un scénario nominal.
+- [x] Il existe au moins un scénario frontière, erreur ou refus.
+- [x] Chaque scénario possède un attendu et un oracle.
+- [x] Les relations de traçabilité sont sourcées.
+- [x] Les inconnues ne sont pas inventées.
+- [x] La vérification est reproductible par une autre personne une fois l'outillage arrêté.
+- [x] Les limites et risques sont documentés.
