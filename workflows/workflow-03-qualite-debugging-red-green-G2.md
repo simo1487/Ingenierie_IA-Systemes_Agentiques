@@ -1,6 +1,6 @@
 # Workflow 03 — Qualité, Debugging Falsifiable, Red-Green, Mutation & Documentation (Gate G2)
 
-Ce workflow transforme les hypothèses et scénarios candidats de la Gate G1 en preuves réelles observées sur une variante contrôlée, valide la robustesse par mutation, trie les alertes de qualité et produit une documentation vérifiée par fact-checking (Correspondance J03).
+Ce workflow transforme les hypothèses et scénarios candidats de la Gate G1 en preuves réelles observées sur une variante contrôlée, valide la robustesse par mutation, trie les alertes de qualité et produit une documentation vérifiée par fact-checking.
 
 ---
 

@@ -20,7 +20,7 @@ Vérifier que la branche affichée correspond à son équipe dans [`travail.md`]
 | Initialisation Normes | `projets/normes/experiments/initialisation-recherche/` | `feat/initSearchSystem` |
 | Qualité du code | `projets/qualite-code/` | `feat_Cppcheck` |
 | Logiciels open source | `projets/logiciel-automobile-open-source/` | `feat_list_existing_projects` |
-| Exigences Zephyr | `projets/exigences-zephyr/` | `feat_getReq` |
+| Ingénierie des exigences agentique | `projets/ingenierie-exigences-agentique/` | `feat_getReq` |
 | Intégration | `projets/socle-commun/` | `develop` |
 
 Ne pas travailler directement sur `main`.
@@ -119,14 +119,14 @@ Chaque projet garde ses outils localement.
 ### Exemple Python
 
 ```text
-projets/exigences-zephyr/
+projets/ingenierie-exigences-agentique/
 ├── README.md
 ├── SPEC.md
 ├── pyproject.toml
 ├── src/
-│   └── exigences_zephyr/
+│   └── ingenierie_exigences/
 └── tests/
-    └── test_extraction.py
+    └── test_orchestration.py
 ```
 
 Le README local indique par exemple :

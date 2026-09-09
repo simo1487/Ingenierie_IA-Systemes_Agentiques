@@ -1,6 +1,6 @@
 # Workflow 02 — Spécifications, Example Mapping, Oracles & Traçabilité v0 (Gate G1)
 
-Ce workflow transforme une exigence brute issue d'une baseline figée en spécification outillée, exemples concrets, scénarios Gherkin falsifiables et matrice de traçabilité v0 en lecture seule (Correspondance J02).
+Ce workflow transforme une User Story ou une exigence brute issue d’une baseline figée en spécification outillée, exemples concrets, scénarios Gherkin falsifiables et matrice de traçabilité v0 en lecture seule.
 
 ---
 
@@ -22,7 +22,7 @@ Passer d'un texte d'exigence (souvent au statut `Draft` ou ambigu) à :
 - **Entrées :**
   - Fiche de cadrage G0 validée.
   - Corpus d'exigences brutes (ex: fichiers `.sdoc` de StrictDoc ou catalogue normalisé).
-  - Documentation d'architecture et en-têtes d'API (ex: `include/zephyr/kernel.h`).
+  - Documentation d’architecture et contrats d’API de la baseline cible.
   - Code source et tests existants en consultation lecture seule.
 
 ---

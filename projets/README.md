@@ -1,6 +1,6 @@
 # Projets de l’atelier
 
-Ce dossier centralise les spécifications macro de travail définies dans [`travail.md`](../travail.md). L'architecture documentaire complète, les modèles d'artefacts (features, Example Mapping, traçabilité, enquêtes) et les règles de conformité J01–J03 sont décrits dans [`specs/README.md`](../specs/README.md). Chaque projet possède un périmètre, des livrables et des critères de vérification propres.
+Ce dossier centralise les spécifications de portefeuille définies dans [`travail.md`](../travail.md). Chaque spécification décrit une Epic complète, ses User Stories, leurs règles, exemples, critères d’acceptation et preuves attendues. L’architecture documentaire, les modèles et les règles d’ingénierie sont décrits dans [`specs/README.md`](../specs/README.md).
 
 | Branche | Équipe ou fonction | Spécification |
 |---|---|---|
@@ -9,11 +9,11 @@ Ce dossier centralise les spécifications macro de travail définies dans [`trav
 | `feat/GetNormes` | Alain et Moustapha — Normes | [`normes/SPEC.md`](normes/SPEC.md) |
 | `feat_Cppcheck` | Eric, Céline et Damien — Qualité du code | [`qualite-code/SPEC.md`](qualite-code/SPEC.md) |
 | `feat_list_existing_projects` | Sylvain, Nathalie et Romain — Logiciel automobile open source | [`logiciel-automobile-open-source/SPEC.md`](logiciel-automobile-open-source/SPEC.md) |
-| `feat_getReq` | Mohammed et Florient — Exigences Zephyr | [`exigences-zephyr/SPEC.md`](exigences-zephyr/SPEC.md) |
+| `feat_getReq` | Mohammed et Florient — Ingénierie des exigences agentique | [`ingenierie-exigences-agentique/SPEC.md`](ingenierie-exigences-agentique/SPEC.md) |
 
 ## Structure d’un projet
 
-Chaque dossier `projets/<slug>/` devient le point d’entrée autonome de son projet. Il contient sa spécification et, lorsqu’ils existent, son `README.md`, ses `experiments/`, son code `src/`, ses `tests/`, sa documentation `docs/`, ses petites données redistribuables `data/` et ses preuves `evidence/`.
+Chaque dossier `projets/<slug>/` devient le point d’entrée autonome de son projet. Il contient une `SPEC.md` structurée selon [`template-project-spec.md`](../specs/templates/template-project-spec.md) et, lorsqu’ils existent, son `README.md`, ses `experiments/`, son code `src/`, ses `tests/`, sa documentation `docs/`, ses petites données redistribuables `data/` et ses preuves `evidence/`.
 
 Le modèle est disponible dans [`_template/README.md`](_template/README.md) et les décisions d’architecture sont décrites dans [`docs/architecture-monorepo.md`](../docs/architecture-monorepo.md). Les actifs historiques ne sont pas déplacés pendant une modification fonctionnelle ; leur migration se fait dans une pull request dédiée.
 

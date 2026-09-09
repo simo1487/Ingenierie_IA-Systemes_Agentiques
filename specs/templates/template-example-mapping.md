@@ -1,6 +1,6 @@
 # Modèle d'Atelier Example Mapping & Table de Décision
 
-Ce document sert de support pour formaliser les règles métier, exemples concrets et tables de décision avant tout codage ou génération de scénarios Gherkin (Méthodologie J02).
+Ce document sert de support pour formaliser les règles métier, exemples concrets et tables de décision d’une User Story avant tout codage ou génération de scénarios Gherkin.
 
 ---
 

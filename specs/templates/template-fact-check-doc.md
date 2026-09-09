@@ -1,6 +1,6 @@
 # Modèle de Fact-Checking Documentaire & Validation Diátaxis
 
-Ce document sert à auditer toute documentation technique produite (guides, API, tutoriels) afin de s'assurer qu'aucune affirmation technique n'est inventée ou découplée du code réel (Livrable de clôture du J03 / Gate G2).
+Ce document sert à auditer toute documentation technique produite (guides, API, tutoriels) afin de s’assurer qu’aucune affirmation technique n’est inventée ou découplée du code réel (livrable de clôture de la Gate G2).
 
 ---
 

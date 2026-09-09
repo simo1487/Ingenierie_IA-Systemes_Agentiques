@@ -1,7 +1,7 @@
 # Modèle de Spécification de Feature
 
-Ce document est le modèle standard pour spécifier une fonctionnalité ou une exigence logicielle (`FEAT-*`).
-Il intègre l'ensemble des exigences méthodologiques des trois premiers jours de formation : oracles indépendants, scénarios Gherkin complets, Example Mapping, distinction des statuts de preuve et traçabilité.
+Ce document est le modèle standard pour détailler une fonctionnalité (`FEAT-*`) rattachée à une User Story d’une Epic de projet.
+Il intègre les oracles indépendants, scénarios Gherkin complets, Example Mapping, statuts de preuve et liens de traçabilité attendus.
 
 ---
 
@@ -12,6 +12,8 @@ Il intègre l'ensemble des exigences méthodologiques des trois premiers jours d
 - **Responsable(s) :** [Équipe et noms des contributeurs]
 - **Branche Git associée :** `feat/[nom-de-branche]`
 - **Spécification parente :** [`projets/[nom-projet]/SPEC.md`](../../projets/)
+- **Epic parente :** `EPIC-[DOMAINE]-[NUMÉRO]`
+- **User Story parente :** `US-[DOMAINE]-[NUMÉRO]`
 - **Priorité :** `P1` (Bloquant) / `P2` (Important) / `P3` (Secondaire)
 - **Statut :** `Draft` / `Candidate` / `In Review` / `Validated`
 - **Date :** `AAAA-MM-JJ`
@@ -69,7 +71,7 @@ Il intègre l'ensemble des exigences méthodologiques des trois premiers jours d
 
 ## 7. Sorties attendues et typologie d'information
 
-Pour chaque sortie, qualifier formellement sa nature selon le principe J01 :
+Pour chaque sortie, qualifier formellement sa nature :
 
 | Sortie | Description | Type d'information | Oracle de validation |
 |---|---|---|---|
@@ -144,7 +146,7 @@ Fonctionnalité: [Nom de la feature]
 |---|---|---|---|---|---|
 | [ID exigence] | [Fichier / ligne] | [Fichier d'implémentation] | [Fichier de test] | `Observé` / `Candidat` / `Vérifié` | [Description du test] |
 
-> **Avertissement J02 :** Une proximité lexicale ne prouve JAMAIS une relation.
+> **Avertissement :** Une proximité lexicale ne prouve JAMAIS une relation.
 
 ---
 

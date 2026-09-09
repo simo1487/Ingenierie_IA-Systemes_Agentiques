@@ -1,6 +1,6 @@
-# Formation IA Project
+# Portefeuille d’ingénierie assistée par IA
 
-Monorepo d’expérimentations et de prototypes réalisés pendant la formation IA Coding. Le dépôt accueille plusieurs projets et plusieurs langages sans imposer une chaîne de build unique.
+Monorepo de projets et prototypes d’ingénierie assistée par IA. Chaque projet possède une Epic, des User Stories, ses propres baselines, contrôles et preuves, sans imposer une chaîne de build unique au portefeuille.
 
 ## Commencer
 
@@ -25,7 +25,6 @@ workflows/              Workflows G0, G1, G2 et intégration
 
 Chaque projet peut employer son propre langage et son propre outillage. Il conserve localement son code, ses tests, sa documentation, ses expériences et ses preuves. Le hook racine ne remplace pas les tests propres au projet.
 
-- [Présentation HTML pour la réunion](docs/presentation-monorepo.html)
 - [Tutoriel d’utilisation](docs/tutoriel-utilisation.md)
 - [Plan concret de migration](docs/plan-migration.md)
 - [Architecture du monorepo](docs/architecture-monorepo.md)

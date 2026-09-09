@@ -44,4 +44,4 @@ Le `README.md` du projet contient au minimum :
 ## Limites et questions ouvertes
 ```
 
-Le `SPEC.md` est créé à partir de la méthode décrite dans [`specs/README.md`](../../specs/README.md). Une expérience suit les conventions de [`docs/architecture-monorepo.md`](../../docs/architecture-monorepo.md).
+Le `SPEC.md` est créé à partir de [`specs/templates/template-project-spec.md`](../../specs/templates/template-project-spec.md). Il décrit au minimum une Epic, ses User Stories, leurs règles, exemples, critères, oracles, liens de traçabilité et ambiguïtés. Une feature détaillée suit ensuite [`specs/templates/template-feature-spec.md`](../../specs/templates/template-feature-spec.md) et reste reliée à sa User Story parente. Une expérience suit les conventions de [`docs/architecture-monorepo.md`](../../docs/architecture-monorepo.md).

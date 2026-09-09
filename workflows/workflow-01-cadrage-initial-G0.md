@@ -1,6 +1,6 @@
 # Workflow 01 — Cadrage Initial, Baselines et Frontières de Confiance (Gate G0)
 
-Ce workflow guide l'équipe dans la mise en place d'un cadre de travail sécurisé, déterministe et mesurable avant toute analyse technique approfondie (Correspondance J01).
+Ce workflow guide l’équipe dans la mise en place d’un cadre de travail sécurisé, déterministe et mesurable avant toute analyse technique approfondie.
 
 ---
 
@@ -53,8 +53,8 @@ Ce workflow guide l'équipe dans la mise en place d'un cadre de travail sécuris
    - La révision exacte (Tag ou SHA-1 du commit).
    - Le statut formel du document (`Draft`, `Release`, `Candidate`).
 2. **Interdiction de mélange :** Consigner formellement la séparation entre les exigences et le code. Par exemple :
-   - *Baseline Exigences :* `reqmgmt-2026-08-31` (`b9e70278...`), statut `Draft`.
-   - *Baseline Code :* Zephyr `v4.4.2` (`dccb0959...`), release officielle.
+   - *Baseline Exigences :* dépôt ou document canonique, révision exacte et statut source.
+   - *Baseline Code :* dépôt cible distinct, tag ou commit exact et statut de release.
 
 ### Étape 1.3 : Cartographie des permissions (Principe du moindre privilège)
 Définir les permissions de l'environnement de travail :

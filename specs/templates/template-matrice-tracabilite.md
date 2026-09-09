@@ -6,11 +6,12 @@ Ce document est le modèle standard pour consigner et vérifier les liens entre 
 
 ## 1. Métadonnées du référentiel et baselines
 
-- **Identifiant matrice :** `TRAC-[DOMAINE]-[VERSION]` (ex: `TRAC-ZEP-001`)
+- **Identifiant matrice :** `TRAC-[DOMAINE]-[VERSION]` (ex: `TRAC-QUAL-001`)
 - **Projet :** [Nom du projet / équipe]
-- **Baseline Exigences :** [ex: reqmgmt commit `b9e702780b6dff096bebb151ab724e6c35fe3cd3`, statut `Draft`]
-- **Baseline Code / Implémentation :** [ex: Zephyr tag `v4.4.2`, commit `dccb09599635bdff17633fa7e9dab014b91dce90`]
-- **Baseline Documentation :** [ex: Documentation Zephyr 4.4.0 / latest]
+- **Epic :** `EPIC-[DOMAINE]-[NUMÉRO]`
+- **Baseline Exigences :** [chemin ou URL, tag ou commit exact, statut]
+- **Baseline Code / Implémentation :** [dépôt canonique, tag ou commit exact]
+- **Baseline Documentation :** [source et version exactes]
 - **Date de relevé :** `AAAA-MM-JJ`
 - **Relecteur :** [Nom de l'ingénieur ayant contrôlé la chaîne]
 
@@ -18,11 +19,10 @@ Ce document est le modèle standard pour consigner et vérifier les liens entre 
 
 ## 2. Tableau de traçabilité v0
 
-| UID Exigence | Titre / Énoncé court | Source & Révision | API publique liée | Fichier code & fonction | Suite de tests liée | Oracle attendu | Statut du lien | Justification / Preuve |
-|---|---|---|---|---|---|---|---|---|
-| `REQ-001` | Initialisation sémaphore | `docs/sdoc/sem.sdoc:42` | `k_sem_init()` | `kernel/sem.c:k_sem_init` | `tests/.../main.c:test_init` | Valeur du compteur == init | `Vérifié` | Test unitaire exécuté avec succès |
-| `REQ-002` | Décrémentation avec timeout | `docs/sdoc/sem.sdoc:58` | `k_sem_take()` | `kernel/sem.c:k_sem_take` | `tests/.../main.c:test_take` | Code retour `0` si ressource disponible | `Candidat` | Scénario écrit, exécution à démontrer |
-| `REQ-003` | Appel en contexte ISR | `docs/sdoc/sem.sdoc:89` | `k_sem_give()` | `kernel/sem.c:k_sem_give` | Non trouvé | Retour immédiat sans blocage | `Non trouvé` | Aucun test dédié identifié |
+| Epic | User Story | UID Exigence | Titre / Énoncé court | Source & Révision | API publique liée | Fichier code & fonction | Suite de tests liée | Oracle attendu | Statut du lien | Justification / Preuve |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `EPIC-QUAL-001` | `US-QUAL-003` | `REQ-QUAL-001` | Exécuter le profil rapide | `projets/qualite-code/SPEC.md` à une révision figée | `[commande publique]` | `[fichier et symbole]` | `[test nominal]` | Tous les contrôles configurés sont observés | `Candidat` | Exécution à démontrer |
+| `EPIC-QUAL-001` | `US-QUAL-003` | `REQ-QUAL-002` | Refuser un défaut bloquant | `projets/qualite-code/SPEC.md` à une révision figée | `[commande publique]` | `[fichier et symbole]` | `[test sur fixture fautive]` | Code non nul et diagnostic localisable | `Non vérifié` | Test non encore identifié |
 
 ---
 
@@ -34,7 +34,7 @@ Ce document est le modèle standard pour consigner et vérifier les liens entre 
 4. **`Non vérifié` (ou `non trouvé`) :** Exigence sans implémentation ou sans test identifié dans la baseline.
 5. **`Bloqué` (ou `non applicable`) :** Exigence hors périmètre ou non testable dans l'environnement actuel.
 
-> **Règle absolue (J02/J03) :** Une proximité lexicale (ex: présence du mot « semaphore » dans un fichier) ne prouve **AUCUNE** relation de couverture ou de traçabilité.
+> **Règle absolue :** Une proximité lexicale ne prouve **AUCUNE** relation de couverture ou de traçabilité.
 
 ---
 
@@ -66,8 +66,10 @@ Pour permettre la validation automatique, chaque matrice doit être convertible 
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["req_id", "source_path", "api", "code_path", "test_path", "status", "proof"],
+        "required": ["epic_id", "user_story_id", "req_id", "source_path", "api", "code_path", "test_path", "status", "proof"],
         "properties": {
+          "epic_id": { "type": "string", "pattern": "^EPIC-" },
+          "user_story_id": { "type": "string", "pattern": "^US-" },
           "req_id": { "type": "string" },
           "source_path": { "type": "string" },
           "api": { "type": "string" },

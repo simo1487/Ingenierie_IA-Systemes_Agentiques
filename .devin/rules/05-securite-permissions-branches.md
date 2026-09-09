@@ -19,7 +19,7 @@ trigger: always_on
   - Équipe 1 (Normes) : `feat/GetNormes` et `feat/initSearchSystem`
   - Équipe 2 (Qualité du code) : `feat_Cppcheck`
   - Équipe 3 (Logiciel auto open source) : `feat_list_existing_projects`
-  - Équipe 4 (Exigences Zephyr) : `feat_getReq`
+  - Équipe 4 (Ingénierie des exigences agentique) : `feat_getReq`
   - Intégration : `develop`
 - Synchroniser régulièrement sa branche avec `develop` avant toute demande de revue.
 - Ne jamais commiter de fichiers personnels, temporaires, caches (`__pycache__`, `.DS_Store`) ou volumineux sans accord explicite.

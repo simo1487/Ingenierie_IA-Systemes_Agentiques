@@ -36,7 +36,7 @@ projets/
 ├── logiciel-automobile-open-source/
 │   └── docs/
 │       └── etat-de-art-zephyr.md
-├── exigences-zephyr/
+├── ingenierie-exigences-agentique/
 └── socle-commun/
 
 specs/

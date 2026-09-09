@@ -1,6 +1,6 @@
 # Modèle de Carnet d'Enquête et Fiche de Reproduction
 
-Ce document formalise la démarche d'enquête scientifique falsifiable et la reproduction d'un défaut avant toute tentative de correction (Livrable central du J03 et de la Gate G2).
+Ce document formalise la démarche d’enquête scientifique falsifiable et la reproduction d’un défaut avant toute tentative de correction (livrable central de la Gate G2).
 
 ---
 

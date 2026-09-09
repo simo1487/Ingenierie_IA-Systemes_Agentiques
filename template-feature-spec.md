@@ -8,6 +8,8 @@ Cette fiche décrit la feature proposée. Les choix d'outillage qui ne sont pas 
 
 - **Identifiant :** `FEAT-QUAL-001`
 - **Nom de la feature :** Vérification qualité statique et dynamique avant validation d'un commit
+- **Epic parente :** `EPIC-QUAL-001`
+- **User Story parente :** `US-QUAL-003`
 - **Responsable(s) :** Équipe Qualité du code : Eric, Céline et Damien
 - **Priorité :** `P1`
 - **Statut :** Proposée
@@ -23,7 +25,7 @@ Cette feature permet d'exécuter automatiquement une vérification statique et u
 
 ## 4. Contexte et problème
 
-- **Situation actuelle :** aucun hook de validation actif, aucun script de contrôle partagé et aucun pipeline de test n'est identifié dans le dépôt. Un rapport Cppcheck existe toutefois pour le noyau Zephyr (`cppcheck-zephyr-kernel-report.xml`).
+- **Situation actuelle :** la cible, ses commandes de build et de test ainsi que les contrôles applicables restent à identifier et à figer avant le prototype.
 - **Problème rencontré :** un commit peut être créé sans analyse statique ni exécution de tests ; les résultats ne sont donc ni systématiques ni facilement comparables.
 - **Décision qui reste humaine :** décider si une anomalie est acceptable, corriger ou justifier une exception, et autoriser l'intégration lorsque le contrôle est inconclusif ou incomplet.
 - **Question ouverte :** quels sont le langage, la commande de compilation et le framework de tests de la cible à contrôler ?
@@ -53,7 +55,7 @@ Cette feature permet d'exécuter automatiquement une vérification statique et u
 | Code source et fichiers de configuration | Dépôt Git | Version du commit contrôlé | À vérifier | Lecture |
 | Configuration du contrôle statique | Dépôt Git | À définir et versionner | Candidat | Lecture |
 | Commande de compilation et tests | Projet cible | À définir | À vérifier | Exécution |
-| Rapport Cppcheck existant | `cppcheck-zephyr-kernel-report.xml` | Cppcheck 2.21.0, rapport existant | Observation à analyser | Lecture |
+| Rapport d’analyse existant | Projet cible à sélectionner | Version à relever | Observation à analyser | Lecture |
 | Environnement d'exécution | Machine locale ou CI | Versions à figer | À vérifier | Lecture |
 
 ## 7. Sorties attendues
@@ -143,7 +145,7 @@ Fonctionnalité: Vérification qualité avant validation d'un commit
 | Exécuter une vérification dynamique | FEAT-QUAL-001 | Compilation et tests du projet | Commande de test à définir | Candidat |
 | Bloquer un commit défectueux | FEAT-QUAL-001 | Hook de commit ou équivalent CI | Code retour non nul attendu | Candidat |
 | Produire une preuve reproductible | FEAT-QUAL-001 | Rapport et documentation | Commit, versions, commandes, résultats | Candidat |
-| État actuel du contrôle statique | `cppcheck-zephyr-kernel-report.xml` | Observation vers rapport statique | Présence d'un rapport Cppcheck, avec avertissements à qualifier | Observé, non validé |
+| État actuel du contrôle statique | Rapport du projet cible à sélectionner | Observation vers rapport statique | Présence et contenu du rapport à qualifier | Non vérifié |
 
 > Une proximité de vocabulaire, un nom de fichier ou la présence d'un test ne suffit pas à prouver une relation.
 

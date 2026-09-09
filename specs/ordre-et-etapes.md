@@ -1,6 +1,6 @@
 # Guide Méthodologique : Les Points et Étapes à Respecter dans l'Ordre Strict
 
-Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il synthétise les enseignements des trois premiers jours de formation (**J01**, **J02**, **J03**) et détaille la **séquence chronologique stricte** à suivre pour chaque exigence, feature, enquête de bogue ou intégration.
+Ce document constitue le référentiel d’ingénierie obligatoire du portefeuille et détaille la **séquence chronologique stricte** à suivre pour chaque Epic, User Story, exigence, feature, enquête de bogue ou intégration.
 
 ```text
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
@@ -29,7 +29,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 1 : Cadrage, Baselines et Frontières de Confiance (J01 / Gate G0)
+## Étape 1 : Cadrage, Baselines et Frontières de Confiance (Gate G0)
 
 > **Règle d'ordre :** Ne JAMAIS commencer à analyser le code ou concevoir des tests avant d'avoir formellement calé le périmètre, les baselines et les permissions.
 
@@ -37,12 +37,12 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 1. **Identifier le besoin réel et l'arbitrage humain :** Qui est l'utilisateur ? Quel est le risque évité ? Quelles décisions restent **exclusivement humaines** (acceptation de risques, conformité légale, validation d'architecture) ?
 2. **Figer les baselines de référence :**
    - Identifier le dépôt cible, le tag exact, le commit SHA et la date de consultation.
-   - **Interdiction formelle de confondre deux baselines :** dans le fil rouge Zephyr, la baseline d'exigences (`reqmgmt-2026-08-31`, commit `b9e70278...`) est au statut `Draft` et est distincte du code noyau Zephyr (`v4.4.2`, commit `dccb0959...`).
+   - **Interdiction formelle de confondre deux baselines :** le référentiel d’exigences et le code cible possèdent chacun leur source, leur révision et leur statut ; leur association reste `Candidate` tant qu’elle n’est pas démontrée.
 3. **Appliquer le principe de moindre privilège (Permissions) :**
    - `ALLOW` : Lecture seule sur le dépôt, analyse de code, outils de recherche (grep, glob, read).
    - `CONFIRM / ASK` : Écriture de code, exécution de scripts modifiant l'environnement, création de branches.
    - `DENY` : Toute écriture dans `upstream/**`, suppression irréversible, exécution de commandes arbitraires avec secrets, contournement de paywalls/contrôles d'accès.
-4. **Typologie fondamentale de l'information (J01) :**
+4. **Typologie fondamentale de l'information :**
    - Toute sortie générée par une IA est une **Proposition**.
    - Tout extrait textuel relevé dans les sources sans extrapolation est une **Observation**.
    - Tout résultat d'une commande exécutée avec succès est une **Preuve vérifiée**.
@@ -50,7 +50,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 2 : Audit de l'Exigence Brute & Détection des Ambiguïtés (J02)
+## Étape 2 : Audit de l'Exigence Brute & Détection des Ambiguïtés
 
 > **Règle d'ordre :** Prendre l'énoncé de l'exigence tel qu'il a été écrit, sans chercher à deviner ce que le code fait.
 
@@ -68,7 +68,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 3 : Example Mapping & Table de Décision (J02)
+## Étape 3 : Example Mapping & Table de Décision
 
 > **Règle d'ordre :** Extraire les règles métier et leurs exemples concrets AVANT toute rédaction de scénarios formels ou de code.
 
@@ -84,7 +84,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 4 : Scénarios Gherkin & Oracles Indépendants (J02)
+## Étape 4 : Scénarios Gherkin & Oracles Indépendants
 
 > **Règle d'ordre :** Définir la condition d'oracle AVANT de regarder l'implémentation ou de coder le test.
 
@@ -102,7 +102,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 5 : Matrice de Traçabilité v0 & Validation Gate G1 (J02)
+## Étape 5 : Matrice de Traçabilité v0 & Validation Gate G1
 
 > **Règle d'ordre :** Consigner la chaîne de traçabilité en lecture seule et franchir formellement la Gate G1.
 
@@ -124,7 +124,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 6 : Enquête Scientifique Falsifiable & Fiche de Reproduction (J03)
+## Étape 6 : Enquête Scientifique Falsifiable & Fiche de Reproduction
 
 > **Règle d'ordre :** Ne JAMAIS modifier une seule ligne de code pour corriger un bogue sans avoir d'abord reproduit le symptôme dans une démarche scientifique falsifiable.
 
@@ -142,7 +142,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 7 : Preuve ROUGE & Cycle Red–Green–Refactor (J03)
+## Étape 7 : Preuve ROUGE & Cycle Red–Green–Refactor
 
 > **Règle d'ordre :** Le test doit être exécuté et échouer (ROUGE) avant d'écrire le correctif.
 
@@ -162,7 +162,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 8 : Épreuve par Mutation / Faux Correctif (J03)
+## Étape 8 : Épreuve par Mutation / Faux Correctif
 
 > **Règle d'ordre :** Prouver la sensibilité et la robustesse du test avant de considérer la correction comme acquise.
 
@@ -178,14 +178,14 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 9 : Contrôles Qualité Automatisés & Tri Humain des Alertes (J03)
+## Étape 9 : Contrôles Qualité Automatisés & Tri Humain des Alertes
 
 > **Règle d'ordre :** Les outils statiques et l'IA émettent des signaux ; l'ingénieur humain effectue le tri et prend la décision.
 
 ### Points à respecter impérativement :
 1. **Exécution des contrôles qualité :**
    - Analyse statique (Cppcheck, clang-tidy, linters).
-   - Vérification des règles de codage (ex: MISRA, règles Zephyr).
+   - Vérification des règles de codage applicables à la baseline (par exemple MISRA ou les règles propres au projet cible).
 2. **Tri humain obligatoire des signalements :**
    - Ne jamais faire confiance aveugle à un scanner ou à une revue IA.
    - Pour chaque alerte, consigner une décision argumentée :
@@ -196,7 +196,7 @@ Ce document constitue le référentiel d'ingénierie obligatoire du projet. Il s
 
 ---
 
-## Étape 10 : Doc-as-Code Diátaxis, Fact-Checking & Gate G2 (J03)
+## Étape 10 : Doc-as-Code Diátaxis, Fact-Checking & Gate G2
 
 > **Règle d'ordre :** Aucune documentation n'est réputée valide tant que chaque affirmation technique n'a pas été formellement vérifiée contre le code réel.
 

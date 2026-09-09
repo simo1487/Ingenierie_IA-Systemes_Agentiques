@@ -42,7 +42,8 @@ def selected_paths(staged: bool) -> list[PurePosixPath]:
     result = git(*args)
     if result.returncode:
         raise RuntimeError(result.stderr.decode("utf-8", errors="replace").strip())
-    return [PurePosixPath(value.decode("utf-8")) for value in result.stdout.split(b"\0") if value]
+    paths = [PurePosixPath(value.decode("utf-8")) for value in result.stdout.split(b"\0") if value]
+    return paths if staged else [path for path in paths if (ROOT / path.as_posix()).exists()]
 
 
 def content_for(path: PurePosixPath, staged: bool) -> bytes:

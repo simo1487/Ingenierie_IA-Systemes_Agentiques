@@ -27,13 +27,13 @@ L’organisation complète des projets et les règles communes sont décrites da
 - **Branche :** `feat_list_existing_projects`
 - **Spécification :** [`projets/logiciel-automobile-open-source/SPEC.md`](projets/logiciel-automobile-open-source/SPEC.md)
 
-## Équipe 4 — Exigences Zephyr
+## Équipe 4 — Ingénierie des exigences agentique
 
 **Mohammed + Florient**
 
-- **Mission :** recherche et analyse des exigences de Zephyr.
+- **Mission :** construire un produit orchestrant dynamiquement des agents IA pour collecter, auditer, structurer et tracer les exigences de baselines approuvées, notamment celles des projets open source retenus.
 - **Branche :** `feat_getReq`
-- **Spécification :** [`projets/exigences-zephyr/SPEC.md`](projets/exigences-zephyr/SPEC.md)
+- **Spécification :** [`projets/ingenierie-exigences-agentique/SPEC.md`](projets/ingenierie-exigences-agentique/SPEC.md)
 
 ## Intégration
 

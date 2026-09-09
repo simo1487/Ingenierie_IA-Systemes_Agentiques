@@ -1,6 +1,6 @@
 # Modèle de Rapport de Revue Qualité & Analyse Statique / Dynamique
 
-Ce document sert à consigner les résultats des contrôles qualité (Cppcheck, linters, SAST, SCA, tests dynamiques) et à opérer le tri humain systématique des alertes et faux positifs (Méthodologie J03).
+Ce document sert à consigner les résultats des contrôles qualité (Cppcheck, linters, SAST, SCA, tests dynamiques) et à opérer le tri humain systématique des alertes et faux positifs.
 
 ---
 

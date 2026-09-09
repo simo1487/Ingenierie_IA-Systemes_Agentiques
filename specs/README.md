@@ -1,9 +1,10 @@
 # Architecture de la documentation des spécifications
 
-Ce dossier centralise l'architecture documentaire du projet, structurée selon les principes d'ingénierie logicielle rigoureuse et les enseignements des trois premiers jours de formation :
-- **J01 :** Cadrage, frontières de confiance, baselines figées, distinction formelle entre *Proposition*, *Observation*, *Preuve vérifiée* et *Question ouverte*.
-- **J02 :** Analyse d'exigences, Example Mapping, scénarios Gherkin, oracles indépendants et matrice de traçabilité v0 en lecture seule.
-- **J03 :** Enquête falsifiable, reproduction avant correction, cycle Red–Green–Refactor, tests de mutation, revue assistée avec tri des faux positifs, et documentation Doc-as-Code (Diátaxis & fact-checking).
+Ce dossier centralise l’architecture documentaire du portefeuille selon des principes d’ingénierie logicielle rigoureuse :
+- cadrage, frontières de confiance, baselines figées et qualification des informations ;
+- hiérarchie `Projet → Epic → User Story → Feature → Critère d’acceptation` ;
+- audit d’exigences, Example Mapping, Gherkin, oracles indépendants et traçabilité ;
+- enquête falsifiable, Red–Green–Refactor, mutation, revue humaine et documentation Doc-as-Code.
 
 ---
 
@@ -15,7 +16,8 @@ FormationIaProject/
 │   ├── README.md                      # Guide d'architecture et règles documentaires (ce fichier)
 │   ├── ordre-et-etapes.md             # Référentiel des étapes à respecter dans l'ordre strict
 │   ├── templates/                     # Modèles normalisés pour chaque type d'artefact
-│   │   ├── template-feature-spec.md   # Spécification détaillée d'une exigence / feature
+│   │   ├── template-project-spec.md   # Epic de projet et User Stories
+│   │   ├── template-feature-spec.md   # Détail d’une feature reliée à une User Story
 │   │   ├── template-example-mapping.md# Fiche d'atelier Example Mapping & table de décision
 │   │   ├── template-matrice-tracabilite.md # Matrice v0 exigences ↔ doc ↔ code ↔ tests
 │   │   ├── template-enquete-reproduction.md # Carnet d'enquête et fiche de reproduction de bug
@@ -29,7 +31,7 @@ FormationIaProject/
 │   ├── normes/                        # PROJ-NORM-001 (Alain + Moustapha)
 │   ├── qualite-code/                  # PROJ-QUAL-001 (Eric + Céline + Damien)
 │   ├── logiciel-automobile-open-source/# PROJ-OSS-AUTO-001 (Sylvain + Nathalie + Romain)
-│   └── exigences-zephyr/              # PROJ-ZEPHYR-REQ-001 (Mohammed + Florient)
+│   └── ingenierie-exigences-agentique/# PROJ-REQ-AI-001 (Mohammed + Florient)
 ├── travail.md                         # Répartition opérationnelle des équipes et branches
 └── template-feature-spec.md           # Raccourci vers specs/templates/template-feature-spec.md
 ```
@@ -42,17 +44,20 @@ Chaque document et chaque élément de spécification porte un identifiant uniqu
 
 | Préfixe | Type de document / artefact | Exemple | Rôle |
 |---|---|---|---|
-| `PROJ-` | Spécification de projet / équipe | `PROJ-QUAL-001` | Cadrage de haut niveau de la mission d'une équipe |
-| `FEAT-` | Spécification de feature / exigence | `FEAT-QUAL-001` | Définition détaillée d'une fonctionnalité avec scénarios et critères |
+| `PROJ-` | Spécification de projet / équipe | `PROJ-QUAL-001` | Cadrage du projet et portefeuille de Stories |
+| `EPIC-` | Epic de projet | `EPIC-QUAL-001` | Résultat global et valeur recherchée |
+| `US-` | User Story | `US-QUAL-003` | Besoin utilisateur vertical et vérifiable |
+| `RM-` | Règle métier | `RM-QUAL-003` | Comportement singulier associé à une Story |
+| `FEAT-` | Spécification de feature | `FEAT-QUAL-001` | Détail d’implémentation relié à une Story |
 | `CA-` | Critère d'acceptation | `CA-QUAL-01` | Condition observable et vérifiable validant un comportement |
 | `ENQ-` | Carnet d'enquête et reproduction | `ENQ-SEM-001` | Démarche falsifiable, preuve rouge et condition de reproduction |
-| `TRAC-` | Matrice de traçabilité v0 | `TRAC-ZEP-001` | Chaîne de liens inspectables entre exigences, doc, code et tests |
+| `TRAC-` | Matrice de traçabilité v0 | `TRAC-REQ-AI-001` | Chaîne de liens inspectables entre Stories, exigences, doc, code et tests |
 | `REV-` | Rapport de revue et qualité | `REV-CPP-001` | Audit de règles, statique/dynamique et tri des faux positifs |
 | `FACT-` | Matrice de fact-checking | `FACT-DOC-001` | Vérification des affirmations textuelles contre le code/tests |
 
 ---
 
-## 3. Typologie des informations (Règle d'or J01)
+## 3. Typologie des informations
 
 Aucune affirmation ne doit être formulée sans que sa nature soit explicitement qualifiée :
 
@@ -63,7 +68,7 @@ Aucune affirmation ne doit être formulée sans que sa nature soit explicitement
 
 ---
 
-## 4. Statuts formels d'une exigence ou d'un lien (J02 / J03)
+## 4. Statuts formels d'une exigence ou d'un lien
 
 | Statut | Signification | Transition autorisée vers |
 |---|---|---|
@@ -99,6 +104,7 @@ flowchart TD
 ## 6. Références aux guides et templates
 
 - [Points et étapes à respecter dans l'ordre strict](./ordre-et-etapes.md)
+- [Template Project Spec — Epic et User Stories](./templates/template-project-spec.md)
 - [Template Feature Spec](./templates/template-feature-spec.md)
 - [Template Example Mapping](./templates/template-example-mapping.md)
 - [Template Matrice de Traçabilité](./templates/template-matrice-tracabilite.md)

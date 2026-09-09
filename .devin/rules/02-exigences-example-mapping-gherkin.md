@@ -1,6 +1,6 @@
 ---
 description: "Règles d'audit des exigences, Example Mapping, tables de décision, Gherkin et oracles indépendants"
-trigger: model_decision
+trigger: always_on
 ---
 
 # Règle : Exigences, Example Mapping et Oracles Indépendants
