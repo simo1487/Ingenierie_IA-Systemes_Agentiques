@@ -107,14 +107,14 @@
 
 ## 8. Critères d’acceptation de l’Epic
 
-- [ ] `CA-QUAL-01` — La cible, sa révision, ses langages et ses commandes de build et de test sont définis.
-- [ ] `CA-QUAL-02` — Au moins deux outils statiques et deux approches dynamiques sont comparés selon une même grille.
-- [ ] `CA-QUAL-03` — Le choix des outils et versions est justifié par des observations reproductibles.
-- [ ] `CA-QUAL-04` — Le profil rapide est exécutable avec une commande documentée.
-- [ ] `CA-QUAL-05` — Un défaut contrôlé produit un code non nul et un diagnostic localisable.
-- [ ] `CA-QUAL-06` — L’absence d’un outil requis produit un échec ou un état inconclusif visible.
+- [x] `CA-QUAL-01` — La cible, sa révision, ses langages et ses commandes de build et de test sont définis.
+- [x] `CA-QUAL-02` — Au moins deux outils statiques et deux approches dynamiques sont comparés selon une même grille.
+- [x] `CA-QUAL-03` — Le choix des outils et versions est justifié par des observations reproductibles.
+- [x] `CA-QUAL-04` — Le profil rapide est exécutable avec une commande documentée.
+- [x] `CA-QUAL-05` — Un défaut contrôlé produit un code non nul et un diagnostic localisable.
+- [x] `CA-QUAL-06` — L’absence d’un outil requis produit un échec ou un état inconclusif visible.
 - [ ] `CA-QUAL-07` — Une autre personne peut reproduire les contrôles dans l’environnement documenté.
-- [ ] `CA-QUAL-08` — Les limites, exclusions, faux positifs et éléments non testés sont listés.
+- [x] `CA-QUAL-08` — Les limites, exclusions, faux positifs et éléments non testés sont listés.
 
 ## 9. Scénarios Gherkin et oracles indépendants
 
