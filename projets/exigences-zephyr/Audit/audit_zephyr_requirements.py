@@ -106,37 +106,52 @@ def fetch_official_requirements(category):
         soup = BeautifulSoup(response.content, 'html.parser')
         requirements = {}
         
-        # Trouver toutes les exigences dans la page
-        # Les exigences sont dans des sections avec UID et STATEMENT
-        req_sections = soup.find_all('div', class_='sdoc-section')
+        # Approche alternative : chercher les patterns d'IDs ZEP-SRS dans tout le contenu
+        content = soup.get_text()
         
-        for section in req_sections:
-            # Extraire l'UID
-            uid_element = section.find(['h2', 'h3', 'h4'])
-            if uid_element:
-                uid_text = uid_element.get_text(strip=True)
-                uid_match = re.search(r'ZEP-SRS-\d+-\d+', uid_text)
-                if uid_match:
-                    req_id = uid_match.group()
+        # Trouver tous les IDs d'exigences
+        uid_pattern = re.compile(r'ZEP-SRS-\d+-\d+')
+        uids = uid_pattern.findall(content)
+        
+        # Pour chaque UID trouvé, essayer de trouver le texte associé
+        for uid in uids:
+            if uid not in requirements:  # Éviter les doublons
+                # Chercher le texte après l'ID
+                # Utiliser une approche plus robuste : chercher dans le HTML structuré
+                uid_elements = soup.find_all(string=lambda text: uid in text)
+                
+                for element in uid_elements:
+                    parent = element.parent
+                    # Chercher le texte statement proche
+                    # Les statements sont souvent dans des divs ou sections
+                    statement_candidates = []
                     
-                    # Extraire le STATEMENT
-                    statement_element = section.find('div', class_='sdoc-statement')
-                    if statement_element:
-                        req_text = statement_element.get_text(strip=True)
+                    # Chercher dans les parents et frères
+                    current = parent
+                    for _ in range(5):  # Limiter la recherche
+                        if current:
+                            # Chercher le texte dans cette section
+                            section_text = current.get_text(strip=True)
+                            if uid in section_text and len(section_text) > len(uid) + 10:
+                                # Extraire le texte après l'ID
+                                uid_index = section_text.find(uid)
+                                potential_statement = section_text[uid_index + len(uid):].strip()
+                                if potential_statement and len(potential_statement) > 20:
+                                    statement_candidates.append(potential_statement)
+                                    break
+                            current = current.parent if current.parent else None
+                    
+                    if statement_candidates:
+                        req_text = statement_candidates[0][:200]  # Limiter la longueur
                         
-                        # Extraire le statut
-                        status = "Unknown"
-                        status_element = section.find('span', class_='sdoc-status')
-                        if status_element:
-                            status = status_element.get_text(strip=True)
-                        
-                        requirements[req_id] = {
-                            'requirement_id': req_id,
+                        requirements[uid] = {
+                            'requirement_id': uid,
                             'requirement_text': req_text,
                             'category': category.replace('_', ' ').title(),
-                            'status': status,
+                            'status': "Draft",  # Statut par défaut
                             'source': 'official'
                         }
+                        break  # Prendre la première correspondance
         
         print(f"    -> {len(requirements)} exigences trouvées")
         return requirements
@@ -351,7 +366,10 @@ def main():
     print("=" * 60)
     print(f"Rapport disponible : {OUTPUT_REPORT_PATH}")
     print(f"Exigences analysées : {len(local_requirements)} (local) vs {len(official_requirements)} (officiel)")
-    print(f"Taux de couverture : {len(comparison['matches']) / len(official_requirements) * 100:.1f}%")
+    if len(official_requirements) > 0:
+        print(f"Taux de couverture : {len(comparison['matches']) / len(official_requirements) * 100:.1f}%")
+    else:
+        print("Taux de couverture : N/A (aucune exigence officielle récupérée)")
 
 if __name__ == "__main__":
     main()
