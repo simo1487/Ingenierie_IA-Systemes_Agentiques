@@ -1,10 +1,13 @@
 [CmdletBinding()]
 param(
-    [string]$CppcheckCommand = "cppcheck"
+    [string]$CppcheckCommand = "cppcheck",
+    [string]$PythonCommand = "python",
+    [string]$ReportPath
 )
 
 $ErrorActionPreference = "Stop"
 $sourceDirectory = $PSScriptRoot
+$projectDirectory = Split-Path -Parent $sourceDirectory
 $sourceFiles = Get-ChildItem -Path $sourceDirectory -Recurse -File |
     Where-Object { $_.Extension -in ".c", ".cc", ".cpp", ".cxx" }
 
@@ -42,17 +45,45 @@ if ($null -eq $cppcheckPath) {
     exit 127
 }
 
+$python = Get-Command -Name $PythonCommand -ErrorAction SilentlyContinue
+if ($null -eq $python) {
+    [Console]::Error.WriteLine("Python est introuvable. Installez Python ou indiquez son exécutable avec -PythonCommand.")
+    exit 126
+}
+
+$misraAddonPath = Join-Path $projectDirectory "sources-downloads\cppcheck-misra\misra.py"
+if (-not (Test-Path -LiteralPath $misraAddonPath -PathType Leaf)) {
+    [Console]::Error.WriteLine("L'addon MISRA est introuvable : $misraAddonPath")
+    exit 3
+}
+
+if ([string]::IsNullOrWhiteSpace($ReportPath)) {
+    $ReportPath = Join-Path $projectDirectory "reports\cppcheck-misra.xml"
+}
+elseif (-not [IO.Path]::IsPathRooted($ReportPath)) {
+    $ReportPath = Join-Path (Get-Location) $ReportPath
+}
+
+$reportDirectory = Split-Path -Parent $ReportPath
+New-Item -ItemType Directory -Force $reportDirectory | Out-Null
+
 Write-Host "Cppcheck : $cppcheckPath"
 & $cppcheckPath --version
 if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-Write-Host "Analyse de $($sourceFiles.Count) fichier(s) dans : $sourceDirectory"
+Write-Host "Analyse MISRA C:2012 de $($sourceFiles.Count) fichier(s) dans : $sourceDirectory"
 & $cppcheckPath `
+    "--addon=$misraAddonPath" `
+    "--addon-python=$($python.Source)" `
     --enable=warning,style,performance,portability `
     --std=c11 `
+    --quiet `
+    --xml `
+    --xml-version=2 `
     --error-exitcode=1 `
-    $sourceFiles.FullName
+    $sourceFiles.FullName 2> $ReportPath
 
+Write-Host "Rapport MISRA : $ReportPath"
 exit $LASTEXITCODE

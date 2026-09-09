@@ -30,3 +30,17 @@ Il trouve aussi l'installation Windows standard dans `C:\Program Files\Cppcheck`
 ```powershell
 ./projets/qualite-code/src/run-cppcheck.ps1 -CppcheckCommand "C:\outils\Cppcheck\cppcheck.exe"
 ```
+
+## Rapport MISRA C:2012
+
+Le même script exécute l’addon MISRA de Cppcheck et écrit le rapport XML dans `projets/qualite-code/reports/cppcheck-misra.xml`. Ce rapport est généré localement et ignoré par Git.
+
+Le code de sortie reste non nul lorsqu’une violation est trouvée. L’emplacement du rapport et l’interpréteur Python peuvent être adaptés :
+
+```powershell
+./projets/qualite-code/src/run-cppcheck.ps1 `
+  -PythonCommand python `
+  -ReportPath ./projets/qualite-code/reports/mon-rapport-misra.xml
+```
+
+L’addon libre ne fournit qu’une couverture partielle de MISRA C:2012 et ne constitue pas une certification de conformité.
