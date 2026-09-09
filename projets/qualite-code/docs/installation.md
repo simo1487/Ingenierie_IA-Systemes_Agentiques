@@ -7,6 +7,22 @@
 
 ## Installation des outils
 
+### Installation automatisée sous Windows
+
+Le script [`../src/install-tools.ps1`](../src/install-tools.ps1) vérifie l'environnement avant d'installer les outils relevés dans le rapport d'exécution : Cppcheck, Python pour l'addon MISRA, Clang et Clang-tidy via LLVM.
+
+```powershell
+./projets/qualite-code/src/install-tools.ps1
+```
+
+Il utilise `winget` uniquement pour les outils absents. Pour vérifier sans modifier l'environnement :
+
+```powershell
+./projets/qualite-code/src/install-tools.ps1 -CheckOnly
+```
+
+Après une installation, ouvrir une nouvelle fenêtre PowerShell si l'installateur a modifié `PATH`, puis relancer `-CheckOnly`.
+
 ### 1. Cppcheck (requis)
 
 #### Windows

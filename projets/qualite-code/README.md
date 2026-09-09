@@ -15,6 +15,20 @@
 
 ## Commandes disponibles
 
+### Installer et vérifier les outils
+
+Sous Windows, le script suivant vérifie PowerShell, Cppcheck, Python, Clang, Clang-tidy et l'addon MISRA. Il installe les composants absents avec `winget` :
+
+```powershell
+./projets/qualite-code/src/install-tools.ps1
+```
+
+Pour un diagnostic sans installation :
+
+```powershell
+./projets/qualite-code/src/install-tools.ps1 -CheckOnly
+```
+
 ### Profil rapide (< 30 secondes)
 
 Analyse statique avec Cppcheck (et Clang-tidy si disponible) :
