@@ -48,7 +48,7 @@ Via API GitHub et webfetch :
 - Analyse des fichiers PDF ou documents externes mentionnés
 
 ### Étape 4 : Remplissage du template
-Créer fichier `fiche_cand_XXX_nom.md` avec les sections :
+Créer fichier `fiche_cand_XXX_nom.json` avec les sections :
 
 **Informations d'identification**
 - ID candidat (CAND-002 à CAND-012)
