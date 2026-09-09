@@ -1,0 +1,20 @@
+================================================================================
+RAPPORT DE VÉRIFICATION DES FICHES CANDIDAT
+================================================================================
+Date: 2026-09-09 16:43:39
+Total fiches vérifiées: 1
+
+STATISTIQUES:
+  ✓ OK: 1
+  ⚠ ATTENTION: 0
+  ✗ ERREUR: 0
+
+DÉTAILS PAR FICHE:
+--------------------------------------------------------------------------------
+✓ projets\logiciel-automobile-open-source\fiche_cand_001_vesc.json
+  URL canonique: https://github.com/vedderb/bldc
+  Accessibilité: OUI (HTTP 200)
+  Activité: ACTIF (Statut déclaré: Actif)
+  Statut global: OK
+
+================================================================================

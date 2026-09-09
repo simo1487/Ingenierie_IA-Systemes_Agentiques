@@ -233,6 +233,10 @@ def main():
     
     # Générer et afficher le rapport
     report = verifier.generate_report()
+    # Utiliser UTF-8 pour l'affichage console
+    if sys.platform == 'win32':
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     print(report)
     
     # Sauvegarder le rapport
