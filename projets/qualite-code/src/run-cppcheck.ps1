@@ -2,12 +2,22 @@
 param(
     [string]$CppcheckCommand = "cppcheck",
     [string]$PythonCommand = "python",
-    [string]$ReportPath
+    [string]$ReportPath,
+    [string]$SourceDirectory
 )
 
 $ErrorActionPreference = "Stop"
-$sourceDirectory = $PSScriptRoot
-$projectDirectory = Split-Path -Parent $sourceDirectory
+if ([string]::IsNullOrWhiteSpace($SourceDirectory)) {
+    $sourceDirectory = $PSScriptRoot
+}
+else {
+    if (-not (Test-Path -LiteralPath $SourceDirectory)) {
+        [Console]::Error.WriteLine("Répertoire source introuvable : $SourceDirectory")
+        exit 2
+    }
+    $sourceDirectory = (Resolve-Path -LiteralPath $SourceDirectory).Path
+}
+$projectDirectory = Split-Path -Parent $PSScriptRoot
 $sourceFiles = Get-ChildItem -Path $sourceDirectory -Recurse -File |
     Where-Object { $_.Extension -in ".c", ".cc", ".cpp", ".cxx" }
 

@@ -61,6 +61,12 @@ Analyse statique et dynamique complète :
 
 Le script analyse récursivement les fichiers `.c`, `.cc`, `.cpp` et `.cxx` du répertoire `src/`. Il retourne le code de Cppcheck (`1` lorsqu'un diagnostic est trouvé), `127` si Cppcheck est indisponible et `2` lorsqu'aucun fichier applicable n'est trouvé.
 
+Pour analyser les fixtures C du projet, indiquer leur répertoire :
+
+```powershell
+./projets/qualite-code/src/run-cppcheck.ps1 -SourceDirectory ./projets/qualite-code/tests/fixtures
+```
+
 Il trouve aussi l'installation Windows standard dans `C:\Program Files\Cppcheck`, même si ce dossier manque dans `PATH`. Pour une installation ailleurs, indiquer le chemin de l'exécutable :
 
 ```powershell
