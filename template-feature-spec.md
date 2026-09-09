@@ -1,4 +1,6 @@
-# Spécification de feature : vérifications statique et dynamique
+# Exemple de spécification : vérifications statique et dynamique
+
+> **Note d'architecture :** Ce fichier constitue un exemple instancié (`FEAT-QUAL-001`). Le modèle générique réutilisable est disponible dans [`specs/templates/template-feature-spec.md`](specs/templates/template-feature-spec.md). L'architecture globale des spécifications et les règles documentaires sont définies dans [`specs/README.md`](specs/README.md).
 
 Cette fiche décrit la feature proposée. Les choix d'outillage qui ne sont pas encore arrêtés restent explicitement ouverts.
 
@@ -189,15 +191,15 @@ La procédure exacte dépend de l'outillage du projet, qui doit encore être arr
 
 ## Checklist finale
 
-- [x] Le besoin utilisateur est compréhensible.
-- [x] Le périmètre et les exclusions sont explicites.
-- [x] Les entrées et leurs versions sont identifiées ou signalées comme à définir.
-- [x] Les sorties sont distinguées des preuves.
-- [x] Les critères d'acceptation sont observables.
-- [x] Il existe au moins un scénario nominal.
-- [x] Il existe au moins un scénario frontière, erreur ou refus.
-- [x] Chaque scénario possède un attendu et un oracle.
-- [x] Les relations de traçabilité sont sourcées.
-- [x] Les inconnues ne sont pas inventées.
-- [x] La vérification est reproductible par une autre personne une fois l'outillage arrêté.
-- [x] Les limites et risques sont documentés.
+- [ ] Le besoin utilisateur est compréhensible.
+- [ ] Le périmètre et les exclusions sont explicites.
+- [ ] Les entrées et leurs versions sont identifiées ou signalées comme à définir.
+- [ ] Les sorties sont distinguées des preuves.
+- [ ] Les critères d'acceptation sont observables.
+- [ ] Il existe au moins un scénario nominal.
+- [ ] Il existe au moins un scénario frontière, erreur ou refus.
+- [ ] Chaque scénario possède un attendu et un oracle.
+- [ ] Les relations de traçabilité sont sourcées.
+- [ ] Les inconnues ne sont pas inventées.
+- [ ] La vérification est reproductible par une autre personne une fois l'outillage arrêté.
+- [ ] Les limites et risques sont documentés.

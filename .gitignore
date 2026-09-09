@@ -10,3 +10,18 @@ env/
 ENV/
 
 *.part
+
+**/node_modules/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/coverage/
+**/.coverage
+**/build/
+**/dist/
+**/target/
+**/compile_commands.json
+
+.env
+.env.*
+!.env.example

@@ -1,6 +1,6 @@
 # Équipes de travail
 
-L’organisation complète des projets et les règles communes sont décrites dans [`projets/README.md`](projets/README.md).
+L’organisation complète des projets et les règles communes sont décrites dans [`projets/README.md`](projets/README.md). L'architecture documentaire des spécifications, les templates et les étapes ordonnées sont centralisés dans [`specs/README.md`](specs/README.md) et [`specs/ordre-et-etapes.md`](specs/ordre-et-etapes.md).
 
 ## Équipe 1 — Normes
 
