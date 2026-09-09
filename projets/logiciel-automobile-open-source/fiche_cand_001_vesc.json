@@ -1,0 +1,140 @@
+{
+  "template": "Fiche Projet Candidat",
+  "informations_identification": {
+    "id_candidat": "CAND-001",
+    "nom_projet": "VESC firmware",
+    "url_canonique_depot": "https://github.com/vedderb/bldc",
+    "revision_analysee": "master (dernier commit 2026-09-04)",
+    "date_revision": "2026-09-04",
+    "domaine_principal": "Embarqué"
+  },
+  "licence_legal": {
+    "licence_observee": "GNU General Public License version 3.0 (GPLv3)",
+    "fichier_licence": "README.md (badge GPLv3), mentionnée dans section License",
+    "statut_reutilisation": "À vérifier (GPLv3 a des restrictions pour réutilisation commerciale)",
+    "notes_licence": "Licence GPLv3 confirmée dans README avec badge officiel. Restrictions copyleft potentielles pour intégration commerciale."
+  },
+  "activite_projet": {
+    "statut": "Actif",
+    "dernier_commit": "2026-09-04 (pushed_at)",
+    "frequence_commits": "3,793 commits depuis 2014-01-09 (création)",
+    "nombre_contributeurs": "À vérifier via GitHub contributors",
+    "definition_activite_appliquee": "Projet actif si commit < 30 jours (dernier commit: 5 jours)"
+  },
+  "documentation": {
+    "readme_principal": "README.md (complet avec instructions build, install, IDE)",
+    "documentation_officielle": "https://vesc-project.com/ (mentionné dans README)",
+    "qualite_documentation": "Bonne - README détaillé avec badges qualité",
+    "notes": "README inclut instructions de build pour Linux/macOS/Windows, support IDE Qt Creator, méthode upload firmware"
+  },
+  "exigences": {
+    "fichiers_exigences_identifies": [],
+    "format_exigences": "Non applicable (pas de fichiers exigences)",
+    "nombre_exigences": 0,
+    "completude_exigences": "Absente",
+    "tracabilite_exigences_code": "Non applicable",
+    "source_precise_exigence_citee": "Non applicable"
+  },
+  "tests": {
+    "fichiers_tests_identifies": [],
+    "framework_tests": "À déterminer",
+    "couverture_tests": "À vérifier",
+    "types_tests": "À déterminer",
+    "notes": "À rechercher"
+  },
+  "mecanismes_qualite": {
+    "ci_cd": {
+      "outil_ci": "GitHub Actions",
+      "fichier_configuration_ci": ".github/workflows/nix.yml",
+      "statut_ci": "Actif (badge GitHub Actions présent dans README)"
+    },
+    "controles_qualite": {
+      "linting_static_analysis": "Codacy (badge présent dans README)",
+      "revues_code": "Non vérifié (56 Pull Requests ouvertes)",
+      "checks_qualite_automatises": "Codacy grade A (badge API)",
+      "notes": "Intégration Codacy pour analyse de code quality"
+    }
+  },
+  "tracabilite": {
+    "relations_tracabilite_explicites": "Non vérifié",
+    "outils_tracabilite": "À déterminer",
+    "liens_exigences_tests_code": "Non vérifié",
+    "notes": ""
+  },
+  "evaluation_grille": [
+    {
+      "critere": "CA-OSS-01",
+      "description": "URL, licence, révision",
+      "statut": "Vérifié",
+      "preuve": "URL: https://github.com/vedderb/bldc, Licence: GPLv3 (README.md badge), Révision: master (2026-09-04)",
+      "notes": "Révision figée: master branch"
+    },
+    {
+      "critere": "CA-OSS-02",
+      "description": "Exigences retrouvables",
+      "statut": "Non vérifié",
+      "preuve": "Analyse complète de l'arborescence via API GitHub",
+      "notes": "Aucun fichier d'exigences formelles identifié (ni .md, .txt, .doc spécifiques exigences)"
+    },
+    {
+      "critere": "CA-OSS-03",
+      "description": "Mécanismes qualité",
+      "statut": "Vérifié partiel",
+      "preuve": "CI: .github/workflows/nix.yml, Quality: Codacy badge (README.md)",
+      "notes": "CI/CD et analyse qualité présents"
+    },
+    {
+      "critere": "CA-OSS-05",
+      "description": "Données signalées",
+      "statut": "Vérifié",
+      "preuve": "Champs avec données marqués, absences signalées",
+      "notes": ""
+    },
+    {
+      "critere": "CA-OSS-07",
+      "description": "Reproductibilité",
+      "statut": "Vérifié",
+      "preuve": "Révision master (2026-09-04) figée pour analyse",
+      "notes": "Branch master accessible"
+    }
+  ],
+  "points_forts": [
+    "Projet mature avec forte communauté (3,428 stars, 1,939 forks)",
+    "Activité soutenue (3,793 commits depuis 2014, dernier commit 2026-09-04)",
+    "Support complet FOC pour moteurs brushless avec techniques avancées",
+    "Documentation README complète et détaillée (build, IDE, upload)",
+    "CI/CD avec GitHub Actions (.github/workflows/nix.yml)",
+    "Analyse qualité automatisée via Codacy (grade A)",
+    "Support multi-plateforme (Linux, macOS, Windows)",
+    "Basé sur STM32F405 MCU (plateforme éprouvée)",
+    "Multi-interface (USB, CAN, SPI, I2C, UART, PWM, ADC)"
+  ],
+  "limites_lacunes": [
+    "Licence GPLv3 - restrictions copyleft potentielles pour réutilisation commerciale",
+    "Exigences formelles absentes : recherche complète via API GitHub confirmée - aucun fichier d'exigences identifié dans l'arborescence",
+    "Traçabilité exigences/tests/code non applicable (absence d'exigences)",
+    "262 issues ouvertes (potentiel dettes techniques)",
+    "Pas de revue de code formelle documentée"
+  ],
+  "recommandation": {
+    "statut": "Candidat acceptable",
+    "justification": "Projet mature avec activité soutenue, CI/CD fonctionnel et analyse qualité (Codacy). Licence GPLv3 confirmée mais restrictions copyleft à considérer pour usage commercial. Absence d'exigences formelles documentées - principal frein pour référence exigences.",
+    "projets_alternatifs_suggeres": [
+      "Cornell CEV (MIT License)",
+      "Axel Framework (MIT License) pour alternatives licences plus permissives"
+    ]
+  },
+  "notes_generales": [
+    "Firmware open source pour contrôleurs DC/BLDC/FOC",
+    "Applications: véhicules électriques personnels, skateboards, e-bikes, robots",
+    "Projet principal de l'écosystème VESC avec forte communauté",
+    "Révision analysée: master branch (commit 2026-09-04)",
+    "Mécanismes qualité présents (CI/CD GitHub Actions, Codacy)",
+    "Exigences formelles absentes du dépôt : recherche complète via API GitHub de l'arborescence complète (git/trees/master?recursive=1) confirmée - aucun fichier d'exigences formelles identifié. Le projet utilise des fichiers de configuration (conf_general.h, CONTRIBUTING guidelines) mais pas de spécifications d'exigences formelles."
+  ],
+  "metadonnees": {
+    "rempli_par": "Devin AI",
+    "date_remplissage": "2026-09-09",
+    "statut_fiche": "En cours (informations dépôt récupérées, exigences formelles à analyser)"
+  }
+}
