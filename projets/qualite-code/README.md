@@ -42,35 +42,27 @@ Analyse statique et dynamique complète :
 ### Cppcheck seul (commande historique)
 
 ```powershell
-./projets/qualite-code/src/run-cppcheck.ps1 -SourceDirectory "chemin/vers/sources"
+./projets/qualite-code/src/run-cppcheck.ps1
 ```
 
-## Outils sélectionnés
+Le script analyse récursivement les fichiers `.c`, `.cc`, `.cpp` et `.cxx` du répertoire `src/`. Il retourne le code de Cppcheck (`1` lorsqu'un diagnostic est trouvé), `127` si Cppcheck est indisponible et `2` lorsqu'aucun fichier applicable n'est trouvé.
 
-### Outils statiques
-- **Cppcheck** : Analyse statique légère et rapide
-- **Clang-tidy** : Analyse approfondie (optionnel)
+Il trouve aussi l'installation Windows standard dans `C:\Program Files\Cppcheck`, même si ce dossier manque dans `PATH`. Pour une installation ailleurs, indiquer le chemin de l'exécutable :
 
-### Outils dynamiques
-- **AddressSanitizer (ASan)** : Détection d'erreurs mémoire (buffer overflow, use-after-free)
-- **LeakSanitizer (LSan)** : Détection de fuites de mémoire
+```powershell
+./projets/qualite-code/src/run-cppcheck.ps1 -CppcheckCommand "C:\outils\Cppcheck\cppcheck.exe"
+```
 
-## Documentation détaillée
+## Rapport MISRA C:2012
 
-- [Matrice de comparaison des outils](experiments/matrice-comparaison.md)
-- [Justification de la sélection](evidence/selection-outils.md)
-- [Fiche de cible](evidence/fiche-cible.md)
-- [Guide d'installation](docs/installation.md)
-- [Guide d'utilisation](docs/utilisation.md)
-- [Limites et exclusions](docs/limites.md)
+Le même script exécute l’addon MISRA de Cppcheck et écrit le rapport XML dans `projets/qualite-code/reports/cppcheck-misra.xml`. Ce rapport est généré localement et ignoré par Git.
 
-## Critères d'acceptation
+Le code de sortie reste non nul lorsqu’une violation est trouvée. L’emplacement du rapport et l’interpréteur Python peuvent être adaptés :
 
-- [x] CA-QUAL-01 : Cible, révision, langages et commandes définis
-- [x] CA-QUAL-02 : Au moins 2 outils statiques et 2 approches dynamiques comparés
-- [x] CA-QUAL-03 : Choix des outils justifié par des observations
-- [x] CA-QUAL-04 : Profil rapide exécutable avec commande documentée
-- [ ] CA-QUAL-05 : Défaut contrôlé produit code non nul et diagnostic localisable
-- [x] CA-QUAL-06 : Absence d'outil produit échec visible
-- [ ] CA-QUAL-07 : Autre personne peut reproduire les contrôles
-- [ ] CA-QUAL-08 : Limites, exclusions, faux positifs listés
+```powershell
+./projets/qualite-code/src/run-cppcheck.ps1 `
+  -PythonCommand python `
+  -ReportPath ./projets/qualite-code/reports/mon-rapport-misra.xml
+```
+
+L’addon libre ne fournit qu’une couverture partielle de MISRA C:2012 et ne constitue pas une certification de conformité.
