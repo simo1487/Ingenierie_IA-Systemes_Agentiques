@@ -24,3 +24,9 @@ Depuis la racine du dépôt, lancer :
 ```
 
 Le script analyse récursivement les fichiers `.c`, `.cc`, `.cpp` et `.cxx` du répertoire `src/`. Il retourne le code de Cppcheck (`1` lorsqu'un diagnostic est trouvé), `127` si Cppcheck est indisponible et `2` lorsqu'aucun fichier applicable n'est trouvé.
+
+Il trouve aussi l'installation Windows standard dans `C:\Program Files\Cppcheck`, même si ce dossier manque dans `PATH`. Pour une installation ailleurs, indiquer le chemin de l'exécutable :
+
+```powershell
+./projets/qualite-code/src/run-cppcheck.ps1 -CppcheckCommand "C:\outils\Cppcheck\cppcheck.exe"
+```
