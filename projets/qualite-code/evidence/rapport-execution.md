@@ -1,351 +1,200 @@
 # Rapport d'exécution - PROJ-QUAL-001
 
-## Date d'exécution
-2026-09-09 (mis à jour après installation des outils)
+## 1. Métadonnées
 
-## Environnement de test
+- **Identifiant :** REV-QUAL-001
+- **Composant / Branche :** `projets/qualite-code` — `feat_Cppcheck`
+- **Commit examiné :** À compléter par le relecteur humain
+- **Date d'exécution :** 2026-09-09
+- **Outils exécutés :** Cppcheck 2.21.0, Clang-tidy 22.1.8, Clang 22.1.8, Python 3.14.6
+- **Relecteur(s) humain(s) :** À compléter
+- **Statut global proposé :** **Refusé / Corrections requises** — défaut confirmé sur `defect.c`, anomalie bloquante dans `run-cppcheck.ps1`, fixture `main.c` incorrecte.
+
+## 2. Environnement
 
 | Attribut | Valeur |
 |---|---|
-| **OS** | Windows |
-| **PowerShell** | 5.1+ |
-| **Cppcheck** | 2.21.0 (installé via winget) |
-| **Clang-tidy** | 22.1.8 (disponible via LLVM) |
-| **Clang** | 22.1.8 (disponible via LLVM) |
-| **GCC** | Non installé |
+| OS | Microsoft Windows NT 10.0.26200.0 |
+| PowerShell | 5.1.26100.9168 |
+| Cppcheck | 2.21.0 (`C:\Program Files\Cppcheck\cppcheck.exe`) |
+| Python | 3.14.6 |
+| Clang | 22.1.8 |
+| Clang-tidy | 22.1.8 |
+| GCC | Non installé |
+| Addon MISRA | Présent dans `sources-downloads/cppcheck-misra/` |
 
-## Résultats des tests
+## 3. Commandes exécutées et résultats
 
-### Test 1 : Profil rapide - Outil absent (CA-QUAL-06)
+### 3.1 Vérification de l'environnement (`install-tools.ps1 -CheckOnly`)
 
-**Commande :**
 ```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\src\run-profile-rapide.ps1"
+.\projets\qualite-code\src\install-tools.ps1 -CheckOnly
 ```
 
-**Résultat :**
-```
-=== Profil Rapide - Controles Qualite ===
-Repertoire source : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\src\..\tests\fixtures
+Résultat : `[OK] Environnement prêt...` — `LASTEXITCODE=0`.
 
-Fichiers trouves : 3
-  - defect.c
-  - main.c
-  - success.c
+### 3.2 Cppcheck direct — fixture `success.c`
 
---- Controle 1 : Cppcheck ---
-Cppcheck est introuvable. Installez-le ou indiquez son exǸcutable avec -CppcheckCommand.
-[WARNING] Cppcheck non disponible
-```
-
-**Code retour :** 1 (adapté pour indiquer l'absence d'outil)
-
-**Observation :**
-- Le script détecte correctement l'absence de Cppcheck
-- Le message d'erreur est clair et explicite
-- Le code retour est approprié (bien que ce soit 1 au lieu de 127 directement du script sous-jacent)
-
-**Statut CA-QUAL-06 :** ✅ Validé - L'absence d'outil produit un échec visible
-
-### Test 2 : Répertoire avec fichiers (main.c, success.c, defect.c)
-
-**Observation :**
-- Le script détecte correctement les 3 fichiers C
-- Les fichiers sont listés explicitement
-- Le chemin du répertoire source est correct
-
-**Statut :** ✅ Fonctionnel
-
-### Test 3 : Script run-cppcheck.ps1 isolé
-
-**Observation :**
-- Le script run-cppcheck.ps1 retourne correctement le code 127 quand Cppcheck est absent
-- Le message d'erreur est explicite
-- La logique de détection d'outil absent fonctionne
-
-**Statut :** ✅ Fonctionnel
-
-### Test 4 : Profil rapide - Fixture success.c (CA-QUAL-05 nominal)
-
-**Commande :**
 ```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\src\run-profile-rapide.ps1" -SourceDirectory "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c"
+& "C:\Program Files\Cppcheck\cppcheck.exe" `
+    --enable=warning,style,performance,portability `
+    --std=c11 --error-exitcode=1 `
+    "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c"
 ```
 
-**Résultat :**
-```
-=== Profil Rapide - Controles Qualite ===
-Repertoire source : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c
-
-Fichiers trouves : 1
-  - success.c
-
---- Controle 1 : Cppcheck ---
-Cppcheck : C:\Program Files\Cppcheck\cppcheck.exe
-Cppcheck 2.21.0
-Analyse de 1 fichier(s) dans : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c
+Sortie :
+```text
 Checking C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c ...
-[OK] Cppcheck : Aucun defaut detecte
-
---- Controle 2 : Clang-tidy (optionnel) ---
-Clang-tidy : C:\Program Files\LLVM\bin\clang-tidy.exe
-LLVM (http://llvm.org/):
-  LLVM version 22.1.8
-  Optimized build.
-Analyse de : success.c
-454 warnings generated.
-[OK] Clang-tidy : Aucun defaut detecte
-
-=== Resume du Profil Rapide ===
-Fichiers analyses : 1
-Cppcheck : OK
-Clang-tidy : OK (optionnel)
-
-[OK] Profil rapide termine avec succes
 ```
 
-**Code retour :** 0
+`LASTEXITCODE=0` — aucun défaut détecté par Cppcheck.
 
-**Observation :**
-- Cppcheck ne détecte aucun défaut sur success.c
-- Clang-tidy génère des warnings mais ne retourne pas d'erreur (warnings traités comme non bloquants)
-- Le profil rapide se termine avec succès
+### 3.3 Cppcheck direct — fixture `defect.c`
 
-**Statut :** ✅ Validé
-
-### Test 5 : Profil rapide - Fixture defect.c (CA-QUAL-05 défaut contrôlé)
-
-**Commande :**
-```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\src\run-profile-rapide.ps1" -SourceDirectory "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c"
-```
-
-**Résultat :**
-```
-=== Profil Rapide - Controles Qualite ===
-Repertoire source : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c
-
-Fichiers trouves : 1
-  - defect.c
-
---- Controle 1 : Cppcheck ---
-Cppcheck : C:\Program Files\Cppcheck\cppcheck.exe
-Cppcheck 2.21.0
-Analyse de 1 fichier(s) dans : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c
+Sortie :
+```text
 Checking C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c ...
 C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c:25:12: error: Buffer is accessed out of bounds: buffer [bufferAccessOutOfBounds]
     strcpy(buffer, "Ceci est trop long pour le tampon");
-           ^
-[FAIL] Cppcheck : Defaut(s) detecte(s)
-
---- Controle 2 : Clang-tidy (optionnel) ---
-Clang-tidy : C:\Program Files\LLVM\bin\clang-tidy.exe
-LLVM (http://llvm.org/):
-  LLVM version 22.1.8
-  Optimized build.
-Analyse de : defect.c
-543 warnings generated.
-[OK] Clang-tidy : Aucun defaut detecte
-
-=== Resume du Profil Rapide ===
-Fichiers analyses : 1
-Cppcheck : ECHEC
-Clang-tidy : OK (optionnel)
 ```
 
-**Code retour :** 1
+`LASTEXITCODE=1` — défaut localisé à la ligne 25, conforme à l'oracle injecté.
 
-**Observation :**
-- Cppcheck détecte le buffer overflow à la ligne 25
-- Le diagnostic est localisable : "Buffer is accessed out of bounds: buffer"
-- Le code retour est non nul (1) comme attendu
-- Clang-tidy détecte le problème (warning strcpy overflow) mais ne le traite pas comme erreur
+### 3.4 Cppcheck direct — fixture `main.c`
 
-**Statut :** ✅ Validé - CA-QUAL-05
+Sortie :
+```text
+Checking C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\main.c ...
+```
 
-### Test 6 : Profil complet - Fixture success.c
+`LASTEXITCODE=0` — Cppcheck ne relève pas d'erreur.
 
-**Commande :**
+### 3.5 Cppcheck direct — répertoire `tests/fixtures` (3 fichiers)
+
+Sortie :
+```text
+C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c:25:12: error: Buffer is accessed out of bounds: buffer [bufferAccessOutOfBounds]
+```
+
+`LASTEXITCODE=1` — le défaut contrôlé fait bien échouer l'analyse.
+
+### 3.6 Clang-tidy — `success.c`
+
 ```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\src\run-profile-complet.ps1" -SourceDirectory "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c"
+clang-tidy "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c" --checks="*" -- --std=c11
 ```
 
-**Résultat :**
-```
-=== Profil Complet - Controles Qualite ===
-Repertoire source : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\success.c
+Sortie partielle : 454 warnings, majoritairement des règles de style (`llvmlibc-restrict-system-libc-headers`, `cppcoreguidelines-avoid-magic-numbers`, `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling` sur `fprintf`...).
 
-Fichiers trouves : 1
-  - success.c
+`LASTEXITCODE=0`.
 
---- Controle 1 : Cppcheck ---
-[OK] Cppcheck : Aucun defaut detecte
+### 3.7 Clang-tidy — `defect.c`
 
---- Controle 2 : Clang-tidy ---
-[OK] Clang-tidy : Aucun defaut detecte
-
---- Controle 3 : AddressSanitizer + LeakSanitizer ---
-Compilateur : Clang C:\Program Files\LLVM\bin\clang.exe
-clang version 22.1.8
-[INFO] ASan/LSan non execute sur Windows MSVC (limitation documentee dans docs/limites.md)
-[INFO] Pour tester ASan/LSan, utiliser Linux ou macOS
-
-=== Resume du Profil Complet ===
-Fichiers analyses : 1
-Cppcheck : OK
-Clang-tidy : OK
-ASan/LSan : OK
-
-[OK] Profil complet termine avec succes
+Sortie partielle :
+```text
+C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c:25:5: warning: 'strcpy' will always overflow; destination buffer has size 10, but the source string has length 34
+C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c:25:5: warning: Call to function 'strcpy' is insecure ... CWE-119
 ```
 
-**Code retour :** 0
+`LASTEXITCODE=0`.
 
-**Observation :**
-- Le profil complet fonctionne sur success.c
-- ASan/LSan est documenté comme non exécuté sur Windows MSVC
-- La limitation est explicitement mentionnée et documentée
+### 3.8 Clang-tidy — `main.c`
 
-**Statut :** ✅ Validé
+Sortie partielle :
+```text
+C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\main.c:11:5: error: call to undeclared library function 'printf' with type 'int (const char *, ...)'; ISO C99 and later do not support implicit function declarations
+```
 
-### Test 7 : Profil complet - Fixture defect.c
+`LASTEXITCODE=1` — la fixture ne compile pas car `#include <stdio.h>` est commentée.
 
-**Commande :**
+### 3.9 Script `run-profile-rapide.ps1` — `tests/fixtures`
+
 ```powershell
-powershell -ExecutionPolicy Bypass -File "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\src\run-profile-complet.ps1" -SourceDirectory "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c"
+.\projets\qualite-code\src\run-profile-rapide.ps1 -SourceDirectory "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures"
 ```
 
-**Résultat :**
-```
-=== Profil Complet - Controles Qualite ===
-Repertoire source : C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures\defect.c
+Résultat : Cppcheck est lancé, mais la sortie XML est affichée comme erreur native (`RemoteException`) et le script s'arrête avant Clang-tidy.
 
-Fichiers trouves : 1
-  - defect.c
+`LASTEXITCODE=1`.
 
---- Controle 1 : Cppcheck ---
-[FAIL] Cppcheck : Defaut(s) detecte(s)
+### 3.10 Script `run-profile-rapide.ps1` — `tests/fixtures/success.c`
 
---- Controle 2 : Clang-tidy ---
-[OK] Clang-tidy : Aucun defaut detecte
+Même comportement : `LASTEXITCODE=1` — le script échoue même sur la fixture propre.
 
---- Controle 3 : AddressSanitizer + LeakSanitizer ---
-[INFO] ASan/LSan non execute sur Windows MSVC (limitation documentee dans docs/limites.md)
+### 3.11 Script `run-profile-rapide.ps1` — `tests/fixtures/defect.c`
 
-=== Resume du Profil Complet ===
-Fichiers analyses : 1
-Cppcheck : ECHEC
-Clang-tidy : OK
-ASan/LSan : OK
+Même comportement : `LASTEXITCODE=1` — le diagnostic Cppcheck n'est pas restitué.
+
+### 3.12 Script `run-cppcheck.ps1` — outil absent
+
+```powershell
+.\projets\qualite-code\src\run-cppcheck.ps1 -CppcheckCommand "C:\Outils\cppcheck_inexistant.exe" -SourceDirectory "C:\Users\eric_\Documents\GitHub\FormationIaProject\projets\qualite-code\tests\fixtures"
 ```
 
-**Code retour :** 1
+Sortie : `Cppcheck est introuvable. Ajoutez-le au PATH ou indiquez son exécutable avec -CppcheckCommand.`
 
-**Observation :**
-- Le profil complet détecte le défaut via Cppcheck
-- Le défaut est localisable (ligne 25, buffer overflow)
-- Le code retour est non nul comme attendu
+`LASTEXITCODE=127` — conforme.
 
-**Statut :** ✅ Validé
+### 3.13 Script `run-cppcheck.ps1` — répertoire vide
 
-## Tests non réalisés (absence d'outils)
+```powershell
+$empty = Join-Path $env:TEMP "qualite-empty"; New-Item -ItemType Directory -Force -Path $empty | Out-Null
+.\projets\qualite-code\src\run-cppcheck.ps1 -SourceDirectory "$empty"
+```
 
-### Test 4 : Profil rapide - Succès (success.c)
-- **Statut :** ⏳ En attente d'installation de Cppcheck
-- **Attendu :** Code retour 0, message "Aucun défaut détecté"
+Sortie : `Aucun fichier C ou C++ à analyser...`
 
-### Test 5 : Profil rapide - Défaut contrôlé (defect.c)
-- **Statut :** ⏳ En attente d'installation de Cppcheck
-- **Attendu :** Code retour 1, diagnostic localisable du buffer overflow
+`LASTEXITCODE=2` — conforme.
 
-### Test 6 : Profil complet - ASan/LSan
-- **Statut :** ⏳ En attente d'installation de GCC/Clang
-- **Attendu :** Détection du buffer overflow par ASan
+### 3.14 Script `run-profile-rapide.ps1` — répertoire vide
 
-### Test 7 : Répertoire vide
-- **Statut :** ⏳ À tester
-- **Attendu :** Code retour 2, message "Aucun fichier applicable"
+`LASTEXITCODE=2` — conforme.
 
-## Observations reproductibles
+## 4. Registre des alertes (proposition IA — décision humaine requise)
 
-### Observation 1 : Détection d'absence d'outil
-- **Oracle indépendant :** Script run-cppcheck.ps1 ligne 21-24
-- **Preuve :** Exécution du script avec Cppcheck absent
-- **Résultat :** Code retour 127, message d'erreur explicite
-- **Statut :** ✅ Validé
+| ID | Outil / Règle | Fichier & Ligne | Description | Qualification proposée | Justification |
+|---|---|---|---|---|---|
+| ALT-01 | Cppcheck / `bufferAccessOutOfBounds` | `defect.c:25` | Dépassement de tampon sur `buffer` | **Anomalie confirmée** | Défaut injecté, détecté statiquement, code retour non nul |
+| ALT-02 | Clang-tidy / `clang-diagnostic-fortify-source` | `defect.c:25` | `strcpy` overflow certain, taille 10 vs 34 | **Anomalie confirmée** | Corrobore le défaut injecté |
+| ALT-03 | Clang-tidy / `llvmlibc-restrict-system-libc-headers` | `success.c:1` | Inclusions système interdites | **Faux positif** | Règle spécifique LLVM libc, non applicable au prototype C11 |
+| ALT-04 | Clang-tidy / `cppcoreguidelines-avoid-magic-numbers` | `success.c:12,19,20,24` | Constantes 5 et 10 | **Faux positif** | Style, non bloquant |
+| ALT-05 | Clang-tidy / `clang-diagnostic-implicit-function-declaration` | `main.c:11` | `printf` non déclaré (`stdio.h` commenté) | **Anomalie confirmée** | La fixture ne compile pas ; correction ou justification requise |
+| ALT-06 | `run-cppcheck.ps1` | `src/run-cppcheck.ps1:87` | La sortie XML Cppcheck n'est pas capturée, provoque une `RemoteException` | **Anomalie confirmée** | La redirection `2>` ne convient pas pour la sortie native de `cppcheck --xml` ; le script s'arrête et le rapport XML reste vide |
 
-### Observation 2 : Détection de fichiers
-- **Oracle indépendant :** Script run-profile-rapide.ps1 ligne 27-33
-- **Preuve :** Exécution sur tests/fixtures/ avec 3 fichiers
-- **Résultat :** 3 fichiers détectés et listés
-- **Statut :** ✅ Validé
+## 5. Évaluation KISS / YAGNI / SRP
 
-### Observation 3 : Structure de répertoires
-- **Oracle indépendant :** README.md
-- **Preuve :** Vérification de l'existence des répertoires
-- **Résultat :** experiments/, tests/, docs/, evidence/ créés
-- **Statut :** ✅ Validé
+| Principe | Constat | Conforme ? |
+|---|---|---:|
+| **KISS** | Commandes directes fonctionnent ; les scripts PowerShell sont fragiles à cause de la redirection XML | Non |
+| **YAGNI** | Aucune dépendance ou fonctionnalité superflue identifiée | Oui |
+| **SRP** | `run-cppcheck.ps1` génère le rapport MISRA, `run-profile-rapide.ps1` orchestre ; rôles séparés | Oui |
 
-## Décisions sur les alertes
+## 6. Statut des critères d'acceptation (proposition)
 
-### Aucune alerte à traiter
-- Pas de faux positifs à documenter (Cppcheck non installé)
-- Pas de défauts détectés sur les fixtures (pas encore testé)
-
-## Limites constatées
-
-### Limites de l'environnement de test
-- Cppcheck non installé sur la machine de test
-- GCC/Clang non testés
-- Clang-tidy non testé
-
-### Impact sur la validation
-- CA-QUAL-05 (défaut contrôlé) ne peut pas être validé sans Cppcheck
-- CA-QUAL-07 (reproductibilité) ne peut pas être pleinement validé
-- Les tests dynamiques (ASan/LSan) ne peuvent pas être validés
-
-## Recommandations
-
-### Actions immédiates
-1. Installer Cppcheck sur l'environnement de test
-2. Installer GCC ou Clang pour les tests dynamiques
-3. Installer Clang-tidy pour le profil complet
-4. Relancer les tests complets
-
-### Actions pour validation complète
-1. Tester success.c avec Cppcheck (attendu : code 0)
-2. Tester defect.c avec Cppcheck (attendu : code 1 + diagnostic)
-3. Tester defect.c avec ASan (attendu : détection buffer overflow)
-4. Tester sur répertoire vide (attendu : code 2)
-5. Faire tester par un tiers pour CA-QUAL-07
-
-## Statut des critères d'acceptation
-
-| Critère | Statut | Preuve |
+| Critère | Statut proposé | Preuve / Raison |
 |---|---|---|
-| CA-QUAL-01 | ✅ Validé | evidence/fiche-cible.md |
-| CA-QUAL-02 | ✅ Validé | experiments/matrice-comparaison.md |
-| CA-QUAL-03 | ✅ Validé | evidence/selection-outils.md |
-| CA-QUAL-04 | ✅ Validé | src/run-profile-rapide.ps1 fonctionnel |
-| CA-QUAL-05 | ✅ Validé | Test 5 : defect.c détecté avec diagnostic localisable |
-| CA-QUAL-06 | ✅ Validé | Test 1 : Outil absent détecté |
-| CA-QUAL-07 | ⏳ En attente | Nécessite tests par tiers |
-| CA-QUAL-08 | ✅ Validé | docs/limites.md |
+| `CA-QUAL-01` | ✅ Validé | Cible et outils identifiés |
+| `CA-QUAL-02` | ✅ Validé | Matrice de comparaison existante (`experiments/matrice-comparaison.md`) |
+| `CA-QUAL-03` | ✅ Validé | Versions relevées ci-dessus |
+| `CA-QUAL-04` | ⚠️ Partiel | Profil documenté mais `run-profile-rapide` s'arrête sur `run-cppcheck` |
+| `CA-QUAL-05` | ✅ Validé | Cppcheck détecte `defect.c:25` (test direct) |
+| `CA-QUAL-06` | ✅ Validé | `run-cppcheck.ps1` retourne 127 quand l'outil est absent |
+| `CA-QUAL-07` | ⏳ En attente | Nécessite correction de `run-cppcheck.ps1` et reproductibilité par un tiers |
+| `CA-QUAL-08` | ✅ Validé | `docs/limites.md` à jour |
 
-## Conclusion
+## 7. Synthèse
 
-Le prototype de chaîne de contrôles qualité est fonctionnellement implémenté et validé. La structure, la documentation et les scripts sont en place. Les tests réalisés montrent que :
+- **Anomalies confirmées :** 3 (`defect.c`, `main.c` fixture, `run-cppcheck.ps1`)
+- **Faux positifs proposés :** 2 (règles de style Clang-tidy sur `success.c`)
+- **Tests environnementaux OK :** vérification des outils, répertoire vide, outil absent.
+- **Bloquants :** `run-cppcheck.ps1` et `run-profile-rapide.ps1` ne sont pas utilisables en l'état ; `main.c` ne compile pas.
 
-- ✅ La détection d'absence d'outil fonctionne (CA-QUAL-06)
-- ✅ La détection de fichiers fonctionne
-- ✅ La structure de projet respecte les conventions
-- ✅ Cppcheck est installé et fonctionnel (version 2.21.0)
-- ✅ Clang-tidy est disponible et fonctionnel (version 22.1.8)
-- ✅ Le défaut contrôlé est détecté avec diagnostic localisable (CA-QUAL-05)
-- ✅ Les profils rapide et complet fonctionnent correctement
-- ⚠️ ASan/LSan est documenté comme non fonctionnel sur Windows MSVC (limité à Linux/macOS)
+## 8. Décision humaine
 
-**Critères validés :** 7/8 (87.5%)
-- Seul CA-QUAL-07 (reproductibilité par un tiers) reste en attente
+- [ ] **Accepter pour intégration dans `develop`**
+- [x] **Refuser — Corrections requises :**
+  - Corriger `src/run-cppcheck.ps1` pour capturer correctement la sortie XML Cppcheck.
+  - Corriger ou justifier `tests/fixtures/main.c` (`#include <stdio.h>` commenté).
+  - Re-tester `run-profile-rapide.ps1` et `run-profile-complet.ps1` après correction.
 
-**Prochaine étape :** Faire tester la chaîne par un tiers pour valider CA-QUAL-07.
+*Rapport généré automatiquement par l'agent Devin le 2026-09-09. Décision humaine à consigner.*
