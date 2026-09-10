@@ -29,7 +29,7 @@ L’organisation complète des projets et les règles communes sont décrites da
 
 ## Équipe 4 — Ingénierie des exigences agentique
 
-**Mohammed + Florient**
+**Mohammed + Florian + Shengjie**
 
 - **Mission :** construire un produit orchestrant dynamiquement des agents IA pour collecter, auditer, structurer et tracer les exigences de baselines approuvées, notamment celles des projets open source retenus.
 - **Branche :** `feat_getReq`
