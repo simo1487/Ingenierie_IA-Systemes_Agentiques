@@ -11,6 +11,14 @@ Objectif :
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+# Permet l'import quel que soit le dossier de lancement
+_project_root = Path(__file__).resolve().parents[3]
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 from exercices.rag.exercices.exo2_indexation_qdrant import run_indexing_exercise
 from exercices.rag.pipeline.retrieval import retrieve_with_citations, format_citation_report
 
@@ -32,7 +40,7 @@ def run_retrieval_exercise():
         {
             "titre": "Cas 2 : Requête sur un diagnostic qualité",
             "query": "Buffer is accessed out of bounds",
-            "filter": "cppcheck",
+            "filter": "qualite",
         },
         {
             "titre": "Cas 3 : Requête sur le firmware open source VESC",
@@ -52,7 +60,7 @@ def run_retrieval_exercise():
             index=index,
             query=q["query"],
             top_k=2,
-            min_score=0.4,
+            min_score=0.2,
             project_filter=q["filter"],
         )
         print(format_citation_report(result))

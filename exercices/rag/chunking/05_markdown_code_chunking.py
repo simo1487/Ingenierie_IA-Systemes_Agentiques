@@ -35,22 +35,35 @@ def demonstrate_code_splitter(code_text: str, language: str = "c") -> list[dict]
     """Découpe un fichier source de code C en blocs fonctionnels."""
     doc = Document(text=code_text, metadata={"source": "defect.c", "lang": language})
 
-    splitter = CodeSplitter(
-        language=language,
-        chunk_lines=15,
-        chunk_lines_overlap=3,
-        max_chars=400,
-    )
-
-    nodes = splitter.get_nodes_from_documents([doc])
-    return [
-        {
-            "chunk_index": idx,
-            "content": node.get_content(),
-            "line_count": len(node.get_content().splitlines()),
-        }
-        for idx, node in enumerate(nodes, start=1)
-    ]
+    try:
+        splitter = CodeSplitter(
+            language=language,
+            chunk_lines=15,
+            chunk_lines_overlap=3,
+            max_chars=400,
+        )
+        nodes = splitter.get_nodes_from_documents([doc])
+        return [
+            {
+                "chunk_index": idx,
+                "content": node.get_content(),
+                "line_count": len(node.get_content().splitlines()),
+                "method": "tree_sitter_ast",
+            }
+            for idx, node in enumerate(nodes, start=1)
+        ]
+    except (ImportError, Exception):
+        # Fallback sans tree_sitter : découpage par fonctions C (séparation par accolades / doubles sauts)
+        raw_blocks = [b.strip() for b in code_text.split("\n\n") if b.strip()]
+        return [
+            {
+                "chunk_index": idx,
+                "content": block,
+                "line_count": len(block.splitlines()),
+                "method": "block_fallback",
+            }
+            for idx, block in enumerate(raw_blocks, start=1)
+        ]
 
 
 if __name__ == "__main__":

@@ -8,16 +8,23 @@ Objectif :
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 from qdrant_client import QdrantClient
+
+# Permet l'import quel que soit le dossier de lancement
+_project_root = Path(__file__).resolve().parents[3]
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
 
 from exercices.rag.config.qdrant_config import (
     get_qdrant_client,
     build_storage_context,
+    get_embedding_model,
     DEFAULT_COLLECTION_NAME,
 )
 from exercices.rag.pipeline.ingestion import load_corpus_documents
-from llama_index.core import VectorStoreIndex
+from llama_index.core import VectorStoreIndex, Settings
 from llama_index.core.node_parser import MarkdownNodeParser
 
 
@@ -40,19 +47,21 @@ def run_indexing_exercise(mode: str = "memory") -> tuple[VectorStoreIndex, Qdran
         recreate=True,
     )
 
-    print("3. Découpage structurel et indexation...")
+    print("3. Configuration de l'embedding déterministe et découpage...")
+    embed_model = get_embedding_model()
+    Settings.embed_model = embed_model
     node_parser = MarkdownNodeParser.from_defaults()
 
-    # Note : Par défaut VectorStoreIndex utilise le modèle d'embedding configuré dans les paramètres globaux de LlamaIndex
     index = VectorStoreIndex.from_documents(
         documents,
         storage_context=storage_context,
         transformations=[node_parser],
+        embed_model=embed_model,
         show_progress=False,
     )
 
     collection_info = client.get_collection(DEFAULT_COLLECTION_NAME)
-    print(f"4. Indexation terminée avec succès !")
+    print("4. Indexation terminée avec succès !")
     print(f"   Points / vecteurs enregistrés dans Qdrant : {collection_info.points_count}")
 
     return index, client

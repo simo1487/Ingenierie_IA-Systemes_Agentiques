@@ -8,16 +8,72 @@ Supporte trois modes de fonctionnement :
 
 from __future__ import annotations
 
+import hashlib
 import os
+import sys
+from pathlib import Path
 from typing import Any
+
+# Permet l'import quel que soit le dossier de lancement
+_project_root = Path(__file__).resolve().parents[3]
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 from qdrant_client import QdrantClient
 from qdrant_client.http import models as qmodels
 
 from llama_index.core import StorageContext
+from llama_index.core.base.embeddings.base import BaseEmbedding
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 
 DEFAULT_COLLECTION_NAME = "formation_ia_corpus"
 DEFAULT_VECTOR_SIZE = 384  # Taille standard pour les modèles légers type all-MiniLM-L6-v2 ou BAAI/bge-small-en-v1.5
+
+
+class DeterministicEmbedding(BaseEmbedding):
+    """Modèle d'embedding local et déterministe pour tests rapides hors-ligne sans téléchargement lourd."""
+
+    embed_dim: int = DEFAULT_VECTOR_SIZE
+
+    def _get_query_embedding(self, query: str) -> list[float]:
+        return self._compute_embedding(query)
+
+    def _get_text_embedding(self, text: str) -> list[float]:
+        return self._compute_embedding(text)
+
+    async def _aget_query_embedding(self, query: str) -> list[float]:
+        return self._compute_embedding(query)
+
+    async def _aget_text_embedding(self, text: str) -> list[float]:
+        return self._compute_embedding(text)
+
+    def _compute_embedding(self, text: str) -> list[float]:
+        vec = [0.0] * self.embed_dim
+        words = text.lower().replace("_", " ").replace("-", " ").split()
+        if not words:
+            return vec
+        for w in words:
+            idx = int(hashlib.md5(w.encode("utf-8")).hexdigest(), 16) % self.embed_dim
+            vec[idx] += 1.0
+        norm = sum(x * x for x in vec) ** 0.5
+        return [x / norm for x in vec] if norm > 0 else vec
+
+
+def get_embedding_model(model_type: str = "deterministic") -> BaseEmbedding:
+    """Retourne un modèle d'embedding selon le type souhaité ('deterministic' ou 'huggingface')."""
+    model_type = os.getenv("RAG_EMBEDDING_MODEL", model_type).lower()
+
+    if model_type == "huggingface":
+        try:
+            from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+
+            model_name = os.getenv("HF_MODEL_NAME", "BAAI/bge-small-en-v1.5")
+            return HuggingFaceEmbedding(model_name=model_name)
+        except Exception as e:
+            print(f"[Avertissement] Impossible de charger HuggingFaceEmbedding ({e}), bascule sur DeterministicEmbedding.")
+            return DeterministicEmbedding()
+
+    return DeterministicEmbedding()
 
 
 def get_qdrant_client(
@@ -59,15 +115,7 @@ def ensure_collection(
     distance: qmodels.Distance = qmodels.Distance.COSINE,
     recreate: bool = False,
 ) -> None:
-    """Crée la collection dans Qdrant si elle n'existe pas déjà.
-
-    Args:
-        client: instance de QdrantClient
-        collection_name: nom de la collection
-        vector_size: dimension des vecteurs d'embedding
-        distance: fonction de distance (Cosine par défaut)
-        recreate: si True, supprime et recrée la collection
-    """
+    """Crée la collection dans Qdrant si elle n'existe pas déjà."""
     collections = [col.name for col in client.get_collections().collections]
 
     if recreate and collection_name in collections:
@@ -90,11 +138,7 @@ def build_storage_context(
     vector_size: int = DEFAULT_VECTOR_SIZE,
     recreate: bool = False,
 ) -> tuple[StorageContext, QdrantVectorStore]:
-    """Construit un StorageContext LlamaIndex adossé à Qdrant.
-
-    Returns:
-        Tuple (StorageContext, QdrantVectorStore)
-    """
+    """Construit un StorageContext LlamaIndex adossé à Qdrant."""
     ensure_collection(
         client=client,
         collection_name=collection_name,

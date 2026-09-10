@@ -8,7 +8,15 @@ Fonctionnalités :
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
 from typing import Any
+
+# Permet l'import quel que soit le dossier de lancement
+_project_root = Path(__file__).resolve().parents[3]
+if str(_project_root) not in sys.path:
+    sys.path.insert(0, str(_project_root))
+
 from llama_index.core import VectorStoreIndex
 from llama_index.core.vector_stores import MetadataFilter, MetadataFilters, FilterOperator
 
