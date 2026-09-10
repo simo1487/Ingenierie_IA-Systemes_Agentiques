@@ -1,0 +1,20 @@
+{
+  "script": "04_semantic_chunking.py",
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "text": "Le protocole Automotive SPICE définit 31 processus d'évaluation du cycle de vie logiciel. Il impose une traçabilité bidirectionnelle entre exigences, architecture et tests unitaires.",
+      "method": "paragraph_boundary_fallback"
+    },
+    {
+      "chunk_index": 2,
+      "text": "L'outil Cppcheck permet de vérifier la conformité MISRA C:2012 et d'identifier les fuites mémoire. Les alertes générées doivent faire l'objet d'un tri humain pour isoler les faux positifs.",
+      "method": "paragraph_boundary_fallback"
+    },
+    {
+      "chunk_index": 3,
+      "text": "Le projet open source VESC implémente un contrôle vectoriel de flux (FOC) pour moteurs sans balais. Son firmware est distribué sous licence GPLv3 et dispose d'une intégration continue GitHub Actions.",
+      "method": "paragraph_boundary_fallback"
+    }
+  ]
+}

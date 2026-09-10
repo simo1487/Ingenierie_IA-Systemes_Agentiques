@@ -1,0 +1,226 @@
+{
+  "script": "01_fixed_token_chunking.py",
+  "sentence_splitter": [
+    {
+      "chunk_index": 1,
+      "text": "L'équipe d'ingénierie logicielle doit spécifier les exigences fonctionnelles et",
+      "char_length": 79,
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "type": "norme"
+      }
+    },
+    {
+      "chunk_index": 2,
+      "text": "doit spécifier les exigences fonctionnelles et non-fonctionnelles du logiciel sur la base des exigences",
+      "char_length": 103,
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "type": "norme"
+      }
+    },
+    {
+      "chunk_index": 3,
+      "text": "du logiciel sur la base des exigences système allouées.",
+      "char_length": 55,
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "type": "norme"
+      }
+    },
+    {
+      "chunk_index": 4,
+      "text": "Chaque exigence logicielle doit être unique, vérifiable et attribuée à un composant.",
+      "char_length": 84,
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "type": "norme"
+      }
+    },
+    {
+      "chunk_index": 5,
+      "text": "Une stratégie de vérification unitaire doit être définie,",
+      "char_length": 57,
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "type": "norme"
+      }
+    },
+    {
+      "chunk_index": 6,
+      "text": "comprenant des critères de couverture structurelle selon le niveau ASIL ciblé.",
+      "char_length": 78,
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "type": "norme"
+      }
+    }
+  ],
+  "token_text_splitter": [
+    {
+      "chunk_index": 1,
+      "text": "L'équipe",
+      "char_length": 8
+    },
+    {
+      "chunk_index": 2,
+      "text": "d'ingénierie",
+      "char_length": 12
+    },
+    {
+      "chunk_index": 3,
+      "text": "logicielle doit spécifier",
+      "char_length": 25
+    },
+    {
+      "chunk_index": 4,
+      "text": "doit spécifier les exigences",
+      "char_length": 28
+    },
+    {
+      "chunk_index": 5,
+      "text": "les exigences fonctionnelles",
+      "char_length": 28
+    },
+    {
+      "chunk_index": 6,
+      "text": "exigences fonctionnelles et",
+      "char_length": 27
+    },
+    {
+      "chunk_index": 7,
+      "text": "non-fonctionnelles",
+      "char_length": 18
+    },
+    {
+      "chunk_index": 8,
+      "text": "du logiciel sur la base",
+      "char_length": 23
+    },
+    {
+      "chunk_index": 9,
+      "text": "logiciel sur la base des",
+      "char_length": 24
+    },
+    {
+      "chunk_index": 10,
+      "text": "sur la base des exigences",
+      "char_length": 25
+    },
+    {
+      "chunk_index": 11,
+      "text": "la base des exigences système",
+      "char_length": 29
+    },
+    {
+      "chunk_index": 12,
+      "text": "système allouées.",
+      "char_length": 17
+    },
+    {
+      "chunk_index": 13,
+      "text": "allouées. Chaque",
+      "char_length": 16
+    },
+    {
+      "chunk_index": 14,
+      "text": "Chaque exigence",
+      "char_length": 15
+    },
+    {
+      "chunk_index": 15,
+      "text": "exigence logicielle doit",
+      "char_length": 24
+    },
+    {
+      "chunk_index": 16,
+      "text": "logicielle doit être",
+      "char_length": 20
+    },
+    {
+      "chunk_index": 17,
+      "text": "doit être unique, vérifiable",
+      "char_length": 28
+    },
+    {
+      "chunk_index": 18,
+      "text": "être unique, vérifiable et",
+      "char_length": 26
+    },
+    {
+      "chunk_index": 19,
+      "text": "vérifiable et attribuée",
+      "char_length": 23
+    },
+    {
+      "chunk_index": 20,
+      "text": "et attribuée à un",
+      "char_length": 17
+    },
+    {
+      "chunk_index": 21,
+      "text": "à un composant. Une",
+      "char_length": 19
+    },
+    {
+      "chunk_index": 22,
+      "text": "Une stratégie de",
+      "char_length": 16
+    },
+    {
+      "chunk_index": 23,
+      "text": "stratégie de vérification",
+      "char_length": 25
+    },
+    {
+      "chunk_index": 24,
+      "text": "de vérification unitaire doit",
+      "char_length": 29
+    },
+    {
+      "chunk_index": 25,
+      "text": "vérification unitaire doit être",
+      "char_length": 31
+    },
+    {
+      "chunk_index": 26,
+      "text": "doit être définie,",
+      "char_length": 18
+    },
+    {
+      "chunk_index": 27,
+      "text": "comprenant des critères",
+      "char_length": 23
+    },
+    {
+      "chunk_index": 28,
+      "text": "des critères de couverture",
+      "char_length": 26
+    },
+    {
+      "chunk_index": 29,
+      "text": "de couverture structurelle selon",
+      "char_length": 32
+    },
+    {
+      "chunk_index": 30,
+      "text": "couverture structurelle selon le",
+      "char_length": 32
+    },
+    {
+      "chunk_index": 31,
+      "text": "structurelle selon le niveau",
+      "char_length": 28
+    },
+    {
+      "chunk_index": 32,
+      "text": "selon le niveau ASIL",
+      "char_length": 20
+    },
+    {
+      "chunk_index": 33,
+      "text": "ASIL ciblé.",
+      "char_length": 11
+    }
+  ]
+}

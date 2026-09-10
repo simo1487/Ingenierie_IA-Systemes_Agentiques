@@ -1,0 +1,135 @@
+{
+  "script": "07_retrieval_and_citations.py",
+  "qdrant_collection": "aspice_exigences_markdown",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "tests": [
+    {
+      "titre": "Cas 1 : Requête par identifiant exact",
+      "query": "SWE.1.BP1 Specify software requirements",
+      "status": "found",
+      "top_k": 3,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.6502,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)",
+          "chunk_index": 77,
+          "content_snippet": "#### SWE.1.BP1 - Specify software requirements.\n\n- **ID officiel :** SWE.1.BP1\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Software Requirements Analysis\n- **Reference source :** PAM v4.0, section SWE.1, BP1\n- "
+        },
+        {
+          "rank": 2,
+          "score": 0.6415,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)",
+          "chunk_index": 78,
+          "content_snippet": "#### SWE.1.BP2 - Structure software requirements.\n\n- **ID officiel :** SWE.1.BP2\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Software Requirements Analysis\n- **Reference source :** PAM v4.0, section SWE.1, BP2\n"
+        },
+        {
+          "rank": 3,
+          "score": 0.6293,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)",
+          "chunk_index": 79,
+          "content_snippet": "#### SWE.1.BP3 - Analyze software requirements.\n\n- **ID officiel :** SWE.1.BP3\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Software Requirements Analysis\n- **Reference source :** PAM v4.0, section SWE.1, BP3\n- "
+        }
+      ]
+    },
+    {
+      "titre": "Cas 2 : Requête thématique paraphrasée",
+      "query": "Comment les exigences logicielles doivent-elles être vérifiées et tracées ?",
+      "status": "found",
+      "top_k": 3,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.5311,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)",
+          "chunk_index": 82,
+          "content_snippet": "#### SWE.1.BP6 - Communicate agreed software requirements and impact on the operating environment.\n\n- **ID officiel :** SWE.1.BP6\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Software Requirements Analysis\n- **R"
+        },
+        {
+          "rank": 2,
+          "score": 0.5272,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "HWE.4 - Verification against Hardware Requirements > Base Practices (pratiques de base)",
+          "chunk_index": 225,
+          "content_snippet": "#### HWE.4.BP1 - Specify verification measures for the verification against hardware requirementsSpecify the verification measure to provide evidence for compliance with the hardware requirements.\n\n- **ID officiel :** HWE.4.BP1\n- **Norme / Version :*"
+        },
+        {
+          "rank": 3,
+          "score": 0.5254,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SWE.1 - Software Requirements Analysis",
+          "chunk_index": 73,
+          "content_snippet": "### Description du processus\n\n**ID officiel :** SWE.1\n\n**Nom :** Software Requirements Analysis\n\n**Norme / Version :** Automotive SPICE PAM v4.0\n\n**Categorie :** Process Reference Model - SWE process group\n\n**Reference source :** PAM v4.0, section SW"
+        }
+      ]
+    },
+    {
+      "titre": "Cas 3 : Requête avec filtre de métadonnées (processus SUP.1)",
+      "query": "Quelles sont les pratiques de qualité assurance ?",
+      "status": "found",
+      "top_k": 3,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.3808,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)",
+          "chunk_index": 236,
+          "content_snippet": "#### SUP.1.BP2 - Define criteria for quality assurance.\n\n- **ID officiel :** SUP.1.BP2\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Quality Assurance\n- **Reference source :** PAM v4.0, section SUP.1, BP2\n- **Sta"
+        },
+        {
+          "rank": 2,
+          "score": 0.3578,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SUP.1 - Quality Assurance",
+          "chunk_index": 234,
+          "content_snippet": "### Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 3,
+          "score": 0.3546,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)",
+          "chunk_index": 239,
+          "content_snippet": "#### SUP.1.BP5 - Summarize and communicate quality assurance activities and results.\n\n- **ID officiel :** SUP.1.BP5\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Quality Assurance\n- **Reference source :** PAM v4."
+        }
+      ]
+    },
+    {
+      "titre": "Cas 4 : Requête hors-corpus (test d'abstention)",
+      "query": "Recette du couscous royal aux légumes",
+      "status": "not_found",
+      "reason": "Aucun passage du corpus n'atteint le seuil de pertinence minimal.",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.2855,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "Root",
+          "chunk_index": 3,
+          "content_snippet": "## Table des matieres\n\n- [ACQ.4 - Supplier Monitoring](#ACQ-4-exigences)\n- [SPL.2 - Product Release](#SPL-2-exigences)\n- [SYS.1 - Requirements Elicitation](#SYS-1-exigences)\n- [SYS.2 - System Requirements Analysis](#SYS-2-exigences)\n- [SYS.3 - System"
+        },
+        {
+          "rank": 2,
+          "score": 0.2843,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "Root",
+          "chunk_index": 1,
+          "content_snippet": "﻿# Automotive SPICE PAM v4.0 - Exigences Detaillees\n\n- **Norme :** Automotive SPICE Process Assessment / Reference Model\n- **Version :** PAM v4.0\n- **Date de publication :** 2023-11-29\n- **Editeur :** VDA Quality Management Center (Working Group 13)\n"
+        },
+        {
+          "rank": 3,
+          "score": 0.2802,
+          "source": "automotive-spice-exigences.md",
+          "header_path": "MAN.6 - Measurement",
+          "chunk_index": 319,
+          "content_snippet": "### Base Practices (pratiques de base)"
+        }
+      ]
+    }
+  ]
+}

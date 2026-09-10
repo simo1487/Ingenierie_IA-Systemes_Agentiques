@@ -1,0 +1,229 @@
+{
+  "script": "09_rag_with_reranker.py",
+  "qdrant_collection": "aspice_exigences_markdown",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "reranker_model": "BAAI/bge-reranker-base",
+  "llm": {
+    "provider": "ollama",
+    "model": "qwen2.5:3b"
+  },
+  "parameters": {
+    "retrieve_k": 10,
+    "keep_k": 3,
+    "min_score": 0.35
+  },
+  "qa": [
+    {
+      "question": "Que doit faire l'équipe selon la base practice SWE.1.BP1 ?",
+      "status": "answered",
+      "answer": "L'équipe doit selon la base practice SWE.1.BP1 :\n\n- Spécifier les exigences logicielles. (ID officiel : SWE.1.BP1)\n\nCette base practice exige que l'équipe utilise les exigences système et l'architecture système pour identifier et documenter les exigences fonctionnelles et fonctionnelles pour le logiciel conformément aux caractéristiques définies pour les exigences.",
+      "ranking_before_rerank": [
+        {
+          "rank": 1,
+          "score": 0.3558,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 2,
+          "score": 0.3456,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 3,
+          "score": 0.3342,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 4,
+          "score": 0.3316,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 5,
+          "score": 0.3306,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 6,
+          "score": 0.3257,
+          "header_path": "SYS.1 - Requirements Elicitation > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 7,
+          "score": 0.3257,
+          "header_path": "SWE.3 - Software Detailed Design and Unit Construction > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 8,
+          "score": 0.3213,
+          "header_path": "SWE.1 - Software Requirements Analysis > Outcomes (resultats attendus)"
+        },
+        {
+          "rank": 9,
+          "score": 0.318,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 10,
+          "score": 0.3168,
+          "header_path": "HWE.1 - Hardware Requirements Analysis > Base Practices (pratiques de base)"
+        }
+      ],
+      "citations": [
+        {
+          "rank_vector": 2,
+          "score_vector": 0.3456,
+          "score_rerank": 0.9486,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank_vector": 4,
+          "score_vector": 0.3316,
+          "score_rerank": 0.9459,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank_vector": 3,
+          "score_vector": 0.3342,
+          "score_rerank": 0.9396,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        }
+      ]
+    },
+    {
+      "question": "Quelles sont les pratiques du processus de qualité assurance SUP.1 ?",
+      "status": "answered",
+      "answer": "Le processus SUP.1, dont le but global est de fournir une assurance indépendante et objective selon que les produits de travail et les processus sont conformes aux critères définis et que les non-conformités sont résolues et préventives, comprend les pratiques suivantes :\n\n- SUP.1.BP3 : Assure la qualité des produits de travail Identifier les produits de travail soumis à la garantie de qualité selon les critères de qualité.\n- SUP.1.BP6 : Soutenir la résolution des non-conformités Analyser, suivre, corriger et prévenir les non-conformités trouvées dans les activités de garantie de qualité.\n- SUP.1.BP7 : Écarter les non-conformités Écarter les non-conformités pertinentes vers des niveaux appropriés de gestion et d'autres acteurs pertinents pour faciliter leur résolution.",
+      "ranking_before_rerank": [
+        {
+          "rank": 1,
+          "score": 0.5569,
+          "header_path": "SUP.1 - Quality Assurance"
+        },
+        {
+          "rank": 2,
+          "score": 0.5192,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 3,
+          "score": 0.5102,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 4,
+          "score": 0.5077,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 5,
+          "score": 0.4983,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 6,
+          "score": 0.4944,
+          "header_path": "SUP.8 - Configuration Management"
+        },
+        {
+          "rank": 7,
+          "score": 0.4853,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 8,
+          "score": 0.4764,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 9,
+          "score": 0.4543,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 10,
+          "score": 0.4537,
+          "header_path": "SUP.8 - Configuration Management > Outcomes (resultats attendus)"
+        }
+      ],
+      "citations": [
+        {
+          "rank_vector": 8,
+          "score_vector": 0.4764,
+          "score_rerank": 0.9681,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank_vector": 7,
+          "score_vector": 0.4853,
+          "score_rerank": 0.9548,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank_vector": 9,
+          "score_vector": 0.4543,
+          "score_rerank": 0.9521,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        }
+      ]
+    },
+    {
+      "question": "Quelle est la recette du couscous royal aux légumes ?",
+      "status": "not_found",
+      "answer": null,
+      "ranking_before_rerank": [
+        {
+          "rank": 1,
+          "score": 0.2896,
+          "header_path": "SPL.2 - Product Release"
+        },
+        {
+          "rank": 2,
+          "score": 0.2835,
+          "header_path": "Root"
+        },
+        {
+          "rank": 3,
+          "score": 0.2737,
+          "header_path": "Root"
+        },
+        {
+          "rank": 4,
+          "score": 0.2726,
+          "header_path": "SPL.2 - Product Release > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 5,
+          "score": 0.2619,
+          "header_path": "SPL.2 - Product Release"
+        },
+        {
+          "rank": 6,
+          "score": 0.2544,
+          "header_path": "ACQ.4 - Supplier Monitoring > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 7,
+          "score": 0.2533,
+          "header_path": "SPL.2 - Product Release > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 8,
+          "score": 0.2509,
+          "header_path": "Root"
+        },
+        {
+          "rank": 9,
+          "score": 0.2458,
+          "header_path": "MAN.6 - Measurement"
+        },
+        {
+          "rank": 10,
+          "score": 0.2455,
+          "header_path": "SPL.2 - Product Release > Base Practices (pratiques de base)"
+        }
+      ],
+      "citations": []
+    }
+  ]
+}
