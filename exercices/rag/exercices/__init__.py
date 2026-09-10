@@ -1,0 +1,1 @@
+"""Exercices guidés RAG."""

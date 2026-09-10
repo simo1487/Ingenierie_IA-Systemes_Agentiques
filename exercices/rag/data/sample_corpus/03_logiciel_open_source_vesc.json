@@ -1,0 +1,39 @@
+{
+  "template": "Fiche Projet Candidat",
+  "informations_identification": {
+    "id_candidat": "CAND-001",
+    "nom_projet": "VESC firmware",
+    "url_canonique_depot": "https://github.com/vedderb/bldc",
+    "revision_analysee": "master-2026-09-04",
+    "date_revision": "2026-09-04",
+    "domaine_principal": "Contrôle moteur électrique et variateurs de vitesse embarqués"
+  },
+  "licence_legal": {
+    "licence_observee": "GNU General Public License version 3.0 (GPLv3)",
+    "fichier_licence": "README.md",
+    "statut_reutilisation": "À vérifier (GPLv3 impose des contraintes copyleft pour une réutilisation commerciale)"
+  },
+  "activite_projet": {
+    "statut": "Actif",
+    "dernier_commit": "2026-09-04",
+    "frequence_commits": "3793 commits depuis 2014"
+  },
+  "documentation": {
+    "readme_principal": "README.md avec guide de compilation et intégration IDE",
+    "qualite_documentation": "Bonne"
+  },
+  "exigences": {
+    "fichiers_exigences_identifies": [],
+    "nombre_exigences": 0,
+    "completude_exigences": "Absente (aucune spécification formelle d'exigence dans le dépôt)"
+  },
+  "mecanismes_qualite": {
+    "ci_cd": "GitHub Actions (.github/workflows/nix.yml)",
+    "linting_static_analysis": "Codacy grade A",
+    "tests_unitaires": "Non vérifié dans la baseline"
+  },
+  "recommandation": {
+    "statut": "Candidat acceptable sous réserve",
+    "justification": "Projet mature et très actif pour le contrôle moteur, mais absence d'exigences formelles documentées et licence GPLv3."
+  }
+}
