@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Exec(git status)",
+      "Exec(git diff)",
+      "Exec(git log)",
+      "Exec(git branch)",
+      "Exec(git show)",
+      "Exec(python3 tools/check_repo.py)"
+    ],
+    "deny": [
+      "Write(upstream/**)",
+      "Write(**/upstream/**)",
+      "Write(.env*)",
+      "Write(**/.env*)",
+      "Exec(rm)",
+      "Exec(sudo)"
+    ],
+    "ask": [
+      "Exec(git commit)",
+      "Exec(git merge)",
+      "Exec(git push)"
+    ]
+  },
+  "read_config_from": {
+    "agents_standard": true,
+    "cursor": true,
+    "windsurf": true,
+    "claude": true
+  }
+}
