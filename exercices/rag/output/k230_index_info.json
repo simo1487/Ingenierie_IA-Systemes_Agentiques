@@ -1,0 +1,9 @@
+{
+  "collection_name": "k230_datasheet_corpus",
+  "mode": "memory",
+  "vector_size": 384,
+  "chunks_count": 105,
+  "points_count": 105,
+  "chunks_file": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\rag\\output\\k230_adapted_chunks.json",
+  "document_type": "K230 Datasheet"
+}

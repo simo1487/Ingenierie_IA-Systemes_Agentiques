@@ -1,0 +1,854 @@
+{
+  "metrics": {
+    "total_questions": 30,
+    "found_relevant": 26,
+    "success_rate": 0.8667,
+    "mrr": 0.7833,
+    "total_time_seconds": 1.92,
+    "avg_time_per_query_seconds": 0.064,
+    "top_k": 3,
+    "min_score": 0.5
+  },
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the maximum operating frequency of CPU0?",
+      "expected_answer": "CPU0 supports a maximum operating frequency of 800 MHz.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 2,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7251,
+          "chunk_id": "k230_adapted_chunk_12",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.7141,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.6991,
+          "chunk_id": "k230_adapted_chunk_41",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the maximum operating frequency of CPU1?",
+      "expected_answer": "CPU1 supports a maximum operating frequency of 1.6 GHz.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 2,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.73,
+          "chunk_id": "k230_adapted_chunk_12",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.714,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.6913,
+          "chunk_id": "k230_adapted_chunk_41",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Which RISC-V extensions are supported by CPU1?",
+      "expected_answer": "CPU1 supports the RISC-V Vector Extension 1.0 specification.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7491,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.6901,
+          "chunk_id": "k230_adapted_chunk_20",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.685,
+          "chunk_id": "k230_adapted_chunk_41",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How much L1 cache does each CPU core provide?",
+      "expected_answer": "Each CPU provides 32 KB instruction cache and 32 KB data cache.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7344,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.6861,
+          "chunk_id": "k230_adapted_chunk_12",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.6666,
+          "chunk_id": "k230_adapted_chunk_20",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "How much L2 cache is integrated into CPU0 and CPU1?",
+      "expected_answer": "CPU0 integrates 128 KB L2 cache and CPU1 integrates 256 KB L2 cache.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7707,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7042,
+          "chunk_id": "k230_adapted_chunk_12",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7041,
+          "chunk_id": "k230_adapted_chunk_20",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How many external interrupt sources can each CPU process?",
+      "expected_answer": "Each CPU can process up to 208 external interrupt sources.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7474,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7313,
+          "chunk_id": "k230_adapted_chunk_19",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7165,
+          "chunk_id": "k230_adapted_chunk_37",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Does the K230 support a Memory Management Unit (MMU)?",
+      "expected_answer": "Yes, both CPUs support an MMU.",
+      "category": "CPU",
+      "status": "found",
+      "relevant_rank": 2,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7375,
+          "chunk_id": "k230_adapted_chunk_16",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.7296,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7172,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What AI frameworks are supported by the K230 KPU?",
+      "expected_answer": "TensorFlow, PyTorch, TFLite, PaddlePaddle and ONNX.",
+      "category": "KPU",
+      "status": "found",
+      "relevant_rank": 2,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7608,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.7203,
+          "chunk_id": "k230_adapted_chunk_6",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7088,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What integer precisions are supported by the KPU?",
+      "expected_answer": "INT8 and INT16.",
+      "category": "KPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7645,
+          "chunk_id": "k230_adapted_chunk_6",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.754,
+          "chunk_id": "k230_adapted_chunk_11",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7474,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the typical YOLOv5S inference performance at INT8?",
+      "expected_answer": "YOLOv5S ≥ 38 fps @ INT8.",
+      "category": "KPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.729,
+          "chunk_id": "k230_adapted_chunk_6",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.6941,
+          "chunk_id": "k230_adapted_chunk_11",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.684,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What is the typical ResNet50 inference performance at INT8?",
+      "expected_answer": "ResNet50 ≥ 85 fps @ INT8.",
+      "category": "KPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.759,
+          "chunk_id": "k230_adapted_chunk_6",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7084,
+          "chunk_id": "k230_adapted_chunk_11",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.6985,
+          "chunk_id": "k230_adapted_chunk_41",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "What is the maximum quantization accuracy loss supported by the KPU?",
+      "expected_answer": "Less than 1%.",
+      "category": "KPU",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7937,
+          "chunk_id": "k230_adapted_chunk_6",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7773,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7578,
+          "chunk_id": "k230_adapted_chunk_10",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "How much SRAM is available on the K230?",
+      "expected_answer": "2 MB shared SRAM + 2 MB dedicated KPU SRAM.",
+      "category": "Memory",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7838,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7652,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7554,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is the maximum LPDDR memory capacity supported by the K230?",
+      "expected_answer": "2 GB.",
+      "category": "Memory",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.8145,
+          "chunk_id": "k230_adapted_chunk_12",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7574,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7562,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Which memory technologies are supported by the K230?",
+      "expected_answer": "LPDDR4 and LPDDR3.",
+      "category": "Memory",
+      "status": "found",
+      "relevant_rank": null,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7526,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.7471,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7377,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "What is the maximum LPDDR4 speed supported by the K230?",
+      "expected_answer": "3200 Mbps.",
+      "category": "Memory",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.8056,
+          "chunk_id": "k230_adapted_chunk_12",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7458,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7422,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "How many UART interfaces are supported by the K230?",
+      "expected_answer": "5 UART interfaces.",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7737,
+          "chunk_id": "k230_adapted_chunk_35",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7177,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7123,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "How many I2C interfaces are supported by the K230?",
+      "expected_answer": "5 I2C interfaces.",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": null,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7539,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.745,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7426,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "How many SPI interfaces are available on the K230?",
+      "expected_answer": "3 SPI interfaces (1 OSPI + 2 QSPI).",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7578,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7562,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7437,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "How many GPIOs are available on the K230?",
+      "expected_answer": "64 GPIO + 8 PMU GPIO (50 GPIO + 6 PMU GPIO in SIP version).",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 2,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7254,
+          "chunk_id": "k230_adapted_chunk_8",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.7199,
+          "chunk_id": "k230_adapted_chunk_41",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7082,
+          "chunk_id": "k230_adapted_chunk_37",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "How many USB 2.0 OTG interfaces are supported?",
+      "expected_answer": "2 USB 2.0 OTG interfaces.",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.699,
+          "chunk_id": "k230_adapted_chunk_37",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.6856,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.6748,
+          "chunk_id": "k230_adapted_chunk_38",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Which USB speeds are supported by the K230?",
+      "expected_answer": "High-Speed (480 Mbps), Full-Speed (12 Mbps) and Low-Speed (1.5 Mbps).",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7295,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7226,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7107,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "How many SD/eMMC controllers does the K230 provide?",
+      "expected_answer": "2 SD/eMMC controllers.",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7863,
+          "chunk_id": "k230_adapted_chunk_38",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7176,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7125,
+          "chunk_id": "k230_adapted_chunk_105",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Which SD and eMMC standards are supported?",
+      "expected_answer": "SD 3.01 and eMMC 5.0/5.1.",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.8103,
+          "chunk_id": "k230_adapted_chunk_38",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7605,
+          "chunk_id": "k230_adapted_chunk_105",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.6893,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "How many DMA channels are provided by the PDMA controller?",
+      "expected_answer": "8 DMA channels.",
+      "category": "Peripheral",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7649,
+          "chunk_id": "k230_adapted_chunk_17",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.6691,
+          "chunk_id": "k230_adapted_chunk_16",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.6562,
+          "chunk_id": "k230_adapted_chunk_34",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "What is the operating temperature range of the K230?",
+      "expected_answer": "-40°C to +85°C.",
+      "category": "Electrical",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7401,
+          "chunk_id": "k230_adapted_chunk_43",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7119,
+          "chunk_id": "k230_adapted_chunk_20",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "score": 0.7082,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "What are the main security features provided by the K230?",
+      "expected_answer": "PUF, OTP, TRNG, Secure Boot, AES, RSA, ECC, SHA and SM algorithms.",
+      "category": "Security",
+      "status": "found",
+      "relevant_rank": null,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7322,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.688,
+          "chunk_id": "k230_adapted_chunk_3",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.6777,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Which cryptographic algorithms are supported by the security subsystem?",
+      "expected_answer": "AES128/192/256, SM4, RSA, ECC, ECDSA, SM2, SHA224/256/384/512, SM3 and HMAC.",
+      "category": "Security",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.703,
+          "chunk_id": "k230_adapted_chunk_40",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.6304,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.6303,
+          "chunk_id": "k230_adapted_chunk_21",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Does the K230 support secure boot?",
+      "expected_answer": "Yes, secure boot with signature verification is supported.",
+      "category": "Security",
+      "status": "found",
+      "relevant_rank": null,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.6777,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "score": 0.6647,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.6647,
+          "chunk_id": "k230_adapted_chunk_39",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "What are the typical applications targeted by the K230 SoC?",
+      "expected_answer": "Smart door locks, smart cameras, dictionary pens, payment recognition systems, drones, robots, smart home appliances, smart manufacturing systems and intelligent vehicle cockpits.",
+      "category": "General",
+      "status": "found",
+      "relevant_rank": 1,
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7931,
+          "chunk_id": "k230_adapted_chunk_4",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "score": 0.7425,
+          "chunk_id": "k230_adapted_chunk_5",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "score": 0.7271,
+          "chunk_id": "k230_adapted_chunk_14",
+          "relevant": false
+        }
+      ]
+    }
+  ]
+}
