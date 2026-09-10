@@ -12,7 +12,7 @@
 
 ## 2. Vision et Epic
 
-### `EPIC-OSS-AUTO-001` — Sélectionner des références open source vérifiables
+### `EPIC-OSS-AUTO-001` — Sélectionner des projets open source avec des exigences vérifiables
 
 - **Vision :** constituer une sélection courte de projets automobiles ou embarqués analysés sur des révisions figées.
 - **Bénéficiaire principal :** analyste produit et ingénieur exigences.
@@ -20,6 +20,7 @@
 - **Indicateur de succès :** un tiers reproduit la comparaison et retrouve chaque constat dans la source indiquée.
 
 > En tant qu’analyste produit, je veux comparer des projets open source actifs disposant de code, d’exigences et de mécanismes qualité afin de sélectionner des références fiables sans confondre popularité et maturité.
+
 
 ## 3. Périmètre
 

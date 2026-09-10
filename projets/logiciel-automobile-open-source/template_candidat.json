@@ -1,0 +1,114 @@
+{
+  "template": "Fiche Projet Candidat",
+  "informations_identification": {
+    "id_candidat": "CAND-XXX",
+    "nom_projet": "",
+    "url_canonique_depot": "",
+    "revision_analysee": "",
+    "date_revision": "",
+    "domaine_principal": "Automobile / Embarqué / Autre"
+  },
+  "licence_legal": {
+    "licence_observee": "",
+    "fichier_licence": "",
+    "statut_reutilisation": "Autorisée / Bloquée / À vérifier",
+    "notes_licence": ""
+  },
+  "activite_projet": {
+    "statut": "Actif / Inactif / Inconnu",
+    "dernier_commit": "",
+    "frequence_commits": "",
+    "nombre_contributeurs": "",
+    "definition_activite_appliquee": ""
+  },
+  "documentation": {
+    "readme_principal": "",
+    "documentation_officielle": "",
+    "qualite_documentation": "",
+    "notes": ""
+  },
+  "exigences": {
+    "fichiers_exigences_identifies": [],
+    "format_exigences": "Markdown / TXT / Spécifique / Autre",
+    "nombre_exigences": 0,
+    "completude_exigences": "Complète / Partielle / Absente",
+    "tracabilite_exigences_code": "Oui / Non / Partielle / Non vérifié",
+    "source_precise_exigence_citee": ""
+  },
+  "tests": {
+    "fichiers_tests_identifies": [],
+    "framework_tests": "",
+    "couverture_tests": "",
+    "types_tests": "Unitaires / Intégration / Système / Autre",
+    "notes": ""
+  },
+  "mecanismes_qualite": {
+    "ci_cd": {
+      "outil_ci": "GitHub Actions / GitLab CI / Jenkins / Autre / Aucun",
+      "fichier_configuration_ci": "",
+      "statut_ci": "Actif / Configuré / Inactif / Non vérifié"
+    },
+    "controles_qualite": {
+      "linting_static_analysis": "",
+      "revues_code": "Oui / Non / Non vérifié",
+      "checks_qualite_automatises": "",
+      "notes": ""
+    }
+  },
+  "tracabilite": {
+    "relations_tracabilite_explicites": "Oui / Non / Partielle / Non vérifié",
+    "outils_tracabilite": "",
+    "liens_exigences_tests_code": "",
+    "notes": ""
+  },
+  "evaluation_grille": [
+    {
+      "critere": "CA-OSS-01",
+      "description": "URL, licence, révision",
+      "statut": "",
+      "preuve": "",
+      "notes": ""
+    },
+    {
+      "critere": "CA-OSS-02",
+      "description": "Exigences retrouvables",
+      "statut": "",
+      "preuve": "",
+      "notes": ""
+    },
+    {
+      "critere": "CA-OSS-03",
+      "description": "Mécanismes qualité",
+      "statut": "",
+      "preuve": "",
+      "notes": ""
+    },
+    {
+      "critere": "CA-OSS-05",
+      "description": "Données signalées",
+      "statut": "",
+      "preuve": "",
+      "notes": ""
+    },
+    {
+      "critere": "CA-OSS-07",
+      "description": "Reproductibilité",
+      "statut": "",
+      "preuve": "",
+      "notes": ""
+    }
+  ],
+  "points_forts": [],
+  "limites_lacunes": [],
+  "recommandation": {
+    "statut": "Recommandé / Candidat acceptable / Non recommandé",
+    "justification": "",
+    "projets_alternatifs_suggeres": []
+  },
+  "notes_generales": [],
+  "metadonnees": {
+    "rempli_par": "",
+    "date_remplissage": "",
+    "statut_fiche": "Brouillon / Complété / Validé"
+  }
+}
