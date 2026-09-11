@@ -1,0 +1,33 @@
+{
+  "script": "12_agent_examinateur_gradio.py",
+  "ui": "gradio",
+  "qdrant_collection": "aspice_exigences_markdown",
+  "llm": {
+    "provider": "mistral",
+    "model": "mistral-small-latest"
+  },
+  "session": {
+    "mode": "aleatoire",
+    "nb_questions": 3,
+    "catalog_size": 0,
+    "rounds": [
+      {
+        "req_id": "X"
+      },
+      {
+        "req_id": "X"
+      },
+      {
+        "req_id": "X"
+      }
+    ],
+    "verdicts": {
+      "CORRECTE": 1,
+      "PARTIELLE": 2,
+      "INCORRECTE": 0
+    },
+    "score": 4,
+    "max_score": 6,
+    "note_sur_20": 13.3
+  }
+}
