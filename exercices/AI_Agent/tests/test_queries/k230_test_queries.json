@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "question": "What is the maximum operating frequency of CPU0?",
+    "category": "CPU",
+    "expected_answer": "CPU0 supports a maximum operating frequency of 800 MHz.",
+    "expected_keywords": ["CPU0", "800 MHz", "working frequency"]
+  },
+  {
+    "id": 2,
+    "question": "What is the maximum operating frequency of CPU1?",
+    "category": "CPU",
+    "expected_answer": "CPU1 supports a maximum operating frequency of 1.6 GHz.",
+    "expected_keywords": ["CPU1", "1.6 GHz", "working frequency"]
+  },
+  {
+    "id": 3,
+    "question": "Which RISC-V extensions are supported by CPU1?",
+    "category": "CPU",
+    "expected_answer": "CPU1 supports the RISC-V Vector Extension 1.0 specification.",
+    "expected_keywords": ["CPU1", "RISC-V Vector Extension", "Vector Extension 1.0"]
+  },
+  {
+    "id": 4,
+    "question": "How much L1 cache does each CPU core provide?",
+    "category": "CPU",
+    "expected_answer": "Each CPU provides 32 KB instruction cache and 32 KB data cache.",
+    "expected_keywords": ["L1 cache", "32 KB", "instruction cache", "data cache"]
+  },
+  {
+    "id": 5,
+    "question": "How much L2 cache is integrated into CPU0 and CPU1?",
+    "category": "CPU",
+    "expected_answer": "CPU0 integrates 128 KB L2 cache and CPU1 integrates 256 KB L2 cache.",
+    "expected_keywords": ["L2 cache", "128 KB", "256 KB"]
+  },
+  {
+    "id": 6,
+    "question": "How many external interrupt sources can each CPU process?",
+    "category": "CPU",
+    "expected_answer": "Each CPU can process up to 208 external interrupt sources.",
+    "expected_keywords": ["interrupt", "208", "external sources"]
+  },
+  {
+    "id": 7,
+    "question": "Does the K230 support a Memory Management Unit (MMU)?",
+    "category": "CPU",
+    "expected_answer": "Yes, both CPUs support an MMU.",
+    "expected_keywords": ["MMU", "memory management unit"]
+  },
+  {
+    "id": 8,
+    "question": "What AI frameworks are supported by the K230 KPU?",
+    "category": "KPU",
+    "expected_answer": "TensorFlow, PyTorch, TFLite, PaddlePaddle and ONNX.",
+    "expected_keywords": ["TensorFlow", "PyTorch", "TFLite", "PaddlePaddle", "ONNX"]
+  },
+  {
+    "id": 9,
+    "question": "What integer precisions are supported by the KPU?",
+    "category": "KPU",
+    "expected_answer": "INT8 and INT16.",
+    "expected_keywords": ["INT8", "INT16"]
+  },
+  {
+    "id": 10,
+    "question": "What is the typical YOLOv5S inference performance at INT8?",
+    "category": "KPU",
+    "expected_answer": "YOLOv5S ≥ 38 fps @ INT8.",
+    "expected_keywords": ["YoloV5S", "38fps", "INT8"]
+  },
+  {
+    "id": 11,
+    "question": "What is the typical ResNet50 inference performance at INT8?",
+    "category": "KPU",
+    "expected_answer": "ResNet50 ≥ 85 fps @ INT8.",
+    "expected_keywords": ["Resnet 50", "85fps", "INT8"]
+  },
+  {
+    "id": 12,
+    "question": "What is the maximum quantization accuracy loss supported by the KPU?",
+    "category": "KPU",
+    "expected_answer": "Less than 1%.",
+    "expected_keywords": ["quantization", "<1%", "accuracy"]
+  },
+  {
+    "id": 13,
+    "question": "How much SRAM is available on the K230?",
+    "category": "Memory",
+    "expected_answer": "2 MB shared SRAM + 2 MB dedicated KPU SRAM.",
+    "expected_keywords": ["SRAM", "2MB", "shared sram"]
+  },
+  {
+    "id": 14,
+    "question": "What is the maximum LPDDR memory capacity supported by the K230?",
+    "category": "Memory",
+    "expected_answer": "2 GB.",
+    "expected_keywords": ["LPDDR", "Maximum capacity", "2GB"]
+  },
+  {
+    "id": 15,
+    "question": "Which memory technologies are supported by the K230?",
+    "category": "Memory",
+    "expected_answer": "LPDDR4 and LPDDR3.",
+    "expected_keywords": ["LPDDR4", "LPDDR3"]
+  },
+  {
+    "id": 16,
+    "question": "What is the maximum LPDDR4 speed supported by the K230?",
+    "category": "Memory",
+    "expected_answer": "3200 Mbps.",
+    "expected_keywords": ["LPDDR4", "3200Mbps"]
+  },
+  {
+    "id": 17,
+    "question": "How many UART interfaces are supported by the K230?",
+    "category": "Peripheral",
+    "expected_answer": "5 UART interfaces.",
+    "expected_keywords": ["UART", "5 UART"]
+  },
+  {
+    "id": 18,
+    "question": "How many I2C interfaces are supported by the K230?",
+    "category": "Peripheral",
+    "expected_answer": "5 I2C interfaces.",
+    "expected_keywords": ["I2C", "5 I2C"]
+  },
+  {
+    "id": 19,
+    "question": "How many SPI interfaces are available on the K230?",
+    "category": "Peripheral",
+    "expected_answer": "3 SPI interfaces (1 OSPI + 2 QSPI).",
+    "expected_keywords": ["SPI", "OSPI", "QSPI"]
+  },
+  {
+    "id": 20,
+    "question": "How many GPIOs are available on the K230?",
+    "category": "Peripheral",
+    "expected_answer": "64 GPIO + 8 PMU GPIO (50 GPIO + 6 PMU GPIO in SIP version).",
+    "expected_keywords": ["GPIO"]
+  },
+  {
+    "id": 21,
+    "question": "How many USB 2.0 OTG interfaces are supported?",
+    "category": "Peripheral",
+    "expected_answer": "2 USB 2.0 OTG interfaces.",
+    "expected_keywords": ["USB", "OTG"]
+  },
+  {
+    "id": 22,
+    "question": "Which USB speeds are supported by the K230?",
+    "category": "Peripheral",
+    "expected_answer": "High-Speed (480 Mbps), Full-Speed (12 Mbps) and Low-Speed (1.5 Mbps).",
+    "expected_keywords": ["USB", "High-Speed", "Full-Speed"]
+  },
+  {
+    "id": 23,
+    "question": "How many SD/eMMC controllers does the K230 provide?",
+    "category": "Peripheral",
+    "expected_answer": "2 SD/eMMC controllers.",
+    "expected_keywords": ["SD", "eMMC", "controller"]
+  },
+  {
+    "id": 24,
+    "question": "Which SD and eMMC standards are supported?",
+    "category": "Peripheral",
+    "expected_answer": "SD 3.01 and eMMC 5.0/5.1.",
+    "expected_keywords": ["SD", "eMMC", "SD3.0", "eMMC5.1"]
+  },
+  {
+    "id": 25,
+    "question": "How many DMA channels are provided by the PDMA controller?",
+    "category": "Peripheral",
+    "expected_answer": "8 DMA channels.",
+    "expected_keywords": ["PDMA", "8 channels"]
+  },
+  {
+    "id": 26,
+    "question": "What is the operating temperature range of the K230?",
+    "category": "Electrical",
+    "expected_answer": "-40°C to +85°C.",
+    "expected_keywords": ["temperature", "operating"]
+  },
+  {
+    "id": 27,
+    "question": "What are the main security features provided by the K230?",
+    "category": "Security",
+    "expected_answer": "PUF, OTP, TRNG, Secure Boot, AES, RSA, ECC, SHA and SM algorithms.",
+    "expected_keywords": ["PUF", "OTP", "TRNG", "security boot"]
+  },
+  {
+    "id": 28,
+    "question": "Which cryptographic algorithms are supported by the security subsystem?",
+    "category": "Security",
+    "expected_answer": "AES128/192/256, SM4, RSA, ECC, ECDSA, SM2, SHA224/256/384/512, SM3 and HMAC.",
+    "expected_keywords": ["AES", "RSA", "ECC", "SHA", "SM3", "SM4"]
+  },
+  {
+    "id": 29,
+    "question": "Does the K230 support secure boot?",
+    "category": "Security",
+    "expected_answer": "Yes, secure boot with signature verification is supported.",
+    "expected_keywords": ["security boot", "signature"]
+  },
+  {
+    "id": 30,
+    "question": "What are the typical applications targeted by the K230 SoC?",
+    "category": "General",
+    "expected_answer": "Smart door locks, smart cameras, dictionary pens, payment recognition systems, drones, robots, smart home appliances, smart manufacturing systems and intelligent vehicle cockpits.",
+    "expected_keywords": ["smart door locks", "security cameras", "drones", "smart hardware"]
+  }
+]

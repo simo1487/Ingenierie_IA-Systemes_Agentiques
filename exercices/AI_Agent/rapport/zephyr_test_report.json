@@ -1,0 +1,1744 @@
+{
+  "corpus": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+  "total_questions": 30,
+  "found_relevant": 23,
+  "success_rate": 0.7667,
+  "llm_backend": "fake",
+  "embedding_backend": "fake",
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the purpose of the Zephyr kernel?",
+      "category": "General",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.9748,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 2,
+          "score": 0.9974,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        },
+        {
+          "rank": 3,
+          "score": 1.0265,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 4,
+          "score": 1.0353,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 5,
+          "score": 1.2837,
+          "content": "mmunication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of such systems\ninclude: fitness wearables, smart watches, and IoT wireless gateways.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_3"
+        }
+      ],
+      "expected_keywords": [
+        "low footprint",
+        "multi-threaded",
+        "kernel"
+      ],
+      "matched_keywords": [
+        "kernel"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 2,
+      "question": "What synchronization mechanisms are available in Zephyr?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.1,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 2,
+          "score": 1.4704,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 3,
+          "score": 1.5409,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 4,
+          "score": 1.5799,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        },
+        {
+          "rank": 5,
+          "score": 1.5824,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nBasic thread manipulationSpawn multiple threads that blink LEDs and print information to the console.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.\nDumb HTTP server (multi-threaded)Implement a simple HTTP server supporting simultaneous connections using BSD sockets.\nDocs / Latest»\nKernel»\nKernel Services»\nScheduling\nOpen on GitHubReport an issue with this page",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_56"
+        }
+      ],
+      "expected_keywords": [
+        "semaphore",
+        "mutex",
+        "condition variable",
+        "event",
+        "spinlock"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 3,
+      "question": "What is a Zephyr thread?",
+      "category": "Threads",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread States\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Suspension",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.1596,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 2,
+          "score": 1.271,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 3,
+          "score": 1.3131,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 4,
+          "score": 1.3416,
+          "content": "A thread that has no factors that prevent its execution is deemed\nto beready, and is eligible to be selected as the current thread.\nA thread that has one or more factors that prevent its execution\nis deemed to beunready, and cannot be selected as the current thread.\nThe following factors make a thread unready:\nThe thread has not been started.\nThe thread has not been started.\nThe thread is waiting for a kernel object to complete an operation.\n(For example, the thread is taking a semaphore that is unavailable.)\nThe thread is waiting for a kernel object to complete an operation.\n(For example, the thread is taking a semaphore that is unavailable.)\nThe thread is waiting for a timeout to occur.\nThe thread is waiting for a timeout to occur.\nThe thread has been suspended.\nThe thread has been suspended.\nThe thread has terminated or aborted.\nThe thread has terminated or aborted.\nNote\nAlthough the diagram above may appear to suggest that bothReadyandRunningare distinct thread states, that is not",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread States",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_20"
+        },
+        {
+          "rank": 5,
+          "score": 1.3571,
+          "content": "A thread can be prevented from executing for an indefinite period of time\nif it becomessuspended. The functionk_thread_suspend()can be used to suspend any thread, including the calling thread.\nSuspending a thread that is already suspended has no additional effect.\nOnce suspended, a thread cannot be scheduled until another thread callsk_thread_resume()to remove the suspension.\nNote\nA thread can prevent itself from executing for a specified period of time\nusingk_sleep(). However, this is different from suspending\na thread since a sleeping thread becomes executable automatically when the\ntime limit is reached.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Suspension",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_19"
+        }
+      ],
+      "expected_keywords": [
+        "thread",
+        "scheduling",
+        "priority"
+      ],
+      "matched_keywords": [
+        "thread"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between cooperative and preemptive threads?",
+      "category": "Threads",
+      "status": "answered",
+      "answer": "The configuration optionsCONFIG_NUM_COOP_PRIORITIESandCONFIG_NUM_PREEMPT_PRIORITIESspecify the number of priority\nlevels for each class of thread, resulting in the following usable priority\nranges:\ncooperative threads: (-CONFIG_NUM_COOP_PRIORITIES) to -1\ncooperative threads: (-CONFIG_NUM_COOP_PRIORITIES) to -1\npreemptive threads: 0 to (CONFIG_NUM_PREEMPT_PRIORITIES- 1)\npreemptive threads: 0 to (CONFIG_NUM_PREEMPT_PRIORITIES- 1)\nFor example, configuring 5 cooperative priorities and 10 preemptive priorities\nresults in the ranges -5 to -1 and 0 to 9, respectively.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Priorities\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Suggested Uses\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Workqueue Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Preemptive Time Slicing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Meta-IRQ Priorities",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.0994,
+          "content": "ead priority levels.\nThe configuration optionsCONFIG_NUM_COOP_PRIORITIESandCONFIG_NUM_PREEMPT_PRIORITIESspecify the number of priority\nlevels for each class of thread, resulting in the following usable priority\nranges:\ncooperative threads: (-CONFIG_NUM_COOP_PRIORITIES) to -1\ncooperative threads: (-CONFIG_NUM_COOP_PRIORITIES) to -1\npreemptive threads: 0 to (CONFIG_NUM_PREEMPT_PRIORITIES- 1)\npreemptive threads: 0 to (CONFIG_NUM_PREEMPT_PRIORITIES- 1)\nFor example, configuring 5 cooperative priorities and 10 preemptive priorities\nresults in the ranges -5 to -1 and 0 to 9, respectively.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Priorities",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_28"
+        },
+        {
+          "rank": 2,
+          "score": 1.1728,
+          "content": "Use cooperative threads for device drivers and other performance-critical work.\nUse cooperative threads to implement mutual exclusion without the need\nfor a kernel object, such as a mutex.\nUse preemptive threads to give priority to time-sensitive processing\nover less time-sensitive processing.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Suggested Uses",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_80"
+        },
+        {
+          "rank": 3,
+          "score": 1.3427,
+          "content": "the work items in the queue. The priority of the\nthread is configurable, allowing it to be either cooperative or preemptive\nas required.\nRegardless of workqueue thread priority the workqueue thread will yield\nbetween each submitted work item, to prevent a cooperative workqueue from\nstarving other threads.\nA workqueue must be initialized before it can be used. This sets its queue to\nempty and spawns the workqueue’s thread.  The thread runs forever, but sleeps\nwhen no work items are available.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Workqueue Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_113"
+        },
+        {
+          "rank": 4,
+          "score": 1.4642,
+          "content": "Once a preemptive thread becomes the current thread, it remains\nthe current thread until a higher priority thread becomes ready,\nor until the thread performs an action that makes it unready.\nConsequently, if a preemptive thread performs lengthy computations,\nit may cause an unacceptable delay in the scheduling of other threads,\nincluding those of equal priority.\nTo overcome such problems, a preemptive thread can perform cooperative\ntime slicing (as described above), or the scheduler’s time slicing capability\ncan be used to allow other threads of the same priority to execute.\nNote\nFor SMP, the behavior would be similar to the above UP image, except that\nThread 1 would not immediately follow Thread 4. Instead it would be\nThread 2, Thread 3, Thread 1, ….\nThe scheduler divides time on each CPU into a series oftime slices, where\nslices are measured in system clock ticks. The time slice size is configurable,\nbut this size can be changed while the application is running. Scheduling a\nnew thre",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Preemptive Time Slicing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_71"
+        },
+        {
+          "rank": 5,
+          "score": 1.4767,
+          "content": "When enabled (seeCONFIG_NUM_METAIRQ_PRIORITIES), there is a special\nsubclass of cooperative priorities at the highest (numerically lowest)\nend of the priority space: meta-IRQ threads.  These are scheduled\naccording to their normal priority, but also have the special ability\nto preempt all other threads (and other meta-IRQ threads) at lower\npriorities, even if those threads are cooperative and/or have taken a\nscheduler lock. Meta-IRQ threads are still threads, however,\nand can still be interrupted by any hardware interrupt.\nNote\nWhen a cooperative (or schedule-locked) thread that was preempted by a\nmeta-IRQ thread resumes its execution after the meta-IRQ thread completes,\nit will be on the same CPU–assuming it was neither suspended nor aborted.\nThis helps ensure that these threads are not unexpectedly shuffled to\nanother CPU while in the midst of querying the properties associated\nwith their own CPU.\nThis behavior makes the act of unblocking a meta-IRQ thread (by any\nmeans, e.g. creatin",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Meta-IRQ Priorities",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_29"
+        }
+      ],
+      "expected_keywords": [
+        "cooperative",
+        "preemptive",
+        "thread"
+      ],
+      "matched_keywords": [
+        "cooperative",
+        "preemptive",
+        "thread"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 5,
+      "question": "How are thread priorities handled in Zephyr?",
+      "category": "Threads",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Options\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.4794,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 2,
+          "score": 1.4835,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 3,
+          "score": 1.5745,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 4,
+          "score": 1.6111,
+          "content": "The kernel supports a small set ofthread optionsthat allow a thread\nto receive special treatment under specific circumstances. The set of options\nassociated with a thread are specified when the thread is spawned.\nA thread that does not require any thread option has an option value of zero.\nA thread that requires a thread option specifies it by name, using the|character as a separator if multiple options are needed\n(i.e. combine options using the bitwise OR operator).\nThe following thread options are supported.\nThis option tags the thread as anessential thread. This instructs\nthe kernel to treat the termination or aborting of the thread as a fatal\nsystem error.\nBy default, the thread is not considered to be an essential thread.\nThis x86-specific option indicate that the thread uses the CPU’s\nSSE registers. Also seeK_FP_REGS.\nBy default, the kernel does not attempt to save and restore the contents\nof these registers when scheduling the thread.\nThis option indicate that the thread uses th",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Options",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_32"
+        },
+        {
+          "rank": 5,
+          "score": 1.6119,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "priority",
+        "thread",
+        "lower numeric",
+        "higher priority"
+      ],
+      "matched_keywords": [
+        "thread"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 6,
+      "question": "What happens when multiple threads are ready to run?",
+      "category": "Scheduling",
+      "status": "answered",
+      "answer": "All ready threads whose priority is higher or equal to that of the\nyielding thread are then allowed to execute before the yielding thread is\nrescheduled.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Cooperative Time Slicing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Suggested Uses\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3603,
+          "content": "ely\nreschedules the yielding thread without context switching.\nCallingk_yield()puts the thread at the back of the scheduler’s\nprioritized list of ready threads, and then invokes the scheduler.\nAll ready threads whose priority is higher or equal to that of the\nyielding thread are then allowed to execute before the yielding thread is\nrescheduled. If no such ready threads exist, the scheduler immediately\nreschedules the yielding thread without context switching.\nCallingk_sleep()makes the thread unready for a specified\ntime period. Ready threads ofallpriorities are then allowed to execute;\nhowever, there is no guarantee that threads whose priority is lower\nthan that of the sleeping thread will actually be scheduled before\nthe sleeping thread becomes ready once again.\nCallingk_sleep()makes the thread unready for a specified\ntime period. Ready threads ofallpriorities are then allowed to execute;\nhowever, there is no guarantee that threads whose priority is lower\nthan that of the sleeping thr",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Cooperative Time Slicing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_69"
+        },
+        {
+          "rank": 2,
+          "score": 1.467,
+          "content": "ting behavior will scale cleanly and\nquickly into the many thousands of threads.Use this for applications needing many concurrent runnable threads (> 20 or\nso).  Most applications won’t need this ready queue implementation.\nRed/black tree ready queue (CONFIG_SCHED_SCALABLE)\nThe scheduler ready queue will be implemented as a red/black tree.  This has\nrather slower constant-time insertion and removal overhead, and on most\nplatforms (that are not otherwise using the red/black tree somewhere) requires\nan extra ~2kb of code. The resulting behavior will scale cleanly and\nquickly into the many thousands of threads.\nUse this for applications needing many concurrent runnable threads (> 20 or\nso).  Most applications won’t need this ready queue implementation.\nTraditional multi-queue ready queue (CONFIG_SCHED_MULTIQ)When selected, the scheduler ready queue will be implemented as the\nclassic/textbook array of lists, one per priority.This corresponds to the scheduler algorithm used in Zephyr versio",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_63"
+        },
+        {
+          "rank": 3,
+          "score": 1.4826,
+          "content": "thread may be replaced by an ISR\nat any time unless interrupts have been masked. This applies to both\ncooperative threads and preemptive threads.\nThe kernel can be built with one of several choices for the ready queue\nimplementation, offering different choices between code size, constant factor\nruntime overhead and performance scaling when many threads are added.\nSimple linked-list ready queue (CONFIG_SCHED_SIMPLE)The scheduler ready queue will be implemented as a simple unordered list, with\nvery fast constant time performance for single threads and very low code size.\nThis implementation should be selected on systems with constrained code size\nthat will never see more than a small number (3, maybe) of runnable threads in\nthe queue at any given time.  On most platforms (that are not otherwise using\nthe red/black tree) this results in a savings of ~2k of code size.\nSimple linked-list ready queue (CONFIG_SCHED_SIMPLE)\nThe scheduler ready queue will be implemented as a simple unordered l",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_61"
+        },
+        {
+          "rank": 4,
+          "score": 1.4904,
+          "content": "Use a semaphore to control access to a set of resources by multiple threads.\nUse a semaphore to synchronize processing between producing and consuming\nthreads or ISRs.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Suggested Uses",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_94"
+        },
+        {
+          "rank": 5,
+          "score": 1.4915,
+          "content": "The kernel’s scheduler selects the highest priority ready thread\nto be the current thread. When multiple ready threads of the same priority\nexist, the scheduler chooses the one that has been waiting longest.\nA thread’s relative priority is primarily determined by its static priority.\nHowever, when both earliest-deadline-first scheduling is enabled\n(CONFIG_SCHED_DEADLINE) and a choice of threads have equal\nstatic priority, then the thread with the earlier deadline is considered\nto have the higher priority. Thus, when earliest-deadline-first scheduling is\nenabled, two threads are only considered to have the same priority when both\ntheir static priorities and deadlines are equal. The routinek_thread_deadline_set()is used to set a thread’s deadline.\nNote\nExecution of ISRs takes precedence over thread execution,\nso the execution of the current thread may be replaced by an ISR\nat any time unless interrupts have been masked. This applies to both\ncooperative threads and preemptive threads.\nThe",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_60"
+        }
+      ],
+      "expected_keywords": [
+        "highest priority",
+        "ready",
+        "run"
+      ],
+      "matched_keywords": [
+        "ready"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 7,
+      "question": "What scheduling algorithms are supported by Zephyr?",
+      "category": "Scheduling",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling, Interrupts, and Synchronization\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using linker script",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.4834,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 2,
+          "score": 1.5284,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 3,
+          "score": 1.6133,
+          "content": "These pages cover basic kernel services related to thread scheduling and\nsynchronization.\nThreads\nScheduling\nCPU Idling\nSystem Threads\nWorkqueue Threads\nOperation without Threads\nInterrupts\nPolling API\nSemaphores\nMutexes\nCondition Variables\nEvents\nSpinlocks\nSymmetric Multiprocessing",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling, Interrupts, and Synchronization",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.6145,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 5,
+          "score": 1.6248,
+          "content": "This way of prepare and parse .isrList section to implement interrupt vectors arrays\nis called local ISR declaration.\nThe name comes from the fact that all the entries to the arrays that would create\ninterrupt vectors are created locally in place of invocation ofIRQ_CONNECTmacro.\nThen automatically generated linker scripts are used to place it in the right place in the memory.\nThis option requires enabling by the choose ofCONFIG_ISR_TABLES_LOCAL_DECLARATION.\nIf this configuration is supported by the used architecture and toolchaing theCONFIG_ISR_TABLES_LOCAL_DECLARATION_SUPPORTEDis set.\nSee details of this option for the information about currently supported configurations.\nAny invocation ofIRQ_CONNECTorIRQ_DIRECT_CONNECTwill declare an instance\nofstruct_isr_list_snamewhich is placed in a special .intList section:\nNote that the section name is placed in flexible array member.\nIt means that the size of the initialized structure will vary depending on the\nstructure name length.\nThe whole",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using linker script",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_192"
+        }
+      ],
+      "expected_keywords": [
+        "priority-based",
+        "cooperative",
+        "preemptive",
+        "scheduling"
+      ],
+      "matched_keywords": [
+        "scheduling"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 8,
+      "question": "What is a semaphore?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "When a semaphore is unavailable, a thread may choose to wait for it to be given.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Semaphores\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Taking a Semaphore\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Giving a Semaphore",
+      "citations": [
+        {
+          "rank": 2,
+          "score": 0.5144,
+          "content": "it.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphore is unavailable, a thread may choose to wait for it to be given.\nAny number of threads may wait on an unavailable semaphore simultaneously.\nWhen the semaphore is given, it is taken by the highest priority thread\nthat has waited longest.\nNote\nYou may initialize a “full” semaphore (count equal to limit) to limit the number\nof threads able to execute the critical section at the same time. You may also\ninitialize an empty semaphore (count equal to 0, with a limit greater than 0)\nto create a gate through which no waiting thread may pass until the semaphore\nis incremented. All standard use cases of the common semaphore are supported.\nNote\nThe kernel does allow an ISR to take a semaphore, however the ISR must\nnot attempt to wait if the semaphore is unavailable.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_90"
+        },
+        {
+          "rank": 3,
+          "score": 0.6405,
+          "content": "Asemaphoreis a kernel object that implements a traditional\ncounting semaphore.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Semaphores",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_88"
+        },
+        {
+          "rank": 4,
+          "score": 0.6743,
+          "content": "A semaphore is taken by callingk_sem_take().\nThe following code builds on the example above, and waits up to 50 milliseconds\nfor the semaphore to be given.\nA warning is issued if the semaphore is not obtained in time.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Taking a Semaphore",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_93"
+        },
+        {
+          "rank": 5,
+          "score": 0.86,
+          "content": "A semaphore is given by callingk_sem_give().\nThe following code builds on the example above, and gives the semaphore to\nindicate that a unit of data is available for processing by a consumer thread.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Giving a Semaphore",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_92"
+        }
+      ],
+      "expected_keywords": [
+        "semaphore",
+        "count",
+        "signal"
+      ],
+      "matched_keywords": [
+        "semaphore"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 9,
+      "question": "What is the difference between a semaphore and a mutex?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "A count of zero indicates that the semaphore is unavailable.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Suggested Uses\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining a Mutex\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Unlocking a Mutex",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.9757,
+          "content": "Any number of semaphores can be defined (limited only by available RAM). Each\nsemaphore is referenced by its memory address.\nA semaphore has the following key properties:\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nA semaphore must be initialized before it can be used. Its count must be set\nto a non-negative value that is less than or equal to its limit.\nA semaphore may begivenby a thread or an ISR. Giving the semaphore\nincrements its count, unless the count is already equal to the limit.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphor",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_89"
+        },
+        {
+          "rank": 2,
+          "score": 1.0288,
+          "content": "Use a semaphore to control access to a set of resources by multiple threads.\nUse a semaphore to synchronize processing between producing and consuming\nthreads or ISRs.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Suggested Uses",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_94"
+        },
+        {
+          "rank": 3,
+          "score": 1.0414,
+          "content": "it.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphore is unavailable, a thread may choose to wait for it to be given.\nAny number of threads may wait on an unavailable semaphore simultaneously.\nWhen the semaphore is given, it is taken by the highest priority thread\nthat has waited longest.\nNote\nYou may initialize a “full” semaphore (count equal to limit) to limit the number\nof threads able to execute the critical section at the same time. You may also\ninitialize an empty semaphore (count equal to 0, with a limit greater than 0)\nto create a gate through which no waiting thread may pass until the semaphore\nis incremented. All standard use cases of the common semaphore are supported.\nNote\nThe kernel does allow an ISR to take a semaphore, however the ISR must\nnot attempt to wait if the semaphore is unavailable.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_90"
+        },
+        {
+          "rank": 4,
+          "score": 1.0691,
+          "content": "A mutex is defined using a variable of typek_mutex.\nIt must then be initialized by callingk_mutex_init().\nThe following code defines and initializes a mutex.\nAlternatively, a mutex can be defined and initialized at compile time\nby callingK_MUTEX_DEFINE.\nThe following code has the same effect as the code segment above.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining a Mutex",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_104"
+        },
+        {
+          "rank": 5,
+          "score": 1.0993,
+          "content": "A mutex is unlocked by callingk_mutex_unlock().\nThe following code builds on the example above,\nand unlocks the mutex that was previously locked by the thread.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Unlocking a Mutex",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_106"
+        }
+      ],
+      "expected_keywords": [
+        "semaphore",
+        "mutex",
+        "counting",
+        "ownership"
+      ],
+      "matched_keywords": [
+        "semaphore",
+        "mutex"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 10,
+      "question": "When should a mutex be used instead of a semaphore?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "A semaphore has the following key properties:\nAcountthat indicates the number of times the semaphore can be taken.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Semaphores\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining a Mutex\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.9989,
+          "content": "Any number of semaphores can be defined (limited only by available RAM). Each\nsemaphore is referenced by its memory address.\nA semaphore has the following key properties:\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nA semaphore must be initialized before it can be used. Its count must be set\nto a non-negative value that is less than or equal to its limit.\nA semaphore may begivenby a thread or an ISR. Giving the semaphore\nincrements its count, unless the count is already equal to the limit.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphor",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_89"
+        },
+        {
+          "rank": 2,
+          "score": 1.1039,
+          "content": "it.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphore is unavailable, a thread may choose to wait for it to be given.\nAny number of threads may wait on an unavailable semaphore simultaneously.\nWhen the semaphore is given, it is taken by the highest priority thread\nthat has waited longest.\nNote\nYou may initialize a “full” semaphore (count equal to limit) to limit the number\nof threads able to execute the critical section at the same time. You may also\ninitialize an empty semaphore (count equal to 0, with a limit greater than 0)\nto create a gate through which no waiting thread may pass until the semaphore\nis incremented. All standard use cases of the common semaphore are supported.\nNote\nThe kernel does allow an ISR to take a semaphore, however the ISR must\nnot attempt to wait if the semaphore is unavailable.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_90"
+        },
+        {
+          "rank": 3,
+          "score": 1.1313,
+          "content": "Asemaphoreis a kernel object that implements a traditional\ncounting semaphore.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Semaphores",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_88"
+        },
+        {
+          "rank": 4,
+          "score": 1.139,
+          "content": "A mutex is defined using a variable of typek_mutex.\nIt must then be initialized by callingk_mutex_init().\nThe following code defines and initializes a mutex.\nAlternatively, a mutex can be defined and initialized at compile time\nby callingK_MUTEX_DEFINE.\nThe following code has the same effect as the code segment above.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining a Mutex",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_104"
+        },
+        {
+          "rank": 5,
+          "score": 1.2047,
+          "content": "Any number of mutexes can be defined (limited only by available RAM). Each mutex\nis referenced by its memory address.\nA mutex has the following key properties:\nAlock countthat indicates the number of times the mutex has been locked\nby the thread that has locked it. A count of zero indicates that the mutex\nis unlocked.\nAlock countthat indicates the number of times the mutex has been locked\nby the thread that has locked it. A count of zero indicates that the mutex\nis unlocked.\nAnowning threadthat identifies the thread that has locked the mutex,\nwhen it is locked.\nAnowning threadthat identifies the thread that has locked the mutex,\nwhen it is locked.\nA mutex must be initialized before it can be used. This sets its lock count\nto zero.\nA thread that needs to use a shared resource must first gain exclusive rights\nto access it bylockingthe associated mutex. If the mutex is already locked\nby another thread, the requesting thread may choose to wait for the mutex\nto be unlocked.\nAfter locking a",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_99"
+        }
+      ],
+      "expected_keywords": [
+        "mutex",
+        "exclusive access",
+        "shared resource"
+      ],
+      "matched_keywords": [
+        "mutex"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 11,
+      "question": "Can an ISR interact with a semaphore?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "An ISR can signal a helper thread to do interrupt-related processing\nusing a kernel object, such as a FIFO, LIFO, or semaphore.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Semaphores\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Taking a Semaphore\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Offloading ISR Work",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7614,
+          "content": "Any number of semaphores can be defined (limited only by available RAM). Each\nsemaphore is referenced by its memory address.\nA semaphore has the following key properties:\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nA semaphore must be initialized before it can be used. Its count must be set\nto a non-negative value that is less than or equal to its limit.\nA semaphore may begivenby a thread or an ISR. Giving the semaphore\nincrements its count, unless the count is already equal to the limit.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphor",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_89"
+        },
+        {
+          "rank": 2,
+          "score": 0.8313,
+          "content": "it.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphore is unavailable, a thread may choose to wait for it to be given.\nAny number of threads may wait on an unavailable semaphore simultaneously.\nWhen the semaphore is given, it is taken by the highest priority thread\nthat has waited longest.\nNote\nYou may initialize a “full” semaphore (count equal to limit) to limit the number\nof threads able to execute the critical section at the same time. You may also\ninitialize an empty semaphore (count equal to 0, with a limit greater than 0)\nto create a gate through which no waiting thread may pass until the semaphore\nis incremented. All standard use cases of the common semaphore are supported.\nNote\nThe kernel does allow an ISR to take a semaphore, however the ISR must\nnot attempt to wait if the semaphore is unavailable.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_90"
+        },
+        {
+          "rank": 3,
+          "score": 1.0049,
+          "content": "Asemaphoreis a kernel object that implements a traditional\ncounting semaphore.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Semaphores",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_88"
+        },
+        {
+          "rank": 4,
+          "score": 1.135,
+          "content": "A semaphore is taken by callingk_sem_take().\nThe following code builds on the example above, and waits up to 50 milliseconds\nfor the semaphore to be given.\nA warning is issued if the semaphore is not obtained in time.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Taking a Semaphore",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_93"
+        },
+        {
+          "rank": 5,
+          "score": 1.1792,
+          "content": "An ISR should execute quickly to ensure predictable system operation.\nIf time consuming processing is required the ISR should offload some or all\nprocessing to a thread, thereby restoring the kernel’s ability to respond\nto other interrupts.\nThe kernel supports several mechanisms for offloading interrupt-related\nprocessing to a thread.\nAn ISR can signal a helper thread to do interrupt-related processing\nusing a kernel object, such as a FIFO, LIFO, or semaphore.\nAn ISR can signal a helper thread to do interrupt-related processing\nusing a kernel object, such as a FIFO, LIFO, or semaphore.\nAn ISR can instruct the system workqueue thread to execute a work item.\n(SeeWorkqueue Threads.)\nAn ISR can instruct the system workqueue thread to execute a work item.\n(SeeWorkqueue Threads.)\nWhen an ISR offloads work to a thread, there is typically a single context\nswitch to that thread when the ISR completes, allowing interrupt-related\nprocessing to continue almost immediately. However, depending on th",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Offloading ISR Work",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_172"
+        }
+      ],
+      "expected_keywords": [
+        "ISR",
+        "semaphore",
+        "give"
+      ],
+      "matched_keywords": [
+        "isr",
+        "semaphore"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 12,
+      "question": "What happens when a semaphore becomes available?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "When a semaphore is unavailable, a thread may choose to wait for it to be given.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Giving a Semaphore\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Semaphores\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Taking a Semaphore",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.0171,
+          "content": "Any number of semaphores can be defined (limited only by available RAM). Each\nsemaphore is referenced by its memory address.\nA semaphore has the following key properties:\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAcountthat indicates the number of times the semaphore can be taken.\nA count of zero indicates that the semaphore is unavailable.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nAlimitthat indicates the maximum value the semaphore’s count\ncan reach.\nA semaphore must be initialized before it can be used. Its count must be set\nto a non-negative value that is less than or equal to its limit.\nA semaphore may begivenby a thread or an ISR. Giving the semaphore\nincrements its count, unless the count is already equal to the limit.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphor",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_89"
+        },
+        {
+          "rank": 2,
+          "score": 1.0927,
+          "content": "it.\nA semaphore may betakenby a thread. Taking the semaphore\ndecrements its count, unless the semaphore is unavailable (i.e. at zero).\nWhen a semaphore is unavailable, a thread may choose to wait for it to be given.\nAny number of threads may wait on an unavailable semaphore simultaneously.\nWhen the semaphore is given, it is taken by the highest priority thread\nthat has waited longest.\nNote\nYou may initialize a “full” semaphore (count equal to limit) to limit the number\nof threads able to execute the critical section at the same time. You may also\ninitialize an empty semaphore (count equal to 0, with a limit greater than 0)\nto create a gate through which no waiting thread may pass until the semaphore\nis incremented. All standard use cases of the common semaphore are supported.\nNote\nThe kernel does allow an ISR to take a semaphore, however the ISR must\nnot attempt to wait if the semaphore is unavailable.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_90"
+        },
+        {
+          "rank": 3,
+          "score": 1.1512,
+          "content": "A semaphore is given by callingk_sem_give().\nThe following code builds on the example above, and gives the semaphore to\nindicate that a unit of data is available for processing by a consumer thread.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Giving a Semaphore",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_92"
+        },
+        {
+          "rank": 4,
+          "score": 1.1673,
+          "content": "Asemaphoreis a kernel object that implements a traditional\ncounting semaphore.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Semaphores",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_88"
+        },
+        {
+          "rank": 5,
+          "score": 1.2762,
+          "content": "A semaphore is taken by callingk_sem_take().\nThe following code builds on the example above, and waits up to 50 milliseconds\nfor the semaphore to be given.\nA warning is issued if the semaphore is not obtained in time.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Taking a Semaphore",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_93"
+        }
+      ],
+      "expected_keywords": [
+        "semaphore",
+        "available",
+        "waiting thread"
+      ],
+      "matched_keywords": [
+        "semaphore",
+        "available"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 13,
+      "question": "What is a workqueue?",
+      "category": "Threads",
+      "status": "answered",
+      "answer": "The kernel defines a workqueue known as thesystem workqueue, which is\navailable to any application or kernel code that requires workqueue support.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / System Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Workqueue Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / System Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Configuration Options\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining and Controlling a Workqueue",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7432,
+          "content": "The kernel defines a workqueue known as thesystem workqueue, which is\navailable to any application or kernel code that requires workqueue support.\nThe system workqueue is optional, and only exists if the application makes\nuse of it.\nImportant\nAdditional workqueues should only be defined when it is not possible\nto submit new work items to the system workqueue, since each new workqueue\nincurs a significant cost in memory footprint. A new workqueue can be\njustified if it is not possible for its work items to co-exist with\nexisting system workqueue work items without an unacceptable impact;\nfor example, if the new work items perform blocking operations that\nwould delay other system workqueue processing to an unacceptable degree.\nAlso note: The system workqueue has the lowest cooperative priority by\ndefault. This means that draining the system workqueue takes precedence overall preemptible threads. Configuring the system workqueue’s priority to be\npreemptible is risky, because subsystems an",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "System Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_123"
+        },
+        {
+          "rank": 2,
+          "score": 0.9991,
+          "content": "the work items in the queue. The priority of the\nthread is configurable, allowing it to be either cooperative or preemptive\nas required.\nRegardless of workqueue thread priority the workqueue thread will yield\nbetween each submitted work item, to prevent a cooperative workqueue from\nstarving other threads.\nA workqueue must be initialized before it can be used. This sets its queue to\nempty and spawns the workqueue’s thread.  The thread runs forever, but sleeps\nwhen no work items are available.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Workqueue Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_113"
+        },
+        {
+          "rank": 3,
+          "score": 1.0564,
+          "content": "workqueue takes precedence overall preemptible threads. Configuring the system workqueue’s priority to be\npreemptible is risky, because subsystems and drivers may implicitly rely on\nwork items being executed in a cooperative context. Therefore, a separate\nworkqueue with lower priority may be appropriate for low-priority tasks.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "System Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_124"
+        },
+        {
+          "rank": 4,
+          "score": 1.0667,
+          "content": "Related configuration options:\nCONFIG_SYSTEM_WORKQUEUE_STACK_SIZE\nCONFIG_SYSTEM_WORKQUEUE_STACK_SIZE\nCONFIG_SYSTEM_WORKQUEUE_PRIORITY\nCONFIG_SYSTEM_WORKQUEUE_PRIORITY\nCONFIG_SYSTEM_WORKQUEUE_NO_YIELD\nCONFIG_SYSTEM_WORKQUEUE_NO_YIELD",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Configuration Options",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_144"
+        },
+        {
+          "rank": 5,
+          "score": 1.3324,
+          "content": "A workqueue is defined using a variable of typek_work_q.\nThe workqueue is initialized by defining the stack area used by its\nthread, initializing thek_work_q, either zeroing its\nmemory or callingk_work_queue_init(), and then callingk_work_queue_start(). The stack area must be defined usingK_THREAD_STACK_DEFINEto ensure it is properly set up in\nmemory.\nThe following code defines and initializes a workqueue:\nIn addition the queue identity and certain behavior related to thread\nrescheduling can be controlled by the optional final parameter; seek_work_queue_start()for details.\nThe following API can be used to interact with a workqueue:\nk_work_queue_drain()can be used to block the caller until the\nwork queue has no items left.  Work items resubmitted from the workqueue\nthread are accepted while a queue is draining, but work items from any other\nthread or ISR are rejected.  The restriction on submitting more work can be\nextended past the completion of the drain operation in order to allow th",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining and Controlling a Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_125"
+        }
+      ],
+      "expected_keywords": [
+        "workqueue",
+        "work",
+        "thread"
+      ],
+      "matched_keywords": [
+        "workqueue",
+        "work",
+        "thread"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 14,
+      "question": "Why would a developer use a workqueue?",
+      "category": "Threads",
+      "status": "answered",
+      "answer": "A new workqueue can be\njustified if it is not possible for its work items to co-exist with\nexisting system workqueue work items without an unacceptable impact;\nfor example, if the new work items perform blocking operations that\nwould delay other system workqueue processing to an unacceptable degree.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / System Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Workqueue Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / System Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Configuration Options\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Suggested Uses",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.1641,
+          "content": "The kernel defines a workqueue known as thesystem workqueue, which is\navailable to any application or kernel code that requires workqueue support.\nThe system workqueue is optional, and only exists if the application makes\nuse of it.\nImportant\nAdditional workqueues should only be defined when it is not possible\nto submit new work items to the system workqueue, since each new workqueue\nincurs a significant cost in memory footprint. A new workqueue can be\njustified if it is not possible for its work items to co-exist with\nexisting system workqueue work items without an unacceptable impact;\nfor example, if the new work items perform blocking operations that\nwould delay other system workqueue processing to an unacceptable degree.\nAlso note: The system workqueue has the lowest cooperative priority by\ndefault. This means that draining the system workqueue takes precedence overall preemptible threads. Configuring the system workqueue’s priority to be\npreemptible is risky, because subsystems an",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "System Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_123"
+        },
+        {
+          "rank": 2,
+          "score": 1.4039,
+          "content": "the work items in the queue. The priority of the\nthread is configurable, allowing it to be either cooperative or preemptive\nas required.\nRegardless of workqueue thread priority the workqueue thread will yield\nbetween each submitted work item, to prevent a cooperative workqueue from\nstarving other threads.\nA workqueue must be initialized before it can be used. This sets its queue to\nempty and spawns the workqueue’s thread.  The thread runs forever, but sleeps\nwhen no work items are available.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Workqueue Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_113"
+        },
+        {
+          "rank": 3,
+          "score": 1.4318,
+          "content": "workqueue takes precedence overall preemptible threads. Configuring the system workqueue’s priority to be\npreemptible is risky, because subsystems and drivers may implicitly rely on\nwork items being executed in a cooperative context. Therefore, a separate\nworkqueue with lower priority may be appropriate for low-priority tasks.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "System Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_124"
+        },
+        {
+          "rank": 4,
+          "score": 1.4546,
+          "content": "Related configuration options:\nCONFIG_SYSTEM_WORKQUEUE_STACK_SIZE\nCONFIG_SYSTEM_WORKQUEUE_STACK_SIZE\nCONFIG_SYSTEM_WORKQUEUE_PRIORITY\nCONFIG_SYSTEM_WORKQUEUE_PRIORITY\nCONFIG_SYSTEM_WORKQUEUE_NO_YIELD\nCONFIG_SYSTEM_WORKQUEUE_NO_YIELD",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Configuration Options",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_144"
+        },
+        {
+          "rank": 5,
+          "score": 1.467,
+          "content": "Use a mutex to provide exclusive access to a resource, such as a physical\ndevice.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Suggested Uses",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_107"
+        }
+      ],
+      "expected_keywords": [
+        "workqueue",
+        "defer",
+        "ISR",
+        "work"
+      ],
+      "matched_keywords": [
+        "workqueue",
+        "work"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 15,
+      "question": "What is the difference between a thread and a workqueue?",
+      "category": "Threads",
+      "status": "answered",
+      "answer": "Regardless of workqueue thread priority the workqueue thread will yield\nbetween each submitted work item, to prevent a cooperative workqueue from\nstarving other threads.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Workqueue Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / System Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread States\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / System Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining and Controlling a Workqueue",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.9655,
+          "content": "the work items in the queue. The priority of the\nthread is configurable, allowing it to be either cooperative or preemptive\nas required.\nRegardless of workqueue thread priority the workqueue thread will yield\nbetween each submitted work item, to prevent a cooperative workqueue from\nstarving other threads.\nA workqueue must be initialized before it can be used. This sets its queue to\nempty and spawns the workqueue’s thread.  The thread runs forever, but sleeps\nwhen no work items are available.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Workqueue Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_113"
+        },
+        {
+          "rank": 2,
+          "score": 1.1607,
+          "content": "The kernel defines a workqueue known as thesystem workqueue, which is\navailable to any application or kernel code that requires workqueue support.\nThe system workqueue is optional, and only exists if the application makes\nuse of it.\nImportant\nAdditional workqueues should only be defined when it is not possible\nto submit new work items to the system workqueue, since each new workqueue\nincurs a significant cost in memory footprint. A new workqueue can be\njustified if it is not possible for its work items to co-exist with\nexisting system workqueue work items without an unacceptable impact;\nfor example, if the new work items perform blocking operations that\nwould delay other system workqueue processing to an unacceptable degree.\nAlso note: The system workqueue has the lowest cooperative priority by\ndefault. This means that draining the system workqueue takes precedence overall preemptible threads. Configuring the system workqueue’s priority to be\npreemptible is risky, because subsystems an",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "System Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_123"
+        },
+        {
+          "rank": 3,
+          "score": 1.3432,
+          "content": "A thread that has no factors that prevent its execution is deemed\nto beready, and is eligible to be selected as the current thread.\nA thread that has one or more factors that prevent its execution\nis deemed to beunready, and cannot be selected as the current thread.\nThe following factors make a thread unready:\nThe thread has not been started.\nThe thread has not been started.\nThe thread is waiting for a kernel object to complete an operation.\n(For example, the thread is taking a semaphore that is unavailable.)\nThe thread is waiting for a kernel object to complete an operation.\n(For example, the thread is taking a semaphore that is unavailable.)\nThe thread is waiting for a timeout to occur.\nThe thread is waiting for a timeout to occur.\nThe thread has been suspended.\nThe thread has been suspended.\nThe thread has terminated or aborted.\nThe thread has terminated or aborted.\nNote\nAlthough the diagram above may appear to suggest that bothReadyandRunningare distinct thread states, that is not",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread States",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_20"
+        },
+        {
+          "rank": 4,
+          "score": 1.3456,
+          "content": "workqueue takes precedence overall preemptible threads. Configuring the system workqueue’s priority to be\npreemptible is risky, because subsystems and drivers may implicitly rely on\nwork items being executed in a cooperative context. Therefore, a separate\nworkqueue with lower priority may be appropriate for low-priority tasks.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "System Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_124"
+        },
+        {
+          "rank": 5,
+          "score": 1.347,
+          "content": "A workqueue is defined using a variable of typek_work_q.\nThe workqueue is initialized by defining the stack area used by its\nthread, initializing thek_work_q, either zeroing its\nmemory or callingk_work_queue_init(), and then callingk_work_queue_start(). The stack area must be defined usingK_THREAD_STACK_DEFINEto ensure it is properly set up in\nmemory.\nThe following code defines and initializes a workqueue:\nIn addition the queue identity and certain behavior related to thread\nrescheduling can be controlled by the optional final parameter; seek_work_queue_start()for details.\nThe following API can be used to interact with a workqueue:\nk_work_queue_drain()can be used to block the caller until the\nwork queue has no items left.  Work items resubmitted from the workqueue\nthread are accepted while a queue is draining, but work items from any other\nthread or ISR are rejected.  The restriction on submitting more work can be\nextended past the completion of the drain operation in order to allow th",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining and Controlling a Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_125"
+        }
+      ],
+      "expected_keywords": [
+        "thread",
+        "workqueue",
+        "work item"
+      ],
+      "matched_keywords": [
+        "thread",
+        "workqueue",
+        "work item"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 16,
+      "question": "What types of timers are available in Zephyr?",
+      "category": "Timing",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Timing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Timer Observers\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3832,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 2,
+          "score": 1.4293,
+          "content": "These pages cover timing related services.\nKernel Timing\nTimers\nSystem Timer Drivers",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Timing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_8"
+        },
+        {
+          "rank": 3,
+          "score": 1.4684,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        },
+        {
+          "rank": 4,
+          "score": 1.5313,
+          "content": "WhenCONFIG_TIMER_OBSERVERis enabled, code can registertimer observersthat are notified of timer lifecycle events across all\ntimers in the system. An observer is a set of optional callbacks invoked when a\ntimer is initialized, started, stopped, or expires. This allows external modules\n– for example tracing, profiling, or power-management code – to react to timer\nactivity without modifying kernel internals or the individual timers.\nAn observer is defined statically withK_TIMER_OBSERVER_DEFINE, which\ntakes pointers to theon_init,on_start,on_stop, andon_expirycallbacks; any callback that is not needed may be passed asNULL. Because the\nexpiry callback runs in interrupt context, it must be kept short and\nnon-blocking.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Timer Observers",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_153"
+        },
+        {
+          "rank": 5,
+          "score": 1.5557,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        }
+      ],
+      "expected_keywords": [
+        "timer",
+        "one-shot",
+        "periodic"
+      ],
+      "matched_keywords": [
+        "timer"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 17,
+      "question": "How are timers typically used?",
+      "category": "Timing",
+      "status": "answered",
+      "answer": "WhenCONFIG_TIMER_OBSERVERis enabled, code can registertimer observersthat are notified of timer lifecycle events across all\ntimers in the system.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Timing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Timer Observers\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Busy Waiting\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Runtime Statistics",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.4742,
+          "content": "These pages cover timing related services.\nKernel Timing\nTimers\nSystem Timer Drivers",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Timing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_8"
+        },
+        {
+          "rank": 2,
+          "score": 1.6327,
+          "content": "Docs / Latest»\nKernel»\nKernel Services»\nTimers\nOpen on GitHubReport an issue with this page",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_145"
+        },
+        {
+          "rank": 3,
+          "score": 1.6539,
+          "content": "WhenCONFIG_TIMER_OBSERVERis enabled, code can registertimer observersthat are notified of timer lifecycle events across all\ntimers in the system. An observer is a set of optional callbacks invoked when a\ntimer is initialized, started, stopped, or expires. This allows external modules\n– for example tracing, profiling, or power-management code – to react to timer\nactivity without modifying kernel internals or the individual timers.\nAn observer is defined statically withK_TIMER_OBSERVER_DEFINE, which\ntakes pointers to theon_init,on_start,on_stop, andon_expirycallbacks; any callback that is not needed may be passed asNULL. Because the\nexpiry callback runs in interrupt context, it must be kept short and\nnon-blocking.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Timer Observers",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_153"
+        },
+        {
+          "rank": 4,
+          "score": 1.7358,
+          "content": "A thread can callk_busy_wait()to perform abusywaitthat delays its processing for a specified time periodwithoutrelinquishing the CPU to another ready thread.\nA busy wait is typically used instead of thread sleeping\nwhen the required delay is too short to warrant having the scheduler\ncontext switch from the current thread to another thread and then back again.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Busy Waiting",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_77"
+        },
+        {
+          "rank": 5,
+          "score": 1.7686,
+          "content": "Thread runtime statistics can be gathered and retrieved ifCONFIG_THREAD_RUNTIME_STATSis enabled, for example, total number of\nexecution cycles of a thread.\nBy default, the runtime statistics are gathered using the default kernel\ntimer. For some architectures, SoCs or boards, there are timers with higher\nresolution available via timing functions. Using of these timers can be\nenabled viaCONFIG_THREAD_RUNTIME_STATS_USE_TIMING_FUNCTIONS.\nHere is an example:\nThe combined statistics for every thread in the system can be retrieved withk_thread_runtime_stats_all_get(), which reports the aggregate runtime\nusage across all threads (including the idle thread). This is useful for\ncomputing overall CPU utilization.\nWhenCONFIG_SCHED_THREAD_USAGEis enabled, statistics\ncollection can be toggled at run time on a per-thread basis withk_thread_runtime_stats_enable()andk_thread_runtime_stats_disable(). Whether collection is currently active\nfor a thread can be checked withk_thread_runtime_stats_is_enabled",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Runtime Statistics",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_48"
+        }
+      ],
+      "expected_keywords": [
+        "timer",
+        "expiry",
+        "callback"
+      ],
+      "matched_keywords": [
+        "timer"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 18,
+      "question": "What kernel objects are available for communication between threads?",
+      "category": "Data Passing",
+      "status": "answered",
+      "answer": "Thek_thread_create()API is\nstill used, but there are additional constraints which must be met or the\ncalling thread will be terminated:\nThe calling thread must have permissions granted on both the child thread\nand stack parameters; both are tracked by the kernel as kernel objects.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Suggested Uses\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / User Mode Constraints\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling, Interrupts, and Synchronization\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Futex API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Locking a Mutex",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5723,
+          "content": "Use a semaphore to control access to a set of resources by multiple threads.\nUse a semaphore to synchronize processing between producing and consuming\nthreads or ISRs.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Suggested Uses",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_94"
+        },
+        {
+          "rank": 2,
+          "score": 1.5782,
+          "content": "This section only applies ifCONFIG_USERSPACEis enabled, and a user\nthread tries to create a new thread. Thek_thread_create()API is\nstill used, but there are additional constraints which must be met or the\ncalling thread will be terminated:\nThe calling thread must have permissions granted on both the child thread\nand stack parameters; both are tracked by the kernel as kernel objects.\nThe calling thread must have permissions granted on both the child thread\nand stack parameters; both are tracked by the kernel as kernel objects.\nThe child thread and stack objects must be in an uninitialized state,\ni.e. it is not currently running and the stack memory is unused.\nThe child thread and stack objects must be in an uninitialized state,\ni.e. it is not currently running and the stack memory is unused.\nThe stack size parameter passed in must be equal to or less than the\nbounds of the stack object when it was declared.\nThe stack size parameter passed in must be equal to or less than the\nbounds of t",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "User Mode Constraints",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_44"
+        },
+        {
+          "rank": 3,
+          "score": 1.615,
+          "content": "These pages cover basic kernel services related to thread scheduling and\nsynchronization.\nThreads\nScheduling\nCPU Idling\nSystem Threads\nWorkqueue Threads\nOperation without Threads\nInterrupts\nPolling API\nSemaphores\nMutexes\nCondition Variables\nEvents\nSpinlocks\nSymmetric Multiprocessing",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling, Interrupts, and Synchronization",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.6319,
+          "content": "k_futexis a lightweight mutual exclusion primitive designed to minimize\nkernel involvement. Uncontended operation relies only on atomic access\nto shared memory.k_futexare not kernel objects and do not use the\nkernel object permission management. They live in user memory and can be\nused by any thread which has read-write access to this memory.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Futex API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_110"
+        },
+        {
+          "rank": 5,
+          "score": 1.6374,
+          "content": "A mutex is locked by callingk_mutex_lock().\nThe following code builds on the example above, and waits indefinitely\nfor the mutex to become available if it is already locked by another thread.\nThe following code waits up to 100 milliseconds for the mutex to become\navailable, and gives a warning if the mutex does not become available.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Locking a Mutex",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_105"
+        }
+      ],
+      "expected_keywords": [
+        "queue",
+        "fifo",
+        "lifo",
+        "message queue",
+        "mailbox",
+        "pipe"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 19,
+      "question": "How can threads exchange data in Zephyr?",
+      "category": "Data Passing",
+      "status": "answered",
+      "answer": "These pages cover kernel objects which can be used to pass data between\nthreads and ISRs.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Custom Data\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Custom Data\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Data Passing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.4154,
+          "content": "it monopolizes the use of the custom data feature.\nUse thread custom data to allow a routine to access thread-specific information,\nby using the custom data as a pointer to a data structure owned by the thread.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Custom Data",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_35"
+        },
+        {
+          "rank": 2,
+          "score": 1.434,
+          "content": "Every thread has a 32-bitcustom dataarea, accessible only by\nthe thread itself, and may be used by the application for any purpose\nit chooses. The default custom data value for a thread is zero.\nNote\nCustom data support is not available to ISRs because they operate\nwithin a single shared kernel interrupt handling context.\nBy default, thread custom data support is disabled. The configuration optionCONFIG_THREAD_CUSTOM_DATAcan be used to enable support.\nThek_thread_custom_data_set()andk_thread_custom_data_get()functions are used to write and read\na thread’s custom data, respectively. A thread can only access its own\ncustom data, and not that of another thread.\nThe following code uses the custom data feature to record the number of times\neach thread calls a specific routine.\nNote\nObviously, only a single routine can use this technique,\nsince it monopolizes the use of the custom data feature.\nUse thread custom data to allow a routine to access thread-specific information,\nby using the cust",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Custom Data",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_34"
+        },
+        {
+          "rank": 3,
+          "score": 1.4375,
+          "content": "These pages cover kernel objects which can be used to pass data between\nthreads and ISRs.\nThe following table summarizes their high-level features.\nObject | Bidirectional? | Data structure | Data item size | Data Alignment | ISRs can receive? | ISRs can send? | Overrun handling\nFIFO | No | Queue | Arbitrary[1] | 4 B[2] | Yes[3] | Yes | N/A\nLIFO | No | Queue | Arbitrary[1] | 4 B[2] | Yes[3] | Yes | N/A\nStack | No | Array | Word | Word | Yes[3] | Yes | Undefined behavior\nMessage queue | No | Ring buffer | Arbitrary[6] | Power of two | Yes[3] | Yes | Pend thread or return -errno\nMailbox | Yes | Queue | Arbitrary[1] | Arbitrary | No | No | N/A\nPipe | No | Ring buffer[4] | Arbitrary | Arbitrary | Yes[5] | Yes[5] | Pend thread or return -errno\nObjectBidirectional?Data structureData item sizeData AlignmentISRs can receive?ISRs can send?Overrun handling\nObject\nBidirectional?\nData structure\nData item size\nData Alignment\nISRs can receive?\nISRs can send?\nOverrun handling\nFIFONoQueueArbitrary[1]4",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Data Passing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_5"
+        },
+        {
+          "rank": 4,
+          "score": 1.5105,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 5,
+          "score": 1.5397,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        }
+      ],
+      "expected_keywords": [
+        "queue",
+        "message queue",
+        "data",
+        "exchange"
+      ],
+      "matched_keywords": [
+        "data"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 20,
+      "question": "What is a message queue?",
+      "category": "Data Passing",
+      "status": "answered",
+      "answer": "hat draining a queue has no effect on scheduling or processing\ndelayable items, but if the queue is plugged and the deadline expires the\nitem will silently fail to be submitted.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining and Controlling a Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining and Controlling a Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining and Controlling a Workqueue\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Work Item Lifecycle\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.7361,
+          "content": "hat draining a queue has no effect on scheduling or processing\ndelayable items, but if the queue is plugged and the deadline expires the\nitem will silently fail to be submitted.\nk_work_queue_unplug()removes any previous block on submission to\nthe queue due to a previous drain operation.\nk_work_queue_unplug()removes any previous block on submission to\nthe queue due to a previous drain operation.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining and Controlling a Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_127"
+        },
+        {
+          "rank": 2,
+          "score": 1.0537,
+          "content": "r\nthread or ISR are rejected.  The restriction on submitting more work can be\nextended past the completion of the drain operation in order to allow the\nblocking thread to perform additional work while the queue is “plugged”.\nNote that draining a queue has no effect on scheduling or processing\ndelayable items, but if the queue is plugged and the deadline expires the\nitem will silently fail to be submitted.\nk_work_queue_drain()can be used to block the caller until the\nwork queue has no items left.  Work items resubmitted from the workqueue\nthread are accepted while a queue is draining, but work items from any other\nthread or ISR are rejected.  The restriction on submitting more work can be\nextended past the completion of the drain operation in order to allow the\nblocking thread to perform additional work while the queue is “plugged”.\nNote that draining a queue has no effect on scheduling or processing\ndelayable items, but if the queue is plugged and the deadline expires the\nitem will sil",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining and Controlling a Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_126"
+        },
+        {
+          "rank": 3,
+          "score": 1.1342,
+          "content": "A workqueue is defined using a variable of typek_work_q.\nThe workqueue is initialized by defining the stack area used by its\nthread, initializing thek_work_q, either zeroing its\nmemory or callingk_work_queue_init(), and then callingk_work_queue_start(). The stack area must be defined usingK_THREAD_STACK_DEFINEto ensure it is properly set up in\nmemory.\nThe following code defines and initializes a workqueue:\nIn addition the queue identity and certain behavior related to thread\nrescheduling can be controlled by the optional final parameter; seek_work_queue_start()for details.\nThe following API can be used to interact with a workqueue:\nk_work_queue_drain()can be used to block the caller until the\nwork queue has no items left.  Work items resubmitted from the workqueue\nthread are accepted while a queue is draining, but work items from any other\nthread or ISR are rejected.  The restriction on submitting more work can be\nextended past the completion of the drain operation in order to allow th",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining and Controlling a Workqueue",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_125"
+        },
+        {
+          "rank": 4,
+          "score": 1.181,
+          "content": "nction. Depending on\nthe scheduling priority of the workqueue’s thread, and the work required by\nother items in the queue, a queued work item may be processed quickly or it\nmay remain in the queue for an extended period of time.\nA delayable work item may bescheduled(K_WORK_DELAYED) to a\nworkqueue; seeDelayable Work.\nA work item will berunning(K_WORK_RUNNING) when it is running\non a work queue, and may also becanceling(K_WORK_CANCELING)\nif it started running before a thread has requested that it be cancelled.\nA work item can be in multiple states; for example it can be:\nrunning on a queue;\nrunning on a queue;\nmarked canceling (because a thread usedk_work_cancel_sync()to\nwait until the work item completed);\nmarked canceling (because a thread usedk_work_cancel_sync()to\nwait until the work item completed);\nqueued to run again on the same queue;\nqueued to run again on the same queue;\nscheduled to be submitted to a (possibly different) queue\nscheduled to be submitted to a (possibly different",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Work Item Lifecycle",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_115"
+        },
+        {
+          "rank": 5,
+          "score": 1.2752,
+          "content": "ting behavior will scale cleanly and\nquickly into the many thousands of threads.Use this for applications needing many concurrent runnable threads (> 20 or\nso).  Most applications won’t need this ready queue implementation.\nRed/black tree ready queue (CONFIG_SCHED_SCALABLE)\nThe scheduler ready queue will be implemented as a red/black tree.  This has\nrather slower constant-time insertion and removal overhead, and on most\nplatforms (that are not otherwise using the red/black tree somewhere) requires\nan extra ~2kb of code. The resulting behavior will scale cleanly and\nquickly into the many thousands of threads.\nUse this for applications needing many concurrent runnable threads (> 20 or\nso).  Most applications won’t need this ready queue implementation.\nTraditional multi-queue ready queue (CONFIG_SCHED_MULTIQ)When selected, the scheduler ready queue will be implemented as the\nclassic/textbook array of lists, one per priority.This corresponds to the scheduler algorithm used in Zephyr versio",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "message queue",
+        "data",
+        "threads"
+      ],
+      "matched_keywords": [
+        "data"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 21,
+      "question": "How are interrupts handled in Zephyr?",
+      "category": "Interrupts",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Files generated by the script\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5102,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 2,
+          "score": 1.5141,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 3,
+          "score": 1.5394,
+          "content": "The interrupt tables generator script creates 3 files:isr_tables.c,isr_tables_swi.ld, andisr_tables_vt.ld.\nTheisr_tables.cwill contain all the structures for interrupts, direct interrupts and\nshared interrupts (if enabled). This file implements only all the structures that\nare not implemented by the application, leaving a comment where the interrupt\nnot implemented here can be found.\nThen two linker files are used. Theisr_tables_vt.ldfile is included in place\nwhere the interrupt vectors are required to be placed in the selected architecture.\nTheisr_tables_swi.ldfile describes the placement of the software interrupt table\nelements. The separated file is required as it might be placed in writable or nonwritable\nsection, depending on the current configuration.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Files generated by the script",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_194"
+        },
+        {
+          "rank": 4,
+          "score": 1.5997,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 5,
+          "score": 1.6348,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "ISR",
+        "interrupt",
+        "handler"
+      ],
+      "matched_keywords": [
+        "isr"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 22,
+      "question": "What are the responsibilities of an ISR?",
+      "category": "Interrupts",
+      "status": "answered",
+      "answer": "Any invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Shared SW ISR Table\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using linker script\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Concepts\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Files generated by the script",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.0905,
+          "content": "This is an array of struct z_shared_isr_table_entry:\nThis table keeps track of the registered clients for each of the interrupt\nlines. Whenever an interrupt line becomes shared,z_shared_isr()will\nreplace the currently registered ISR in _sw_isr_table. This special ISR will\niterate through the list of registered clients and invoke the ISRs.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Shared SW ISR Table",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_191"
+        },
+        {
+          "rank": 2,
+          "score": 1.179,
+          "content": "This way of prepare and parse .isrList section to implement interrupt vectors arrays\nis called local ISR declaration.\nThe name comes from the fact that all the entries to the arrays that would create\ninterrupt vectors are created locally in place of invocation ofIRQ_CONNECTmacro.\nThen automatically generated linker scripts are used to place it in the right place in the memory.\nThis option requires enabling by the choose ofCONFIG_ISR_TABLES_LOCAL_DECLARATION.\nIf this configuration is supported by the used architecture and toolchaing theCONFIG_ISR_TABLES_LOCAL_DECLARATION_SUPPORTEDis set.\nSee details of this option for the information about currently supported configurations.\nAny invocation ofIRQ_CONNECTorIRQ_DIRECT_CONNECTwill declare an instance\nofstruct_isr_list_snamewhich is placed in a special .intList section:\nNote that the section name is placed in flexible array member.\nIt means that the size of the initialized structure will vary depending on the\nstructure name length.\nThe whole",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using linker script",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_192"
+        },
+        {
+          "rank": 3,
+          "score": 1.2052,
+          "content": "service a device that generates\nmultiple types of interrupts or to service multiple devices\n(usually of the same type). The argument value passed to an ISR’s function\nallows the function to determine which interrupt has been signaled.\nThe kernel provides a default ISR for all unused IDT entries. This ISR\ngenerates a fatal system error if an unexpected interrupt is signaled.\nThe kernel supportsinterrupt nesting. This allows an ISR to be preempted\nin mid-execution if a higher priority interrupt is signaled. The lower\npriority ISR resumes execution once the higher priority ISR has completed\nits processing.\nAn ISR executes in the kernel’sinterrupt context. This context has its\nown dedicated stack area (or, on some architectures, stack areas). The size\nof the interrupt context stack must be capable of handling the execution of\nmultiple concurrent ISRs if interrupt\nnesting support is enabled.\nImportant\nMany kernel APIs can be used only by threads, and not by ISRs. In cases\nwhere a routine ma",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Concepts",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_163"
+        },
+        {
+          "rank": 4,
+          "score": 1.2833,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 5,
+          "score": 1.3358,
+          "content": "The interrupt tables generator script creates 3 files:isr_tables.c,isr_tables_swi.ld, andisr_tables_vt.ld.\nTheisr_tables.cwill contain all the structures for interrupts, direct interrupts and\nshared interrupts (if enabled). This file implements only all the structures that\nare not implemented by the application, leaving a comment where the interrupt\nnot implemented here can be found.\nThen two linker files are used. Theisr_tables_vt.ldfile is included in place\nwhere the interrupt vectors are required to be placed in the selected architecture.\nTheisr_tables_swi.ldfile describes the placement of the software interrupt table\nelements. The separated file is required as it might be placed in writable or nonwritable\nsection, depending on the current configuration.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Files generated by the script",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_194"
+        }
+      ],
+      "expected_keywords": [
+        "ISR",
+        "short",
+        "non-blocking"
+      ],
+      "matched_keywords": [
+        "isr"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 23,
+      "question": "What memory management mechanisms are available?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "Depending on configuration, there are several constraints that must be\nmet:\nThere may need to be additional memory reserved for memory management\nstructures\nThere may need to be additional memory reserved for memory management\nstructures\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Memory Management\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Memory Management\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Stack objects\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Futex API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.766,
+          "content": "SeeMemory Management.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Memory Management",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_7"
+        },
+        {
+          "rank": 2,
+          "score": 0.8727,
+          "content": "The following contains various topics regarding memory management.\nMemory Heaps\nShared Multi Heap\nMemory Slabs\nMemory Blocks Allocator\nDemand Paging\nVirtual Memory",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Memory Management",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_203"
+        },
+        {
+          "rank": 3,
+          "score": 1.3451,
+          "content": "Every thread requires its own stack buffer for the CPU to push context.\nDepending on configuration, there are several constraints that must be\nmet:\nThere may need to be additional memory reserved for memory management\nstructures\nThere may need to be additional memory reserved for memory management\nstructures\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\nIf userspace is enabled, a separate fixed-size privilege elevation stack must\nbe reserved to serve as a private kernel stack for handling system calls.\nIf userspace is enabled, a separate fixed-size privilege elevation stack must\nbe reserved to serve as a private kernel stack for handling system calls.\nIf userspace is enabled, the thread’s stack buffer must be a",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Stack objects",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_22"
+        },
+        {
+          "rank": 4,
+          "score": 1.355,
+          "content": "k_futexis a lightweight mutual exclusion primitive designed to minimize\nkernel involvement. Uncontended operation relies only on atomic access\nto shared memory.k_futexare not kernel objects and do not use the\nkernel object permission management. They live in user memory and can be\nused by any thread which has read-write access to this memory.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Futex API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_110"
+        },
+        {
+          "rank": 5,
+          "score": 1.3571,
+          "content": "Docs / Latest»\nKernel»\nMemory Management\nOpen on GitHubReport an issue with this page",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_202"
+        }
+      ],
+      "expected_keywords": [
+        "heap",
+        "slab",
+        "pool",
+        "memory"
+      ],
+      "matched_keywords": [
+        "memory"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 24,
+      "question": "Does Zephyr support dynamic memory allocation?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "Enabling the shared interrupt support and dynamic interrupt support will\nallow users to dynamically disconnect ISRs usingirq_disconnect_dynamic().\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Defining a regular ISR\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Memory Management\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / x86 Details\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Sharing interrupt lines\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2547,
+          "content": "dynamic(). It is used in exactly the same way asIRQ_CONNECT:\nDynamic interrupts require theCONFIG_DYNAMIC_INTERRUPTSoption to\nbe enabled. Removing or re-configuring a dynamic interrupt is currently\nunsupported.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Defining a regular ISR",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_177"
+        },
+        {
+          "rank": 2,
+          "score": 1.3185,
+          "content": "The following contains various topics regarding memory management.\nMemory Heaps\nShared Multi Heap\nMemory Slabs\nMemory Blocks Allocator\nDemand Paging\nVirtual Memory",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Memory Management",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_203"
+        },
+        {
+          "rank": 3,
+          "score": 1.3924,
+          "content": "r in the IDT. This is used at runtime byIRQ_CONNECTto program the IRQ-to-vector association in the interrupt controller.\nFor dynamic interrupts, the build must generate some 4-byte dynamic interrupt\nstubs, one stub per dynamic interrupt in use. The number of stubs is controlled\nby theCONFIG_X86_DYNAMIC_IRQ_STUBSoption. Each stub pushes an\nunique identifier which is then used to fetch the appropriate handler function\nand parameter out of a table populated when the dynamic interrupt was\nconnected.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "x86 Details",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_197"
+        },
+        {
+          "rank": 4,
+          "score": 1.5504,
+          "content": "voked each time the interrupt is triggered.\nThe entities that make use of an interrupt line in the shared interrupt context\nare known as clients. The maximum number of allowed clients for an interrupt is\ncontrolled byCONFIG_SHARED_IRQ_MAX_NUM_CLIENTS.\nInterrupt sharing is transparent to the user. As such, the user may register\ninterrupts usingIRQ_CONNECTandirq_connect_dynamic()as\nthey normally would. The interrupt sharing is taken care of behind the scenes.\nEnabling the shared interrupt support and dynamic interrupt support will\nallow users to dynamically disconnect ISRs usingirq_disconnect_dynamic().\nAfter an ISR is disconnected, whenever the interrupt line for which it was\nregister gets triggered, the ISR will no longer get invoked.\nPlease note that enablingCONFIG_SHARED_INTERRUPTSwill\nresult in a non-negligible increase in the binary size. Use with caution.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Sharing interrupt lines",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_175"
+        },
+        {
+          "rank": 5,
+          "score": 1.5843,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "heap",
+        "dynamic",
+        "allocation"
+      ],
+      "matched_keywords": [
+        "dynamic"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 25,
+      "question": "What is a memory slab?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "Depending on configuration, there are several constraints that must be\nmet:\nThere may need to be additional memory reserved for memory management\nstructures\nThere may need to be additional memory reserved for memory management\nstructures\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Futex API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Stack objects\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Termination",
+      "citations": [
+        {
+          "rank": 2,
+          "score": 1.211,
+          "content": "k_futexis a lightweight mutual exclusion primitive designed to minimize\nkernel involvement. Uncontended operation relies only on atomic access\nto shared memory.k_futexare not kernel objects and do not use the\nkernel object permission management. They live in user memory and can be\nused by any thread which has read-write access to this memory.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Futex API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_110"
+        },
+        {
+          "rank": 3,
+          "score": 1.2802,
+          "content": "Every thread requires its own stack buffer for the CPU to push context.\nDepending on configuration, there are several constraints that must be\nmet:\nThere may need to be additional memory reserved for memory management\nstructures\nThere may need to be additional memory reserved for memory management\nstructures\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\nIf userspace is enabled, a separate fixed-size privilege elevation stack must\nbe reserved to serve as a private kernel stack for handling system calls.\nIf userspace is enabled, a separate fixed-size privilege elevation stack must\nbe reserved to serve as a private kernel stack for handling system calls.\nIf userspace is enabled, the thread’s stack buffer must be a",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Stack objects",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_22"
+        },
+        {
+          "rank": 4,
+          "score": 1.4123,
+          "content": "Note\nThere is also limited support for usingOperation without Threads.\nThis section describes kernel services for creating, scheduling, and deleting\nindependently executable threads of instructions.\nAthreadis a kernel object that is used for application processing\nthat is too lengthy or too complex to be performed by an ISR.\nAny number of threads can be defined by an application (limited only by\navailable RAM). Each thread is referenced by athread idthat is assigned\nwhen the thread is spawned.\nA thread has the following key properties:\nAstack area, which is a region of memory used for the thread’s stack.\nThesizeof the stack area can be tailored to conform to the actual needs\nof the thread’s processing. Special macros exist to create and work with\nstack memory regions.\nAstack area, which is a region of memory used for the thread’s stack.\nThesizeof the stack area can be tailored to conform to the actual needs\nof the thread’s processing. Special macros exist to create and work with\nstack",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_10"
+        },
+        {
+          "rank": 5,
+          "score": 1.5039,
+          "content": "Once a thread is started it typically executes forever. However, a thread may\nsynchronously end its execution by returning from its entry point function.\nThis is known astermination.\nA thread that terminates is responsible for releasing any shared resources\nit may own (such as mutexes and dynamically allocated memory)\nprior to returning, since the kernel doesnotreclaim them automatically.\nIn some cases a thread may want to sleep until another thread terminates.\nThis can be accomplished with thek_thread_join()API. This\nwill block the calling thread until either the timeout expires, the target\nthread self-exits, or the target thread aborts (either due to ak_thread_abort()call or triggering a fatal error).\nOnce a thread has terminated, the kernel guarantees that no use will\nbe made of the thread struct.  The memory of such a struct can then be\nreused for any purpose, including spawning a new thread.  Note that\nthe thread must be fully terminated, which presents race conditions\nwhere a thr",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Termination",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_16"
+        }
+      ],
+      "expected_keywords": [
+        "memory slab",
+        "fixed-size",
+        "blocks"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 26,
+      "question": "What is the purpose of a memory pool?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "A thread has the following key properties:\nAstack area, which is a region of memory used for the thread’s stack.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Memory Management\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Futex API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Stack objects\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.6134,
+          "content": "The following contains various topics regarding memory management.\nMemory Heaps\nShared Multi Heap\nMemory Slabs\nMemory Blocks Allocator\nDemand Paging\nVirtual Memory",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Memory Management",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_203"
+        },
+        {
+          "rank": 2,
+          "score": 1.1887,
+          "content": "Note\nThere is also limited support for usingOperation without Threads.\nThis section describes kernel services for creating, scheduling, and deleting\nindependently executable threads of instructions.\nAthreadis a kernel object that is used for application processing\nthat is too lengthy or too complex to be performed by an ISR.\nAny number of threads can be defined by an application (limited only by\navailable RAM). Each thread is referenced by athread idthat is assigned\nwhen the thread is spawned.\nA thread has the following key properties:\nAstack area, which is a region of memory used for the thread’s stack.\nThesizeof the stack area can be tailored to conform to the actual needs\nof the thread’s processing. Special macros exist to create and work with\nstack memory regions.\nAstack area, which is a region of memory used for the thread’s stack.\nThesizeof the stack area can be tailored to conform to the actual needs\nof the thread’s processing. Special macros exist to create and work with\nstack",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_10"
+        },
+        {
+          "rank": 3,
+          "score": 1.276,
+          "content": "k_futexis a lightweight mutual exclusion primitive designed to minimize\nkernel involvement. Uncontended operation relies only on atomic access\nto shared memory.k_futexare not kernel objects and do not use the\nkernel object permission management. They live in user memory and can be\nused by any thread which has read-write access to this memory.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Futex API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_110"
+        },
+        {
+          "rank": 4,
+          "score": 1.3236,
+          "content": "Every thread requires its own stack buffer for the CPU to push context.\nDepending on configuration, there are several constraints that must be\nmet:\nThere may need to be additional memory reserved for memory management\nstructures\nThere may need to be additional memory reserved for memory management\nstructures\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\nIf guard-based stack overflow detection is enabled, a small write-protected\nmemory management region must immediately precede the stack buffer\nto catch overflows.\nIf userspace is enabled, a separate fixed-size privilege elevation stack must\nbe reserved to serve as a private kernel stack for handling system calls.\nIf userspace is enabled, a separate fixed-size privilege elevation stack must\nbe reserved to serve as a private kernel stack for handling system calls.\nIf userspace is enabled, the thread’s stack buffer must be a",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Stack objects",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_22"
+        },
+        {
+          "rank": 5,
+          "score": 1.3417,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "memory pool",
+        "variable-size",
+        "allocation"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 27,
+      "question": "How does Zephyr support real-time behavior?",
+      "category": "Scheduling",
+      "status": "answered",
+      "answer": "Note\nThe kernel’s time slicing algorithm doesnotensure that a set\nof equal-priority threads receive an equitable amount of CPU time,\nsince it does not measure the amount of time a thread actually gets to\nexecute.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Implementation using C arrays\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Preemptive Time Slicing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.6214,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 2,
+          "score": 1.6497,
+          "content": "This is the default configuration available for all Zephyr supported architectures.\nAny invocation ofIRQ_CONNECTwill declare an instance of\nstruct _isr_list which is placed in a special .intList section:\nZephyr is built in two phases; the first phase of the build produces${ZEPHYR_PREBUILT_EXECUTABLE}.elf which contains all the entries in\nthe .intList section preceded by a header:\nThis data consisting of the header and instances of struct _isr_list inside${ZEPHYR_PREBUILT_EXECUTABLE}.elf is then used by the\ngen_isr_tables.py script to generate a C file defining a vector table and\nsoftware ISR table that are then compiled and linked into the final\napplication.\nThe priority level of any interrupt is not encoded in these tables, insteadIRQ_CONNECTalso has a runtime component which programs the desired\npriority level of the interrupt to the interrupt controller. Some architectures\ndo not support the notion of interrupt priority, in which case the priority\nargument is ignored.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Implementation using C arrays",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_187"
+        },
+        {
+          "rank": 3,
+          "score": 1.6501,
+          "content": "e-sensitive.\nNote\nThe kernel’s time slicing algorithm doesnotensure that a set\nof equal-priority threads receive an equitable amount of CPU time,\nsince it does not measure the amount of time a thread actually gets to\nexecute. However, the algorithmdoesensure that a thread never executes\nfor longer than a single time slice without being required to yield.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Preemptive Time Slicing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_73"
+        },
+        {
+          "rank": 4,
+          "score": 1.6906,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 5,
+          "score": 1.7177,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "priority-based",
+        "deterministic",
+        "real-time"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 28,
+      "question": "Which kernel service should be used to protect a shared resource?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "There is a ~2kb code size increase overCONFIG_WAITQ_SIMPLE(which may\nbe shared withCONFIG_SCHED_SCALABLE) if the red/black tree is not\nused elsewhere in the application, and pend/unpend operations on “small”\nqueues will be somewhat slower (though this is not generally a performance\npath).\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Sharing interrupt lines\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Futex API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Meta-IRQ Priorities\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Thread Termination\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3292,
+          "content": "In the case of some hardware platforms, the same interrupt lines may be used\nby different IPs. For example, interrupt 17 may be used by a DMA controller to\nsignal that a data transfer has been completed or by a DAI controller to signal\nthat the transfer FIFO has reached its watermark. To make this work, one would\nhave to either employ some special logic or find a workaround (for example, using\nthe shared_irq interrupt controller), which doesn’t scale very well.\nTo solve this problem, one may use shared interrupts, which can be enabled usingCONFIG_SHARED_INTERRUPTS. Whenever an attempt to register\na second ISR/argument pair on the same interrupt line is made (usingIRQ_CONNECTorirq_connect_dynamic()), the interrupt line will\nbecome shared, meaning the two ISR/argument pairs (previous one and the one that\nhas just been registered) will be invoked each time the interrupt is triggered.\nThe entities that make use of an interrupt line in the shared interrupt context\nare known as clients. The",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Sharing interrupt lines",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_174"
+        },
+        {
+          "rank": 2,
+          "score": 1.3496,
+          "content": "k_futexis a lightweight mutual exclusion primitive designed to minimize\nkernel involvement. Uncontended operation relies only on atomic access\nto shared memory.k_futexare not kernel objects and do not use the\nkernel object permission management. They live in user memory and can be\nused by any thread which has read-write access to this memory.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Futex API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_110"
+        },
+        {
+          "rank": 3,
+          "score": 1.4432,
+          "content": "because this breaks the promise made to cooperative\nthreads by the Zephyr API (namely that the OS won’t schedule other\nthread until the current thread deliberately blocks), it should be\nused only with great care from application code.  These are not simply\nvery high priority threads and should not be used as such.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Meta-IRQ Priorities",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_31"
+        },
+        {
+          "rank": 4,
+          "score": 1.4983,
+          "content": "be\nreused for any purpose, including spawning a new thread.  Note that\nthe thread must be fully terminated, which presents race conditions\nwhere a thread’s own logic signals completion which is seen by another\nthread before the kernel processing is complete.  Under normal\ncircumstances, application code should usek_thread_join()ork_thread_abort()to synchronize on thread termination state\nand not rely on signaling from within application logic.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Thread Termination",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_17"
+        },
+        {
+          "rank": 5,
+          "score": 1.5133,
+          "content": "a balanced tree.  Choose\nthis if you expect to have many threads waiting on individual primitives.\nThere is a ~2kb code size increase overCONFIG_WAITQ_SIMPLE(which may\nbe shared withCONFIG_SCHED_SCALABLE) if the red/black tree is not\nused elsewhere in the application, and pend/unpend operations on “small”\nqueues will be somewhat slower (though this is not generally a performance\npath).\nScalable wait_q implementation (CONFIG_WAITQ_SCALABLE)\nWhen selected, the wait_q will be implemented with a balanced tree.  Choose\nthis if you expect to have many threads waiting on individual primitives.\nThere is a ~2kb code size increase overCONFIG_WAITQ_SIMPLE(which may\nbe shared withCONFIG_SCHED_SCALABLE) if the red/black tree is not\nused elsewhere in the application, and pend/unpend operations on “small”\nqueues will be somewhat slower (though this is not generally a performance\npath).\nSimple linked-list wait_q (CONFIG_WAITQ_SIMPLE)When selected, the wait_q will be implemented with a doubly-linked l",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_66"
+        }
+      ],
+      "expected_keywords": [
+        "mutex",
+        "shared resource",
+        "protect"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 29,
+      "question": "How does Zephyr wake up waiting threads?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "Choose\nthis if you expect to have many threads waiting on individual primitives.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling, Interrupts, and Synchronization\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Kernel Services",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.6111,
+          "content": "Related code samples\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_109"
+        },
+        {
+          "rank": 2,
+          "score": 1.6821,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 3,
+          "score": 1.6972,
+          "content": "These pages cover basic kernel services related to thread scheduling and\nsynchronization.\nThreads\nScheduling\nCPU Idling\nSystem Threads\nWorkqueue Threads\nOperation without Threads\nInterrupts\nPolling API\nSemaphores\nMutexes\nCondition Variables\nEvents\nSpinlocks\nSymmetric Multiprocessing",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling, Interrupts, and Synchronization",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.7035,
+          "content": "esponds to the scheduler algorithm used in Zephyr versions prior to\n1.12.\nIt incurs only a tiny code size overhead vs. the “dumb” scheduler and runs in\nO(1) time in almost all circumstances with very low constant factor.  But it\nrequires a fairly large RAM budget to store those list heads, and the limited\nfeatures make it incompatible with features like deadline scheduling that\nneed to sort threads more finely, and SMP affinity which need to traverse the\nlist of threads.\nTypical applications with small numbers of runnable threads probably want the\nsimple scheduler.\nThe wait_q abstraction used in IPC primitives to pend threads for later wakeup\nshares the same backend data structure choices as the scheduler, and can use\nthe same options.\nScalable wait_q implementation (CONFIG_WAITQ_SCALABLE)When selected, the wait_q will be implemented with a balanced tree.  Choose\nthis if you expect to have many threads waiting on individual primitives.\nThere is a ~2kb code size increase overCONFIG_WAIT",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_65"
+        },
+        {
+          "rank": 5,
+          "score": 1.71,
+          "content": "The Zephyr kernel lies at the heart of every Zephyr application. It provides\na low footprint, high performance, multi-threaded execution environment\nwith a rich set of available features. The rest of the Zephyr ecosystem,\nincluding device drivers, networking stack, and application-specific code,\nuses the kernel’s features to create a complete application.\nThe configurable nature of the kernel allows you to incorporate only those\nfeatures needed by your application, making it ideal for systems with limited\namounts of memory (as little as 2 KB!) or with simple multi-threading\nrequirements (such as a set of interrupt handlers and a single background task).\nExamples of such systems include: embedded sensor hubs, environmental sensors,\nsimple LED wearable, and store inventory tags.\nApplications requiring more memory (50 to 900 KB), multiple communication\ndevices (like Wi-Fi and Bluetooth Low Energy), and complex multi-threading,\ncan also be developed using the Zephyr kernel. Examples of suc",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Kernel Services",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "semaphore",
+        "signal",
+        "wake up",
+        "waiting"
+      ],
+      "matched_keywords": [
+        "waiting"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 30,
+      "question": "Which kernel service would be the most appropriate for producer-consumer synchronization?",
+      "category": "Synchronization",
+      "status": "answered",
+      "answer": "Note\nFor SMP, the behavior would be similar to the above UP image, except that\nThread 1 would not immediately follow Thread 4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / API Reference\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Preemptive Time Slicing\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Threads\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html / Scheduling Algorithm",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.319,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_96"
+        },
+        {
+          "rank": 2,
+          "score": 1.5734,
+          "content": "Related code samples\nBasic SynchronizationManipulate basic kernel synchronization primitives.\nBasic thread manipulationSpawn multiple threads that blink LEDs and print information to the console.\nDining PhilosophersImplement a solution to the Dining Philosophers problem using Zephyr kernel services.\nDumb HTTP server (multi-threaded)Implement a simple HTTP server supporting simultaneous connections using BSD sockets.\nDocs / Latest»\nKernel»\nKernel Services»\nScheduling\nOpen on GitHubReport an issue with this page",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "API Reference",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_56"
+        },
+        {
+          "rank": 3,
+          "score": 1.5978,
+          "content": "Once a preemptive thread becomes the current thread, it remains\nthe current thread until a higher priority thread becomes ready,\nor until the thread performs an action that makes it unready.\nConsequently, if a preemptive thread performs lengthy computations,\nit may cause an unacceptable delay in the scheduling of other threads,\nincluding those of equal priority.\nTo overcome such problems, a preemptive thread can perform cooperative\ntime slicing (as described above), or the scheduler’s time slicing capability\ncan be used to allow other threads of the same priority to execute.\nNote\nFor SMP, the behavior would be similar to the above UP image, except that\nThread 1 would not immediately follow Thread 4. Instead it would be\nThread 2, Thread 3, Thread 1, ….\nThe scheduler divides time on each CPU into a series oftime slices, where\nslices are measured in system clock ticks. The time slice size is configurable,\nbut this size can be changed while the application is running. Scheduling a\nnew thre",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Preemptive Time Slicing",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_71"
+        },
+        {
+          "rank": 4,
+          "score": 1.6427,
+          "content": "hesizeof the stack area can be tailored to conform to the actual needs\nof the thread’s processing. Special macros exist to create and work with\nstack memory regions.\nAthread control blockfor private kernel bookkeeping of the thread’s\nmetadata. This is an instance of typek_thread.\nAthread control blockfor private kernel bookkeeping of the thread’s\nmetadata. This is an instance of typek_thread.\nAnentry point function, which is invoked when the thread is started.\nUp to 3argument valuescan be passed to this function.\nAnentry point function, which is invoked when the thread is started.\nUp to 3argument valuescan be passed to this function.\nAscheduling priority, which instructs the kernel’s scheduler how to\nallocate CPU time to the thread. (SeeScheduling.)\nAscheduling priority, which instructs the kernel’s scheduler how to\nallocate CPU time to the thread. (SeeScheduling.)\nA set ofthread options, which allow the thread to receive special\ntreatment by the kernel under specific circumstances.\n(S",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Threads",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_11"
+        },
+        {
+          "rank": 5,
+          "score": 1.6657,
+          "content": "ting behavior will scale cleanly and\nquickly into the many thousands of threads.Use this for applications needing many concurrent runnable threads (> 20 or\nso).  Most applications won’t need this ready queue implementation.\nRed/black tree ready queue (CONFIG_SCHED_SCALABLE)\nThe scheduler ready queue will be implemented as a red/black tree.  This has\nrather slower constant-time insertion and removal overhead, and on most\nplatforms (that are not otherwise using the red/black tree somewhere) requires\nan extra ~2kb of code. The resulting behavior will scale cleanly and\nquickly into the many thousands of threads.\nUse this for applications needing many concurrent runnable threads (> 20 or\nso).  Most applications won’t need this ready queue implementation.\nTraditional multi-queue ready queue (CONFIG_SCHED_MULTIQ)When selected, the scheduler ready queue will be implemented as the\nclassic/textbook array of lists, one per priority.This corresponds to the scheduler algorithm used in Zephyr versio",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html",
+          "section": "Scheduling Algorithm",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\data\\zephyr_kernel.html_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "semaphore",
+        "mutex",
+        "condition variable",
+        "producer",
+        "consumer"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    }
+  ]
+}

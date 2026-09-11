@@ -1,0 +1,1713 @@
+{
+  "corpus": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures",
+  "total_questions": 30,
+  "found_relevant": 10,
+  "success_rate": 0.3333,
+  "llm_backend": "fake",
+  "embedding_backend": "fake",
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the maximum operating frequency of CPU0?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": "The maximum frequency is 800 MHz.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / CPU Subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Electrical Characteristics for PLL\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.6654,
+          "content": "The CPU0 supports a maximum operating frequency of 800 MHz.\nThe CPU1 supports a maximum operating frequency of 1.6 GHz.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "CPU Subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_1"
+        },
+        {
+          "rank": 2,
+          "score": 1.4468,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 3,
+          "score": 1.4888,
+          "content": "G, baseline sequential, YUV420 and YUV422. Note Only the JPEG codec can decode YUV422.\n\nHEVC (H.265) decoding features\n\n- The decoder is fully compliant to the Main and Main10 Profiles.\n- Maximum frame width is 4,096 pixels.\n- Maximum frame height is 4,096 pixels.\n- Error concealment is performed in case of bit errors.\n- Stream parameter information is output.\n\nH.264 decoding features\n\n- Baseline, Main, High, and High 10 progressive Profiles.\n- For progressive streams\n  - Average bitrates up to 100MBit/s.\n  - Maximum frame width is 4,096 pixels.\n  - Maximum frame height is 4,096 pixels.\n- For interlaced streams\n  - Average bitrates up to 50MBit/s.\n  - A maximum frame width of 2,048 pixels.\n  - A maximum frame height of 4,096 pixels.\n- Error concealment is performed in case of bit errors.\n- Stream parameter information is output. Escaping to prevent NAL unit start code emulation is always expected. This is independent of the NAL packet format setting. For more information, see ITU T H.2",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_45"
+        },
+        {
+          "rank": 4,
+          "score": 1.5239,
+          "content": "<div align=center>Table 3-3-2 Electrical Characteristics for PLL</div>\n\n| Parameter | Description                       | Min  | Type | Max | Units                     |\n| --------- | --------------------------------- | ---- | ---- | --- | ------------------------- |\n| Fref      | Divided reference frequency range | 488K |      | 4G  | Hz                        |\n| Fout      | Total output frequency range      | 50M  | NA   | 4G  | Hz                        |\n| Fvco      | VCO frequency range               | 800M | NA   | 4G  | Hz                        |\n| Tlt       | Lock time                         | 500  |      |     | div referency clock cycle |\n| Ijitter   | input jitter                      |      | 2%   |     | div referency clock cycle |",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Electrical Characteristics for PLL",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_76"
+        },
+        {
+          "rank": 5,
+          "score": 1.5407,
+          "content": "SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SAD single/double layer enable, support SAD double layer enable, and support the first layer input of Init_SAD/SAD is involved in the calculation after 1/2 downsampling\n- Post_proc: The precision of the input column parallax is int16, the precision of the output calculation result is int1, supports Post_proc enable, and supports Post_proc inner mask denoising enable\n- Align: The precision of input column parallax is int16, the precision of mask is int1, the precision of output depth/disparity map is int16, the precision of input/output infrared map is int8, supports height block processing parallax/infrared alignment, supports parallax/infrared Alignment enable, support Align inner parallax denoising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout i",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_18"
+        }
+      ],
+      "expected_keywords": [
+        "CPU0",
+        "800 MHz",
+        "working frequency"
+      ],
+      "matched_keywords": [
+        "800 mhz"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 2,
+      "question": "What is the maximum operating frequency of CPU1?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": "The maximum frequency is 800 MHz.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / CPU Subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Electrical Characteristics for PLL\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.6746,
+          "content": "The CPU0 supports a maximum operating frequency of 800 MHz.\nThe CPU1 supports a maximum operating frequency of 1.6 GHz.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "CPU Subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_1"
+        },
+        {
+          "rank": 2,
+          "score": 1.437,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 3,
+          "score": 1.4797,
+          "content": "G, baseline sequential, YUV420 and YUV422. Note Only the JPEG codec can decode YUV422.\n\nHEVC (H.265) decoding features\n\n- The decoder is fully compliant to the Main and Main10 Profiles.\n- Maximum frame width is 4,096 pixels.\n- Maximum frame height is 4,096 pixels.\n- Error concealment is performed in case of bit errors.\n- Stream parameter information is output.\n\nH.264 decoding features\n\n- Baseline, Main, High, and High 10 progressive Profiles.\n- For progressive streams\n  - Average bitrates up to 100MBit/s.\n  - Maximum frame width is 4,096 pixels.\n  - Maximum frame height is 4,096 pixels.\n- For interlaced streams\n  - Average bitrates up to 50MBit/s.\n  - A maximum frame width of 2,048 pixels.\n  - A maximum frame height of 4,096 pixels.\n- Error concealment is performed in case of bit errors.\n- Stream parameter information is output. Escaping to prevent NAL unit start code emulation is always expected. This is independent of the NAL packet format setting. For more information, see ITU T H.2",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_45"
+        },
+        {
+          "rank": 4,
+          "score": 1.5155,
+          "content": "<div align=center>Table 3-3-2 Electrical Characteristics for PLL</div>\n\n| Parameter | Description                       | Min  | Type | Max | Units                     |\n| --------- | --------------------------------- | ---- | ---- | --- | ------------------------- |\n| Fref      | Divided reference frequency range | 488K |      | 4G  | Hz                        |\n| Fout      | Total output frequency range      | 50M  | NA   | 4G  | Hz                        |\n| Fvco      | VCO frequency range               | 800M | NA   | 4G  | Hz                        |\n| Tlt       | Lock time                         | 500  |      |     | div referency clock cycle |\n| Ijitter   | input jitter                      |      | 2%   |     | div referency clock cycle |",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Electrical Characteristics for PLL",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_76"
+        },
+        {
+          "rank": 5,
+          "score": 1.5326,
+          "content": "SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SAD single/double layer enable, support SAD double layer enable, and support the first layer input of Init_SAD/SAD is involved in the calculation after 1/2 downsampling\n- Post_proc: The precision of the input column parallax is int16, the precision of the output calculation result is int1, supports Post_proc enable, and supports Post_proc inner mask denoising enable\n- Align: The precision of input column parallax is int16, the precision of mask is int1, the precision of output depth/disparity map is int16, the precision of input/output infrared map is int8, supports height block processing parallax/infrared alignment, supports parallax/infrared Alignment enable, support Align inner parallax denoising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout i",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_18"
+        }
+      ],
+      "expected_keywords": [
+        "CPU1",
+        "1.6 GHz",
+        "working frequency"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 3,
+      "question": "Which RISC-V extensions are supported by CPU1?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": "- CPU0 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 800 MHz working frequency\n  - Supports RISC-V 64GCB instruction set\n  - Cpu contains floating-point units (FPUs)\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 128 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\n- CPU1 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 1.6 GHz working frequency\n  - Supports RISC-V Vector Extension 1.0 specification\n  - Cpu contains floating-point units (FPUs)\n  - 128bits vector-process-unit\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 inte\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / CPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / CPU Subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Electrical Characteristics for USB\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Absolute Max Rating\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.6621,
+          "content": "- CPU0 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 800 MHz working frequency\n  - Supports RISC-V 64GCB instruction set\n  - Cpu contains floating-point units (FPUs)\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 128 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\n- CPU1 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 1.6 GHz working frequency\n  - Supports RISC-V Vector Extension 1.0 specification\n  - Cpu contains floating-point units (FPUs)\n  - 128bits vector-process-unit\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 inte",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "CPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_10"
+        },
+        {
+          "rank": 2,
+          "score": 1.7045,
+          "content": "The CPU0 supports a maximum operating frequency of 800 MHz.\nThe CPU1 supports a maximum operating frequency of 1.6 GHz.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "CPU Subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_1"
+        },
+        {
+          "rank": 3,
+          "score": 1.7048,
+          "content": "naling common mode voltage range (guideline for receiver) | VHSCM   |                                                       | -50       | 500   | mV   |\n| Low                                                                          | VOL     |                                                       | 0         | 0.3   | V    |\n| High (Driven)                                                                | VOH     |                                                       | 2.8       | 3.6   | V    |\n| SE1                                                                          | VOSE1   |                                                       | 0.8       |       | V    |\n| Output Signal Crossover Voltage                                              | VCRS    |                                                       | 1.3       | 2     | V    |\n| High-speed idle level                                                        | VHSOI   |                                                       | -10",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Electrical Characteristics for USB",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_108"
+        },
+        {
+          "rank": 4,
+          "score": 1.7504,
+          "content": "8/3.63       | V     |\n| IO           | VDDIO3P3_2      | -0.1 | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_3      | -0.1 | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_4      | -0.1 | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_5      | -0.1 | 1.98/3.63       | V     |\n| USB          | AVDD3P3_USB     | -0.1 | 3.63            | V     |\n| USB          | AVDD1P8_USB     | -0.1 | 1.98            | V     |\n| PLL          | AVDD0P8_PLL     | -0.1 | 0.88            | V     |\n| MIPI         | AVDD0P8_MIPI    | -0.1 | 0.88            | V     |\n| MIPI         | AVDD1P8_MIPI    | -0.1 | 1.98            | V     |\n| ADC          | AVDD1P8_ADC     | -0.1 | 1.98            | V     |\n| AUDIO CODEC  | AVDD1P8_CODEC   | -0.1 | 1.98            | V     |\n| MMC          | VDD3P3_SD       | -0.1 | 3.63            | V     |\n| SYSTEM       | VDD1P8          | -0.1 | 1.98            | V     |\n| K230D LPDDR4 | VDD1P8_DDR_VDD1 | -0.1 | 1.98            | V     |\n| K230D LPDDR4 | VDD1P1_D",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Absolute Max Rating",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_69"
+        },
+        {
+          "rank": 5,
+          "score": 1.7517,
+          "content": "rvice (QoS) support\n  - Programmable support for all of the following SDRAM data-bus widths: Full data-bus width or Half of the full data-bus width\n  - Supports max to 2 ranks\n  - Control options to avoid starvation of lower priorities\n  - Guaranteed coherency for write-after-read (WAR) and read-after-write (RAW) hazards (always on the HIF interface and on the AXI interface only if appropriate hardware configuration parameter and software register are set)\n  - Write combine to allow multiple writes to the same address to be combined into a single write to SDRAM; supported for same starting address\n  - Supports automatic SDRAM power-down entry and exit caused by lack of transaction arrival for a programmable time\n  - Supports automatic Clock Stop (LPDDR3/LPDDR4) entry and exit caused by lack transaction arrival\n  - Supports automatic low power mode operation caused by lack of transaction arrival for a rogrammable time through the Hardware Low Power Interface\n  - Flexible address mapper",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_21"
+        }
+      ],
+      "expected_keywords": [
+        "CPU1",
+        "RISC-V Vector Extension",
+        "Vector Extension 1.0"
+      ],
+      "matched_keywords": [
+        "cpu1",
+        "risc-v vector extension",
+        "vector extension 1.0"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 4,
+      "question": "How much L1 cache does each CPU core provide?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": "s 4K\n\n  - Note2: All configured ddr addresses follow 16B align, which is friendly to performance\n\n  - Note3: A configuration register cannot exceed 1KB\n\n  - Note4: When configuring cpu, configure 32bit each time, and configure 4 times for each 128bit, and must configure 4 times, the order is from low to high; when configuring GNNE, configure 128bit at a time\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / D Engine\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / peripheral\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / D GPU\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Video output\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / system component",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5105,
+          "content": "s 4K\n\n  - Note2: All configured ddr addresses follow 16B align, which is friendly to performance\n\n  - Note3: A configuration register cannot exceed 1KB\n\n  - Note4: When configuring cpu, configure 32bit each time, and configure 4 times for each 128bit, and must configure 4 times, the order is from low to high; when configuring GNNE, configure 128bit at a time",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "D Engine",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_16"
+        },
+        {
+          "rank": 2,
+          "score": 1.6489,
+          "content": "upport 6 channel\n  - Interface of APB 3.0, width 32 bit data; Slave Error response is not supported\n  - Support arbitrary duty ratio\n  - Support programmable output waveform (support two adjacent channel output waveform and even)\n  - Support produce periodic pulse signal of pulse signal and one-time\n  - Precise interruption generator can be used as a cycle\n  - Support output burr elimination\n\n- GPIO (multiplexed with function pins):\n  - 64 x GPIO + 8 x PMU GPIO\n  - 50 x GPIO + 6 x PMU GPIO(SIP)\n  - Separate data registers and data direction registers for each signal\n  - Configurable hardware and software control for each signal, or for each bit of each signal Separate auxiliary data input, data output, and data control for each I/O in Hardware Control mode. As output, each GPIO can be set to 0 or 1 separately.\n  - Independently controllable signal bits\n  - Configurable interrupt mode for GPIO group0 and GPIO group1. As input, each GPIO pin can act as an interrupt source.  IO both edge",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "peripheral",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_54"
+        },
+        {
+          "rank": 3,
+          "score": 1.7324,
+          "content": "- Support following Hardware Components\n  - Command list based DMAs, Fire and Forgot Control mechanism to minimize CPU overhead\n  - Primitive Rasterizer, 16x Anti-aliasing without performance drop.\n  - Texture Mapping Unit, 4 Texel/cycle in Bi-linear filter\n  - Hardware composition, Frame buffer compression\n  - Tessellation, No CPU Involved in Bezier Curve generation\n  - Alpha blending\n- Support Image Transformation\n  - Texture mapping, Point sampling, Bilinear filtering\n  - Blit support, Stretch (independently on x and y axis)\n  - Rotation any angle, Mirroring, FP24 coordinate precision, no precision difference in any degree rotation\n  - 2.5D Perspective Correct Projections\n  - Configurable Coordinate Systems and Transformations (3x3 matrix)\n  - Scissoring and viewport clipping,  Mage Interpolation, Paint\n  - Odd/even and non-zero fill rules\n- Support draw engine\n  - Pixel / Line drawing with any degree\n  - Gradient Filled rectangles\n  - Triangles, Polygon\n  - Path Generation\n  - Line",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "D GPU",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_47"
+        },
+        {
+          "rank": 4,
+          "score": 1.7452,
+          "content": "ort scaling function\n- 8 OSD layers support 1 or 2 plane ARGB formats:\n  - RGB888 with separate alpha channel\n  - RGB565 with separate alpha channel\n  - ARGB8888\n  - ARGB4444\n  - ARGB1555\n  - Monochrome(8-bit)\n- Display mix:\n  - OSD layer support configurable global alpha blending or pixel by pixel alpha mode\n  - Video layer only support configurable global alpha\n  - Configurable output size and position for each layer\n- Support vsync interrupt, DPI interface underrun interrupt and configurable output line number interrupt\n- Support configurable color space conversion, yuv2rgb or rgb2yuv\n- Support gamma correction on RGB data before output\n- Support dither function\n\n  **Note**\n- When not using scaling, it is recommended to use layer1 (supports rotation but not scaling)/layer2 (does not support rotation and scaling)/layer3 (does not support rotation and scaling). The video layer can only use three layers\n- When scaling is necessary and layer0 is required, the maximum frame rate at 1080p",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Video output",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_37"
+        },
+        {
+          "rank": 5,
+          "score": 1.7883,
+          "content": "ency can be changed independently\n\n- PWR\n\n  - Power control module (PWR) is used for power control of SOC and sub-module\n  - There are five power mode : Power on, sleep0, sleep1, standby, powerdown\n  - There are three kinds of wakeup source : GPIO, PMU and timer\n  - Each power domain can be controlled to power down、power up 、clock gating according to defferent application\n\n- Interrupt\n\n  - K230 supports 208 interrupt sources\n\n- PDMA\n\n  - PDMA (Peripheral Direct Memory Access) supports the data transfer between peripheral ports and DDR/SRAM\n  - PDMA provides 8 channels to transfer different transactions, with 64-byte data buffer per channel\n  - It supports up to 35 peripheral ports through channel configuration\n  - Low power IDLE state of each channel can be set by shutting down corresponding clock\n  - A 64-bit AXI4 master is used to transfer different channel transactions\n  - The priority of each transaction is configured with each channel. Transactions with high priority gets high cha",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "system component",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_27"
+        }
+      ],
+      "expected_keywords": [
+        "L1 cache",
+        "32 KB",
+        "instruction cache",
+        "data cache"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 5,
+      "question": "How much L2 cache is integrated into CPU0 and CPU1?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": ", monthly, daily, weekly, every hour, every minute, every second, every 1/8 of a second, 1/64 of a second trigger interrupt) the interrupts for pulse, pulse width is two 32768 hz clock cycles\n  - Typical application scenario: calendar, timing interrupt trigger interrupt trigger, cycle\n  - Other features: a regular in the system domain, need external power supply; A low speed clock of 32768Hz is required\n\n- Mailbox\n\n  - Bus interface: Mailbox with APB 3.0 interface\n  - Data bit width: 32bit, configurable via APB bus\n  - Configuring the clock: configuring the clock to be the pclk clock\n  - Support for hardware locks\n  - Support for cpu0_sys and cpu1_sys to send interrupts to each other\n  - Support for register configuration and status reading of submodules\n\n- Temperature Sensor\n\n  - ±3°C Accuracy Without Trimming\n  - Supply voltages: VDD 0.72-0.88V, VDDA 1.62-1.98V\n  - Temperature Measurement Range: -40 ~ 125℃\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / CPU Subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / system component\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Audio\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / system component",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3739,
+          "content": "The CPU0 supports a maximum operating frequency of 800 MHz.\nThe CPU1 supports a maximum operating frequency of 1.6 GHz.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "CPU Subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_1"
+        },
+        {
+          "rank": 2,
+          "score": 1.6759,
+          "content": "- RMU\n\n  - Reset management module (RMU) is responable for power on reset deglitch, manage wdt reset，chip soft reset and generate sub-module reset\n  - Reset glitch length less than 8ms will be filtered\n  - Manage two watchdog reset and generate soc reset\n  - Manage software soc reset request and generate soc reset\n  - Manage sub-module software reset request and generate sub-module reset\n\n- CMU\n\n  - Clock management module (CMU) is designed to manage generation of sub-module and system clock、clock division、clock switch and clock gating\n  - The clock source include external 24MHz OSC and four internal PLLs\n  - CPU1 and KPU module support DVFS. Their frequency should meet current voltage\n  - When CPU1 and KPU use the same clock source, their frequency can be changed synchronously\n  - When CPU1 and KPU use different clock source, their frequency can be changed independently\n\n- PWR\n\n  - Power control module (PWR) is used for power control of SOC and sub-module\n  - There are five power mode",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "system component",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_26"
+        },
+        {
+          "rank": 3,
+          "score": 1.6973,
+          "content": "ng\n    1. Data bus VREFDQ training\n    1. Read training( DQ bit deskew training using DRAM mode registers and DQS to DQ eye centering training using DRAM array)\n  - LVSTL IO calibration and ODT calibration\n  - Support for a SW controllable DQ bit and AC bit swizzling\n  - Firmware-based 2D eye mapping diagnostic tool allows measuring 2D eye for every bit of the bus at both DRAM and host receivers\n  - Direct override programming available for all VREF, ODT, drive strength, and timing delays to facilitate debug and characterization\n\n- SRAM\n  - SRAM：2MB (shared sram)+2MB (default for KPU)\n  - The shared 2MB sram provides access to CPU/KPU/decompression and other modules\n  - The shared 2MB sram has two independent 128bit AXI4 Slave buses. Burst supports incremental, fixed, and wrap. The maximum burst length is 16. Exclusive transmission is not supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared b",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_23"
+        },
+        {
+          "rank": 4,
+          "score": 1.7138,
+          "content": "K230 audio supports the following features:\n\n- Audio codec inside\n- 2 DAC channels for stereo playback with sample rate 8-192Khz\n- 2 ADC channels for stereo recording from microphone with sample rate 8-192Khz\n- Audio codec support Automatic Level Control (ALC) function to adjust the signal level,which is input into ADC\n- Maximum 8 x PDM DMIC inputs\n- I2S interface supports 2x2 expansion\n- Support master mode, which means clock(pdm_clk and i2s_sclk) and ws(only I2S) are output from audio.\n- I2S input, pdm input and I2s output audio modes can work simultaneously\n- APB2.0 interface is used to configure registers, and read/write PCM data. The default frequency of configurable APB working clock PCLK is 100MHz, and the data interface is 32 bits\n- PCM data can be transferred by PDMA. Burst length in PDMA is configurable\n- The audio module can start working again after being disabled and re-enabled\n- The audio module can start working again after asserting reset and de-asserting reset\n- PDM au",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Audio",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_49"
+        },
+        {
+          "rank": 5,
+          "score": 1.7161,
+          "content": ", monthly, daily, weekly, every hour, every minute, every second, every 1/8 of a second, 1/64 of a second trigger interrupt) the interrupts for pulse, pulse width is two 32768 hz clock cycles\n  - Typical application scenario: calendar, timing interrupt trigger interrupt trigger, cycle\n  - Other features: a regular in the system domain, need external power supply; A low speed clock of 32768Hz is required\n\n- Mailbox\n\n  - Bus interface: Mailbox with APB 3.0 interface\n  - Data bit width: 32bit, configurable via APB bus\n  - Configuring the clock: configuring the clock to be the pclk clock\n  - Support for hardware locks\n  - Support for cpu0_sys and cpu1_sys to send interrupts to each other\n  - Support for register configuration and status reading of submodules\n\n- Temperature Sensor\n\n  - ±3°C Accuracy Without Trimming\n  - Supply voltages: VDD 0.72-0.88V, VDDA 1.62-1.98V\n  - Temperature Measurement Range: -40 ~ 125℃",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "system component",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_32"
+        }
+      ],
+      "expected_keywords": [
+        "L2 cache",
+        "128 KB",
+        "256 KB"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 6,
+      "question": "How many external interrupt sources can each CPU process?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": "The answer is 256.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / CPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / CPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / peripheral\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / D Engine",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2345,
+          "content": "egrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "CPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_11"
+        },
+        {
+          "rank": 2,
+          "score": 1.3111,
+          "content": "- CPU0 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 800 MHz working frequency\n  - Supports RISC-V 64GCB instruction set\n  - Cpu contains floating-point units (FPUs)\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 128 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\n- CPU1 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 1.6 GHz working frequency\n  - Supports RISC-V Vector Extension 1.0 specification\n  - Cpu contains floating-point units (FPUs)\n  - 128bits vector-process-unit\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 inte",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "CPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_10"
+        },
+        {
+          "rank": 3,
+          "score": 1.5603,
+          "content": "noising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout interrupt, instruction exception interrupt, configuration instruction overflow interrupt, AXI write response exception interrupt\n- Support independent soft reset, interrupt clear operation",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_19"
+        },
+        {
+          "rank": 4,
+          "score": 1.5837,
+          "content": "upport 6 channel\n  - Interface of APB 3.0, width 32 bit data; Slave Error response is not supported\n  - Support arbitrary duty ratio\n  - Support programmable output waveform (support two adjacent channel output waveform and even)\n  - Support produce periodic pulse signal of pulse signal and one-time\n  - Precise interruption generator can be used as a cycle\n  - Support output burr elimination\n\n- GPIO (multiplexed with function pins):\n  - 64 x GPIO + 8 x PMU GPIO\n  - 50 x GPIO + 6 x PMU GPIO(SIP)\n  - Separate data registers and data direction registers for each signal\n  - Configurable hardware and software control for each signal, or for each bit of each signal Separate auxiliary data input, data output, and data control for each I/O in Hardware Control mode. As output, each GPIO can be set to 0 or 1 separately.\n  - Independently controllable signal bits\n  - Configurable interrupt mode for GPIO group0 and GPIO group1. As input, each GPIO pin can act as an interrupt source.  IO both edge",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "peripheral",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_54"
+        },
+        {
+          "rank": 5,
+          "score": 1.6298,
+          "content": "s 4K\n\n  - Note2: All configured ddr addresses follow 16B align, which is friendly to performance\n\n  - Note3: A configuration register cannot exceed 1KB\n\n  - Note4: When configuring cpu, configure 32bit each time, and configure 4 times for each 128bit, and must configure 4 times, the order is from low to high; when configuring GNNE, configure 128bit at a time",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "D Engine",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_16"
+        }
+      ],
+      "expected_keywords": [
+        "interrupt",
+        "208",
+        "external sources"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 7,
+      "question": "Does the K230 support a Memory Management Unit (MMU)?",
+      "category": "CPU",
+      "status": "answered",
+      "answer": "egrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / CPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / CPU subsystem",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.377,
+          "content": "egrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "CPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_11"
+        },
+        {
+          "rank": 2,
+          "score": 1.4082,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 3,
+          "score": 1.4884,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 4,
+          "score": 1.5079,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 5,
+          "score": 1.5275,
+          "content": "- CPU0 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 800 MHz working frequency\n  - Supports RISC-V 64GCB instruction set\n  - Cpu contains floating-point units (FPUs)\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 128 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\n- CPU1 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 1.6 GHz working frequency\n  - Supports RISC-V Vector Extension 1.0 specification\n  - Cpu contains floating-point units (FPUs)\n  - 128bits vector-process-unit\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 inte",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "CPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_10"
+        }
+      ],
+      "expected_keywords": [
+        "MMU",
+        "memory management unit"
+      ],
+      "matched_keywords": [
+        "mmu",
+        "memory management unit"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 8,
+      "question": "What AI frameworks are supported by the K230 KPU?",
+      "category": "KPU",
+      "status": "answered",
+      "answer": "Supported items: The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority, The decompression module shares 768KB SRAM to cache the decompression process data, Flash, Supports the SPI NOR flash and SPI NAND flash, Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash..\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Overview",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3481,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 2,
+          "score": 1.5113,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 3,
+          "score": 1.5326,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 4,
+          "score": 1.5795,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 5,
+          "score": 1.5875,
+          "content": "The K230 chip is the latest generation SoC product in Canaan Technology's (NASDAQ: CAN) Kendryte® series of AIOT chips. The chip adopts a brand-new multi-heterogeneous unit acceleration computing architecture, integrates two RISC-V C908 computing cores, and has a built-in new generation KPU (Knowledge Process Unit) intelligent computing unit. Multi-precision AI computing power with INT8 and INT16. Supports general AI computing framework. The chip also has a variety of peripheral interfaces, as well as multiple scalar, vector, graphics, and other dedicated hardware acceleration units such as image 2D engine, AI 2D engine, 2.5D GPU, and 3D depth engine. K230 provides full-process computing acceleration for various computing tasks such as images, videos, audio, AI, etc. The chip has many features such as low latency, high performance, low power consumption, fast startup, and high security.\nK230 can be used in various smart hardware products, such as smart door locks, home smart security c",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Overview",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_8"
+        }
+      ],
+      "expected_keywords": [
+        "TensorFlow",
+        "PyTorch",
+        "TFLite",
+        "PaddlePaddle",
+        "ONNX"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 9,
+      "question": "What integer precisions are supported by the KPU?",
+      "category": "KPU",
+      "status": "answered",
+      "answer": "Supported items: The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority, The decompression module shares 768KB SRAM to cache the decompression process data, Flash, Supports the SPI NOR flash and SPI NAND flash, Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash..\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2728,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 2,
+          "score": 1.5763,
+          "content": "performance.\n  - YUV420 10 bit, P010, little endian, MSB aligned.\n  - YUV420 10 bit, 2 × 2 tile format. Note The YUV buffer and stride must have correct alignment for maximum performance.\n- Stride support for scan-line formats only.\n- Support for rotation of the decoded frame in 90 degree steps before output.\n- Support for downscaling the decoded frame horizontally and vertically by a factor of 2 or 4.\n- Support for downscaling the decoded frame horizontally and vertically by any factor individually. The smallest resolution can be 2 x 2 pixels.\n- Support for output of average frame luminance and chrominance for each 32 x 32 pixel block, for every output display frame.\n\nSupported codecs\n\nThe following codec standards are supported for decoding:\n\n- HEVC (H.265) Main/Main10.\n- H.264 Baseline, Main, High, and High10 Progressive Profile.\n- JPEG, baseline sequential, YUV420 and YUV422. Note Only the JPEG codec can decode YUV422.\n\nHEVC (H.265) decoding features\n\n- The decoder is fully complia",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_44"
+        },
+        {
+          "rank": 3,
+          "score": 1.5848,
+          "content": "ng\n    1. Data bus VREFDQ training\n    1. Read training( DQ bit deskew training using DRAM mode registers and DQS to DQ eye centering training using DRAM array)\n  - LVSTL IO calibration and ODT calibration\n  - Support for a SW controllable DQ bit and AC bit swizzling\n  - Firmware-based 2D eye mapping diagnostic tool allows measuring 2D eye for every bit of the bus at both DRAM and host receivers\n  - Direct override programming available for all VREF, ODT, drive strength, and timing delays to facilitate debug and characterization\n\n- SRAM\n  - SRAM：2MB (shared sram)+2MB (default for KPU)\n  - The shared 2MB sram provides access to CPU/KPU/decompression and other modules\n  - The shared 2MB sram has two independent 128bit AXI4 Slave buses. Burst supports incremental, fixed, and wrap. The maximum burst length is 16. Exclusive transmission is not supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared b",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_23"
+        },
+        {
+          "rank": 4,
+          "score": 1.5946,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 5,
+          "score": 1.6038,
+          "content": "rvice (QoS) support\n  - Programmable support for all of the following SDRAM data-bus widths: Full data-bus width or Half of the full data-bus width\n  - Supports max to 2 ranks\n  - Control options to avoid starvation of lower priorities\n  - Guaranteed coherency for write-after-read (WAR) and read-after-write (RAW) hazards (always on the HIF interface and on the AXI interface only if appropriate hardware configuration parameter and software register are set)\n  - Write combine to allow multiple writes to the same address to be combined into a single write to SDRAM; supported for same starting address\n  - Supports automatic SDRAM power-down entry and exit caused by lack of transaction arrival for a programmable time\n  - Supports automatic Clock Stop (LPDDR3/LPDDR4) entry and exit caused by lack transaction arrival\n  - Supports automatic low power mode operation caused by lack of transaction arrival for a rogrammable time through the Hardware Low Power Interface\n  - Flexible address mapper",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_21"
+        }
+      ],
+      "expected_keywords": [
+        "INT8",
+        "INT16"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 10,
+      "question": "What is the typical YOLOv5S inference performance at INT8?",
+      "category": "KPU",
+      "status": "answered",
+      "answer": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / KPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Video output\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / D Engine\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.9571,
+          "content": "- Support INT8 and INT16\n- Support weight sparse compression\n- Typical network performance：\n  - Resnet 50 ≥ 85fps @INT8\n  - Mobilenet_v2 ≥ 670fps @INT8\n  - YoloV5S ≥ 38fps @INT8\n- Support TensorFlow / PyTorch / TFLite / PaddlePaddle / ONNX\n- Support quantization toolchain and profiling tools\n- Loss of quantization accuracy <1%\n- Support Abs, Acos, Acosh, And, ArgMax, ArgMin, Asin, Asinh, Add, AveragePool, BatchNormalization, Cast, Ceil, Celu, Clip, Concat, Constant, ConstantOfShape, Conv, ConvTranspose, Cos, Cosh, CumSum, DepthToSpace, DequantizeLinear, Div, Dropout, Elu, Equal, Exp, Erf, Expand, Flatten, Floor, Gather, GatherElements, GatherND, Gemm, GlobalAveragePool, GlobalMaxPool, Greater, GreaterOrEqual, Hardmax, HardSigmoid, HardSwish, Identity, InstanceNormalization, LpNormalization, LeakyRelu, Less, LessOrEqual, Log, LogSoftmax, LRN, LSTM, MatMul, MaxPool, Max, Min, Mod, Mul, Neg, Not, OneHot, Pad, Pow, PRelu, QuantizeLinear, QLinearConv, QLinearMatmul, RandomNormal, RandomNorm",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "KPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_12"
+        },
+        {
+          "rank": 2,
+          "score": 1.3952,
+          "content": "t rotation and scaling). The video layer can only use three layers\n- When scaling is necessary and layer0 is required, the maximum frame rate at 1080p is 20fps, and 30 frames can be supported at 720p",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Video output",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_38"
+        },
+        {
+          "rank": 3,
+          "score": 1.4054,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 4,
+          "score": 1.5243,
+          "content": "s 4K\n\n  - Note2: All configured ddr addresses follow 16B align, which is friendly to performance\n\n  - Note3: A configuration register cannot exceed 1KB\n\n  - Note4: When configuring cpu, configure 32bit each time, and configure 4 times for each 128bit, and must configure 4 times, the order is from low to high; when configuring GNNE, configure 128bit at a time",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "D Engine",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_16"
+        },
+        {
+          "rank": 5,
+          "score": 1.6073,
+          "content": "SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SAD single/double layer enable, support SAD double layer enable, and support the first layer input of Init_SAD/SAD is involved in the calculation after 1/2 downsampling\n- Post_proc: The precision of the input column parallax is int16, the precision of the output calculation result is int1, supports Post_proc enable, and supports Post_proc inner mask denoising enable\n- Align: The precision of input column parallax is int16, the precision of mask is int1, the precision of output depth/disparity map is int16, the precision of input/output infrared map is int8, supports height block processing parallax/infrared alignment, supports parallax/infrared Alignment enable, support Align inner parallax denoising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout i",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_18"
+        }
+      ],
+      "expected_keywords": [
+        "YoloV5S",
+        "38fps",
+        "INT8"
+      ],
+      "matched_keywords": [
+        "int8"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 11,
+      "question": "What is the typical ResNet50 inference performance at INT8?",
+      "category": "KPU",
+      "status": "answered",
+      "answer": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / KPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Video output\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / D Engine\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.9571,
+          "content": "- Support INT8 and INT16\n- Support weight sparse compression\n- Typical network performance：\n  - Resnet 50 ≥ 85fps @INT8\n  - Mobilenet_v2 ≥ 670fps @INT8\n  - YoloV5S ≥ 38fps @INT8\n- Support TensorFlow / PyTorch / TFLite / PaddlePaddle / ONNX\n- Support quantization toolchain and profiling tools\n- Loss of quantization accuracy <1%\n- Support Abs, Acos, Acosh, And, ArgMax, ArgMin, Asin, Asinh, Add, AveragePool, BatchNormalization, Cast, Ceil, Celu, Clip, Concat, Constant, ConstantOfShape, Conv, ConvTranspose, Cos, Cosh, CumSum, DepthToSpace, DequantizeLinear, Div, Dropout, Elu, Equal, Exp, Erf, Expand, Flatten, Floor, Gather, GatherElements, GatherND, Gemm, GlobalAveragePool, GlobalMaxPool, Greater, GreaterOrEqual, Hardmax, HardSigmoid, HardSwish, Identity, InstanceNormalization, LpNormalization, LeakyRelu, Less, LessOrEqual, Log, LogSoftmax, LRN, LSTM, MatMul, MaxPool, Max, Min, Mod, Mul, Neg, Not, OneHot, Pad, Pow, PRelu, QuantizeLinear, QLinearConv, QLinearMatmul, RandomNormal, RandomNorm",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "KPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_12"
+        },
+        {
+          "rank": 2,
+          "score": 1.3952,
+          "content": "t rotation and scaling). The video layer can only use three layers\n- When scaling is necessary and layer0 is required, the maximum frame rate at 1080p is 20fps, and 30 frames can be supported at 720p",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Video output",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_38"
+        },
+        {
+          "rank": 3,
+          "score": 1.4054,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 4,
+          "score": 1.5243,
+          "content": "s 4K\n\n  - Note2: All configured ddr addresses follow 16B align, which is friendly to performance\n\n  - Note3: A configuration register cannot exceed 1KB\n\n  - Note4: When configuring cpu, configure 32bit each time, and configure 4 times for each 128bit, and must configure 4 times, the order is from low to high; when configuring GNNE, configure 128bit at a time",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "D Engine",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_16"
+        },
+        {
+          "rank": 5,
+          "score": 1.6073,
+          "content": "SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SAD single/double layer enable, support SAD double layer enable, and support the first layer input of Init_SAD/SAD is involved in the calculation after 1/2 downsampling\n- Post_proc: The precision of the input column parallax is int16, the precision of the output calculation result is int1, supports Post_proc enable, and supports Post_proc inner mask denoising enable\n- Align: The precision of input column parallax is int16, the precision of mask is int1, the precision of output depth/disparity map is int16, the precision of input/output infrared map is int8, supports height block processing parallax/infrared alignment, supports parallax/infrared Alignment enable, support Align inner parallax denoising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout i",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_18"
+        }
+      ],
+      "expected_keywords": [
+        "Resnet 50",
+        "85fps",
+        "INT8"
+      ],
+      "matched_keywords": [
+        "int8"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 12,
+      "question": "What is the maximum quantization accuracy loss supported by the KPU?",
+      "category": "KPU",
+      "status": "answered",
+      "answer": "Supported items: The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority, The decompression module shares 768KB SRAM to cache the decompression process data, Flash, Supports the SPI NOR flash and SPI NAND flash, Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash..\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Others\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Others\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2712,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 2,
+          "score": 1.3349,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 3,
+          "score": 1.4378,
+          "content": "- decompression\n\n  - Decompression accelerator is mainly used to implement hardware GZIP decompression function.\n  - Decompression bandwidth ≥ 400MB/s\n  - Support GZIP file format version 4.3\n  - Support DEFLATE compressed file version 1.3\n  - The maximum dictionary size is 32KB\n  - Support the minimum word matching length of 3Byte and the maximum word matching length of 258Byte\n  - Only dynamic huffman compression mode is supported\n  - Support data stream CRC32 verification\n  - Support hardware to automatically generate dynamic huffman tree\n  - The APB3 register interface is used to configure the startup decompression accelerator\n  - Request the DMA controller to transfer large blocks through hardware, and request to transfer 32Kbyte at most once\n\n- FFT/IFFT\n\n  - Support maximum 4096 point fft, ifft calculation\n  - Support int16 calculation accuracy, the real and imaginary parts of input and output are both in int16 format\n  - Support the standard axi4 slave interface, which is used f",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Others",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_61"
+        },
+        {
+          "rank": 4,
+          "score": 1.4489,
+          "content": "ion accuracy, the real and imaginary parts of input and output are both in int16 format\n  - Support the standard axi4 slave interface, which is used for parameter configuration and data transfer.\n  - The input supports RIRI...., RRRR.... (singal real part), RRRR...IIII... format arrangement, and the output supports RIRI...., RRRR...IIII... format arrangement\n  - It adopts the calculation method of base 2-time decimation, and there is only one butterfly operator inside\n  - A single clock domain design is adopted, and the bus clock is also used as the operation clock\n  - The calculation time of 4096-point fft/ifft is controlled within 1ms, including the total overhead of data movement, calculation, and interrupt interaction\n  - Support interrupt mask, original interrupt query\n\n- Fastboot: 3A first picture ≤ 400ms\n- Working environment temperature: -40 ~ 85°C",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Others",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_62"
+        },
+        {
+          "rank": 5,
+          "score": 1.4491,
+          "content": "SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SAD single/double layer enable, support SAD double layer enable, and support the first layer input of Init_SAD/SAD is involved in the calculation after 1/2 downsampling\n- Post_proc: The precision of the input column parallax is int16, the precision of the output calculation result is int1, supports Post_proc enable, and supports Post_proc inner mask denoising enable\n- Align: The precision of input column parallax is int16, the precision of mask is int1, the precision of output depth/disparity map is int16, the precision of input/output infrared map is int8, supports height block processing parallax/infrared alignment, supports parallax/infrared Alignment enable, support Align inner parallax denoising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout i",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_18"
+        }
+      ],
+      "expected_keywords": [
+        "quantization",
+        "<1%",
+        "accuracy"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 13,
+      "question": "How much SRAM is available on the K230?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "The K230 provides 2 MB of shared SRAM.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.034,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 2,
+          "score": 1.1657,
+          "content": "ng\n    1. Data bus VREFDQ training\n    1. Read training( DQ bit deskew training using DRAM mode registers and DQS to DQ eye centering training using DRAM array)\n  - LVSTL IO calibration and ODT calibration\n  - Support for a SW controllable DQ bit and AC bit swizzling\n  - Firmware-based 2D eye mapping diagnostic tool allows measuring 2D eye for every bit of the bus at both DRAM and host receivers\n  - Direct override programming available for all VREF, ODT, drive strength, and timing delays to facilitate debug and characterization\n\n- SRAM\n  - SRAM：2MB (shared sram)+2MB (default for KPU)\n  - The shared 2MB sram provides access to CPU/KPU/decompression and other modules\n  - The shared 2MB sram has two independent 128bit AXI4 Slave buses. Burst supports incremental, fixed, and wrap. The maximum burst length is 16. Exclusive transmission is not supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared b",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_23"
+        },
+        {
+          "rank": 3,
+          "score": 1.2671,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 4,
+          "score": 1.385,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 5,
+          "score": 1.553,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "SRAM",
+        "2MB",
+        "shared sram"
+      ],
+      "matched_keywords": [
+        "sram",
+        "shared sram"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 14,
+      "question": "What is the maximum LPDDR memory capacity supported by the K230?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3673,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.4316,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 3,
+          "score": 1.4482,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 4,
+          "score": 1.5036,
+          "content": "to prevent NAL unit start code emulation is always expected. This is independent of the NAL packet format setting. For more information, see ITU T H.264 Annex B.\n\nJPEG decoding features\n\n- Average bitrates up to 20MBit/s.\n- Support for 4:2:0 output by the video encoder, baseline sequential YYYYCbCr interleaved MCU format only.\n- Support for 4:2:2 output by the video encoder, baseline sequential YYCbCr interleaved MCU format only.\n- Maximum frame width is 8,192 pixels.\n- Maximum frame height is 8,192 pixels.\n- Error concealment is performed in case of bit errors.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_46"
+        },
+        {
+          "rank": 5,
+          "score": 1.5116,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        }
+      ],
+      "expected_keywords": [
+        "LPDDR",
+        "Maximum capacity",
+        "2GB"
+      ],
+      "matched_keywords": [
+        "lpddr"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 15,
+      "question": "Which memory technologies are supported by the K230?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "egrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / CPU subsystem\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5111,
+          "content": "egrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "CPU subsystem",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_11"
+        },
+        {
+          "rank": 2,
+          "score": 1.5604,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 3,
+          "score": 1.5796,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 4,
+          "score": 1.6217,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 5,
+          "score": 1.6506,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "LPDDR4",
+        "LPDDR3"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 16,
+      "question": "What is the maximum LPDDR4 speed supported by the K230?",
+      "category": "Memory",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.188,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.3109,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 3,
+          "score": 1.4367,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.4532,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 5,
+          "score": 1.5081,
+          "content": "to prevent NAL unit start code emulation is always expected. This is independent of the NAL packet format setting. For more information, see ITU T H.264 Annex B.\n\nJPEG decoding features\n\n- Average bitrates up to 20MBit/s.\n- Support for 4:2:0 output by the video encoder, baseline sequential YYYYCbCr interleaved MCU format only.\n- Support for 4:2:2 output by the video encoder, baseline sequential YYCbCr interleaved MCU format only.\n- Maximum frame width is 8,192 pixels.\n- Maximum frame height is 8,192 pixels.\n- Error concealment is performed in case of bit errors.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_46"
+        }
+      ],
+      "expected_keywords": [
+        "LPDDR4",
+        "3200Mbps"
+      ],
+      "matched_keywords": [
+        "lpddr4"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 17,
+      "question": "How many UART interfaces are supported by the K230?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.4295,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.4544,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 3,
+          "score": 1.5091,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.5466,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 5,
+          "score": 1.5483,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "UART",
+        "5 UART"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 18,
+      "question": "How many I2C interfaces are supported by the K230?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.4295,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.4544,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 3,
+          "score": 1.5091,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.5466,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 5,
+          "score": 1.5483,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "I2C",
+        "5 I2C"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 19,
+      "question": "How many SPI interfaces are available on the K230?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / K230",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3382,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.4305,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 3,
+          "score": 1.4741,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 4,
+          "score": 1.4759,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        },
+        {
+          "rank": 5,
+          "score": 1.4763,
+          "content": "<div align=center>Figure 2-1-1 K230 Package</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "K230",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_65"
+        }
+      ],
+      "expected_keywords": [
+        "SPI",
+        "OSPI",
+        "QSPI"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 20,
+      "question": "How many GPIOs are available on the K230?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / K230",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3382,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.4305,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 3,
+          "score": 1.4741,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 4,
+          "score": 1.4759,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        },
+        {
+          "rank": 5,
+          "score": 1.4763,
+          "content": "<div align=center>Figure 2-1-1 K230 Package</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "K230",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_65"
+        }
+      ],
+      "expected_keywords": [
+        "GPIO"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 21,
+      "question": "How many USB 2.0 OTG interfaces are supported?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "The answer is 8.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Absolute Max Rating\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / peripheral\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Audio\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Electrical Characteristics for USB\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Recommended Operating Condition",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5388,
+          "content": "8/3.63       | V     |\n| IO           | VDDIO3P3_2      | -0.1 | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_3      | -0.1 | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_4      | -0.1 | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_5      | -0.1 | 1.98/3.63       | V     |\n| USB          | AVDD3P3_USB     | -0.1 | 3.63            | V     |\n| USB          | AVDD1P8_USB     | -0.1 | 1.98            | V     |\n| PLL          | AVDD0P8_PLL     | -0.1 | 0.88            | V     |\n| MIPI         | AVDD0P8_MIPI    | -0.1 | 0.88            | V     |\n| MIPI         | AVDD1P8_MIPI    | -0.1 | 1.98            | V     |\n| ADC          | AVDD1P8_ADC     | -0.1 | 1.98            | V     |\n| AUDIO CODEC  | AVDD1P8_CODEC   | -0.1 | 1.98            | V     |\n| MMC          | VDD3P3_SD       | -0.1 | 3.63            | V     |\n| SYSTEM       | VDD1P8          | -0.1 | 1.98            | V     |\n| K230D LPDDR4 | VDD1P8_DDR_VDD1 | -0.1 | 1.98            | V     |\n| K230D LPDDR4 | VDD1P1_D",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Absolute Max Rating",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_69"
+        },
+        {
+          "rank": 2,
+          "score": 1.5508,
+          "content": "le signal bits\n  - Configurable interrupt mode for GPIO group0 and GPIO group1. As input, each GPIO pin can act as an interrupt source.  IO both edge interrupts.\n  - Configurable debounce logic with an external slow clock to debounce interrupts\n  - Option to generate single or multiple interrupts\n  - Configurable reset values on output signals\n  - Configurable synchronization of interrupt signals\n  - 32-bit APB width\n\n- USB\n\n  - Support 2 USB 2.0 OTG\n  - Support for the following speeds:High-Speed (HS, 480-Mbps),Full-Speed (FS, 12-Mbps) and Low-Speed (LS, 1.5-Mbps) modes\n  - Multiple options available for low power operations\n  - DMA mode access support on the application side\n  - Supports up to 6 bidirectional endpoints, including control endpoint 0\n  - Supports the Keep-Alive in Low-Speed mode and SOFs in High/Full-Speed modes\n  - The USB 2.0 modules supports the following transfer types:Control transfer,Bulk transfer,Interrupt transfer,isochronous transfer\n  - Internal DMA mode has",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "peripheral",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_55"
+        },
+        {
+          "rank": 3,
+          "score": 1.5727,
+          "content": "art working again after being disabled and re-enabled\n- The audio module can start working again after asserting reset and de-asserting reset\n- PDM audio\n  - PDM audio input with data sampling rate of 2.048/2.8224 MHz, 1-bit data width, sampling clock rate of 0.256MHz/0.384MHz/0.512MHz/0.768MHz/1.024MHz/1.4112MHz/1.536MHz/2.048MHz/2.8224MHz/3.072MHz/4.096MHz/5.6448MHz/6.144MHz/12.288MHz/24.576MHz, corresponding PCM sampling rate of 8kHz/12kHz/16kHz/24kHz/32kHz/44.1kHz/48kHz/96kHz/192kHz\n  - Oversampling rate is configurable with x128, x64 and x32\n  - 1-4 IOs are used for input PDM audio\n  - The input can be configured with 1-8 PDM channels. It supports left/right mono mode and dual mode of PDM. All IO channel modes are unified. The maximum number of IO in dual mode is 4\n  - The serial numbers of enabled channels are from small to big. Random enabling of each channel is not supported\n  - The skew between PDM input data and pdm_clk is up to 18 PCLK cycles\n  - Conversion from input PDM au",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Audio",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_50"
+        },
+        {
+          "rank": 4,
+          "score": 1.6225,
+          "content": "| ICCSH   |                                                       |           | 2.5   | mA   |\n| Suspended Low-power Device                                                   | ICCSL   |                                                       |           | 500   | uA   |\n| High (driven)                                                                | VIH     |                                                       | 2         |       | V    |\n| High (floating)                                                              | VIHZ    |                                                       | 2.7       | 3.6   | V    |\n| Low                                                                          | VIL     |                                                       | 0.8       |       | V    |\n| Differential Input Sensitivity                                               | VDI     |                                                       | (D+)-(D-) |       | 0.2  |\n| Differential Co",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Electrical Characteristics for USB",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_106"
+        },
+        {
+          "rank": 5,
+          "score": 1.6524,
+          "content": "| VDD1P1_DDR_IO   | 1.06/1.14/1.283 | 1.1/1.2/1.35 | 1.21/1.32/1.485 | V     |\n| DDR          | VAA_DDR         | 1.674           | 1.8          | 1.98            | V     |\n| IO           | VDDIO3P3_0      | 1.62/2.97       | 1.8/3.3      | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_1      | 1.62/2.97       | 1.8/3.3      | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_2      | 1.62/2.97       | 1.8/3.3      | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_3      | 1.62/2.97       | 1.8/3.3      | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_4      | 1.62/2.97       | 1.8/3.3      | 1.98/3.63       | V     |\n| IO           | VDDIO3P3_5      | 1.62/2.97       | 1.8/3.3      | 1.98/3.63       | V     |\n| USB          | AVDD3P3_USB     | 3.07            | 3.3          | 3.63            | V     |\n| USB          | AVDD1P8_USB     | 1.674           | 1.8          | 1.98            | V     |\n| PLL          | AVDD0P8_PLL     | 0.72            | 0.8          | 0",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Recommended Operating Condition",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_72"
+        }
+      ],
+      "expected_keywords": [
+        "USB",
+        "OTG"
+      ],
+      "matched_keywords": [
+        "usb"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 22,
+      "question": "Which USB speeds are supported by the K230?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5555,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.5749,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 3,
+          "score": 1.6175,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.6467,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 5,
+          "score": 1.648,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "USB",
+        "High-Speed",
+        "Full-Speed"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 23,
+      "question": "How many SD/eMMC controllers does the K230 provide?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "The answer is 2.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / peripheral\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2507,
+          "content": "SB 2.0 modules supports the following transfer types:Control transfer,Bulk transfer,Interrupt transfer,isochronous transfer\n  - Internal DMA mode has two modes of operation: Buffer DMA mode and Scatter/Gather DMA mode\n  - Total Data FIFO RAM Depth is 3072\n  - Not support ADP/HNP/SRP/Battery Charger\n\n- SD/EMMC\n  - Support 2 SDxC: SD3.01, eMMC 5.0\n  - The eMMC/SD/SDIO controller features as below.\n\n    - Supports SD memory and SD Input/Output (SDIO) digital interface protocol, and compliant with SD HCI specification\n    - Uses the same SD-HCI register set for eMMC transfers\n    - Supports eMMC protocols including eMMC 5.1\n    - Supports SD-HCI Host version 3 mode or less\n    - Supports the following data transfer types for SD, eMMC modes:\n      - CPU\n      - SDMA\n      - ADMA2\n      - ADMA3\n    - Supports independent controller, AMBA Slave interface and Master Interface clocks\n    - Supports gating of controller base clock if Host Controller is inactive\n    - Support context aware functi",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "peripheral",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_56"
+        },
+        {
+          "rank": 2,
+          "score": 1.4623,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 3,
+          "score": 1.5374,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.5727,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 5,
+          "score": 1.5743,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        }
+      ],
+      "expected_keywords": [
+        "SD",
+        "eMMC",
+        "controller"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 24,
+      "question": "Which SD and eMMC standards are supported?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "SB 2.0 modules supports the following transfer types:Control transfer,Bulk transfer,Interrupt transfer,isochronous transfer\n  - Internal DMA mode has two modes of operation: Buffer DMA mode and Scatter/Gather DMA mode\n  - Total Data FIFO RAM Depth is 3072\n  - Not support ADP/HNP/SRP/Battery Charger\n\n- SD/EMMC\n  - Support 2 SDxC: SD3.01, eMMC 5.0\n  - The eMMC/SD/SDIO controller features as below.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / peripheral\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Audio\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Others\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Audio\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Video output",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2623,
+          "content": "SB 2.0 modules supports the following transfer types:Control transfer,Bulk transfer,Interrupt transfer,isochronous transfer\n  - Internal DMA mode has two modes of operation: Buffer DMA mode and Scatter/Gather DMA mode\n  - Total Data FIFO RAM Depth is 3072\n  - Not support ADP/HNP/SRP/Battery Charger\n\n- SD/EMMC\n  - Support 2 SDxC: SD3.01, eMMC 5.0\n  - The eMMC/SD/SDIO controller features as below.\n\n    - Supports SD memory and SD Input/Output (SDIO) digital interface protocol, and compliant with SD HCI specification\n    - Uses the same SD-HCI register set for eMMC transfers\n    - Supports eMMC protocols including eMMC 5.1\n    - Supports SD-HCI Host version 3 mode or less\n    - Supports the following data transfer types for SD, eMMC modes:\n      - CPU\n      - SDMA\n      - ADMA2\n      - ADMA3\n    - Supports independent controller, AMBA Slave interface and Master Interface clocks\n    - Supports gating of controller base clock if Host Controller is inactive\n    - Support context aware functi",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "peripheral",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_56"
+        },
+        {
+          "rank": 2,
+          "score": 1.7046,
+          "content": "art working again after being disabled and re-enabled\n- The audio module can start working again after asserting reset and de-asserting reset\n- PDM audio\n  - PDM audio input with data sampling rate of 2.048/2.8224 MHz, 1-bit data width, sampling clock rate of 0.256MHz/0.384MHz/0.512MHz/0.768MHz/1.024MHz/1.4112MHz/1.536MHz/2.048MHz/2.8224MHz/3.072MHz/4.096MHz/5.6448MHz/6.144MHz/12.288MHz/24.576MHz, corresponding PCM sampling rate of 8kHz/12kHz/16kHz/24kHz/32kHz/44.1kHz/48kHz/96kHz/192kHz\n  - Oversampling rate is configurable with x128, x64 and x32\n  - 1-4 IOs are used for input PDM audio\n  - The input can be configured with 1-8 PDM channels. It supports left/right mono mode and dual mode of PDM. All IO channel modes are unified. The maximum number of IO in dual mode is 4\n  - The serial numbers of enabled channels are from small to big. Random enabling of each channel is not supported\n  - The skew between PDM input data and pdm_clk is up to 18 PCLK cycles\n  - Conversion from input PDM au",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Audio",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_50"
+        },
+        {
+          "rank": 3,
+          "score": 1.7147,
+          "content": "ion accuracy, the real and imaginary parts of input and output are both in int16 format\n  - Support the standard axi4 slave interface, which is used for parameter configuration and data transfer.\n  - The input supports RIRI...., RRRR.... (singal real part), RRRR...IIII... format arrangement, and the output supports RIRI...., RRRR...IIII... format arrangement\n  - It adopts the calculation method of base 2-time decimation, and there is only one butterfly operator inside\n  - A single clock domain design is adopted, and the bus clock is also used as the operation clock\n  - The calculation time of 4096-point fft/ifft is controlled within 1ms, including the total overhead of data movement, calculation, and interrupt interaction\n  - Support interrupt mask, original interrupt query\n\n- Fastboot: 3A first picture ≤ 400ms\n- Working environment temperature: -40 ~ 85°C",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Others",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_62"
+        },
+        {
+          "rank": 4,
+          "score": 1.7221,
+          "content": "K230 audio supports the following features:\n\n- Audio codec inside\n- 2 DAC channels for stereo playback with sample rate 8-192Khz\n- 2 ADC channels for stereo recording from microphone with sample rate 8-192Khz\n- Audio codec support Automatic Level Control (ALC) function to adjust the signal level,which is input into ADC\n- Maximum 8 x PDM DMIC inputs\n- I2S interface supports 2x2 expansion\n- Support master mode, which means clock(pdm_clk and i2s_sclk) and ws(only I2S) are output from audio.\n- I2S input, pdm input and I2s output audio modes can work simultaneously\n- APB2.0 interface is used to configure registers, and read/write PCM data. The default frequency of configurable APB working clock PCLK is 100MHz, and the data interface is 32 bits\n- PCM data can be transferred by PDMA. Burst length in PDMA is configurable\n- The audio module can start working again after being disabled and re-enabled\n- The audio module can start working again after asserting reset and de-asserting reset\n- PDM au",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Audio",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_49"
+        },
+        {
+          "rank": 5,
+          "score": 1.7405,
+          "content": "t rotation and scaling). The video layer can only use three layers\n- When scaling is necessary and layer0 is required, the maximum frame rate at 1080p is 20fps, and 30 frames can be supported at 720p",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Video output",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_38"
+        }
+      ],
+      "expected_keywords": [
+        "SD",
+        "eMMC",
+        "SD3.0",
+        "eMMC5.1"
+      ],
+      "matched_keywords": [
+        "sd",
+        "emmc",
+        "sd3.0"
+      ],
+      "is_relevant": true
+    },
+    {
+      "id": 25,
+      "question": "How many DMA channels are provided by the PDMA controller?",
+      "category": "Peripheral",
+      "status": "answered",
+      "answer": "The answer is 2.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / peripheral\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Audio\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Others",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5007,
+          "content": "SB 2.0 modules supports the following transfer types:Control transfer,Bulk transfer,Interrupt transfer,isochronous transfer\n  - Internal DMA mode has two modes of operation: Buffer DMA mode and Scatter/Gather DMA mode\n  - Total Data FIFO RAM Depth is 3072\n  - Not support ADP/HNP/SRP/Battery Charger\n\n- SD/EMMC\n  - Support 2 SDxC: SD3.01, eMMC 5.0\n  - The eMMC/SD/SDIO controller features as below.\n\n    - Supports SD memory and SD Input/Output (SDIO) digital interface protocol, and compliant with SD HCI specification\n    - Uses the same SD-HCI register set for eMMC transfers\n    - Supports eMMC protocols including eMMC 5.1\n    - Supports SD-HCI Host version 3 mode or less\n    - Supports the following data transfer types for SD, eMMC modes:\n      - CPU\n      - SDMA\n      - ADMA2\n      - ADMA3\n    - Supports independent controller, AMBA Slave interface and Master Interface clocks\n    - Supports gating of controller base clock if Host Controller is inactive\n    - Support context aware functi",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "peripheral",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_56"
+        },
+        {
+          "rank": 2,
+          "score": 1.6184,
+          "content": "art working again after being disabled and re-enabled\n- The audio module can start working again after asserting reset and de-asserting reset\n- PDM audio\n  - PDM audio input with data sampling rate of 2.048/2.8224 MHz, 1-bit data width, sampling clock rate of 0.256MHz/0.384MHz/0.512MHz/0.768MHz/1.024MHz/1.4112MHz/1.536MHz/2.048MHz/2.8224MHz/3.072MHz/4.096MHz/5.6448MHz/6.144MHz/12.288MHz/24.576MHz, corresponding PCM sampling rate of 8kHz/12kHz/16kHz/24kHz/32kHz/44.1kHz/48kHz/96kHz/192kHz\n  - Oversampling rate is configurable with x128, x64 and x32\n  - 1-4 IOs are used for input PDM audio\n  - The input can be configured with 1-8 PDM channels. It supports left/right mono mode and dual mode of PDM. All IO channel modes are unified. The maximum number of IO in dual mode is 4\n  - The serial numbers of enabled channels are from small to big. Random enabling of each channel is not supported\n  - The skew between PDM input data and pdm_clk is up to 18 PCLK cycles\n  - Conversion from input PDM au",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Audio",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_50"
+        },
+        {
+          "rank": 3,
+          "score": 1.635,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 4,
+          "score": 1.6622,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 5,
+          "score": 1.6634,
+          "content": "- decompression\n\n  - Decompression accelerator is mainly used to implement hardware GZIP decompression function.\n  - Decompression bandwidth ≥ 400MB/s\n  - Support GZIP file format version 4.3\n  - Support DEFLATE compressed file version 1.3\n  - The maximum dictionary size is 32KB\n  - Support the minimum word matching length of 3Byte and the maximum word matching length of 258Byte\n  - Only dynamic huffman compression mode is supported\n  - Support data stream CRC32 verification\n  - Support hardware to automatically generate dynamic huffman tree\n  - The APB3 register interface is used to configure the startup decompression accelerator\n  - Request the DMA controller to transfer large blocks through hardware, and request to transfer 32Kbyte at most once\n\n- FFT/IFFT\n\n  - Support maximum 4096 point fft, ifft calculation\n  - Support int16 calculation accuracy, the real and imaginary parts of input and output are both in int16 format\n  - Support the standard axi4 slave interface, which is used f",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Others",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_61"
+        }
+      ],
+      "expected_keywords": [
+        "PDMA",
+        "8 channels"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 26,
+      "question": "What is the operating temperature range of the K230?",
+      "category": "Electrical",
+      "status": "answered",
+      "answer": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Others\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / DPU (Depth Processing Unit)",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.1298,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 2,
+          "score": 1.1732,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 3,
+          "score": 1.2342,
+          "content": "- Using 3D structured light depth calculation\n- The maximum resolution of the landscape image is 1920\\*1080, and the maximum resolution of the portrait image is 1080\\*1440\n- Typical performance is 1280\\*800@30fps, 1280\\*1080@15fps,1920\\*1080@9fps\n- Both read and write AXI bus support crop\n- Support standard axi-4 protocol, data bit width 64bit, address bit width 32bit, burst_length up to 16, read and write outstanding up to 8\n- Support standard apb3.0 protocol, data bit width 32bit, address bit width 32bit\n- Img_check: The precision of the input speckle image is int8, the precision of the output calculation result is int1, and it supports output after downsampling\n- LCN: The precision of the input speckle image is int8, and the precision of the output calculation result is int12, which supports normalized calculation of the source image\n- SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SA",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_17"
+        },
+        {
+          "rank": 4,
+          "score": 1.3166,
+          "content": "ion accuracy, the real and imaginary parts of input and output are both in int16 format\n  - Support the standard axi4 slave interface, which is used for parameter configuration and data transfer.\n  - The input supports RIRI...., RRRR.... (singal real part), RRRR...IIII... format arrangement, and the output supports RIRI...., RRRR...IIII... format arrangement\n  - It adopts the calculation method of base 2-time decimation, and there is only one butterfly operator inside\n  - A single clock domain design is adopted, and the bus clock is also used as the operation clock\n  - The calculation time of 4096-point fft/ifft is controlled within 1ms, including the total overhead of data movement, calculation, and interrupt interaction\n  - Support interrupt mask, original interrupt query\n\n- Fastboot: 3A first picture ≤ 400ms\n- Working environment temperature: -40 ~ 85°C",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Others",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_62"
+        },
+        {
+          "rank": 5,
+          "score": 1.3369,
+          "content": "SAD: Input the normalized speckle image/reference image, the accuracy is int12, the output row and column parallax accuracy is int16, support Init_SAD single/double layer enable, support SAD double layer enable, and support the first layer input of Init_SAD/SAD is involved in the calculation after 1/2 downsampling\n- Post_proc: The precision of the input column parallax is int16, the precision of the output calculation result is int1, supports Post_proc enable, and supports Post_proc inner mask denoising enable\n- Align: The precision of input column parallax is int16, the precision of mask is int1, the precision of output depth/disparity map is int16, the precision of input/output infrared map is int8, supports height block processing parallax/infrared alignment, supports parallax/infrared Alignment enable, support Align inner parallax denoising enable, support parallax/infrared up and down sampling enable, support Disp2depth enable\n- Support normal calculation end interrupt, timeout i",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "DPU (Depth Processing Unit)",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_18"
+        }
+      ],
+      "expected_keywords": [
+        "temperature",
+        "operating"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 27,
+      "question": "What are the main security features provided by the K230?",
+      "category": "Security",
+      "status": "answered",
+      "answer": "This document is intended to provide a full description of the K230 platform and its features.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2869,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 2,
+          "score": 1.422,
+          "content": "performance.\n  - YUV420 10 bit, P010, little endian, MSB aligned.\n  - YUV420 10 bit, 2 × 2 tile format. Note The YUV buffer and stride must have correct alignment for maximum performance.\n- Stride support for scan-line formats only.\n- Support for rotation of the decoded frame in 90 degree steps before output.\n- Support for downscaling the decoded frame horizontally and vertically by a factor of 2 or 4.\n- Support for downscaling the decoded frame horizontally and vertically by any factor individually. The smallest resolution can be 2 x 2 pixels.\n- Support for output of average frame luminance and chrominance for each 32 x 32 pixel block, for every output display frame.\n\nSupported codecs\n\nThe following codec standards are supported for decoding:\n\n- HEVC (H.265) Main/Main10.\n- H.264 Baseline, Main, High, and High10 Progressive Profile.\n- JPEG, baseline sequential, YUV420 and YUV422. Note Only the JPEG codec can decode YUV422.\n\nHEVC (H.265) decoding features\n\n- The decoder is fully complia",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_44"
+        },
+        {
+          "rank": 3,
+          "score": 1.4577,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 4,
+          "score": 1.4815,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 5,
+          "score": 1.4891,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        }
+      ],
+      "expected_keywords": [
+        "PUF",
+        "OTP",
+        "TRNG",
+        "security boot"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 28,
+      "question": "Which cryptographic algorithms are supported by the security subsystem?",
+      "category": "Security",
+      "status": "answered",
+      "answer": "rvice (QoS) support\n  - Programmable support for all of the following SDRAM data-bus widths: Full data-bus width or Half of the full data-bus width\n  - Supports max to 2 ranks\n  - Control options to avoid starvation of lower priorities\n  - Guaranteed coherency for write-after-read (WAR) and read-after-write (RAW) hazards (always on the HIF interface and on the AXI interface only if appropriate hardware configuration parameter and software register are set)\n  - Write combine to allow multiple writes to the same address to be combined into a single write to SDRAM; supported for same starting address\n  - Supports automatic SDRAM power-down entry and exit caused by lack of transaction arrival for a programmable time\n  - Supports automatic Clock Stop (LPDDR3/LPDDR4) entry and exit caused by lack transaction arrival\n  - Supports automatic low power mode operation caused by lack of transaction arrival for a rogrammable time through the Hardware Low Power Interface\n  - Flexible address mapper\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / video codec\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Others",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.5516,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 2,
+          "score": 1.5536,
+          "content": "performance.\n  - YUV420 10 bit, P010, little endian, MSB aligned.\n  - YUV420 10 bit, 2 × 2 tile format. Note The YUV buffer and stride must have correct alignment for maximum performance.\n- Stride support for scan-line formats only.\n- Support for rotation of the decoded frame in 90 degree steps before output.\n- Support for downscaling the decoded frame horizontally and vertically by a factor of 2 or 4.\n- Support for downscaling the decoded frame horizontally and vertically by any factor individually. The smallest resolution can be 2 x 2 pixels.\n- Support for output of average frame luminance and chrominance for each 32 x 32 pixel block, for every output display frame.\n\nSupported codecs\n\nThe following codec standards are supported for decoding:\n\n- HEVC (H.265) Main/Main10.\n- H.264 Baseline, Main, High, and High10 Progressive Profile.\n- JPEG, baseline sequential, YUV420 and YUV422. Note Only the JPEG codec can decode YUV422.\n\nHEVC (H.265) decoding features\n\n- The decoder is fully complia",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "video codec",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_44"
+        },
+        {
+          "rank": 3,
+          "score": 1.5729,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 4,
+          "score": 1.5826,
+          "content": "rvice (QoS) support\n  - Programmable support for all of the following SDRAM data-bus widths: Full data-bus width or Half of the full data-bus width\n  - Supports max to 2 ranks\n  - Control options to avoid starvation of lower priorities\n  - Guaranteed coherency for write-after-read (WAR) and read-after-write (RAW) hazards (always on the HIF interface and on the AXI interface only if appropriate hardware configuration parameter and software register are set)\n  - Write combine to allow multiple writes to the same address to be combined into a single write to SDRAM; supported for same starting address\n  - Supports automatic SDRAM power-down entry and exit caused by lack of transaction arrival for a programmable time\n  - Supports automatic Clock Stop (LPDDR3/LPDDR4) entry and exit caused by lack transaction arrival\n  - Supports automatic low power mode operation caused by lack of transaction arrival for a rogrammable time through the Hardware Low Power Interface\n  - Flexible address mapper",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_21"
+        },
+        {
+          "rank": 5,
+          "score": 1.6249,
+          "content": "ion accuracy, the real and imaginary parts of input and output are both in int16 format\n  - Support the standard axi4 slave interface, which is used for parameter configuration and data transfer.\n  - The input supports RIRI...., RRRR.... (singal real part), RRRR...IIII... format arrangement, and the output supports RIRI...., RRRR...IIII... format arrangement\n  - It adopts the calculation method of base 2-time decimation, and there is only one butterfly operator inside\n  - A single clock domain design is adopted, and the bus clock is also used as the operation clock\n  - The calculation time of 4096-point fft/ifft is controlled within 1ms, including the total overhead of data movement, calculation, and interrupt interaction\n  - Support interrupt mask, original interrupt query\n\n- Fastboot: 3A first picture ≤ 400ms\n- Working environment temperature: -40 ~ 85°C",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Others",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_62"
+        }
+      ],
+      "expected_keywords": [
+        "AES",
+        "RSA",
+        "ECC",
+        "SHA",
+        "SM3",
+        "SM4"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 29,
+      "question": "Does the K230 support secure boot?",
+      "category": "Security",
+      "status": "answered",
+      "answer": "The K230 provides 2 MB of shared SRAM.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Block Diagram\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / K230",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.2133,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        },
+        {
+          "rank": 2,
+          "score": 1.3748,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 3,
+          "score": 1.462,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 4,
+          "score": 1.5049,
+          "content": "<div align=center>Figure 1-3-1 K230 block diagram</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Block Diagram",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_63"
+        },
+        {
+          "rank": 5,
+          "score": 1.5053,
+          "content": "<div align=center>Figure 2-1-1 K230 Package</div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "K230",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_65"
+        }
+      ],
+      "expected_keywords": [
+        "security boot",
+        "signature"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    },
+    {
+      "id": 30,
+      "question": "What are the typical applications targeted by the K230 SoC?",
+      "category": "General",
+      "status": "answered",
+      "answer": "All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nSources:\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Trademark Notice\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Chapter 2 Package Information\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Memory\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md / Purpose\n- C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html / Memory",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 1.3682,
+          "content": "\"Canaan\" and other Canaan trademarks are trademarks of Canaan Creative CO., LTD. and its affiliates. All other trademarks or registered trademarks that may be mentioned in this document are owned by their respective owners.\n\nCopyright©2023 Canaan Creative CO., LTD.\nThis document is only suitable for the development and design of K230 platform, without the written permission of the company, any unit or individual shall not disseminate part or all of the content of this document in any form.\n\nCanaan Creative CO., LTD.\nWebsite：canaan-creative.com\nBusiness Email：<salesAI@canaan-creative.com>\n\n<div style=\"page-break-after:always\"></div>",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Trademark Notice",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_3"
+        },
+        {
+          "rank": 2,
+          "score": 1.4047,
+          "content": "K230 have two types of package, one is K230 that has a single die, the other is K230D that merges a 1Gb LPDDR4.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Chapter 2 Package Information",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_64"
+        },
+        {
+          "rank": 3,
+          "score": 1.4374,
+          "content": "supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:\n    - Programmble address,instruction,wait cycles,and data frame size\n    - Dual Data Rate(DDR) support\n    - Read Data Strobe support for DDR transfer\n  - Data item size(4 to 32bits)-Item size of each data transfer under control of the programmer\n  - Execute In Pla",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_24"
+        },
+        {
+          "rank": 4,
+          "score": 1.4446,
+          "content": "This document is intended to provide a full description of the K230 platform and its features.",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md",
+          "section": "Purpose",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample_k230.md_chunk_4"
+        },
+        {
+          "rank": 5,
+          "score": 1.487,
+          "content": "The K230 provides 2 MB of shared SRAM.\nLPDDR4 support\nLPDDR3 support",
+          "source": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html",
+          "section": "Memory",
+          "chunk_id": "C:\\Users\\mberrada\\FormationIaProject\\exercices\\AI_Agent\\tests\\fixtures\\sample.html_chunk_2"
+        }
+      ],
+      "expected_keywords": [
+        "smart door locks",
+        "security cameras",
+        "drones",
+        "smart hardware"
+      ],
+      "matched_keywords": [],
+      "is_relevant": false
+    }
+  ]
+}
