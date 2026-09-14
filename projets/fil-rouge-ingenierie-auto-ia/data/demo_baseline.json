@@ -1,0 +1,77 @@
+{
+  "run_id": "AUTO-AI-DEMO-001",
+  "objective": "Construire une chaîne automobile traçable reliant normes, exigences, projet open source et qualité logicielle",
+  "human_approvals": {
+    "baselines": true
+  },
+  "baselines": [
+    {
+      "id": "ASPICE-DEMO",
+      "source": "fixture pédagogique locale",
+      "revision": "demo-1",
+      "access": "lecture seule",
+      "status": "Candidat",
+      "passages": [
+        {
+          "id": "SWE.1-DEMO",
+          "text": "Les exigences logicielles doivent être structurées, analysées et reliées à leur source avec des critères vérifiables."
+        }
+      ]
+    },
+    {
+      "id": "QUALITY-DEMO",
+      "source": "fixture pédagogique locale",
+      "revision": "demo-1",
+      "access": "lecture seule",
+      "status": "Candidat",
+      "passages": [
+        {
+          "id": "QA-TRACE-DEMO",
+          "text": "Chaque diagnostic qualité doit conserver son outil, sa localisation, sa sévérité et la preuve de recontrôle."
+        }
+      ]
+    }
+  ],
+  "project_candidates": [
+    {
+      "name": "Projet moteur démonstrateur",
+      "revision": "demo-commit-001",
+      "license": "Licence de fixture",
+      "requirements": true,
+      "tests": true,
+      "quality": true
+    },
+    {
+      "name": "Projet incomplet",
+      "revision": "demo-commit-002",
+      "license": null,
+      "requirements": false,
+      "tests": true,
+      "quality": false
+    }
+  ],
+  "quality_diagnostics": [
+    {
+      "id": "CPP-DEMO-001",
+      "tool": "cppcheck-fixture",
+      "severity": "warning",
+      "file": "src/control.c",
+      "line": 42,
+      "message": "Diagnostic pédagogique, aucune conformité revendiquée."
+    }
+  ],
+  "explicit_trace_links": [
+    {
+      "requirement_id": "REQ-FIL-001",
+      "target": "tests/test_traceability.py::test_demo",
+      "oracle": "fixture approuvée avant implémentation",
+      "evidence": "run-demo-001"
+    },
+    {
+      "requirement_id": "REQ-FIL-001",
+      "target": "src/control.c",
+      "oracle": null,
+      "evidence": null
+    }
+  ]
+}
