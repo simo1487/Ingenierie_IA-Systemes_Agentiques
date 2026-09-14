@@ -1,0 +1,186 @@
+{
+  "run_id": "AUTO-AI-DEMO-001",
+  "objective": "Construire une chaîne automobile traçable reliant normes, exigences, projet open source et qualité logicielle",
+  "provider": "deterministic-offline",
+  "generated_at": "2026-09-13T06:41:31.708566+00:00",
+  "status": "ready-for-human-review",
+  "results": [
+    {
+      "agent": "corpus",
+      "status": "Observé",
+      "payload": {
+        "baseline_count": 2,
+        "passage_count": 2
+      },
+      "sources": [
+        {
+          "source_id": "ASPICE-DEMO",
+          "revision": "demo-1"
+        },
+        {
+          "source_id": "QUALITY-DEMO",
+          "revision": "demo-1"
+        }
+      ],
+      "questions": []
+    },
+    {
+      "agent": "rag",
+      "status": "Observé",
+      "payload": {
+        "retrieval_status": "found",
+        "citations": [
+          {
+            "source_id": "ASPICE-DEMO",
+            "revision": "demo-1",
+            "passage_id": "SWE.1-DEMO",
+            "text": "Les exigences logicielles doivent être structurées, analysées et reliées à leur source avec des critères vérifiables.",
+            "score": 0.1667
+          },
+          {
+            "source_id": "QUALITY-DEMO",
+            "revision": "demo-1",
+            "passage_id": "QA-TRACE-DEMO",
+            "text": "Chaque diagnostic qualité doit conserver son outil, sa localisation, sa sévérité et la preuve de recontrôle.",
+            "score": 0.0833
+          }
+        ]
+      },
+      "sources": [
+        {
+          "source_id": "ASPICE-DEMO",
+          "revision": "demo-1"
+        },
+        {
+          "source_id": "QUALITY-DEMO",
+          "revision": "demo-1"
+        }
+      ],
+      "questions": []
+    },
+    {
+      "agent": "requirements",
+      "status": "Proposition",
+      "payload": {
+        "requirements": [
+          {
+            "id": "REQ-FIL-001",
+            "statement": "Le produit doit conserver une preuve traçable vers ASPICE-DEMO:SWE.1-DEMO.",
+            "rationale": "Proposition dérivée du passage le mieux classé, à valider par un ingénieur exigences.",
+            "status": "Proposition",
+            "citations": [
+              {
+                "source_id": "ASPICE-DEMO",
+                "passage_id": "SWE.1-DEMO"
+              },
+              {
+                "source_id": "QUALITY-DEMO",
+                "passage_id": "QA-TRACE-DEMO"
+              }
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "source_id": "ASPICE-DEMO",
+          "revision": "demo-1"
+        },
+        {
+          "source_id": "QUALITY-DEMO",
+          "revision": "demo-1"
+        }
+      ],
+      "questions": []
+    },
+    {
+      "agent": "project-selection",
+      "status": "Proposition",
+      "payload": {
+        "ranking": [
+          {
+            "name": "Projet moteur démonstrateur",
+            "score": 10,
+            "max_score": 10,
+            "status": "Proposition"
+          },
+          {
+            "name": "Projet incomplet",
+            "score": 4,
+            "max_score": 10,
+            "status": "Proposition"
+          }
+        ],
+        "decision_required": true
+      },
+      "sources": [],
+      "questions": [
+        "Licence ou révision absente pour Projet incomplet"
+      ]
+    },
+    {
+      "agent": "quality",
+      "status": "Observé",
+      "payload": {
+        "diagnostics": [
+          {
+            "id": "CPP-DEMO-001",
+            "tool": "cppcheck-fixture",
+            "severity": "warning",
+            "file": "src/control.c",
+            "line": 42,
+            "message": "Diagnostic pédagogique, aucune conformité revendiquée."
+          }
+        ],
+        "correction_proposals": [
+          {
+            "diagnostic_id": "CPP-DEMO-001",
+            "proposal": "Examiner la cause, appliquer un correctif minimal sur une branche dédiée et relancer l'oracle indépendant.",
+            "status": "Proposition"
+          }
+        ],
+        "automatic_apply": false
+      },
+      "sources": [],
+      "questions": []
+    },
+    {
+      "agent": "traceability",
+      "status": "Observé",
+      "payload": {
+        "links": [
+          {
+            "requirement_id": "REQ-FIL-001",
+            "target": "tests/test_traceability.py::test_demo",
+            "oracle": "fixture approuvée avant implémentation",
+            "evidence": "run-demo-001",
+            "status": "Vérifié"
+          },
+          {
+            "requirement_id": "REQ-FIL-001",
+            "target": "src/control.c",
+            "oracle": null,
+            "evidence": null,
+            "status": "Proposition"
+          }
+        ],
+        "lexical_inference": false
+      },
+      "sources": [],
+      "questions": []
+    },
+    {
+      "agent": "review",
+      "status": "Proposition",
+      "payload": {
+        "gate": "ready-for-human-review",
+        "blocking_agents": [],
+        "human_decision_required": true
+      },
+      "sources": [],
+      "questions": [
+        "Licence ou révision absente pour Projet incomplet"
+      ]
+    }
+  ]
+}

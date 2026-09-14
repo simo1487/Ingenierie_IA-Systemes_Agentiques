@@ -5,6 +5,7 @@ Ce dossier centralise les spécifications de portefeuille définies dans [`trava
 | Branche | Équipe ou fonction | Spécification |
 |---|---|---|
 | `develop` | Intégration du travail commun | [`socle-commun/SPEC.md`](socle-commun/SPEC.md) |
+| `feat/fil-rouge-ingenierie-auto-ia` | Intégration fil rouge automobile IA | [`fil-rouge-ingenierie-auto-ia/SPEC.md`](fil-rouge-ingenierie-auto-ia/SPEC.md) |
 | `feat/initSearchSystem` | Initialisation technique de la recherche de normes | [`normes/initialisation-recherche/SPEC.md`](normes/initialisation-recherche/SPEC.md) |
 | `feat/GetNormes` | Alain et Moustapha — Normes | [`normes/SPEC.md`](normes/SPEC.md) |
 | `feat_Cppcheck` | Eric, Céline et Damien — Qualité du code | [`qualite-code/SPEC.md`](qualite-code/SPEC.md) |
