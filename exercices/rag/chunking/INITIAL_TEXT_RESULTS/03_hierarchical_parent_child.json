@@ -1,0 +1,112 @@
+{
+  "script": "03_hierarchical_parent_child.py",
+  "chunk_sizes": [
+    256,
+    64
+  ],
+  "total_nodes": 6,
+  "leaf_nodes": 5,
+  "all_nodes": [
+    {
+      "node_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "parent_id": null,
+      "text": "# Chapitre 1 : Spécification des exigences logicielles (SWE.1)\n\nL'objectif de l'analyse des exigences logicielles est de transformer les exigences système allouées au logiciel en un ensemble structuré d'exigences logicielles vérifiables.\n\n## Base Practice SWE.1.BP1 : Elicitation\nUtiliser les exigences système et les attentes d'architecture pour documenter les besoins.\n\n## Base Practice SWE.1.BP2 : Structuration\nStructurer les exigences par domaine fonctionnel, sécurité et performance.\n\n# Chapitre 2 : Conception détaillée (SWE.3)\n\nDéfinir la structure interne de chaque unité logicielle, ses interfaces et ses invariants.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "9463a6a8-ccb1-4096-a7ca-19e63b011e8b",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "# Chapitre 1 : Spécification des exigences logicielles (SWE.1)\n\nL'objectif de l'analyse des exigences logicielles est de transformer les exigences système",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "f896bf02-80dd-4f1a-a976-1c02f25fb4dc",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "de l'analyse des exigences logicielles est de transformer les exigences système allouées au logiciel en un ensemble structuré d'exigences logicielles vérifiables.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "05fe4ec8-0ebc-4c2b-975b-383d16f027de",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "logicielles vérifiables.\n\n## Base Practice SWE.1.BP1 : Elicitation\nUtiliser les exigences système et les attentes d'architecture pour documenter les besoins.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "e66c2283-7a38-4840-a730-7f9de326061d",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "## Base Practice SWE.1.BP2 : Structuration\nStructurer les exigences par domaine fonctionnel, sécurité et performance.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "0ef39a1e-b6cb-43b1-b303-6314e0b9a6c4",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "# Chapitre 2 : Conception détaillée (SWE.3)\n\nDéfinir la structure interne de chaque unité logicielle, ses interfaces et ses invariants.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    }
+  ],
+  "leaf_nodes_list": [
+    {
+      "node_id": "9463a6a8-ccb1-4096-a7ca-19e63b011e8b",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "# Chapitre 1 : Spécification des exigences logicielles (SWE.1)\n\nL'objectif de l'analyse des exigences logicielles est de transformer les exigences système",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "f896bf02-80dd-4f1a-a976-1c02f25fb4dc",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "de l'analyse des exigences logicielles est de transformer les exigences système allouées au logiciel en un ensemble structuré d'exigences logicielles vérifiables.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "05fe4ec8-0ebc-4c2b-975b-383d16f027de",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "logicielles vérifiables.\n\n## Base Practice SWE.1.BP1 : Elicitation\nUtiliser les exigences système et les attentes d'architecture pour documenter les besoins.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "e66c2283-7a38-4840-a730-7f9de326061d",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "## Base Practice SWE.1.BP2 : Structuration\nStructurer les exigences par domaine fonctionnel, sécurité et performance.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    },
+    {
+      "node_id": "0ef39a1e-b6cb-43b1-b303-6314e0b9a6c4",
+      "parent_id": "662ca013-a3f1-4246-b0bd-92f0a50193b0",
+      "text": "# Chapitre 2 : Conception détaillée (SWE.3)\n\nDéfinir la structure interne de chaque unité logicielle, ses interfaces et ses invariants.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "baseline": "ASPICE-v4.0"
+      }
+    }
+  ]
+}

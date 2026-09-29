@@ -1,0 +1,55 @@
+{
+  "script": "11_agent_examinateur.py",
+  "qdrant_collection": "aspice_exigences_markdown",
+  "llm": {
+    "provider": "mistral",
+    "model": "mistral-small-latest"
+  },
+  "session": {
+    "mode": "aleatoire",
+    "nb_questions": 3,
+    "catalog_size": 211,
+    "rounds": [
+      {
+        "req_id": "SWE.2.BP4",
+        "process_id": "SWE.2",
+        "process_label": "SWE.2 - Software Architectural Design",
+        "chapter": "Base Practices (pratiques de base)",
+        "question": "**Question :**\n*Comment expliquez-vous l'importance de la traçabilité bidirectionnelle entre les exigences logicielles et l'architecture logicielle dans le cadre du processus SWE.2, et quels bénéfices concrets cette pratique apporte-t-elle au projet ?*",
+        "candidate_answer": "Dans SWE.2 (*Software Architectural Design*), la traçabilité bidirectionnelle entre exigences logicielles et architecture logicielle est exigée par **SWE.2.BP4** et constitue un résultat attendu du processus (**OUTCOME1**) : elle garantit que chaque exigence est couverte par un élément d'architecture et que chaque élément d'architecture est justifié par une exigence. Ses bénéfices concrets (Note 10) sont le maintien de la cohérence entre exigences et conception, la facilitation de l'analyse d'impact des demandes de changement, et la démonstration de la couverture de vérification (work product *13-51 Consistency Evidence*). La norme précise toutefois que certaines exigences (ex. exigences de processus) ne tracent pas vers l'architecture tout en restant soumises à vérification, et que l'existence de liens seule ne prouve pas la cohérence — il faut aussi vérifier le contenu.",
+        "verdict": "CORRECTE",
+        "explanation": "La réponse du candidat est globalement correcte et couvre les points clés de l'exigence SWE.2.BP4. Elle mentionne explicitement la référence à la base practice (SWE.2.BP4), son lien avec l'outcome du processus (OUTCOME1), et les bénéfices concrets de la traçabilité bidirectionnelle (cohérence, analyse d'impact, couverture de vérification). Elle intègre également les précisions importantes des notes (exigences de processus non traçables, distinction entre existence de liens et cohérence).\n\nCependant, la réponse pourrait être enrichie en :\n1. **Explicitant davantage le rôle de la traçabilité bidirectionnelle** dans la démonstration de la conformité aux exigences (ex. : lien avec les activités de vérification comme SWE.6.BP3).\n2. **Précisant les artefacts concrets** attendus pour prouver cette traçabilité (ex. : matrices de traçabilité, documents d'architecture, preuves de cohérence comme le *13-51 Consistency Evidence*).\n3. **Soulignant l'aspect systématique** de la pratique, comme requis par l'exigence officielle (ex. : \"mise en œuvre systématique\" et \"preuves collectées\").\n\n**Réponse attendue d'après l'exigence officielle** :\nLa traçabilité bidirectionnelle est essentielle pour :\n- **Garantir la cohérence** entre exigences et architecture (ex. : chaque exigence fonctionnelle doit être reflétée dans l'architecture, et inversement).\n- **Faciliter l'analyse d'impact** des changements (ex. : identifier les éléments impactés par une modification d'exigence).\n- **Démontrer la couverture de vérification** (ex. : prouver que toutes les exigences sont vérifiables via l'architecture).\n- **Soutenir les activités de vérification** (ex. : lien avec SWE.6 pour la vérification des exigences).\n\nLes preuves doivent inclure des artefacts tangibles (matrices, documents) et des démonstrations pratiques (interviews, revues) pour valider la cohérence et l'exhaustivité des liens.",
+        "source_header_path": "SWE.2 - Software Architectural Design > Base Practices (pratiques de base)"
+      },
+      {
+        "req_id": "SUP.10.BP4",
+        "process_id": "SUP.10",
+        "process_label": "SUP.10 - Change Request Management",
+        "chapter": "Base Practices (pratiques de base)",
+        "question": "**Question :**\n*Comment démontreriez-vous concrètement que la traçabilité bidirectionnelle entre les demandes de changement (change requests) et les éléments du projet affectés (work products) est maintenue tout au long du cycle de vie d’un changement, en incluant les rapports de problème (problem reports) lorsqu’ils sont à l’origine de la demande ?*\n\n*(Précisez les artefacts, outils ou méthodes utilisés et donnez un exemple concret issu de votre projet.)*",
+        "candidate_answer": "La traçabilité bidirectionnelle entre change requests et work products affectés est exigée par **SUP.10.BP4**, qui impose aussi un lien **CR ↔ problem reports** quand la demande vient d'un problème (SUP.9). Concrètement, elle se démontre sur tout le cycle de vie : le problem report reçoit un ID unique qui supporte la traçabilité vers les changements (SUP.9.BP1, Note 4), la CR créée lors de l'initiation de la résolution (SUP.9.BP5) est enregistrée avec ID, initiateur et statut (SUP.10.BP1), puis l'analyse d'impact détermine les work products affectés et les dépendances (SUP.10.BP2), avant approbation CCB (SUP.10.BP3), confirmation de l'implémentation par les parties prenantes (SUP.10.BP5) et suivi jusqu'à clôture — le problème n'étant clos qu'avec toutes ses CR associées (SUP.9.BP6 + SUP.10.BP6). Les preuves sont les work products **13-16 Change request**, **13-51 Consistency evidence**, **13-07 Problem** et **15-12 Problem status**, maintenus via des workflows outillés ou des points réguliers.",
+        "verdict": "CORRECTE",
+        "explanation": "La réponse du candidat démontre une compréhension précise des exigences de traçabilité bidirectionnelle entre change requests (CR), work products et problem reports, en s'appuyant explicitement sur les processus SUP.9 et SUP.10 (BP1 à BP6) et leurs artefacts associés (13-16, 13-51, 13-07, 15-12). Elle couvre le cycle de vie complet du changement, depuis l'initiation jusqu'à la clôture, et mentionne les liens entre CR et problem reports, ainsi que les preuves documentaires attendues.\n\nCependant, la réponse aurait pu être enrichie en précisant :\n- **Les outils/méthodes concrets** utilisés pour maintenir cette traçabilité (ex : outils ALM comme Polarion, Jira avec plugins de traçabilité, ou matrices Excel dynamiques).\n- **Un exemple tangible** (même fictif) illustrant comment les IDs uniques et les liens sont documentés (ex : \"Le PR-2024-045 est lié à la CR-2024-078 via un champ dédié dans l'outil, et les work products impactés [ex : spécification SRS v2.1, code module X] sont référencés dans la CR\").\n- **La vérification systématique** de la cohérence des liens (ex : revues de traçabilité avant clôture de la CR).\n\n**Réponse attendue selon l'exigence officielle** :\nL'assesseur attend une démonstration **pratique et vérifiable** de la traçabilité bidirectionnelle, incluant :\n1. **Preuves tangibles** : artefacts (CR, problem reports, work products) avec des références croisées explicites (IDs, liens hypertextes, ou matrices).\n2. **Processus formalisé** : étapes claires (création des IDs, analyse d'impact, approbation, implémentation, clôture) avec des rôles responsables (ex : responsable qualité, chef de projet).\n3. **Outils/méthodes** : description des moyens utilisés pour établir et maintenir les liens (ex : outil ALM avec fonctionnalités de traçabilité, revues de cohérence).\n4. **Exemple concret** : un cas réel ou simulé montrant comment un changement (ex : correction d'un bug) est traçable",
+        "source_header_path": "SUP.10 - Change Request Management > Base Practices (pratiques de base)"
+      },
+      {
+        "req_id": "SWE.3.BP2",
+        "process_id": "SWE.3",
+        "process_label": "SWE.3 - Software Detailed Design and Unit Construction",
+        "chapter": "Base Practices (pratiques de base)",
+        "question": "**Question :**\n\n*\"Dans le cadre du processus SWE.3 (Software Detailed Design and Unit Construction) d'Automotive SPICE PAM v4.0, comment un ingénieur doit-il documenter et justifier les interactions dynamiques entre les unités logicielles pour garantir que le comportement global du composant est conforme à l'architecture logicielle ? Quels types d'artefacts ou de notations pourraient être utilisés pour illustrer ces aspects dynamiques, et pourquoi ?\"*",
+        "candidate_answer": "",
+        "verdict": "PARTIELLE",
+        "explanation": "La réponse du candidat aborde correctement l'importance de documenter les interactions dynamiques entre unités logicielles, mais elle reste trop générale et ne détaille pas suffisamment les artefacts ou notations spécifiques exigés par Automotive SPICE PAM v4.0. Elle mentionne brièvement des exemples comme les diagrammes UML ou SysML, mais sans expliquer leur pertinence pour justifier la conformité au comportement global du composant.\n\n**Réponse attendue :**\nUn ingénieur doit documenter les interactions dynamiques en utilisant des artefacts comme des diagrammes de séquence UML (pour les interactions temporelles), des diagrammes d'états-transitions (pour les comportements conditionnels), ou des spécifications en langage naturel semi-formel (ex. : SysML). Ces notations doivent être cohérentes avec l'architecture logicielle et inclure des justifications claires (ex. : allocation des responsabilités, contraintes temporelles). Les preuves de conformité incluent aussi des traces entre les exigences dynamiques (SWE.1) et le design détaillé (SWE.3), ainsi que des revues de conception validant ces aspects.",
+        "source_header_path": "SWE.3 - Software Detailed Design and Unit Construction > Base Practices (pratiques de base)"
+      }
+    ],
+    "verdicts": {
+      "CORRECTE": 2,
+      "PARTIELLE": 1,
+      "INCORRECTE": 0
+    },
+    "score": 5,
+    "max_score": 6
+  }
+}

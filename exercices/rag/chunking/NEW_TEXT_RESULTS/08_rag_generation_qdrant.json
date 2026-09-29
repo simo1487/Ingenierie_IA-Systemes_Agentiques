@@ -1,0 +1,65 @@
+{
+  "script": "08_rag_generation.py",
+  "qdrant_collection": "aspice_exigences_markdown",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "llm": {
+    "provider": "ollama",
+    "model": "qwen2.5:3b"
+  },
+  "parameters": {
+    "top_k": 3,
+    "min_score": 0.35
+  },
+  "qa": [
+    {
+      "question": "Que doit faire l'équipe selon la base practice SWE.1.BP1 ?",
+      "status": "answered",
+      "answer": "L'équipe doit selon la base practice SWE.1.BP1 :\n\n- Spécifier les exigences logicielles. \n- Utiliser les exigences systèmes et l'architecture système pour identifier et documenter les exigences fonctionnelles et fonctionnelles du logiciel conformément aux caractéristiques définies pour les exigences.\n\nConformément aux spécifications du document officiel, cette base practice requiert que l'équipe spécifie les exigences logicielles, en utilisant les exigences système et l'architecture système pour identifier et documenter les exigences fonctionnelles et fonctionnelles du logiciel conformément aux caractéristiques définies pour les exigences.",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.3558,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 2,
+          "score": 0.3456,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 3,
+          "score": 0.3342,
+          "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)"
+        }
+      ]
+    },
+    {
+      "question": "Quelles sont les pratiques du processus de qualité assurance SUP.1 ?",
+      "status": "answered",
+      "answer": "Le processus de qualité assurance SUP.1 comporte deux pratiques de base :\n\n1. SUP.1.BP2 - Define criteria for quality assurance\n   - Cette pratique de base requiert de définir des critères pour la garantie de qualité. Les critères doivent inclure des attentes internes et externes, tels que les exigences de la clientèle, les normes, les mottos, etc. \n\n2. SUP.1.BP5 - Summarize and communicate quality assurance activities and results\n   - Cette pratique de base requiert de résumer et de communiquer les activités et les résultats de la garantie de qualité. De plus, il faut régulièrement rapporter les performances, les non-conformités et les tendances des activités de garantie de qualité à tous les parties concernées.\n\nLes deux pratiques de base contribuent aux résultats du processus SUP.1 et à la capacité globale du projet dans le groupe SUP. La mise en œuvre de ces pratiques nécessite une définition claire des responsabilités, des ressources adéquates et un suivi des activités. Les notes associées à ces pratiques dans le document officiel fournissent des précisions sur les modalités d'application et les liens avec d'autres processus. La conformité à ces pratiques est vérifiée par l'examen des artefacts produits, les interviews du personnel et les démonstrations pratiques. La base pratique est considérée comme réalisée lorsque les preuves collectées montrent que l'activité décrite est effectivement exécutée de manière systématique.",
+      "citations": [
+        {
+          "rank": 1,
+          "score": 0.5569,
+          "header_path": "SUP.1 - Quality Assurance"
+        },
+        {
+          "rank": 2,
+          "score": 0.5192,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        },
+        {
+          "rank": 3,
+          "score": 0.5102,
+          "header_path": "SUP.1 - Quality Assurance > Base Practices (pratiques de base)"
+        }
+      ]
+    },
+    {
+      "question": "Quelle est la recette du couscous royal aux légumes ?",
+      "status": "not_found",
+      "answer": null,
+      "citations": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "script": "06_indexation_qdrant.py",
+  "source_chunks_file": "05_markdown_code_chunking.json",
+  "source_document": "automotive-spice-exigences.md",
+  "qdrant": {
+    "mode": "disk",
+    "path": "C:\\Users\\mos_k\\Documents\\GitHub\\FormationIaProject\\exercices\\rag\\chunking\\NEW_SCRIPTS\\qdrant_data",
+    "collection_name": "aspice_exigences_markdown",
+    "points_count": 339
+  },
+  "embedding": {
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dim": 384
+  },
+  "indexed_chunks": 339,
+  "demo_query": {
+    "query": "Quelles sont les exigences de l'analyse des exigences logicielles SWE.1 ?",
+    "top_k": 3,
+    "results": [
+      {
+        "score": 0.6157,
+        "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)",
+        "text_preview": "#### SWE.1.BP1 - Specify software requirements.\n\n- **ID officiel :** SWE.1.BP1\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Base Practice - Software Requirements Analysis\n- **Re"
+      },
+      {
+        "score": 0.6057,
+        "header_path": "SWE.1 - Software Requirements Analysis > Base Practices (pratiques de base)",
+        "text_preview": "#### SWE.1.BP6 - Communicate agreed software requirements and impact on the operating environment.\n\n- **ID officiel :** SWE.1.BP6\n- **Norme / Version :** Automotive SPICE PAM v4.0\n- **Categorie :** Ba"
+      },
+      {
+        "score": 0.6052,
+        "header_path": "SWE.1 - Software Requirements Analysis",
+        "text_preview": "### Description du processus\n\n**ID officiel :** SWE.1\n\n**Nom :** Software Requirements Analysis\n\n**Norme / Version :** Automotive SPICE PAM v4.0\n\n**Categorie :** Process Reference Model - SWE process "
+      }
+    ]
+  }
+}

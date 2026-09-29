@@ -1,0 +1,52 @@
+{
+  "script": "05_markdown_code_chunking.py",
+  "markdown_chunks": [
+    {
+      "chunk_index": 1,
+      "header_path": "Root",
+      "content": "# Spécification Logicielle\n\nIntroduction générale du système embarqué.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "header_path": "/"
+      }
+    },
+    {
+      "chunk_index": 2,
+      "header_path": "Root",
+      "content": "## SWE.1.BP1 : Elicitation\nL'équipe collecte les exigences système et les trace.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "header_path": "/Spécification Logicielle/"
+      }
+    },
+    {
+      "chunk_index": 3,
+      "header_path": "Root",
+      "content": "## SWE.1.BP2 : Analyse\nL'équipe analyse la faisabilité technique et le risque sécurité.",
+      "metadata": {
+        "source": "01_normes_automobile.md",
+        "header_path": "/Spécification Logicielle/"
+      }
+    }
+  ],
+  "code_chunks": [
+    {
+      "chunk_index": 1,
+      "content": "#include <stdio.h>\n#include <string.h>",
+      "line_count": 2,
+      "method": "block_fallback"
+    },
+    {
+      "chunk_index": 2,
+      "content": "void check_buffer(const char *input) {\n    char local_buf[16];\n    strncpy(local_buf, input, sizeof(local_buf) - 1);\n    local_buf[sizeof(local_buf) - 1] = '\\0';\n    printf(\"Buffer contenu: %s\\n\", local_buf);\n}",
+      "line_count": 6,
+      "method": "block_fallback"
+    },
+    {
+      "chunk_index": 3,
+      "content": "int main(void) {\n    check_buffer(\"Test unitaire safe\");\n    return 0;\n}",
+      "line_count": 4,
+      "method": "block_fallback"
+    }
+  ]
+}

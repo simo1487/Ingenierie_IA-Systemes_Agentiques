@@ -1,0 +1,61 @@
+{
+  "script": "02_sentence_window_chunking.py",
+  "window_size": 1,
+  "chunks": [
+    {
+      "chunk_index": 1,
+      "sentence": "Lors de l'analyse statique de la fixture defect.c, Cppcheck a detecte une ecriture hors limites. ",
+      "window_context": "Lors de l'analyse statique de la fixture defect.c, Cppcheck a detecte une ecriture hors limites.  L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets. ",
+      "metadata": {
+        "source": "02_qualite_cppcheck_misra.md",
+        "auteur": "Equipe Qualite",
+        "window": "Lors de l'analyse statique de la fixture defect.c, Cppcheck a detecte une ecriture hors limites.  L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets. ",
+        "original_sentence": "Lors de l'analyse statique de la fixture defect.c, Cppcheck a detecte une ecriture hors limites. "
+      }
+    },
+    {
+      "chunk_index": 2,
+      "sentence": "L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets. ",
+      "window_context": "Lors de l'analyse statique de la fixture defect.c, Cppcheck a detecte une ecriture hors limites.  L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets.  Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration. ",
+      "metadata": {
+        "source": "02_qualite_cppcheck_misra.md",
+        "auteur": "Equipe Qualite",
+        "window": "Lors de l'analyse statique de la fixture defect.c, Cppcheck a detecte une ecriture hors limites.  L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets.  Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration. ",
+        "original_sentence": "L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets. "
+      }
+    },
+    {
+      "chunk_index": 3,
+      "sentence": "Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration. ",
+      "window_context": "L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets.  Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration.  Elle necessite un remplacement par strncpy ou un controle prealable de longueur. ",
+      "metadata": {
+        "source": "02_qualite_cppcheck_misra.md",
+        "auteur": "Equipe Qualite",
+        "window": "L'erreur provient d'un usage non securise de strcpy sur un tampon de 10 octets.  Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration.  Elle necessite un remplacement par strncpy ou un controle prealable de longueur. ",
+        "original_sentence": "Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration. "
+      }
+    },
+    {
+      "chunk_index": 4,
+      "sentence": "Elle necessite un remplacement par strncpy ou un controle prealable de longueur. ",
+      "window_context": "Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration.  Elle necessite un remplacement par strncpy ou un controle prealable de longueur.  La directive MISRA Dir 4.6 exige egalement des types a taille fixee dans stdint.h.",
+      "metadata": {
+        "source": "02_qualite_cppcheck_misra.md",
+        "auteur": "Equipe Qualite",
+        "window": "Cette anomalie a ete confirmee par la revue humaine comme bloquante pour l'integration.  Elle necessite un remplacement par strncpy ou un controle prealable de longueur.  La directive MISRA Dir 4.6 exige egalement des types a taille fixee dans stdint.h.",
+        "original_sentence": "Elle necessite un remplacement par strncpy ou un controle prealable de longueur. "
+      }
+    },
+    {
+      "chunk_index": 5,
+      "sentence": "La directive MISRA Dir 4.6 exige egalement des types a taille fixee dans stdint.h.",
+      "window_context": "Elle necessite un remplacement par strncpy ou un controle prealable de longueur.  La directive MISRA Dir 4.6 exige egalement des types a taille fixee dans stdint.h.",
+      "metadata": {
+        "source": "02_qualite_cppcheck_misra.md",
+        "auteur": "Equipe Qualite",
+        "window": "Elle necessite un remplacement par strncpy ou un controle prealable de longueur.  La directive MISRA Dir 4.6 exige egalement des types a taille fixee dans stdint.h.",
+        "original_sentence": "La directive MISRA Dir 4.6 exige egalement des types a taille fixee dans stdint.h."
+      }
+    }
+  ]
+}
