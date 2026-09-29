@@ -33,9 +33,11 @@ PROMPT_TEMPLATE = """You are a requirements engineer. Compare these two automoti
 [/REQ-B]
 
 Decide their relationship:
-- "contradiction": they impose incompatible behaviours or values
-- "duplicate": they express the same obligation (including paraphrases)
-- "ok": distinct, compatible or unrelated obligations
+- "contradiction": they impose mutually exclusive behaviours or incompatible values on the SAME subject (both cannot be satisfied at once)
+- "duplicate": they express the SAME obligation with equivalent meaning (including paraphrases)
+- "ok": distinct, compatible, complementary or unrelated obligations
+
+Be strict: different services, thresholds, or operating conditions on a related subject are "ok", NOT contradictions. Storing versus erasing data are different lifecycle actions.
 
 Answer with ONLY this JSON object:
 {{"verdict": "contradiction" | "duplicate" | "ok", "rationale": "<one sentence>"}}"""

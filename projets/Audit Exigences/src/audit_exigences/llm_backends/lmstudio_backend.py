@@ -25,7 +25,7 @@ class LMStudioBackend(LLMBackend):
         self,
         base_url: str | None = None,
         model: str | None = None,
-        timeout: float = 30.0,
+        timeout: float = 120.0,
     ):
         self.base_url = (base_url or config.LMSTUDIO_URL).rstrip("/")
         self.model = model or config.LMSTUDIO_MODEL

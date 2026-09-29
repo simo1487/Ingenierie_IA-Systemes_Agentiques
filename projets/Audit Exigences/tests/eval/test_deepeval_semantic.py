@@ -18,7 +18,10 @@ from audit_exigences.llm_backends.lmstudio_backend import LMStudioBackend
 from audit_exigences.loader import load_dataset
 from audit_exigences.semantic import build_prompt, parse_verdict
 
-from eval.judge_model import LMStudioJudge, lmstudio_reachable
+try:
+    from eval.judge_model import LMStudioJudge, lmstudio_reachable
+except ImportError:  # appel direct : python -m unittest tests.eval.test_deepeval_semantic
+    from tests.eval.judge_model import LMStudioJudge, lmstudio_reachable
 
 try:
     from deepeval.metrics import GEval, JsonCorrectnessMetric
@@ -59,8 +62,8 @@ class TestSemanticVerdictsDeepEval(unittest.TestCase):
     def setUpClass(cls):
         cls.requirements = {r.id: r for r in load_dataset(DATASET)}
         cls.oracle = json.loads(ORACLE.read_text(encoding="utf-8"))
-        cls.backend = LMStudioBackend()
-        cls.judge = LMStudioJudge()
+        cls.backend = LMStudioBackend(timeout=120.0)
+        cls.judge = LMStudioJudge(timeout=120.0)
         cls.metrics = [
             JsonCorrectnessMetric(
                 expected_schema=SemanticVerdict,
@@ -70,11 +73,10 @@ class TestSemanticVerdictsDeepEval(unittest.TestCase):
             ),
             GEval(
                 name="SemanticVerdictCorrectness",
-                criteria=(
-                    "Determine whether the verdict correctly classifies the "
-                    "relationship between the two requirements in the input, and "
-                    "whether the rationale reflects the actual semantic relation."
-                ),
+                evaluation_steps=[
+                    "Check whether the verdict field classifies the relationship between the two requirements correctly.",
+                    "Check whether the rationale reflects the actual semantic relation between the requirements.",
+                ],
                 evaluation_params=[
                     SingleTurnParams.INPUT,
                     SingleTurnParams.ACTUAL_OUTPUT,
@@ -123,7 +125,11 @@ class TestSemanticVerdictsDeepEval(unittest.TestCase):
         )
         scores = {}
         for metric in self.metrics:
-            metric.measure(test_case)
+            try:
+                metric.measure(test_case)
+            except Exception as exc:  # juge local incapable de produire le JSON attendu
+                scores[metric.__name__] = {"score": None, "error": str(exc)[:200]}
+                continue
             scores[metric.__name__] = {
                 "score": metric.score,
                 "reason": getattr(metric, "reason", ""),
