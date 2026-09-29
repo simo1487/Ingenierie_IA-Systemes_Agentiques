@@ -37,6 +37,7 @@ class Finding:
     suggestion: str = ""
     related_ids: list[str] = field(default_factory=list)
     score: float | None = None
+    model: str = ""
 
     def to_dict(self) -> dict[str, Any]:
         result = {
@@ -52,5 +53,7 @@ class Finding:
             result["related_ids"] = self.related_ids
         if self.score is not None:
             result["score"] = round(self.score, 4)
+        if self.model:
+            result["model"] = self.model
         return result
 

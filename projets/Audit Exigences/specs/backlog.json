@@ -31,6 +31,18 @@
       "title": "Vérifier la non-contradiction",
       "benefit": "Détecter les exigences qui se contredisent pour résoudre les incohérences avant implémentation.",
       "stories": [301]
+    },
+    {
+      "id": "EPIC-AUD-04",
+      "title": "Analyse sémantique par IA",
+      "benefit": "Détecter les contradictions et duplications sémantiques hors de portée des règles déterministes, via un LLM local.",
+      "stories": [401, 402]
+    },
+    {
+      "id": "EPIC-AUD-05",
+      "title": "Écosystème d'évaluation DeepEval",
+      "benefit": "Objectiver la qualité des verdicts IA contre un oracle figé via des métriques LLM-as-judge locales.",
+      "stories": [501]
     }
   ],
   "stories": [
@@ -136,6 +148,84 @@
         "Figer les patterns de contradiction et l'oracle sur le dataset d'exemples.",
         "Implémenter la détection de négations opposées et de valeurs numériques incompatibles.",
         "Générer le rapport JSON des couples contradictoires."
+      ]
+    },
+    {
+      "number": 401,
+      "epic": "EPIC-AUD-04",
+      "title": "Détecter les contradictions sémantiques via LLM local",
+      "role": "ingénieur exigences",
+      "capability": "identifier les contradictions sémantiques sans négation explicite via un LLM local",
+      "benefit": "détecter les incohérences sémantiques que les patterns déterministes ne voient pas",
+      "tier": "socle",
+      "priority": "P2",
+      "depends_on": [301],
+      "input": "Paires d'exigences candidates pré-filtrées (sujets partagés, non déjà détectées).",
+      "output": "Rapport JSON des couples en semantic_contradiction avec rationale et modèle utilisé.",
+      "rule": "Une contradiction sémantique est signalée uniquement sur verdict 'contradiction' du LLM local pour une paire candidate ; le couple reste une proposition à arbitrer.",
+      "cases": [
+        ["deux exigences imposent des comportements sémantiquement opposés (disable vs continue)", "l'audit sémantique est exécuté", "le couple est signalé en semantic_contradiction avec la rationale"],
+        ["deux exigences portent sur des sujets proches mais non opposés", "l'audit sémantique est exécuté", "aucune contradiction n'est signalée"],
+        ["le backend LLM est indisponible", "l'audit sémantique est exécuté", "l'audit est sauté avec un message d'abstention"]
+      ],
+      "oracle": "Verdicts attendus figés dans tests/fixtures/semantic_oracle.json avant exécution ; qualité évaluée par DeepEval (EPIC-AUD-05) ; revue humaine des couples.",
+      "scope": "LLM local (LM Studio) sur paires pré-filtrées ; mode opt-in --epic 4 ; backend fake pour tests hors-ligne.",
+      "tasks": [
+        "Figer les paires candidates et verdicts attendus dans l'oracle sémantique.",
+        "Implémenter le pré-filtre, le prompt verdict JSON et les backends fake/lmstudio.",
+        "Vérifier les findings semantic_contradiction contre l'oracle."
+      ]
+    },
+    {
+      "number": 402,
+      "epic": "EPIC-AUD-04",
+      "title": "Détecter les duplications sémantiques via LLM local",
+      "role": "ingénieur exigences",
+      "capability": "identifier les exigences sémantiquement équivalentes à vocabulaire disjoint",
+      "benefit": "détecter les reformulations que la similarité lexicale ne voit pas",
+      "tier": "socle",
+      "priority": "P2",
+      "depends_on": [201],
+      "input": "Paires d'exigences candidates pré-filtrées (sujets partagés, sous le seuil lexical).",
+      "output": "Rapport JSON des couples en semantic_duplicate avec rationale et modèle utilisé.",
+      "rule": "Une duplication sémantique est signalée uniquement sur verdict 'duplicate' du LLM local pour une paire candidate ; le couple reste une proposition à arbitrer.",
+      "cases": [
+        ["deux exigences expriment la même obligation avec un vocabulaire disjoint", "l'audit sémantique est exécuté", "le couple est signalé en semantic_duplicate avec la rationale"],
+        ["deux exigences partagent des sujets mais imposent des obligations distinctes", "l'audit sémantique est exécuté", "aucune duplication n'est signalée"],
+        ["le backend LLM est indisponible", "l'audit sémantique est exécuté", "l'audit est sauté avec un message d'abstention"]
+      ],
+      "oracle": "Verdicts attendus figés dans tests/fixtures/semantic_oracle.json avant exécution ; qualité évaluée par DeepEval (EPIC-AUD-05) ; revue humaine des couples.",
+      "scope": "LLM local (LM Studio) sur paires pré-filtrées ; paires déjà signalées par US-AUD-201 exclues.",
+      "tasks": [
+        "Figer les paires candidates et verdicts attendus dans l'oracle sémantique.",
+        "Émettre les findings semantic_duplicate sur verdict 'duplicate'.",
+        "Vérifier les findings semantic_duplicate contre l'oracle."
+      ]
+    },
+    {
+      "number": 501,
+      "epic": "EPIC-AUD-05",
+      "title": "Évaluer les verdicts IA avec DeepEval",
+      "role": "responsable qualité",
+      "capability": "confronter les verdicts sémantiques à un oracle figé via des métriques LLM-as-judge locales",
+      "benefit": "objectiver la qualité de la partie IA et détecter les régressions",
+      "tier": "socle",
+      "priority": "P2",
+      "depends_on": [401, 402],
+      "input": "Goldens tests/fixtures/semantic_oracle.json et verdicts produits par l'audit sémantique.",
+      "output": "Rapport evidence/deepeval-report.json avec scores par métrique, verdicts et rationales.",
+      "rule": "Chaque paire golden est évaluée en LLMTestCase ; les métriques utilisent un juge LLM local ; un score sous le seuil échoue le test.",
+      "cases": [
+        ["un golden dont le verdict attendu est 'contradiction'", "l'évaluation DeepEval est exécutée", "le verdict produit est confronté au verdict attendu et JsonCorrectness vérifie la structure"],
+        ["un golden de non-détection ('ok' attendu)", "l'évaluation est exécutée", "un verdict non-'ok' produit est rapporté comme échec"],
+        ["LM Studio est indisponible", "la suite de tests est exécutée", "les tests eval sont skippés et la suite hors-ligne reste verte"]
+      ],
+      "oracle": "Goldens figés avant implémentation ; GEval évalue la rationale, JsonCorrectness la structure ; scores = preuves à revue humaine.",
+      "scope": "DeepEval + juge LM Studio local ; dépendance de test uniquement ; aucune clé API requise.",
+      "tasks": [
+        "Figer les goldens et implémenter le juge LMStudioJudge.",
+        "Implémenter les tests DeepEval (LLMTestCase, JsonCorrectness, GEval, skip offline).",
+        "Produire evidence/deepeval-report.json et soumettre à revue."
       ]
     }
   ]

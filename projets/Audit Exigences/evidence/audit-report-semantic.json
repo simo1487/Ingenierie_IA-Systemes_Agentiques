@@ -1,9 +1,9 @@
 {
-  "run_id": "audit-20260915-144508",
+  "run_id": "audit-20260915-144509",
   "input": "data\\exigences_sample.json",
   "requirements_count": 35,
   "threshold": 0.85,
-  "findings_count": 11,
+  "findings_count": 14,
   "findings": [
     {
       "epic": "grammar",
@@ -117,7 +117,42 @@
       "related_ids": [
         "REQ-027"
       ]
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-005",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-006' : Actions opposees 'disable' vs 'continue' (stub).",
+      "related_ids": [
+        "REQ-006"
+      ],
+      "model": "fake"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-016",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-017' : Actions opposees 'erase' vs 'retain' (stub).",
+      "related_ids": [
+        "REQ-017"
+      ],
+      "model": "fake"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-034",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-035' : Unites de debit differentes (stub).",
+      "related_ids": [
+        "REQ-035"
+      ],
+      "model": "fake"
     }
   ],
-  "status": "ready-for-human-review"
+  "status": "ready-for-human-review",
+  "semantic_backend": "fake",
+  "semantic_status": "ok (fake)"
 }

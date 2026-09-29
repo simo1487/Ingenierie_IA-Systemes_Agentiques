@@ -14,7 +14,7 @@
 
 ## Vision
 
-Fournir un outil déterministe d'audit de qualité pour un dataset d'exigences automobiles. L'outil détecte les anomalies linguistiques (grammaire, orthographe), les duplications et les contradictions entre exigences. Toutes les sorties sont des **propositions** ; la correction et la validation restent des décisions humaines.
+Fournir un outil d'audit de qualité pour un dataset d'exigences automobiles. L'outil détecte les anomalies linguistiques (grammaire, orthographe), les duplications et les contradictions entre exigences — par règles déterministes, complétées en mode opt-in par une analyse sémantique par LLM local. Toutes les sorties sont des **propositions** ; la correction et la validation restent des décisions humaines.
 
 ## Parties prenantes
 
@@ -46,11 +46,13 @@ Fournir un outil déterministe d'audit de qualité pour un dataset d'exigences a
 1. [`EPIC-AUD-01`](specs/epics/EPIC-AUD-01/EPIC.md) — Vérifier grammaire et orthographe
 2. [`EPIC-AUD-02`](specs/epics/EPIC-AUD-02/EPIC.md) — Vérifier la non-duplication
 3. [`EPIC-AUD-03`](specs/epics/EPIC-AUD-03/EPIC.md) — Vérifier la non-contradiction
+4. [`EPIC-AUD-04`](specs/epics/EPIC-AUD-04/EPIC.md) — Analyse sémantique par IA (opt-in, LLM local)
+5. [`EPIC-AUD-05`](specs/epics/EPIC-AUD-05/EPIC.md) — Écosystème d'évaluation DeepEval
 
 ## Navigation
 
 - [Spécifications](specs/README.md)
-- [Backlog ordonnancé](specs/roadmap/backlog.md)
+- [Roadmap](specs/roadmap/README.md)
 - [Registre d'ambiguïtés](specs/governance/ambiguities.md)
 - [Cycle de vie](specs/governance/lifecycle.md)
 

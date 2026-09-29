@@ -1,0 +1,49 @@
+{
+  "oracle_id": "ORACLE-AUD-301",
+  "user_story": "US-AUD-301",
+  "dataset": "data/exigences_sample.json",
+  "description": "Couples d'exigences contradictoires attendus : negations opposees sur un sujet commun (>= 2 tokens) et valeurs numeriques incompatibles sur une meme grandeur.",
+  "expected_findings": [
+    {
+      "pair": ["REQ-001", "REQ-002"],
+      "type": "numeric_conflict",
+      "detail_contains": ["400.0", "450.0"],
+      "cause": "Limite de courant moteur 400 A vs 450 A sur le meme sujet."
+    },
+    {
+      "pair": ["REQ-021", "REQ-022"],
+      "type": "negation_conflict",
+      "cause": "shall authenticate vs shall allow without authentication."
+    },
+    {
+      "pair": ["REQ-026", "REQ-027"],
+      "type": "numeric_conflict",
+      "detail_contains": ["5.0", "50.0"],
+      "cause": "Periode d'echantillonnage pedale 5 ms vs 50 ms."
+    },
+    {
+      "pair": ["REQ-030", "REQ-031"],
+      "type": "negation_conflict",
+      "cause": "shall reset vs shall never reset."
+    }
+  ],
+  "expected_non_detections": [
+    {
+      "pair": ["REQ-005", "REQ-006"],
+      "reason": "disable vs continue torque : contradiction semantique hors perimetre des patterns de ce lot (limite documentee)."
+    },
+    {
+      "pair": ["REQ-016", "REQ-017"],
+      "reason": "erase all vs retain DTC : contradiction semantique complexe non couverte."
+    },
+    {
+      "pair": ["REQ-003", "REQ-030"],
+      "reason": "Sujets differents (detection bus vs watchdog) : 10 ms et 100 ms ne sont pas sur la meme grandeur."
+    },
+    {
+      "pair": ["REQ-034", "REQ-035"],
+      "reason": "2 Mbps vs 500 kbps : unites differentes non converties dans ce lot."
+    }
+  ],
+  "notes": "La detection semantique de contradictions (REQ-005/006, REQ-016/017) et la conversion d'unites (Mbps/kbps) sont des extensions futures."
+}

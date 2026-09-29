@@ -9,6 +9,9 @@ description = "Outil d'audit de qualite des exigences automobiles"
 requires-python = ">=3.10"
 dependencies = []
 
+[project.optional-dependencies]
+eval = ["deepeval>=4.0.9,<5"]
+
 [project.scripts]
 audit-exigences = "audit_exigences.cli:main"
 
