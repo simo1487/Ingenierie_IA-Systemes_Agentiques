@@ -1,0 +1,217 @@
+{
+  "dataset_id": "DEMO-AUTO-EV-001",
+  "version": "2.0",
+  "description": "Dataset d'exigences automobiles (powertrain, safety, AUTOSAR, diagnostics, thermal, cybersecurity, vehicle control, integration). Fixture de demonstration.",
+  "exigences": [
+    {
+      "id": "REQ-001",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The traction inverter shall limit motor phase current to 400 A."
+    },
+    {
+      "id": "REQ-002",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The traction inverter shall limit motor phase current to 450 A."
+    },
+    {
+      "id": "REQ-003",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The system shall detect DC bus overvoltage conditions within 10 ms."
+    },
+    {
+      "id": "REQ-004",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The system shall detect DC bus undervoltage conditions within 10 ms."
+    },
+    {
+      "id": "REQ-005",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The inverter shall disable torque production after detection of a critical fault."
+    },
+    {
+      "id": "REQ-006",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The inverter shall continue torque production after detection of a critical fault."
+    },
+    {
+      "id": "REQ-007",
+      "source": "Safety ISO26262",
+      "version": "1.0",
+      "text": "The safety manager shall monitor execution of all ASIL-D software partitions."
+    },
+    {
+      "id": "REQ-008",
+      "source": "Safety ISO26262",
+      "version": "1.0",
+      "text": "The software shall perform RAM integrity tests at startup."
+    },
+    {
+      "id": "REQ-009",
+      "source": "Safety ISO26262",
+      "version": "1.0",
+      "text": "The software shall perform RAM integrity tests at start-up."
+    },
+    {
+      "id": "REQ-010",
+      "source": "AUTOSAR",
+      "version": "1.0",
+      "text": "The CAN communication stack shall comply with AUTOSAR Classic Platform."
+    },
+    {
+      "id": "REQ-011",
+      "source": "AUTOSAR",
+      "version": "1.0",
+      "text": "The diagnostic manager shall support UDS service 0x10."
+    },
+    {
+      "id": "REQ-012",
+      "source": "AUTOSAR",
+      "version": "1.0",
+      "text": "The diagnostic manager shall support UDS service 0x11."
+    },
+    {
+      "id": "REQ-013",
+      "source": "AUTOSAR",
+      "version": "1.0",
+      "text": "The ECU shall transmit heartbeat messages every 100 ms."
+    },
+    {
+      "id": "REQ-014",
+      "source": "AUTOSAR",
+      "version": "1.0",
+      "text": "The ECU shall transmit heartbeat messages every 100 ms."
+    },
+    {
+      "id": "REQ-015",
+      "source": "Diagnostics",
+      "version": "1.0",
+      "text": "The ECU shall store a diagnostic trouble code when overtemperature is detected."
+    },
+    {
+      "id": "REQ-016",
+      "source": "Diagnostics",
+      "version": "1.0",
+      "text": "The ECU shall erase all diagnostic trouble codes at every ignition cycle."
+    },
+    {
+      "id": "REQ-017",
+      "source": "Diagnostics",
+      "version": "1.0",
+      "text": "The ECU shall retain diagnostic trouble codes across ignition cycles."
+    },
+    {
+      "id": "REQ-018",
+      "source": "Thermal",
+      "version": "1.0",
+      "text": "The inverter shall enter thermal derating mode above 110 degC."
+    },
+    {
+      "id": "REQ-019",
+      "source": "Thermal",
+      "version": "1.0",
+      "text": "The inverter shall enter thermal derating mode above 110°C."
+    },
+    {
+      "id": "REQ-020",
+      "source": "Thermal",
+      "version": "1.0",
+      "text": "The inverter cooling pump shall be activated when coolant temperature exceeds 70°C."
+    },
+    {
+      "id": "REQ-021",
+      "source": "Cybersecurity",
+      "version": "1.0",
+      "text": "The ECU shall authenticate all software updates before installation."
+    },
+    {
+      "id": "REQ-022",
+      "source": "Cybersecurity",
+      "version": "1.0",
+      "text": "The ECU shall allow software updates without authentication."
+    },
+    {
+      "id": "REQ-023",
+      "source": "Cybersecurity",
+      "version": "1.0",
+      "text": "The bootloader shall verify the digital signature of firmware images."
+    },
+    {
+      "id": "REQ-024",
+      "source": "Vehicle Control",
+      "version": "1.0",
+      "text": "The torque request shall be limited to 100 percent."
+    },
+    {
+      "id": "REQ-025",
+      "source": "Vehicle Control",
+      "version": "1.0",
+      "text": "The torque request shall not exceed 100%."
+    },
+    {
+      "id": "REQ-026",
+      "source": "Vehicle Control",
+      "version": "1.0",
+      "text": "The accelerator pedal position shall be sampled every 5 ms."
+    },
+    {
+      "id": "REQ-027",
+      "source": "Vehicle Control",
+      "version": "1.0",
+      "text": "The accelerator pedal position shall be sampled every 50 ms."
+    },
+    {
+      "id": "REQ-028",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The motor speed shall be measured using a resolver sensor."
+    },
+    {
+      "id": "REQ-029",
+      "source": "Powertrain",
+      "version": "1.0",
+      "text": "The motor speed shall be measured using a resolver sensor"
+    },
+    {
+      "id": "REQ-030",
+      "source": "Safety ISO26262",
+      "version": "1.0",
+      "text": "The safety watchdog shall reset the ECU if the main control task fails to execute within 100 ms."
+    },
+    {
+      "id": "REQ-031",
+      "source": "Safety ISO26262",
+      "version": "1.0",
+      "text": "The safety watchdog shall never reset the ECU."
+    },
+    {
+      "id": "REQ-032",
+      "source": "Integration",
+      "version": "1.0",
+      "text": "All software components shall log errors in a centralized event memory."
+    },
+    {
+      "id": "REQ-033",
+      "source": "Integration",
+      "version": "1.0",
+      "text": "All software components shall logs errors in a centralized event memory."
+    },
+    {
+      "id": "REQ-034",
+      "source": "Integration",
+      "version": "1.0",
+      "text": "The system shall support CAN FD communication at 2 Mbps."
+    },
+    {
+      "id": "REQ-035",
+      "source": "Integration",
+      "version": "1.0",
+      "text": "The system shall support CAN FD communication at 500 kbps."
+    }
+  ]
+}

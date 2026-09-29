@@ -1,0 +1,142 @@
+{
+  "schema_version": 2,
+  "project_id": "PROJ-AUD-EXG-001",
+  "status": "Candidate",
+  "information_type": "Proposition",
+  "branch": "Mo_filRouge",
+  "conventions": {
+    "hierarchy": "PROJ → EPIC → US → FEAT → TASK ; RM et CA sont définis dans la US et référencés par la Feature",
+    "id_rule": "Le numéro n donne US-AUD-n, FEAT-AUD-n, RM-AUD-n ; les CA et TASK portent un suffixe stable à deux chiffres.",
+    "work_status": "À faire",
+    "trace_status": "Candidat",
+    "owner": "Rôle proposé ; personne à désigner avant prise en charge",
+    "task_phases": ["Spécifier et figer l'oracle", "Réaliser dans le périmètre autorisé", "Vérifier et soumettre à revue"],
+    "case_labels": ["Nominal", "Frontière", "Refus"]
+  },
+  "epics": [
+    {
+      "id": "EPIC-AUD-01",
+      "title": "Vérifier grammaire et orthographe",
+      "benefit": "Améliorer la lisibilité des exigences et réduire les ambiguïtés d'interprétation dues aux fautes de langue.",
+      "stories": [101, 102]
+    },
+    {
+      "id": "EPIC-AUD-02",
+      "title": "Vérifier la non-duplication",
+      "benefit": "Identifier les exigences dupliquées ou quasi-identiques pour éviter les redondances et les divergences de maintenance.",
+      "stories": [201]
+    },
+    {
+      "id": "EPIC-AUD-03",
+      "title": "Vérifier la non-contradiction",
+      "benefit": "Détecter les exigences qui se contredisent pour résoudre les incohérences avant implémentation.",
+      "stories": [301]
+    }
+  ],
+  "stories": [
+    {
+      "number": 101,
+      "epic": "EPIC-AUD-01",
+      "title": "Auditer la grammaire des exigences",
+      "role": "ingénieur exigences",
+      "capability": "détecter les erreurs de grammaire (accord sujet-verbe, ponctuation, capitalisation)",
+      "benefit": "améliorer la lisibilité et réduire les ambiguïtés d'interprétation",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [],
+      "input": "Dataset d'exigences JSON/Markdown avec id, text, source, version.",
+      "output": "Rapport JSON des anomalies grammaticales avec id d'exigence, position, type d'anomalie et proposition.",
+      "rule": "Une anomalie grammaticale est signalée avec sa position exacte ; aucune correction n'est appliquée automatiquement.",
+      "cases": [
+        ["une exigence contient une erreur d'accord après modal (shall logs)", "l'audit grammaire est exécuté", "l'erreur est signalée avec sa position et la suggestion shall log"],
+        ["une exigence contient un double espace", "l'audit est exécuté", "l'anomalie de ponctuation est signalée avec sa position"],
+        ["une exigence est grammaticalement correcte", "l'audit est exécuté", "aucune anomalie n'est rapportée pour cette exigence"]
+      ],
+      "oracle": "Règles d'accord figées avant exécution ; relecture humaine des propositions avant adoption.",
+      "scope": "Détection par règles simples ; pas de modèle IA requis pour ce lot.",
+      "tasks": [
+        "Figer l'oracle : règles d'accord et anomalies attendues dans le dataset d'exemple.",
+        "Implémenter la détection grammaticale (accord, ponctuation, capitalisation) avec position.",
+        "Générer le rapport JSON et vérifier contre l'oracle."
+      ]
+    },
+    {
+      "number": 102,
+      "epic": "EPIC-AUD-01",
+      "title": "Détecter les fautes d'orthographe",
+      "role": "ingénieur exigences",
+      "capability": "détecter les fautes d'orthographe avec position et correction",
+      "benefit": "améliorer la qualité linguistique des spécifications",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [],
+      "input": "Dataset d'exigences JSON/Markdown avec id, text, source, version.",
+      "output": "Rapport JSON des fautes d'orthographe avec id, position du caractère, mot fautif et correction du dictionnaire.",
+      "rule": "Une faute est signalée avec sa position exacte ; la correction proposée vient du dictionnaire figé, jamais générée.",
+      "cases": [
+        ["une exigence contient une faute du dictionnaire", "l'audit orthographe est exécuté", "la faute est signalée à sa position avec la correction proposée"],
+        ["une exigence contient plusieurs fautes", "l'audit est exécuté", "chaque faute est signalée individuellement avec sa position"],
+        ["une exigence ne contient aucune faute connue", "l'audit est exécuté", "aucune anomalie n'est rapportée"]
+      ],
+      "oracle": "Dictionnaire de fautes figé avant exécution ; vérification de mot entier ; relecture humaine avant adoption.",
+      "scope": "Détection par dictionnaire figé ; pas de modèle IA requis pour ce lot.",
+      "tasks": [
+        "Figer le dictionnaire de fautes et l'oracle sur le dataset d'exemple.",
+        "Implémenter la détection orthographique avec position exacte et mot entier.",
+        "Générer le rapport JSON et vérifier contre l'oracle."
+      ]
+    },
+    {
+      "number": 201,
+      "epic": "EPIC-AUD-02",
+      "title": "Détecter les exigences dupliquées",
+      "role": "ingénieur exigences",
+      "capability": "identifier les exigences dupliquées ou quasi-identiques",
+      "benefit": "éviter les redondances et les divergences entre copies",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [],
+      "input": "Dataset d'exigences avec id et text.",
+      "output": "Rapport JSON des groupes de duplication avec paires d'ids et score de similarité.",
+      "rule": "Deux exigences sont signalées comme dupliquées si leur similarité dépasse le seuil configuré ; le score est une proposition, pas une décision de suppression.",
+      "cases": [
+        ["deux exigences ont un texte identique", "l'audit duplication est exécuté", "la paire est signalée avec un score de 1.0"],
+        ["deux exigences sont similaires au-dessus du seuil", "l'audit est exécuté", "la paire est signalée avec son score et le seuil utilisé"],
+        ["deux exigences partagent des mots mais traitent des sujets différents", "l'audit est exécuté", "la paire reste sous le seuil et n'est pas signalée"]
+      ],
+      "oracle": "Similarité Jaccard sur tokens normalisés ; le seuil est figé avant exécution et documenté dans le rapport.",
+      "scope": "Similarité lexicale ; les reformulations sémantiques avec vocabulaire disjoint ne sont pas détectées dans ce lot.",
+      "tasks": [
+        "Figer le seuil de similarité et l'oracle sur le dataset d'exemples.",
+        "Implémenter la comparaison par paires avec normalisation des tokens.",
+        "Générer le rapport JSON des groupes de duplication."
+      ]
+    },
+    {
+      "number": 301,
+      "epic": "EPIC-AUD-03",
+      "title": "Détecter les exigences contradictoires",
+      "role": "responsable qualité",
+      "capability": "identifier les exigences qui se contredisent",
+      "benefit": "résoudre les incohérences avant implémentation",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [201],
+      "input": "Dataset d'exigences avec id et text.",
+      "output": "Rapport JSON des couples contradictoires avec le motif de contradiction détecté.",
+      "rule": "Une contradiction est signalée uniquement sur un motif explicite (négation opposée, valeur numérique incompatible) ; le couple reste une proposition à arbitrer.",
+      "cases": [
+        ["deux exigences imposent des comportements opposés sur le même sujet (doit / ne doit pas)", "l'audit contradiction est exécuté", "le couple est signalé avec le motif de négation opposée"],
+        ["deux exigences fixent des valeurs numériques incompatibles sur la même grandeur", "l'audit est exécuté", "le couple est signalé avec les valeurs en conflit"],
+        ["deux exigences traitent de sujets différents", "l'audit est exécuté", "aucune contradiction n'est signalée"]
+      ],
+      "oracle": "Patterns de contradiction figés avant exécution (négations, valeurs) ; revue humaine des couples signalés avant arbitrage.",
+      "scope": "Détection par patterns explicites ; les contradictions sémantiques complexes sont hors périmètre de ce lot.",
+      "tasks": [
+        "Figer les patterns de contradiction et l'oracle sur le dataset d'exemples.",
+        "Implémenter la détection de négations opposées et de valeurs numériques incompatibles.",
+        "Générer le rapport JSON des couples contradictoires."
+      ]
+    }
+  ]
+}

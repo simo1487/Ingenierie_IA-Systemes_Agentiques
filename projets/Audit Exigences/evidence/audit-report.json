@@ -1,0 +1,123 @@
+{
+  "run_id": "audit-20260914-141755",
+  "input": "C:\\Users\\mberrada\\FormationIaProject\\projets\\Audit Exigences\\data\\exigences_sample.json",
+  "requirements_count": 35,
+  "threshold": 0.85,
+  "findings_count": 11,
+  "findings": [
+    {
+      "epic": "grammar",
+      "requirement_id": "REQ-033",
+      "type": "grammar",
+      "position": 24,
+      "detail": "Erreur d'accord probable : 'shall logs'",
+      "suggestion": "shall log"
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-008",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-009' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-009"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-013",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-014' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-014"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-018",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-019' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-019"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-028",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-029' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-029"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-032",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-033' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-033"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-021",
+      "type": "negation_conflict",
+      "position": 0,
+      "detail": "Comportements opposés avec 'REQ-022' sur le sujet commun : ecu, software, update",
+      "related_ids": [
+        "REQ-022"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-024",
+      "type": "negation_conflict",
+      "position": 0,
+      "detail": "Comportements opposés avec 'REQ-025' sur le sujet commun : 100, request, torque",
+      "related_ids": [
+        "REQ-025"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-030",
+      "type": "negation_conflict",
+      "position": 0,
+      "detail": "Comportements opposés avec 'REQ-031' sur le sujet commun : ecu, reset, safety, watchdog",
+      "related_ids": [
+        "REQ-031"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-001",
+      "type": "numeric_conflict",
+      "position": 0,
+      "detail": "Valeurs incompatibles avec 'REQ-002' : 400.0 vs 450.0 a",
+      "related_ids": [
+        "REQ-002"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-026",
+      "type": "numeric_conflict",
+      "position": 0,
+      "detail": "Valeurs incompatibles avec 'REQ-027' : 5.0 vs 50.0 ms",
+      "related_ids": [
+        "REQ-027"
+      ]
+    }
+  ],
+  "status": "ready-for-human-review"
+}
