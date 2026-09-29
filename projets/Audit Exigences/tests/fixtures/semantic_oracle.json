@@ -1,0 +1,57 @@
+{
+  "oracle_id": "ORACLE-AUD-401",
+  "user_stories": ["US-AUD-401", "US-AUD-402", "US-AUD-501"],
+  "dataset": "data/exigences_sample.json",
+  "description": "Verdicts attendus de l'analyse semantique par LLM local sur les paires candidates (>= 2 tokens de sujet partages, hors paires deja detectees par les audits deterministes).",
+  "min_shared_subject_tokens": 2,
+  "expected_findings": [
+    {
+      "pair": ["REQ-005", "REQ-006"],
+      "verdict": "contradiction",
+      "type": "semantic_contradiction",
+      "cause": "disable vs continue torque production apres critical fault : comportements semantiquement opposes."
+    },
+    {
+      "pair": ["REQ-016", "REQ-017"],
+      "verdict": "contradiction",
+      "type": "semantic_contradiction",
+      "cause": "erase all DTCs at every ignition cycle vs retain DTCs across ignition cycles."
+    },
+    {
+      "pair": ["REQ-034", "REQ-035"],
+      "verdict": "contradiction",
+      "type": "semantic_contradiction",
+      "cause": "CAN FD a 2 Mbps vs 500 kbps : debits incompatibles (conversion d'unites requise par le LLM)."
+    }
+  ],
+  "expected_non_detections": [
+    {
+      "pair": ["REQ-003", "REQ-004"],
+      "verdict": "ok",
+      "reason": "overvoltage vs undervoltage : conditions distinctes qui coexistent, pas une contradiction."
+    },
+    {
+      "pair": ["REQ-011", "REQ-012"],
+      "verdict": "ok",
+      "reason": "services UDS 0x10 et 0x11 distincts et complementaires, pas des doublons."
+    },
+    {
+      "pair": ["REQ-015", "REQ-016"],
+      "verdict": "ok",
+      "reason": "stocker un DTC a la detection vs effacer les DTCs au cycle : actions de cycle de vie distinctes. Cas frontiere - a confirmer en revue humaine."
+    }
+  ],
+  "excluded_already_flagged": [
+    ["REQ-001", "REQ-002"],
+    ["REQ-008", "REQ-009"],
+    ["REQ-013", "REQ-014"],
+    ["REQ-018", "REQ-019"],
+    ["REQ-021", "REQ-022"],
+    ["REQ-024", "REQ-025"],
+    ["REQ-026", "REQ-027"],
+    ["REQ-028", "REQ-029"],
+    ["REQ-030", "REQ-031"],
+    ["REQ-032", "REQ-033"]
+  ],
+  "notes": "Le backend 'fake' ne reproduit pas une analyse reelle : il stub le pipeline via un lexique d'antonymes pour les tests hors-ligne. La qualite semantique reelle est evaluee par EPIC-AUD-05 (DeepEval + juge LM Studio). REQ-015/016 est un cas frontiere consigne comme question ouverte."
+}

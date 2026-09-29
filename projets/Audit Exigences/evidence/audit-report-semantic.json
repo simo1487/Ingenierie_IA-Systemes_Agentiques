@@ -1,0 +1,202 @@
+{
+  "run_id": "audit-20260916-071545",
+  "input": "data\\exigences_sample.json",
+  "requirements_count": 35,
+  "threshold": 0.85,
+  "findings_count": 18,
+  "findings": [
+    {
+      "epic": "grammar",
+      "requirement_id": "REQ-033",
+      "type": "grammar",
+      "position": 24,
+      "detail": "Erreur d'accord probable : 'shall logs'",
+      "suggestion": "shall log"
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-008",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-009' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-009"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-013",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-014' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-014"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-018",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-019' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-019"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-028",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-029' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-029"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "duplicates",
+      "requirement_id": "REQ-032",
+      "type": "duplicate",
+      "position": 0,
+      "detail": "Exigence similaire a 'REQ-033' (similarite 1.00 >= seuil 0.85)",
+      "related_ids": [
+        "REQ-033"
+      ],
+      "score": 1.0
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-021",
+      "type": "negation_conflict",
+      "position": 0,
+      "detail": "Comportements opposés avec 'REQ-022' sur le sujet commun : ecu, software, update",
+      "related_ids": [
+        "REQ-022"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-024",
+      "type": "negation_conflict",
+      "position": 0,
+      "detail": "Comportements opposés avec 'REQ-025' sur le sujet commun : 100, request, torque",
+      "related_ids": [
+        "REQ-025"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-030",
+      "type": "negation_conflict",
+      "position": 0,
+      "detail": "Comportements opposés avec 'REQ-031' sur le sujet commun : ecu, reset, safety, watchdog",
+      "related_ids": [
+        "REQ-031"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-001",
+      "type": "numeric_conflict",
+      "position": 0,
+      "detail": "Valeurs incompatibles avec 'REQ-002' : 400.0 vs 450.0 a",
+      "related_ids": [
+        "REQ-002"
+      ]
+    },
+    {
+      "epic": "contradictions",
+      "requirement_id": "REQ-026",
+      "type": "numeric_conflict",
+      "position": 0,
+      "detail": "Valeurs incompatibles avec 'REQ-027' : 5.0 vs 50.0 ms",
+      "related_ids": [
+        "REQ-027"
+      ]
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-003",
+      "type": "semantic_duplicate",
+      "position": 0,
+      "detail": "Verdict LLM 'duplicate' avec 'REQ-004' : Both requirements express the same obligation to detect DC bus voltage conditions within 10 ms, using different types of conditions (overvoltage and undervoltage).",
+      "related_ids": [
+        "REQ-004"
+      ],
+      "model": "lmstudio"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-005",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-006' : These requirements impose mutually exclusive behaviours on the inverter's operation under critical fault conditions.",
+      "related_ids": [
+        "REQ-006"
+      ],
+      "model": "lmstudio"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-013",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-030' : Both requirements impose the same 100 ms threshold on the ECU's main control task, which cannot be satisfied simultaneously.",
+      "related_ids": [
+        "REQ-030"
+      ],
+      "model": "lmstudio"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-014",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-030' : Both requirements impose the same 100 ms threshold on the ECU's main control task, which cannot be satisfied simultaneously.",
+      "related_ids": [
+        "REQ-030"
+      ],
+      "model": "lmstudio"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-015",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-016' : REQ-A and REQ-B impose mutually exclusive behaviors on the ECU regarding diagnostic trouble code storage and erasure.",
+      "related_ids": [
+        "REQ-016"
+      ],
+      "model": "lmstudio"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-016",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-017' : These requirements impose mutually exclusive behaviors on the ECU regarding diagnostic trouble codes, erasing vs. retaining data across ignition cycles.",
+      "related_ids": [
+        "REQ-017"
+      ],
+      "model": "lmstudio"
+    },
+    {
+      "epic": "semantic",
+      "requirement_id": "REQ-034",
+      "type": "semantic_contradiction",
+      "position": 0,
+      "detail": "Verdict LLM 'contradiction' avec 'REQ-035' : These requirements impose mutually exclusive speeds for CAN FD communication on the same subject.",
+      "related_ids": [
+        "REQ-035"
+      ],
+      "model": "lmstudio"
+    }
+  ],
+  "status": "ready-for-human-review",
+  "semantic_backend": "lmstudio",
+  "semantic_status": "ok (lmstudio)"
+}

@@ -1,0 +1,232 @@
+{
+  "schema_version": 2,
+  "project_id": "PROJ-AUD-EXG-001",
+  "status": "Candidate",
+  "information_type": "Proposition",
+  "branch": "Mo_filRouge",
+  "conventions": {
+    "hierarchy": "PROJ → EPIC → US → FEAT → TASK ; RM et CA sont définis dans la US et référencés par la Feature",
+    "id_rule": "Le numéro n donne US-AUD-n, FEAT-AUD-n, RM-AUD-n ; les CA et TASK portent un suffixe stable à deux chiffres.",
+    "work_status": "À faire",
+    "trace_status": "Candidat",
+    "owner": "Rôle proposé ; personne à désigner avant prise en charge",
+    "task_phases": ["Spécifier et figer l'oracle", "Réaliser dans le périmètre autorisé", "Vérifier et soumettre à revue"],
+    "case_labels": ["Nominal", "Frontière", "Refus"]
+  },
+  "epics": [
+    {
+      "id": "EPIC-AUD-01",
+      "title": "Vérifier grammaire et orthographe",
+      "benefit": "Améliorer la lisibilité des exigences et réduire les ambiguïtés d'interprétation dues aux fautes de langue.",
+      "stories": [101, 102]
+    },
+    {
+      "id": "EPIC-AUD-02",
+      "title": "Vérifier la non-duplication",
+      "benefit": "Identifier les exigences dupliquées ou quasi-identiques pour éviter les redondances et les divergences de maintenance.",
+      "stories": [201]
+    },
+    {
+      "id": "EPIC-AUD-03",
+      "title": "Vérifier la non-contradiction",
+      "benefit": "Détecter les exigences qui se contredisent pour résoudre les incohérences avant implémentation.",
+      "stories": [301]
+    },
+    {
+      "id": "EPIC-AUD-04",
+      "title": "Analyse sémantique par IA",
+      "benefit": "Détecter les contradictions et duplications sémantiques hors de portée des règles déterministes, via un LLM local.",
+      "stories": [401, 402]
+    },
+    {
+      "id": "EPIC-AUD-05",
+      "title": "Écosystème d'évaluation DeepEval",
+      "benefit": "Objectiver la qualité des verdicts IA contre un oracle figé via des métriques LLM-as-judge locales.",
+      "stories": [501]
+    }
+  ],
+  "stories": [
+    {
+      "number": 101,
+      "epic": "EPIC-AUD-01",
+      "title": "Auditer la grammaire des exigences",
+      "role": "ingénieur exigences",
+      "capability": "détecter les erreurs de grammaire (accord sujet-verbe, ponctuation, capitalisation)",
+      "benefit": "améliorer la lisibilité et réduire les ambiguïtés d'interprétation",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [],
+      "input": "Dataset d'exigences JSON/Markdown avec id, text, source, version.",
+      "output": "Rapport JSON des anomalies grammaticales avec id d'exigence, position, type d'anomalie et proposition.",
+      "rule": "Une anomalie grammaticale est signalée avec sa position exacte ; aucune correction n'est appliquée automatiquement.",
+      "cases": [
+        ["une exigence contient une erreur d'accord après modal (shall logs)", "l'audit grammaire est exécuté", "l'erreur est signalée avec sa position et la suggestion shall log"],
+        ["une exigence contient un double espace", "l'audit est exécuté", "l'anomalie de ponctuation est signalée avec sa position"],
+        ["une exigence est grammaticalement correcte", "l'audit est exécuté", "aucune anomalie n'est rapportée pour cette exigence"]
+      ],
+      "oracle": "Règles d'accord figées avant exécution ; relecture humaine des propositions avant adoption.",
+      "scope": "Détection par règles simples ; pas de modèle IA requis pour ce lot.",
+      "tasks": [
+        "Figer l'oracle : règles d'accord et anomalies attendues dans le dataset d'exemple.",
+        "Implémenter la détection grammaticale (accord, ponctuation, capitalisation) avec position.",
+        "Générer le rapport JSON et vérifier contre l'oracle."
+      ]
+    },
+    {
+      "number": 102,
+      "epic": "EPIC-AUD-01",
+      "title": "Détecter les fautes d'orthographe",
+      "role": "ingénieur exigences",
+      "capability": "détecter les fautes d'orthographe avec position et correction",
+      "benefit": "améliorer la qualité linguistique des spécifications",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [],
+      "input": "Dataset d'exigences JSON/Markdown avec id, text, source, version.",
+      "output": "Rapport JSON des fautes d'orthographe avec id, position du caractère, mot fautif et correction du dictionnaire.",
+      "rule": "Une faute est signalée avec sa position exacte ; la correction proposée vient du dictionnaire figé, jamais générée.",
+      "cases": [
+        ["une exigence contient une faute du dictionnaire", "l'audit orthographe est exécuté", "la faute est signalée à sa position avec la correction proposée"],
+        ["une exigence contient plusieurs fautes", "l'audit est exécuté", "chaque faute est signalée individuellement avec sa position"],
+        ["une exigence ne contient aucune faute connue", "l'audit est exécuté", "aucune anomalie n'est rapportée"]
+      ],
+      "oracle": "Dictionnaire de fautes figé avant exécution ; vérification de mot entier ; relecture humaine avant adoption.",
+      "scope": "Détection par dictionnaire figé ; pas de modèle IA requis pour ce lot.",
+      "tasks": [
+        "Figer le dictionnaire de fautes et l'oracle sur le dataset d'exemple.",
+        "Implémenter la détection orthographique avec position exacte et mot entier.",
+        "Générer le rapport JSON et vérifier contre l'oracle."
+      ]
+    },
+    {
+      "number": 201,
+      "epic": "EPIC-AUD-02",
+      "title": "Détecter les exigences dupliquées",
+      "role": "ingénieur exigences",
+      "capability": "identifier les exigences dupliquées ou quasi-identiques",
+      "benefit": "éviter les redondances et les divergences entre copies",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [],
+      "input": "Dataset d'exigences avec id et text.",
+      "output": "Rapport JSON des groupes de duplication avec paires d'ids et score de similarité.",
+      "rule": "Deux exigences sont signalées comme dupliquées si leur similarité dépasse le seuil configuré ; le score est une proposition, pas une décision de suppression.",
+      "cases": [
+        ["deux exigences ont un texte identique", "l'audit duplication est exécuté", "la paire est signalée avec un score de 1.0"],
+        ["deux exigences sont similaires au-dessus du seuil", "l'audit est exécuté", "la paire est signalée avec son score et le seuil utilisé"],
+        ["deux exigences partagent des mots mais traitent des sujets différents", "l'audit est exécuté", "la paire reste sous le seuil et n'est pas signalée"]
+      ],
+      "oracle": "Similarité Jaccard sur tokens normalisés ; le seuil est figé avant exécution et documenté dans le rapport.",
+      "scope": "Similarité lexicale ; les reformulations sémantiques avec vocabulaire disjoint ne sont pas détectées dans ce lot.",
+      "tasks": [
+        "Figer le seuil de similarité et l'oracle sur le dataset d'exemples.",
+        "Implémenter la comparaison par paires avec normalisation des tokens.",
+        "Générer le rapport JSON des groupes de duplication."
+      ]
+    },
+    {
+      "number": 301,
+      "epic": "EPIC-AUD-03",
+      "title": "Détecter les exigences contradictoires",
+      "role": "responsable qualité",
+      "capability": "identifier les exigences qui se contredisent",
+      "benefit": "résoudre les incohérences avant implémentation",
+      "tier": "socle",
+      "priority": "P1",
+      "depends_on": [201],
+      "input": "Dataset d'exigences avec id et text.",
+      "output": "Rapport JSON des couples contradictoires avec le motif de contradiction détecté.",
+      "rule": "Une contradiction est signalée uniquement sur un motif explicite (négation opposée, valeur numérique incompatible) ; le couple reste une proposition à arbitrer.",
+      "cases": [
+        ["deux exigences imposent des comportements opposés sur le même sujet (doit / ne doit pas)", "l'audit contradiction est exécuté", "le couple est signalé avec le motif de négation opposée"],
+        ["deux exigences fixent des valeurs numériques incompatibles sur la même grandeur", "l'audit est exécuté", "le couple est signalé avec les valeurs en conflit"],
+        ["deux exigences traitent de sujets différents", "l'audit est exécuté", "aucune contradiction n'est signalée"]
+      ],
+      "oracle": "Patterns de contradiction figés avant exécution (négations, valeurs) ; revue humaine des couples signalés avant arbitrage.",
+      "scope": "Détection par patterns explicites ; les contradictions sémantiques complexes sont hors périmètre de ce lot.",
+      "tasks": [
+        "Figer les patterns de contradiction et l'oracle sur le dataset d'exemples.",
+        "Implémenter la détection de négations opposées et de valeurs numériques incompatibles.",
+        "Générer le rapport JSON des couples contradictoires."
+      ]
+    },
+    {
+      "number": 401,
+      "epic": "EPIC-AUD-04",
+      "title": "Détecter les contradictions sémantiques via LLM local",
+      "role": "ingénieur exigences",
+      "capability": "identifier les contradictions sémantiques sans négation explicite via un LLM local",
+      "benefit": "détecter les incohérences sémantiques que les patterns déterministes ne voient pas",
+      "tier": "socle",
+      "priority": "P2",
+      "depends_on": [301],
+      "input": "Paires d'exigences candidates pré-filtrées (sujets partagés, non déjà détectées).",
+      "output": "Rapport JSON des couples en semantic_contradiction avec rationale et modèle utilisé.",
+      "rule": "Une contradiction sémantique est signalée uniquement sur verdict 'contradiction' du LLM local pour une paire candidate ; le couple reste une proposition à arbitrer.",
+      "cases": [
+        ["deux exigences imposent des comportements sémantiquement opposés (disable vs continue)", "l'audit sémantique est exécuté", "le couple est signalé en semantic_contradiction avec la rationale"],
+        ["deux exigences portent sur des sujets proches mais non opposés", "l'audit sémantique est exécuté", "aucune contradiction n'est signalée"],
+        ["le backend LLM est indisponible", "l'audit sémantique est exécuté", "l'audit est sauté avec un message d'abstention"]
+      ],
+      "oracle": "Verdicts attendus figés dans tests/fixtures/semantic_oracle.json avant exécution ; qualité évaluée par DeepEval (EPIC-AUD-05) ; revue humaine des couples.",
+      "scope": "LLM local (LM Studio) sur paires pré-filtrées ; mode opt-in --epic 4 ; backend fake pour tests hors-ligne.",
+      "tasks": [
+        "Figer les paires candidates et verdicts attendus dans l'oracle sémantique.",
+        "Implémenter le pré-filtre, le prompt verdict JSON et les backends fake/lmstudio.",
+        "Vérifier les findings semantic_contradiction contre l'oracle."
+      ]
+    },
+    {
+      "number": 402,
+      "epic": "EPIC-AUD-04",
+      "title": "Détecter les duplications sémantiques via LLM local",
+      "role": "ingénieur exigences",
+      "capability": "identifier les exigences sémantiquement équivalentes à vocabulaire disjoint",
+      "benefit": "détecter les reformulations que la similarité lexicale ne voit pas",
+      "tier": "socle",
+      "priority": "P2",
+      "depends_on": [201],
+      "input": "Paires d'exigences candidates pré-filtrées (sujets partagés, sous le seuil lexical).",
+      "output": "Rapport JSON des couples en semantic_duplicate avec rationale et modèle utilisé.",
+      "rule": "Une duplication sémantique est signalée uniquement sur verdict 'duplicate' du LLM local pour une paire candidate ; le couple reste une proposition à arbitrer.",
+      "cases": [
+        ["deux exigences expriment la même obligation avec un vocabulaire disjoint", "l'audit sémantique est exécuté", "le couple est signalé en semantic_duplicate avec la rationale"],
+        ["deux exigences partagent des sujets mais imposent des obligations distinctes", "l'audit sémantique est exécuté", "aucune duplication n'est signalée"],
+        ["le backend LLM est indisponible", "l'audit sémantique est exécuté", "l'audit est sauté avec un message d'abstention"]
+      ],
+      "oracle": "Verdicts attendus figés dans tests/fixtures/semantic_oracle.json avant exécution ; qualité évaluée par DeepEval (EPIC-AUD-05) ; revue humaine des couples.",
+      "scope": "LLM local (LM Studio) sur paires pré-filtrées ; paires déjà signalées par US-AUD-201 exclues.",
+      "tasks": [
+        "Figer les paires candidates et verdicts attendus dans l'oracle sémantique.",
+        "Émettre les findings semantic_duplicate sur verdict 'duplicate'.",
+        "Vérifier les findings semantic_duplicate contre l'oracle."
+      ]
+    },
+    {
+      "number": 501,
+      "epic": "EPIC-AUD-05",
+      "title": "Évaluer les verdicts IA avec DeepEval",
+      "role": "responsable qualité",
+      "capability": "confronter les verdicts sémantiques à un oracle figé via des métriques LLM-as-judge locales",
+      "benefit": "objectiver la qualité de la partie IA et détecter les régressions",
+      "tier": "socle",
+      "priority": "P2",
+      "depends_on": [401, 402],
+      "input": "Goldens tests/fixtures/semantic_oracle.json et verdicts produits par l'audit sémantique.",
+      "output": "Rapport evidence/deepeval-report.json avec scores par métrique, verdicts et rationales.",
+      "rule": "Chaque paire golden est évaluée en LLMTestCase ; les métriques utilisent un juge LLM local ; un score sous le seuil échoue le test.",
+      "cases": [
+        ["un golden dont le verdict attendu est 'contradiction'", "l'évaluation DeepEval est exécutée", "le verdict produit est confronté au verdict attendu et JsonCorrectness vérifie la structure"],
+        ["un golden de non-détection ('ok' attendu)", "l'évaluation est exécutée", "un verdict non-'ok' produit est rapporté comme échec"],
+        ["LM Studio est indisponible", "la suite de tests est exécutée", "les tests eval sont skippés et la suite hors-ligne reste verte"]
+      ],
+      "oracle": "Goldens figés avant implémentation ; GEval évalue la rationale, JsonCorrectness la structure ; scores = preuves à revue humaine.",
+      "scope": "DeepEval + juge LM Studio local ; dépendance de test uniquement ; aucune clé API requise.",
+      "tasks": [
+        "Figer les goldens et implémenter le juge LMStudioJudge.",
+        "Implémenter les tests DeepEval (LLMTestCase, JsonCorrectness, GEval, skip offline).",
+        "Produire evidence/deepeval-report.json et soumettre à revue."
+      ]
+    }
+  ]
+}

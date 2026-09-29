@@ -1,0 +1,50 @@
+{
+  "oracle_id": "ORACLE-AUD-201",
+  "user_story": "US-AUD-201",
+  "dataset": "data/exigences_sample.json",
+  "threshold": 0.80,
+  "description": "Paires d'exigences dupliquees attendues avec score de similarite Jaccard sur tokens normalises (stemming, stopwords, unites et modaux exclus).",
+  "expected_findings": [
+    {
+      "pair": ["REQ-008", "REQ-009"],
+      "type": "duplicate",
+      "min_score": 1.0,
+      "cause": "startup vs start-up : tiret unifie par la normalisation."
+    },
+    {
+      "pair": ["REQ-013", "REQ-014"],
+      "type": "duplicate",
+      "min_score": 1.0,
+      "cause": "Duplication exacte."
+    },
+    {
+      "pair": ["REQ-018", "REQ-019"],
+      "type": "duplicate",
+      "min_score": 1.0,
+      "cause": "110 degC vs 110 degC : unites normalisees."
+    },
+    {
+      "pair": ["REQ-028", "REQ-029"],
+      "type": "duplicate",
+      "min_score": 1.0,
+      "cause": "Point final manquant uniquement : tokens identiques."
+    },
+    {
+      "pair": ["REQ-032", "REQ-033"],
+      "type": "duplicate",
+      "min_score": 1.0,
+      "cause": "log vs logs : stemming unifie les pluriels."
+    }
+  ],
+  "expected_non_detections": [
+    {
+      "pair": ["REQ-005", "REQ-006"],
+      "reason": "disable vs continue torque : vocabulaire different, similarite sous le seuil."
+    },
+    {
+      "pair": ["REQ-005", "REQ-006"],
+      "reason": "Paire contradictoire, pas une duplication."
+    }
+  ],
+  "notes": "Une exigence negative et une positive ne sont jamais signalees comme dupliquees (polarite de negation discriminante)."
+}

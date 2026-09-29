@@ -1,0 +1,18 @@
+{
+  "oracle_id": "ORACLE-AUD-102",
+  "user_story": "US-AUD-102",
+  "dataset": "data/exigences_sample.json",
+  "description": "Fautes d'orthographe attendues dans le dataset, avec position exacte du caractere et correction issue du dictionnaire fige.",
+  "expected_findings": [],
+  "expected_non_detections": [
+    {
+      "requirement_id": "REQ-001",
+      "reason": "Texte linguistiquement correct (controle negatif)."
+    },
+    {
+      "requirement_id": "REQ-029",
+      "reason": "Point final manquant : anomalie de ponctuation finale, hors perimetre du dictionnaire d'orthographe de ce lot."
+    }
+  ],
+  "notes": "Le dataset de demonstration est en anglais ; les fautes francaises du dictionnaire (systeme, redemarrer, apres) ne s'y declenchent pas. L'erreur d'accord 'shall logs' de REQ-033 relève de la grammaire (US-AUD-101), pas de l'orthographe."
+}

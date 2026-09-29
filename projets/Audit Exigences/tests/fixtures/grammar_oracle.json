@@ -1,0 +1,25 @@
+{
+  "oracle_id": "ORACLE-AUD-101",
+  "user_story": "US-AUD-101",
+  "dataset": "data/exigences_sample.json",
+  "description": "Anomalies grammaticales attendues : accords sujet-verbe apres modal, doubles espaces, capitalisation.",
+  "expected_findings": [
+    {
+      "requirement_id": "REQ-033",
+      "type": "grammar",
+      "detail_contains": "shall logs",
+      "suggestion": "shall log"
+    }
+  ],
+  "expected_non_detections": [
+    {
+      "requirement_id": "REQ-008",
+      "reason": "Phrase grammaticalement correcte (controle negatif)."
+    },
+    {
+      "requirement_id": "REQ-013",
+      "reason": "Phrase grammaticalement correcte (controle negatif)."
+    }
+  ],
+  "notes": "Les regles d'accord sont figees dans GRAMMAR_RULES. Aucune regle de ponctuation finale (point manquant REQ-029) dans ce lot."
+}

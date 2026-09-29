@@ -1,0 +1,83 @@
+{
+  "run_id": "deepeval-20260916-072524",
+  "judge": "lmstudio:local-model",
+  "results": [
+    {
+      "pair": [
+        "REQ-005",
+        "REQ-006"
+      ],
+      "expected_verdict": "contradiction",
+      "actual_verdict": "contradiction",
+      "rationale": "These requirements impose mutually exclusive behaviours on the inverter's operation under critical fault conditions.",
+      "scores": {
+        "Json Correctness": {
+          "score": 1,
+          "reason": "The generated Json matches and is syntactically correct to the expected schema."
+        },
+        "SemanticVerdictCorrectness [GEval]": {
+          "score": 0.8,
+          "reason": "The verdict correctly identifies the contradiction between the two requirements. However, the rationale could be more detailed by explaining how these requirements are mutually exclusive in terms of their intended behavior under critical fault conditions."
+        }
+      }
+    },
+    {
+      "pair": [
+        "REQ-016",
+        "REQ-017"
+      ],
+      "expected_verdict": "contradiction",
+      "actual_verdict": "contradiction",
+      "rationale": "These requirements impose mutually exclusive behaviors on the ECU regarding diagnostic trouble codes, erasing vs. retaining data across ignition cycles.",
+      "scores": {
+        "Json Correctness": {
+          "score": 1,
+          "reason": "The generated Json matches and is syntactically correct to the expected schema."
+        },
+        "SemanticVerdictCorrectness [GEval]": {
+          "score": 0.8,
+          "reason": "The verdict correctly identifies the contradiction between the two requirements. However, the rationale could be more detailed by explaining how these requirements conflict with each other."
+        }
+      }
+    },
+    {
+      "pair": [
+        "REQ-034",
+        "REQ-035"
+      ],
+      "expected_verdict": "contradiction",
+      "actual_verdict": "contradiction",
+      "rationale": "These requirements impose mutually exclusive speeds for CAN FD communication on the same subject.",
+      "scores": {
+        "Json Correctness": {
+          "score": 1,
+          "reason": "The generated Json matches and is syntactically correct to the expected schema."
+        },
+        "SemanticVerdictCorrectness [GEval]": {
+          "score": 1.0,
+          "reason": "The verdict correctly identifies the relationship between the two requirements as contradictory. However, the rationale could be more detailed to explain why these speeds are mutually exclusive."
+        }
+      }
+    },
+    {
+      "pair": [
+        "REQ-011",
+        "REQ-012"
+      ],
+      "expected_verdict": "ok",
+      "actual_verdict": "ok",
+      "rationale": "REQ-A and REQ-B express distinct obligations to support different UDS services, which are compatible and complementary.",
+      "scores": {
+        "Json Correctness": {
+          "score": 1,
+          "reason": "The generated Json matches and is syntactically correct to the expected schema."
+        },
+        "SemanticVerdictCorrectness [GEval]": {
+          "score": 1.0,
+          "reason": "The verdict is correct as it indicates the relationship between the two requirements is classified correctly. The rationale accurately reflects that REQ-011 and REQ-012 express distinct obligations to support different UDS services, which are compatible and complementary."
+        }
+      }
+    }
+  ],
+  "status": "ready-for-human-review"
+}
