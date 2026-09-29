@@ -1,0 +1,18 @@
+# Environnement et secrets
+.env
+.env.*
+!.env.example
+
+# Base vectorielle ChromaDB generee localement
+chroma_db/
+chroma_db_demo/
+chroma_db_k230/
+chroma_db_zephyr/
+
+# Caches Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs
+*.log

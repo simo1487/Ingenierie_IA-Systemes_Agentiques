@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "question": "What is the purpose of the Zephyr kernel?",
+    "category": "General",
+    "expected_keywords": ["low footprint", "multi-threaded", "kernel"]
+  },
+  {
+    "id": 2,
+    "question": "What synchronization mechanisms are available in Zephyr?",
+    "category": "Synchronization",
+    "expected_keywords": ["semaphore", "mutex", "condition variable", "event", "spinlock"]
+  },
+  {
+    "id": 3,
+    "question": "What is a Zephyr thread?",
+    "category": "Threads",
+    "expected_keywords": ["thread", "scheduling", "priority"]
+  },
+  {
+    "id": 4,
+    "question": "What is the difference between cooperative and preemptive threads?",
+    "category": "Threads",
+    "expected_keywords": ["cooperative", "preemptive", "thread"]
+  },
+  {
+    "id": 5,
+    "question": "How are thread priorities handled in Zephyr?",
+    "category": "Threads",
+    "expected_keywords": ["priority", "thread", "lower numeric", "higher priority"]
+  },
+  {
+    "id": 6,
+    "question": "What happens when multiple threads are ready to run?",
+    "category": "Scheduling",
+    "expected_keywords": ["highest priority", "ready", "run"]
+  },
+  {
+    "id": 7,
+    "question": "What scheduling algorithms are supported by Zephyr?",
+    "category": "Scheduling",
+    "expected_keywords": ["priority-based", "cooperative", "preemptive", "scheduling"]
+  },
+  {
+    "id": 8,
+    "question": "What is a semaphore?",
+    "category": "Synchronization",
+    "expected_keywords": ["semaphore", "count", "signal"]
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between a semaphore and a mutex?",
+    "category": "Synchronization",
+    "expected_keywords": ["semaphore", "mutex", "counting", "ownership"]
+  },
+  {
+    "id": 10,
+    "question": "When should a mutex be used instead of a semaphore?",
+    "category": "Synchronization",
+    "expected_keywords": ["mutex", "exclusive access", "shared resource"]
+  },
+  {
+    "id": 11,
+    "question": "Can an ISR interact with a semaphore?",
+    "category": "Synchronization",
+    "expected_keywords": ["ISR", "semaphore", "give"]
+  },
+  {
+    "id": 12,
+    "question": "What happens when a semaphore becomes available?",
+    "category": "Synchronization",
+    "expected_keywords": ["semaphore", "available", "waiting thread"]
+  },
+  {
+    "id": 13,
+    "question": "What is a workqueue?",
+    "category": "Threads",
+    "expected_keywords": ["workqueue", "work", "thread"]
+  },
+  {
+    "id": 14,
+    "question": "Why would a developer use a workqueue?",
+    "category": "Threads",
+    "expected_keywords": ["workqueue", "defer", "ISR", "work"]
+  },
+  {
+    "id": 15,
+    "question": "What is the difference between a thread and a workqueue?",
+    "category": "Threads",
+    "expected_keywords": ["thread", "workqueue", "work item"]
+  },
+  {
+    "id": 16,
+    "question": "What types of timers are available in Zephyr?",
+    "category": "Timing",
+    "expected_keywords": ["timer", "one-shot", "periodic"]
+  },
+  {
+    "id": 17,
+    "question": "How are timers typically used?",
+    "category": "Timing",
+    "expected_keywords": ["timer", "expiry", "callback"]
+  },
+  {
+    "id": 18,
+    "question": "What kernel objects are available for communication between threads?",
+    "category": "Data Passing",
+    "expected_keywords": ["queue", "fifo", "lifo", "message queue", "mailbox", "pipe"]
+  },
+  {
+    "id": 19,
+    "question": "How can threads exchange data in Zephyr?",
+    "category": "Data Passing",
+    "expected_keywords": ["queue", "message queue", "data", "exchange"]
+  },
+  {
+    "id": 20,
+    "question": "What is a message queue?",
+    "category": "Data Passing",
+    "expected_keywords": ["message queue", "data", "threads"]
+  },
+  {
+    "id": 21,
+    "question": "How are interrupts handled in Zephyr?",
+    "category": "Interrupts",
+    "expected_keywords": ["ISR", "interrupt", "handler"]
+  },
+  {
+    "id": 22,
+    "question": "What are the responsibilities of an ISR?",
+    "category": "Interrupts",
+    "expected_keywords": ["ISR", "short", "non-blocking"]
+  },
+  {
+    "id": 23,
+    "question": "What memory management mechanisms are available?",
+    "category": "Memory",
+    "expected_keywords": ["heap", "slab", "pool", "memory"]
+  },
+  {
+    "id": 24,
+    "question": "Does Zephyr support dynamic memory allocation?",
+    "category": "Memory",
+    "expected_keywords": ["heap", "dynamic", "allocation"]
+  },
+  {
+    "id": 25,
+    "question": "What is a memory slab?",
+    "category": "Memory",
+    "expected_keywords": ["memory slab", "fixed-size", "blocks"]
+  },
+  {
+    "id": 26,
+    "question": "What is the purpose of a memory pool?",
+    "category": "Memory",
+    "expected_keywords": ["memory pool", "variable-size", "allocation"]
+  },
+  {
+    "id": 27,
+    "question": "How does Zephyr support real-time behavior?",
+    "category": "Scheduling",
+    "expected_keywords": ["priority-based", "deterministic", "real-time"]
+  },
+  {
+    "id": 28,
+    "question": "Which kernel service should be used to protect a shared resource?",
+    "category": "Synchronization",
+    "expected_keywords": ["mutex", "shared resource", "protect"]
+  },
+  {
+    "id": 29,
+    "question": "How does Zephyr wake up waiting threads?",
+    "category": "Synchronization",
+    "expected_keywords": ["semaphore", "signal", "wake up", "waiting"]
+  },
+  {
+    "id": 30,
+    "question": "Which kernel service would be the most appropriate for producer-consumer synchronization?",
+    "category": "Synchronization",
+    "expected_keywords": ["semaphore", "mutex", "condition variable", "producer", "consumer"]
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "titre": "Cas 1 : Fréquence CPU",
+    "query": "What is the CPU frequency of K230?",
+    "status": "found",
+    "top_k": 2,
+    "citations": [
+      {
+        "rank": 1,
+        "score": 0.7994,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_5",
+        "chunk_index": 5,
+        "content_snippet": "#### CPU subsystem\n\n- CPU0 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 800 MHz working frequency\n  - Supports RISC-V 64GCB instruction set\n  - Cpu contains floating-point units (FPUs)\n  - L1 cache contains 32 KB instruction cache (I-ca",
+        "full_content": "#### CPU subsystem\n\n- CPU0 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 800 MHz working frequency\n  - Supports RISC-V 64GCB instruction set\n  - Cpu contains floating-point units (FPUs)\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 128 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI\n\n- CPU1 subsystem\n\n  - 64bit RISC-V processor\n  - Supports maximum 1.6 GHz working frequency\n  - Supports RISC-V Vector Extension 1.0 specification\n  - Cpu contains floating-point units (FPUs)\n  - 128bits vector-process-unit\n  - L1 cache contains 32 KB instruction cache (I-cache) and 32 KB data cache (D-cache)\n  - Integrates with 256 KB L2 cache\n  - Supports memory management unit (MMU)\n  - Integrates with the interrupt controller (PLIC), which can process 208 interrupt external sources\n  - Supports the Joint Test Action Group (JTAG) debugging interface\n  - Supports WFI",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_5",
+          "chunk_index": 5,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1127,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      },
+      {
+        "rank": 2,
+        "score": 0.7679,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_4",
+        "chunk_index": 4,
+        "content_snippet": "### Overview\n\nThe K230 chip is the latest generation SoC product in Canaan Technology's (NASDAQ: CAN) Kendryte® series of AIOT chips. The chip adopts a brand-new multi-heterogeneous unit acceleration computing architecture, integrates two RISC-V C908",
+        "full_content": "### Overview\n\nThe K230 chip is the latest generation SoC product in Canaan Technology's (NASDAQ: CAN) Kendryte® series of AIOT chips. The chip adopts a brand-new multi-heterogeneous unit acceleration computing architecture, integrates two RISC-V C908 computing cores, and has a built-in new generation KPU (Knowledge Process Unit) intelligent computing unit. Multi-precision AI computing power with INT8 and INT16. Supports general AI computing framework. The chip also has a variety of peripheral interfaces, as well as multiple scalar, vector, graphics, and other dedicated hardware acceleration units such as image 2D engine, AI 2D engine, 2.5D GPU, and 3D depth engine. K230 provides full-process computing acceleration for various computing tasks such as images, videos, audio, AI, etc. The chip has many features such as low latency, high performance, low power consumption, fast startup, and high security.\nK230 can be used in various smart hardware products, such as smart door locks, home smart security cameras, dictionary pens, payment recognition, 3D structured light vision modules, drones, interactive robots, smart home appliances, smart toys, and smart manufacturing, intelligent vehicle cockpit and many other fields.\n\n### Feature",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_4",
+          "chunk_index": 4,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1247,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      }
+    ]
+  },
+  {
+    "titre": "Cas 2 : Capacités KPU",
+    "query": "KPU performance and supported neural networks",
+    "status": "found",
+    "top_k": 2,
+    "citations": [
+      {
+        "rank": 1,
+        "score": 0.738,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_6",
+        "chunk_index": 6,
+        "content_snippet": "#### KPU subsystem\n\n- Support INT8 and INT16\n- Support weight sparse compression\n- Typical network performance：\n  - Resnet 50 ≥ 85fps @INT8\n  - Mobilenet_v2 ≥ 670fps @INT8\n  - YoloV5S ≥ 38fps @INT8\n- Support TensorFlow / PyTorch / TFLite / PaddlePadd",
+        "full_content": "#### KPU subsystem\n\n- Support INT8 and INT16\n- Support weight sparse compression\n- Typical network performance：\n  - Resnet 50 ≥ 85fps @INT8\n  - Mobilenet_v2 ≥ 670fps @INT8\n  - YoloV5S ≥ 38fps @INT8\n- Support TensorFlow / PyTorch / TFLite / PaddlePaddle / ONNX\n- Support quantization toolchain and profiling tools\n- Loss of quantization accuracy <1%\n- Support Abs, Acos, Acosh, And, ArgMax, ArgMin, Asin, Asinh, Add, AveragePool, BatchNormalization, Cast, Ceil, Celu, Clip, Concat, Constant, ConstantOfShape, Conv, ConvTranspose, Cos, Cosh, CumSum, DepthToSpace, DequantizeLinear, Div, Dropout, Elu, Equal, Exp, Erf, Expand, Flatten, Floor, Gather, GatherElements, GatherND, Gemm, GlobalAveragePool, GlobalMaxPool, Greater, GreaterOrEqual, Hardmax, HardSigmoid, HardSwish, Identity, InstanceNormalization, LpNormalization, LeakyRelu, Less, LessOrEqual, Log, LogSoftmax, LRN, LSTM, MatMul, MaxPool, Max, Min, Mod, Mul, Neg, Not, OneHot, Pad, Pow, PRelu, QuantizeLinear, QLinearConv, QLinearMatmul, RandomNormal, RandomNormalLike, RandomUniform, RandomUniformLike, Range, ReduceL1, ReduceL2, ReduceLogSum, ReduceLogSumExp, ReduceMax, ReduceMean, ReduceMin, ReduceProd, ReduceSum, ReduceSumSquare, Relu, Reshape,",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_6",
+          "chunk_index": 6,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1208,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      },
+      {
+        "rank": 2,
+        "score": 0.6937,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_14",
+        "chunk_index": 14,
+        "content_snippet": "DRAM array)\n  - LVSTL IO calibration and ODT calibration\n  - Support for a SW controllable DQ bit and AC bit swizzling\n  - Firmware-based 2D eye mapping diagnostic tool allows measuring 2D eye for every bit of the bus at both DRAM and host receivers\n",
+        "full_content": "DRAM array)\n  - LVSTL IO calibration and ODT calibration\n  - Support for a SW controllable DQ bit and AC bit swizzling\n  - Firmware-based 2D eye mapping diagnostic tool allows measuring 2D eye for every bit of the bus at both DRAM and host receivers\n  - Direct override programming available for all VREF, ODT, drive strength, and timing delays to facilitate debug and characterization\n\n- SRAM\n  - SRAM：2MB (shared sram)+2MB (default for KPU)\n  - The shared 2MB sram provides access to CPU/KPU/decompression and other modules\n  - The shared 2MB sram has two independent 128bit AXI4 Slave buses. Burst supports incremental, fixed, and wrap. The maximum burst length is 16. Exclusive transmission is not supported. The maximum outstanding read and write are 16 respectively\n  - The shared 2MB sram is divided into two groups. The first group is shared by KPU port0, axi slave0, axi slave1, and decompression module. When decompression does not work, KPU port0 has the highest priority, followed by axi slave0/axi slave1. The other group of KPU port1, axi slave 0, and axi slave 1 are shared. KPU port1 has the highest priority\n  - The decompression module shares 768KB SRAM to cache the decompression process data\n\n- Flash\n\n  - Supports the SPI NOR flash and SPI NAND flash\n  - Supports the read and write operations in internal DMA mode for the SPI NAND flash and the SPI NOR flash.\n  - Support Enhanced (Dual/Quad/Octal) SPI features:",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_14",
+          "chunk_index": 14,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1434,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      }
+    ]
+  },
+  {
+    "titre": "Cas 3 : Interfaces vidéo",
+    "query": "MIPI CSI and video input capabilities",
+    "status": "found",
+    "top_k": 2,
+    "citations": [
+      {
+        "rank": 1,
+        "score": 0.7797,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_21",
+        "chunk_index": 21,
+        "content_snippet": "#### Video input\n\n- Compatible with MIPI 1.2 RX protocol, max up to three 2lane sensors or one 4lane sensor and one 2lane sensor\n- 3 x MIPI CSI\n- Support sensor slave mode\n- Support flash trigger mode which support both follow-strobe mode and pwm mod",
+        "full_content": "#### Video input\n\n- Compatible with MIPI 1.2 RX protocol, max up to three 2lane sensors or one 4lane sensor and one 2lane sensor\n- 3 x MIPI CSI\n- Support sensor slave mode\n- Support flash trigger mode which support both follow-strobe mode and pwm mode\n- Support structured light sensor and can separate the IR data and speckle data to different DVP interface.\n- Support timestamp\n- Support HDR sensor\n- Support hardware discard frame\n- 8/10/12/16 Bit Bayer RAW",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_21",
+          "chunk_index": 21,
+          "source_file": "k230_datasheet.md",
+          "char_length": 460,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      },
+      {
+        "rank": 2,
+        "score": 0.7128,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_24",
+        "chunk_index": 24,
+        "content_snippet": "#### Video output\n\n- 1 x MIPI DSI, 1 x 4 lane or 1 x 2 lane\n- Resolution: 2MP@60fps\n- Support up to 13 layers, including 4 video layers, 8 OSD layers and 1 background layer.\n- Support all common output picture formats: UXVGA (1600x1200), SXVGA (1280x",
+        "full_content": "#### Video output\n\n- 1 x MIPI DSI, 1 x 4 lane or 1 x 2 lane\n- Resolution: 2MP@60fps\n- Support up to 13 layers, including 4 video layers, 8 OSD layers and 1 background layer.\n- Support all common output picture formats: UXVGA (1600x1200), SXVGA (1280x1024), 1080p, 720p\n- Video Layer 0:\n  - support scaling up and scaling down function\n  - support 2-plane, YUV420 data format input\n  - support configurable start pixel & start line input\n  - Support 90 °, 180 °, 270 ° rotation\n  - Support x-mirror/y-mirror function.\n- Video Layer 1:\n  - support 2-plane, YUV420 data format input\n  - support configurable start pixel & start line input\n  - support 90 °, 180 °, 270 ° rotation\n  - Support x-mirror/y-mirror function.\n- Video Layer 2 & Layer 3:\n  - Support 2-plane, YUV420 & YUV422 data format input\n  - Support configurable start pixel & start line input\n  - Do not support scaling function\n- 8 OSD layers support 1 or 2 plane ARGB formats:\n  - RGB888 with separate alpha channel\n  - RGB565 with separate alpha channel\n  - ARGB8888\n  - ARGB4444\n  - ARGB1555\n  - Monochrome(8-bit)\n- Display mix:\n  - OSD layer support configurable global alpha blending or pixel by pixel alpha mode\n  - Video layer only support configurable global alpha\n  -",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_24",
+          "chunk_index": 24,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1238,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      }
+    ]
+  },
+  {
+    "titre": "Cas 4 : Sécurité",
+    "query": "AES and security boot features",
+    "status": "not_found",
+    "reason": "Aucun passage du corpus n'atteint le seuil de pertinence minimal.",
+    "citations": [
+      {
+        "rank": 1,
+        "score": 0.6738,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_40",
+        "chunk_index": 40,
+        "content_snippet": "#### security\n\n- Support PUF / OTP / TRNG\n- Support following symmetric algorithm\n  - AES128/192/256\n  - CMAC128/192/256\n  - SM4-128\n\n- Support following asymmetric algorithm\n  - RSA-1024/2048/3072/4096\n  - RSA encrypt/decrypt/signature/verify\n  - EC",
+        "full_content": "#### security\n\n- Support PUF / OTP / TRNG\n- Support following symmetric algorithm\n  - AES128/192/256\n  - CMAC128/192/256\n  - SM4-128\n\n- Support following asymmetric algorithm\n  - RSA-1024/2048/3072/4096\n  - RSA encrypt/decrypt/signature/verify\n  - ECC-163/233/283/409/571/192/224/256/384/521\n  - ECDSA-233/283/409/571/224/256/384/521\n  - ECC CDH-163/233/283/409/571/192/224/256/384/521\n  - SM2 encrypt/decrypt/signature/verify\n\n- Support following hash algorithm\n  - HMAC\n  - SHA224/256/384/512, SHA_512/224, SHA_512/256\n  - SM3\n\n- TRNG\n  - 160Mbps@20Mhz\n  - Stabilization time minimum than 50us\n\n- OTP program region has raw OTP density 32Kbits, with security protection\n- Support security boot with signature",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_40",
+          "chunk_index": 40,
+          "source_file": "k230_datasheet.md",
+          "char_length": 710,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      },
+      {
+        "rank": 2,
+        "score": 0.6395,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_35",
+        "chunk_index": 35,
+        "content_snippet": "#### peripheral\n\n- UART\n  - Support 5 UART interface\n  - 9-bit serial data support\n  - False start bit detection\n  - Programmable fractional baud rate support\n  - APB data bus widths of 32\n  - Additional DMA interface signals for compatibility with D",
+        "full_content": "#### peripheral\n\n- UART\n  - Support 5 UART interface\n  - 9-bit serial data support\n  - False start bit detection\n  - Programmable fractional baud rate support\n  - APB data bus widths of 32\n  - Additional DMA interface signals for compatibility with DMA interface, DMA interface signal active low\n  - Transmit and receive FIFO depths of 32, Supports 32x32-bit transmit first-in, first-out (FIFO) and 32x32-bit RX FIFO, Internal FIFO (RAM)\n  - Busy functionality\n  - Functionality based on the 16550 industry standard\n    - Programmable character properties, such as:\n      - Number of data bits per character (5-8)\n      - Optional parity bit (with odd, even select or Stick Parity)\n      - Number of stop bits (1, 1.5 or 2)\n    - Line break generation and detection\n    - DMA signaling with two programmable modes\n    - Prioritized interrupt identification\n  - Programmable FIFO enable/disable\n  - Separate system resets for each clock domain to prevent metastability\n\n- I2C\n  - Support 5 I2C interface\n  - Two-wire I2C serial interface–consists of a serial data line (SDA) and a serial clock (SCL)\n  - Three speeds:\n    - Standard mode (0 to 100 Kb/s)\n    - Fast mode (≤400 Kb/s) or fast mode plus (≤1000 Κb/s)\n    - High-speed mode (≤3.4 Mb/s)\n  - Clock synchronization\n  - Master",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_35",
+          "chunk_index": 35,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1282,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      }
+    ]
+  },
+  {
+    "titre": "Cas 5 : Hors-corpus",
+    "query": "Protocole de routage BGP sur réseau 5G",
+    "status": "not_found",
+    "reason": "Aucun passage du corpus n'atteint le seuil de pertinence minimal.",
+    "citations": [
+      {
+        "rank": 1,
+        "score": 0.6855,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_103",
+        "chunk_index": 103,
+        "content_snippet": "|\n| Transceiver edge rate control capacitance                                    | CEDGE   |                                                       | 75        |       | pF   |\n| TDR spec for high-speed termination                                     ",
+        "full_content": "|\n| Transceiver edge rate control capacitance                                    | CEDGE   |                                                       | 75        |       | pF   |\n| TDR spec for high-speed termination                                          |         |                                                       |           |       |      |\n| Bus Pull-up Resistor on Upstream Facing Port                                 | RPU     | 1.5 kΩ ±5%",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_103",
+          "chunk_index": 103,
+          "source_file": "k230_datasheet.md",
+          "char_length": 451,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      },
+      {
+        "rank": 2,
+        "score": 0.6814,
+        "file_name": "k230_datasheet.md",
+        "chunk_id": "k230_adapted_chunk_12",
+        "chunk_index": 12,
+        "content_snippet": "#### Memory\n\n- DDR\n\n  - 16-bit per channel LPDDR4, two channels, the max speed is 3200Mbps\n  - 32-bit LPDDR3 supported,the max speed is 2133Mbps\n  - Maximum capacity: 2GB\n  - Scalable 1:1/1:2 frequency ratio architecture. We setting 1:2 frequency rat",
+        "full_content": "#### Memory\n\n- DDR\n\n  - 16-bit per channel LPDDR4, two channels, the max speed is 3200Mbps\n  - 32-bit LPDDR3 supported,the max speed is 2133Mbps\n  - Maximum capacity: 2GB\n  - Scalable 1:1/1:2 frequency ratio architecture. We setting 1:2 frequency ratio\n  - For LPDDR3 configurations, direct software request control or programmable internal control for ZQ short calibration cycles\n  - For LPDDR3 configurations, support for ZQ long calibration after self-refresh exit\n  - For LPDDR4 configurations, direct software request control or programmable internal control for ZQ calibration cycles\n  - For LPDDR4 configurations, support for ZQ calibration after SR-Powerdown exit\n  - Dynamic scheduling to optimize bandwidth and latency\n  - For maximum SDRAM efficiency, commands are executed out-of-order\n  - Hardware configurable and software programmable Quality of Service (QoS) support\n  - Programmable support for all of the following SDRAM data-bus widths: Full data-bus width or Half of the full data-bus width\n  - Supports max to 2 ranks\n  - Control options to avoid starvation of lower priorities\n  - Guaranteed coherency for write-after-read (WAR) and read-after-write (RAW) hazards (always on the HIF interface and on the AXI interface only if appropriate hardware configuration parameter and software register are set)\n  - Write combine to allow multiple writes to the same address to be combined into a single write to SDRAM; supported for same starting address\n  - Supports automatic SDRAM power-down entry and exit caused by lack of transaction arrival for a programmable time\n  - Supports automatic Clock Stop",
+        "metadata": {
+          "chunk_id": "k230_adapted_chunk_12",
+          "chunk_index": 12,
+          "source_file": "k230_datasheet.md",
+          "char_length": 1618,
+          "header_path": "Root",
+          "parser": "Adapted: MarkdownNodeParser + TokenTextSplitter + merge_short"
+        }
+      }
+    ]
+  }
+]
